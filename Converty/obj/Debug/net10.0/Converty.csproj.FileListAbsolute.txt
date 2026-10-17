@@ -1,0 +1,204 @@
+e:/Converty/bin/Debug/net10.0/appsettings.Development.json
+e:/Converty/bin/Debug/net10.0/appsettings.json
+e:/Converty/bin/Debug/net10.0/Converty.staticwebassets.runtime.json
+e:/Converty/bin/Debug/net10.0/Converty.staticwebassets.endpoints.json
+e:/Converty/bin/Debug/net10.0/Converty.exe
+e:/Converty/bin/Debug/net10.0/Converty.deps.json
+e:/Converty/bin/Debug/net10.0/Converty.runtimeconfig.json
+e:/Converty/bin/Debug/net10.0/Converty.dll
+e:/Converty/bin/Debug/net10.0/Converty.pdb
+e:/Converty/bin/Debug/net10.0/ExcelDataReader.dll
+e:/Converty/bin/Debug/net10.0/ExcelDataReader.DataSet.dll
+e:/Converty/bin/Debug/net10.0/Newtonsoft.Json.dll
+e:/Converty/obj/Debug/net10.0/Converty.csproj.AssemblyReference.cache
+e:/Converty/obj/Debug/net10.0/rpswa.dswa.cache.json
+e:/Converty/obj/Debug/net10.0/Converty.GeneratedMSBuildEditorConfig.editorconfig
+e:/Converty/obj/Debug/net10.0/Converty.AssemblyInfoInputs.cache
+e:/Converty/obj/Debug/net10.0/Converty.AssemblyInfo.cs
+e:/Converty/obj/Debug/net10.0/Converty.csproj.CoreCompileInputs.cache
+e:/Converty/obj/Debug/net10.0/Converty.MvcApplicationPartsAssemblyInfo.cache
+e:/Converty/obj/Debug/net10.0/Converty.RazorAssemblyInfo.cache
+e:/Converty/obj/Debug/net10.0/Converty.RazorAssemblyInfo.cs
+e:/Converty/obj/Debug/net10.0/rjimswa.dswa.cache.json
+e:/Converty/obj/Debug/net10.0/rjsmrazor.dswa.cache.json
+e:/Converty/obj/Debug/net10.0/rjsmcshtml.dswa.cache.json
+e:/Converty/obj/Debug/net10.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+e:/Converty/obj/Debug/net10.0/scopedcss/bundle/Converty.styles.css
+e:/Converty/obj/Debug/net10.0/scopedcss/projectbundle/Converty.bundle.scp.css
+e:/Converty/obj/Debug/net10.0/compressed/ev7zaickh7-{0}-61n19gt1b8-61n19gt1b8.gz
+e:/Converty/obj/Debug/net10.0/compressed/j966k0xpjg-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
+e:/Converty/obj/Debug/net10.0/compressed/k5syi156hc-{0}-bqjiyaj88i-bqjiyaj88i.gz
+e:/Converty/obj/Debug/net10.0/compressed/5m8vf6vag7-{0}-c2jlpeoesf-c2jlpeoesf.gz
+e:/Converty/obj/Debug/net10.0/compressed/3tp42kqr07-{0}-erw9l3u2r3-erw9l3u2r3.gz
+e:/Converty/obj/Debug/net10.0/compressed/acn6ciz9zz-{0}-aexeepp0ev-aexeepp0ev.gz
+e:/Converty/obj/Debug/net10.0/compressed/cxlrt44x1d-{0}-d7shbmvgxk-d7shbmvgxk.gz
+e:/Converty/obj/Debug/net10.0/compressed/e0sreu2gum-{0}-ausgxo2sd3-ausgxo2sd3.gz
+e:/Converty/obj/Debug/net10.0/compressed/zrq3qxcd1t-{0}-k8d9w2qqmf-k8d9w2qqmf.gz
+e:/Converty/obj/Debug/net10.0/compressed/dzwl6c6ok2-{0}-cosvhxvwiu-cosvhxvwiu.gz
+e:/Converty/obj/Debug/net10.0/compressed/wj5adpf8qy-{0}-ub07r2b239-ub07r2b239.gz
+e:/Converty/obj/Debug/net10.0/compressed/zgsau8j15k-{0}-fvhpjtyr6v-fvhpjtyr6v.gz
+e:/Converty/obj/Debug/net10.0/compressed/5cenzr5xp0-{0}-b7pk76d08c-b7pk76d08c.gz
+e:/Converty/obj/Debug/net10.0/compressed/8qjhkjlsyn-{0}-fsbi9cje9m-fsbi9cje9m.gz
+e:/Converty/obj/Debug/net10.0/compressed/jb4ybj1jmn-{0}-rzd6atqjts-rzd6atqjts.gz
+e:/Converty/obj/Debug/net10.0/compressed/18bm0eykvk-{0}-ee0r1s7dh0-ee0r1s7dh0.gz
+e:/Converty/obj/Debug/net10.0/compressed/5z34vwxft2-{0}-dxx9fxp4il-dxx9fxp4il.gz
+e:/Converty/obj/Debug/net10.0/compressed/pxb3sudivt-{0}-jd9uben2k1-jd9uben2k1.gz
+e:/Converty/obj/Debug/net10.0/compressed/1burqrppq8-{0}-khv3u5hwcm-khv3u5hwcm.gz
+e:/Converty/obj/Debug/net10.0/compressed/2ex58cwbfm-{0}-r4e9w2rdcm-r4e9w2rdcm.gz
+e:/Converty/obj/Debug/net10.0/compressed/z74j05c68z-{0}-lcd1t2u6c8-lcd1t2u6c8.gz
+e:/Converty/obj/Debug/net10.0/compressed/8z240ixtsc-{0}-c2oey78nd0-c2oey78nd0.gz
+e:/Converty/obj/Debug/net10.0/compressed/o7gr3vvefw-{0}-tdbxkamptv-tdbxkamptv.gz
+e:/Converty/obj/Debug/net10.0/compressed/z0edj3uvne-{0}-j5mq2jizvt-j5mq2jizvt.gz
+e:/Converty/obj/Debug/net10.0/compressed/fvih1qulkx-{0}-06098lyss8-06098lyss8.gz
+e:/Converty/obj/Debug/net10.0/compressed/wpgh6uxrny-{0}-nvvlpmu67g-nvvlpmu67g.gz
+e:/Converty/obj/Debug/net10.0/compressed/22qj8p80p4-{0}-s35ty4nyc5-s35ty4nyc5.gz
+e:/Converty/obj/Debug/net10.0/compressed/3v8iyxyu8r-{0}-pj5nd1wqec-pj5nd1wqec.gz
+e:/Converty/obj/Debug/net10.0/compressed/xj1b34h07s-{0}-46ein0sx1k-46ein0sx1k.gz
+e:/Converty/obj/Debug/net10.0/compressed/e2fjpp4xud-{0}-v0zj4ognzu-v0zj4ognzu.gz
+e:/Converty/obj/Debug/net10.0/compressed/yw37ze5bks-{0}-37tfw0ft22-37tfw0ft22.gz
+e:/Converty/obj/Debug/net10.0/compressed/694kkddjjj-{0}-hrwsygsryq-hrwsygsryq.gz
+e:/Converty/obj/Debug/net10.0/compressed/c1jhg0mmxj-{0}-pk9g2wxc8p-pk9g2wxc8p.gz
+e:/Converty/obj/Debug/net10.0/compressed/ib2bofmlj0-{0}-ft3s53vfgj-ft3s53vfgj.gz
+e:/Converty/obj/Debug/net10.0/compressed/t9wo4vqpmv-{0}-6cfz1n2cew-6cfz1n2cew.gz
+e:/Converty/obj/Debug/net10.0/compressed/zpyiah16kl-{0}-6pdc2jztkx-6pdc2jztkx.gz
+e:/Converty/obj/Debug/net10.0/compressed/m545pp2mkc-{0}-493y06b0oq-493y06b0oq.gz
+e:/Converty/obj/Debug/net10.0/compressed/kspt7ljuur-{0}-iovd86k7lj-iovd86k7lj.gz
+e:/Converty/obj/Debug/net10.0/compressed/sdvj16mnv6-{0}-vr1egmr9el-vr1egmr9el.gz
+e:/Converty/obj/Debug/net10.0/compressed/5dzb6e3u14-{0}-kbrnm935zg-kbrnm935zg.gz
+e:/Converty/obj/Debug/net10.0/compressed/sjtgxuw8yr-{0}-jj8uyg4cgr-jj8uyg4cgr.gz
+e:/Converty/obj/Debug/net10.0/compressed/pzt0fqxrxt-{0}-y7v9cxd14o-y7v9cxd14o.gz
+e:/Converty/obj/Debug/net10.0/compressed/xzc9s0pthn-{0}-notf2xhcfb-notf2xhcfb.gz
+e:/Converty/obj/Debug/net10.0/compressed/1mrsi21a4g-{0}-h1s4sie4z3-h1s4sie4z3.gz
+e:/Converty/obj/Debug/net10.0/compressed/flszg3gwld-{0}-63fj8s7r0e-63fj8s7r0e.gz
+e:/Converty/obj/Debug/net10.0/compressed/c63zi1lrup-{0}-0j3bgjxly4-0j3bgjxly4.gz
+e:/Converty/obj/Debug/net10.0/compressed/tprspnfku3-{0}-47otxtyo56-47otxtyo56.gz
+e:/Converty/obj/Debug/net10.0/compressed/sfie0xy37d-{0}-4v8eqarkd7-4v8eqarkd7.gz
+e:/Converty/obj/Debug/net10.0/compressed/z4uepmqbwc-{0}-356vix0kms-356vix0kms.gz
+e:/Converty/obj/Debug/net10.0/compressed/tky8nllfn4-{0}-83jwlth58m-83jwlth58m.gz
+e:/Converty/obj/Debug/net10.0/compressed/eqhgk1wrfn-{0}-mrlpezrjn3-mrlpezrjn3.gz
+e:/Converty/obj/Debug/net10.0/compressed/fp0yfwozvf-{0}-lzl9nlhx6b-lzl9nlhx6b.gz
+e:/Converty/obj/Debug/net10.0/compressed/b61xixnpk6-{0}-ag7o75518u-ag7o75518u.gz
+e:/Converty/obj/Debug/net10.0/compressed/xnku43dbbs-{0}-x0q3zqp4vz-x0q3zqp4vz.gz
+e:/Converty/obj/Debug/net10.0/compressed/8h2l380e2x-{0}-0i3buxo5is-0i3buxo5is.gz
+e:/Converty/obj/Debug/net10.0/compressed/elhi7kt1lz-{0}-o1o13a6vjx-o1o13a6vjx.gz
+e:/Converty/obj/Debug/net10.0/compressed/qsonm30myc-{0}-ttgo8qnofa-ttgo8qnofa.gz
+e:/Converty/obj/Debug/net10.0/compressed/p5pz0nhb6s-{0}-2z0ns9nrw6-2z0ns9nrw6.gz
+e:/Converty/obj/Debug/net10.0/compressed/4atja2epv0-{0}-muycvpuwrr-muycvpuwrr.gz
+e:/Converty/obj/Debug/net10.0/compressed/v8o04hgl80-{0}-87fc7y1x7t-87fc7y1x7t.gz
+e:/Converty/obj/Debug/net10.0/compressed/wi32tfws9o-{0}-mlv21k5csn-mlv21k5csn.gz
+e:/Converty/obj/Debug/net10.0/compressed/cfa9n18gqu-{0}-2gw6qd8h2m-2gw6qd8h2m.gz
+e:/Converty/obj/Debug/net10.0/compressed/cer4os7vub-{0}-2gw6qd8h2m-2gw6qd8h2m.gz
+e:/Converty/obj/Debug/net10.0/staticwebassets.build.json
+e:/Converty/obj/Debug/net10.0/staticwebassets.build.json.cache
+e:/Converty/obj/Debug/net10.0/staticwebassets.development.json
+e:/Converty/obj/Debug/net10.0/staticwebassets.build.endpoints.json
+e:/Converty/obj/Debug/net10.0/swae.build.ex.cache
+e:/Converty/obj/Debug/net10.0/Converty.csproj.Up2Date
+e:/Converty/obj/Debug/net10.0/Converty.dll
+e:/Converty/obj/Debug/net10.0/refint/Converty.dll
+e:/Converty/obj/Debug/net10.0/Converty.pdb
+e:/Converty/obj/Debug/net10.0/Converty.genruntimeconfig.cache
+e:/Converty/obj/Debug/net10.0/ref/Converty.dll
+E:/Converty/obj/Debug/net10.0/compressed/bypp75mcqt-{0}-5tihhjto5q-5tihhjto5q.gz
+/run/media/clover/New Volume/Brindavan/Converty/bin/Debug/net10.0/appsettings.Development.json
+/run/media/clover/New Volume/Brindavan/Converty/bin/Debug/net10.0/appsettings.json
+/run/media/clover/New Volume/Brindavan/Converty/bin/Debug/net10.0/Converty.staticwebassets.runtime.json
+/run/media/clover/New Volume/Brindavan/Converty/bin/Debug/net10.0/Converty.staticwebassets.endpoints.json
+/run/media/clover/New Volume/Brindavan/Converty/bin/Debug/net10.0/Converty
+/run/media/clover/New Volume/Brindavan/Converty/bin/Debug/net10.0/Converty.deps.json
+/run/media/clover/New Volume/Brindavan/Converty/bin/Debug/net10.0/Converty.runtimeconfig.json
+/run/media/clover/New Volume/Brindavan/Converty/bin/Debug/net10.0/Converty.dll
+/run/media/clover/New Volume/Brindavan/Converty/bin/Debug/net10.0/Converty.pdb
+/run/media/clover/New Volume/Brindavan/Converty/bin/Debug/net10.0/ExcelDataReader.dll
+/run/media/clover/New Volume/Brindavan/Converty/bin/Debug/net10.0/ExcelDataReader.DataSet.dll
+/run/media/clover/New Volume/Brindavan/Converty/bin/Debug/net10.0/Newtonsoft.Json.dll
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/Converty.csproj.AssemblyReference.cache
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/rpswa.dswa.cache.json
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/Converty.GeneratedMSBuildEditorConfig.editorconfig
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/Converty.AssemblyInfoInputs.cache
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/Converty.AssemblyInfo.cs
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/Converty.csproj.CoreCompileInputs.cache
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/Converty.MvcApplicationPartsAssemblyInfo.cache
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/Converty.RazorAssemblyInfo.cache
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/Converty.RazorAssemblyInfo.cs
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/rjimswa.dswa.cache.json
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/rjsmrazor.dswa.cache.json
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/rjsmcshtml.dswa.cache.json
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/scopedcss/bundle/Converty.styles.css
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/scopedcss/projectbundle/Converty.bundle.scp.css
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/bypp75mcqt-{0}-n0i00u2044-n0i00u2044.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/ev7zaickh7-{0}-61n19gt1b8-61n19gt1b8.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/j966k0xpjg-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/k5syi156hc-{0}-bqjiyaj88i-bqjiyaj88i.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/5m8vf6vag7-{0}-c2jlpeoesf-c2jlpeoesf.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/3tp42kqr07-{0}-erw9l3u2r3-erw9l3u2r3.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/acn6ciz9zz-{0}-aexeepp0ev-aexeepp0ev.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/cxlrt44x1d-{0}-d7shbmvgxk-d7shbmvgxk.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/e0sreu2gum-{0}-ausgxo2sd3-ausgxo2sd3.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/zrq3qxcd1t-{0}-k8d9w2qqmf-k8d9w2qqmf.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/dzwl6c6ok2-{0}-cosvhxvwiu-cosvhxvwiu.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/wj5adpf8qy-{0}-ub07r2b239-ub07r2b239.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/zgsau8j15k-{0}-fvhpjtyr6v-fvhpjtyr6v.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/5cenzr5xp0-{0}-b7pk76d08c-b7pk76d08c.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/8qjhkjlsyn-{0}-fsbi9cje9m-fsbi9cje9m.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/jb4ybj1jmn-{0}-rzd6atqjts-rzd6atqjts.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/18bm0eykvk-{0}-ee0r1s7dh0-ee0r1s7dh0.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/5z34vwxft2-{0}-dxx9fxp4il-dxx9fxp4il.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/pxb3sudivt-{0}-jd9uben2k1-jd9uben2k1.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/1burqrppq8-{0}-khv3u5hwcm-khv3u5hwcm.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/2ex58cwbfm-{0}-r4e9w2rdcm-r4e9w2rdcm.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/z74j05c68z-{0}-lcd1t2u6c8-lcd1t2u6c8.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/8z240ixtsc-{0}-c2oey78nd0-c2oey78nd0.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/o7gr3vvefw-{0}-tdbxkamptv-tdbxkamptv.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/z0edj3uvne-{0}-j5mq2jizvt-j5mq2jizvt.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/fvih1qulkx-{0}-06098lyss8-06098lyss8.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/wpgh6uxrny-{0}-nvvlpmu67g-nvvlpmu67g.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/22qj8p80p4-{0}-s35ty4nyc5-s35ty4nyc5.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/3v8iyxyu8r-{0}-pj5nd1wqec-pj5nd1wqec.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/xj1b34h07s-{0}-46ein0sx1k-46ein0sx1k.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/e2fjpp4xud-{0}-v0zj4ognzu-v0zj4ognzu.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/yw37ze5bks-{0}-37tfw0ft22-37tfw0ft22.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/694kkddjjj-{0}-hrwsygsryq-hrwsygsryq.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/c1jhg0mmxj-{0}-pk9g2wxc8p-pk9g2wxc8p.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/ib2bofmlj0-{0}-ft3s53vfgj-ft3s53vfgj.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/t9wo4vqpmv-{0}-6cfz1n2cew-6cfz1n2cew.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/zpyiah16kl-{0}-6pdc2jztkx-6pdc2jztkx.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/m545pp2mkc-{0}-493y06b0oq-493y06b0oq.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/kspt7ljuur-{0}-iovd86k7lj-iovd86k7lj.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/sdvj16mnv6-{0}-vr1egmr9el-vr1egmr9el.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/5dzb6e3u14-{0}-kbrnm935zg-kbrnm935zg.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/sjtgxuw8yr-{0}-jj8uyg4cgr-jj8uyg4cgr.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/pzt0fqxrxt-{0}-y7v9cxd14o-y7v9cxd14o.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/xzc9s0pthn-{0}-notf2xhcfb-notf2xhcfb.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/1mrsi21a4g-{0}-h1s4sie4z3-h1s4sie4z3.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/flszg3gwld-{0}-63fj8s7r0e-63fj8s7r0e.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/c63zi1lrup-{0}-0j3bgjxly4-0j3bgjxly4.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/tprspnfku3-{0}-47otxtyo56-47otxtyo56.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/sfie0xy37d-{0}-4v8eqarkd7-4v8eqarkd7.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/z4uepmqbwc-{0}-356vix0kms-356vix0kms.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/tky8nllfn4-{0}-83jwlth58m-83jwlth58m.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/eqhgk1wrfn-{0}-mrlpezrjn3-mrlpezrjn3.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/fp0yfwozvf-{0}-lzl9nlhx6b-lzl9nlhx6b.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/b61xixnpk6-{0}-ag7o75518u-ag7o75518u.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/xnku43dbbs-{0}-x0q3zqp4vz-x0q3zqp4vz.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/8h2l380e2x-{0}-0i3buxo5is-0i3buxo5is.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/elhi7kt1lz-{0}-o1o13a6vjx-o1o13a6vjx.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/qsonm30myc-{0}-ttgo8qnofa-ttgo8qnofa.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/p5pz0nhb6s-{0}-2z0ns9nrw6-2z0ns9nrw6.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/4atja2epv0-{0}-muycvpuwrr-muycvpuwrr.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/v8o04hgl80-{0}-87fc7y1x7t-87fc7y1x7t.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/wi32tfws9o-{0}-mlv21k5csn-mlv21k5csn.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/cfa9n18gqu-{0}-8jt89mgwsz-8jt89mgwsz.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/compressed/cer4os7vub-{0}-8jt89mgwsz-8jt89mgwsz.gz
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/staticwebassets.build.json
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/staticwebassets.build.json.cache
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/staticwebassets.development.json
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/staticwebassets.build.endpoints.json
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/swae.build.ex.cache
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/Converty.csproj.Up2Date
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/Converty.dll
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/refint/Converty.dll
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/Converty.pdb
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/Converty.genruntimeconfig.cache
+/run/media/clover/New Volume/Brindavan/Converty/obj/Debug/net10.0/ref/Converty.dll

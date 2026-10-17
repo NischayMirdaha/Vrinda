@@ -1,0 +1,256 @@
+@model dynamic
+@{
+    ViewData["Title"] = "घरपरिवार विवरण";
+    int currentPage = ViewBag.CurrentPage ?? 1;
+    int totalPages = ViewBag.TotalPages ?? 1;
+    int? wardNo = ViewBag.WardNo;
+    int totalItems = ViewBag.TotalItems ?? 0;
+}
+
+<style>
+    .action-col { box-shadow: -2px 0 4px rgba(0, 0, 0, 0.08); }
+</style>
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <h2 class="fw-bold mb-1"><i class="bi bi-house-door me-2"></i>घरपरिवार विवरण</h2>
+            <p class="text-muted mb-0">कुल @totalItems घरपरिवार</p>
+        </div>
+        <div class="d-flex gap-2">
+            <a href="/Admin" class="btn btn-outline-secondary btn-sm">ड्यासबोर्ड</a>
+            <a href="/Admin/CreateHousehold" class="btn btn-primary btn-sm">
+                <i class="bi bi-plus-circle me-1"></i>नयाँ थप्नुहोस्
+            </a>
+            <a href="/Admin/HouseholdsTrash" class="btn btn-sm btn-outline-danger">
+                <i class="bi bi-trash me-1"></i>ट्रेस (@(ViewBag.DeletedCount ?? 0))
+            </a>
+            <!-- When in trash mode — show back link + link to public Household tables -->
+            @if (ViewBag.IsTrash == true)
+            {
+                <a href="/Admin/Households" class="btn btn-outline-secondary btn-sm">
+                    <i class="bi bi-arrow-left me-1"></i>सक्रिय प्रविष्टिहरूमा फर्कनुहोस्
+                </a>
+                <a href="/Household" class="btn btn-outline-primary btn-sm" target="_blank">
+                    <i class="bi bi-table me-1"></i>घरपरिवार तालिकाहरू हेर्नुहोस्
+                </a>
+            }
+        </div>
+    </div>
+
+    @{
+    string? settlement = ViewBag.Settlement;
+    string? search = ViewBag.Search;
+    int? minMembers = ViewBag.MinMembers;
+    int? maxMembers = ViewBag.MaxMembers;
+    var settlements = ViewBag.Settlements as List<string> ?? new List<string>();
+}
+
+    <!-- Advanced Household Filter -->
+    <div class="card mb-3 shadow-sm border-0">
+        <div class="card-header bg-light py-2 d-flex justify-content-between align-items-center"
+             style="cursor:pointer;" onclick="this.nextElementSibling.classList.toggle('d-none')">
+            <span class="fw-bold small"><i class="bi bi-funnel me-1"></i>उन्नत खोज / फिल्टर</span>
+            <span class="badge bg-success">
+                @(new[]{ wardNo?.ToString(), settlement, search, minMembers?.ToString(), maxMembers?.ToString() }
+                    .Count(v => !string.IsNullOrEmpty(v))) फिल्टर सक्रिय
+            </span>
+        </div>
+        <div class="card-body py-2">
+            <form method="get" class="row g-2 align-items-end">
+                <!-- Ward -->
+                <div class="col-md-2">
+                    <label class="form-label small fw-semibold">वडा नं.</label>
+                    <input type="number" name="wardNo" value="@wardNo"
+                           class="form-control form-control-sm" placeholder="सबै" min="1" max="9" />
+                </div>
+                <!-- Settlement -->
+                <div class="col-md-3">
+                    <label class="form-label small fw-semibold">बस्ती (Settlement)</label>
+                    <input type="text" name="settlement" value="@settlement"
+                           class="form-control form-control-sm" placeholder="बस्तीको नाम..." list="settlementList" />
+                    <datalist id="settlementList">
+                        @foreach (var s in settlements)
+                        {
+                            <option value="@s" />
+                        }
+                    </datalist>
+                </div>
+                <!-- Search -->
+                <div class="col-md-3">
+                    <label class="form-label small fw-semibold">खोज्नुहोस्</label>
+                    <input type="text" name="search" value="@search"
+                           class="form-control form-control-sm"
+                           placeholder="नाम, फोन, घर नं..." />
+                </div>
+                <!-- Members range -->
+                <div class="col-md-1">
+                    <label class="form-label small fw-semibold">सदस्य न्यून</label>
+                    <input type="number" name="minMembers" value="@minMembers"
+                           class="form-control form-control-sm" min="1" />
+                </div>
+                <div class="col-md-1">
+                    <label class="form-label small fw-semibold">अधिकतम</label>
+                    <input type="number" name="maxMembers" value="@maxMembers"
+                           class="form-control form-control-sm" min="1" />
+                </div>
+                <!-- Buttons -->
+                <div class="col-md-2 d-flex gap-1">
+                    <button type="submit" class="btn btn-success btn-sm flex-fill">
+                        <i class="bi bi-search"></i> खोज
+                    </button>
+                    <a href="/Admin/Households" class="btn btn-outline-secondary btn-sm">
+                        <i class="bi bi-x"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body p-0">
+            <div class="table-responsive" style="max-height: 680px;">
+                <table class="table table-hover align-middle mb-0 table-sm" style="font-size: 0.85rem; white-space: nowrap;">
+                    <thead class="table-light" style="position: sticky; top: 0; z-index: 10;">
+                        <tr>
+                            <th style="min-width: 60px;">ID</th>
+                            <th style="min-width: 50px;">वडा</th>
+                            <th style="min-width: 70px;">घर नं.</th>
+                            <th style="min-width: 120px;">टोल/बस्ती</th>
+                            <th style="min-width: 110px;">उत्तरदाता</th>
+                            <th style="min-width: 95px;">फोन</th>
+                            <th style="min-width: 70px;">सदस्य संख्या</th>
+                            <th style="min-width: 100px;">गणक</th>
+                            <th style="min-width: 70px;">अवस्था</th>
+                            <th style="min-width: 100px;">सडक</th>
+                            <th style="min-width: 70px;">मृत्यु संख्या</th>
+                            <th class="text-end action-col" style="min-width: 170px; position: sticky; right: 0; background: #f8f9fa; z-index: 11;">
+                                कार्यहरू
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            bool hasData = false;
+                            if (Model != null)
+                            {
+                                foreach (var _ in Model) { hasData = true; break; }
+                            }
+                        }
+
+                        @if (hasData)
+                        {
+                            foreach (var h in Model)
+                            {
+                                <tr>
+                                    <td>@h.Id</td>
+                                    <td>@h.WardNo</td>
+                                    <td>@h.HouseSerialNo</td>
+                                    <td class="text-truncate" style="max-width: 140px;" title="@h.SettlementName">@h.SettlementName</td>
+                                    <td class="text-truncate" style="max-width: 120px;" title="@h.RespondentName">@h.RespondentName</td>
+                                    <td>@h.RespondentPhone</td>
+                                    <td>@h.FamilyMemberCount</td>
+                                    <td class="text-truncate" style="max-width: 110px;" title="@h.EnumeratorName">@h.EnumeratorName</td>
+                                    <td><span class="badge bg-secondary">@h.Status</span></td>
+                                    <td class="text-truncate" style="max-width: 100px;" title="@h.RoadName">@h.RoadName</td>
+                                    <td>@h.DeathCount</td>
+                                    <td class="text-end action-col" style="position: sticky; right: 0; background: white; z-index: 5; min-width: 170px;">
+                                        @if (ViewBag.IsTrash == true)
+                                        {
+                                            <form asp-action="RestoreHousehold" method="post" style="display:inline;"
+                                                  onsubmit="return confirm('के तपाईं यो घरपरिवार पुनर्स्थापित गर्न चाहनुहुन्छ?');">
+                                                <input type="hidden" name="id" value="@h.Id" />
+                                                <button type="submit" class="btn btn-sm btn-success">पुनर्स्थापित</button>
+                                            </form>
+                                            <form asp-action="HardDeleteHousehold" method="post" style="display:inline;"
+                                                  onsubmit="return confirm('⚠️ यो घरपरिवार र यसका सबै सदस्यहरू स्थायी रूपमा मेटिनेछन्। निश्चित हुनुहुन्छ?');">
+                                                <input type="hidden" name="id" value="@h.Id" />
+                                                <button type="submit" class="btn btn-sm btn-danger">स्थायी मेटाउनुहोस्</button>
+                                            </form>
+                                        }
+                                        else
+                                        {
+                                            <a href="/Admin/ManageHouseholdData/@h.Id" class="btn btn-sm btn-info">डेटा व्यवस्थापन</a>
+                                            <a href="/Admin/EditHousehold/@h.Id" class="btn btn-sm btn-outline-primary">सम्पादन</a>
+                                            <form asp-action="DeleteHousehold" method="post" style="display:inline;"
+                                                  onsubmit="return confirm('के तपाईं यो घरपरिवार ट्रेसमा सार्न चाहनुहुन्छ?');">
+                                                <input type="hidden" name="id" value="@h.Id" />
+                                                <button type="submit" class="btn btn-sm btn-outline-danger">मेटाउनुहोस्</button>
+                                            </form>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="12" class="text-center py-4 text-muted">कुनै घरपरिवार भेटिएन।</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+        <!-- Smart compact pagination (aggregated) -->
+    @if (totalPages > 1)
+    {
+        <nav class="mt-3">
+            <ul class="pagination pagination-sm justify-content-center flex-wrap">
+                <!-- First & Previous -->
+                @if (currentPage > 1)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="/Admin/Households?page=1&&wardNo=@wardNo&settlement=@settlement&search=@search&minMembers=@minMembers&maxMembers=@maxMembers">«</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="/Admin/Households?page=@(currentPage - 1)&wardNo=@wardNo&settlement=@settlement&search=@search&minMembers=@minMembers&maxMembers=@maxMembers">‹</a>
+                    </li>
+                }
+
+                @{
+                    int start = Math.Max(1, currentPage - 2);
+                    int end = Math.Min(totalPages, currentPage + 2);
+
+                    if (start > 1)
+                    {
+                        <li class="page-item"><a class="page-link" href="/Admin/Households?page=1&&wardNo=@wardNo&settlement=@settlement&search=@search&minMembers=@minMembers&maxMembers=@maxMembers">1</a></li>
+                        if (start > 2)
+                        {
+                            <li class="page-item disabled"><span class="page-link">…</span></li>
+                        }
+                    }
+
+                    for (int p = start; p <= end; p++)
+                    {
+                        <li class="page-item @(p == currentPage ? "active" : "")">
+                            <a class="page-link" href="/Admin/Households?page=@p&&wardNo=@wardNo&settlement=@settlement&search=@search&minMembers=@minMembers&maxMembers=@maxMembers">@p</a>
+                        </li>
+                    }
+
+                    if (end < totalPages)
+                    {
+                        if (end < totalPages - 1)
+                        {
+                            <li class="page-item disabled"><span class="page-link">…</span></li>
+                        }
+                        <li class="page-item"><a class="page-link" href="/Admin/Households?page=@totalPages&wardNo=@wardNo&settlement=@settlement&search=@search&minMembers=@minMembers&maxMembers=@maxMembers">@totalPages</a></li>
+                    }
+                }
+
+                <!-- Next & Last -->
+                @if (currentPage < totalPages)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="/Admin/Households?page=@(currentPage + 1)&wardNo=@wardNo&settlement=@settlement&search=@search&minMembers=@minMembers&maxMembers=@maxMembers">›</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="/Admin/Households?page=@totalPages&wardNo=@wardNo&settlement=@settlement&search=@search&minMembers=@minMembers&maxMembers=@maxMembers">»</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    }
+</div>

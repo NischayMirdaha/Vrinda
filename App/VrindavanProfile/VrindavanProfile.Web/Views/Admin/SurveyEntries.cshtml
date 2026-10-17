@@ -1,0 +1,284 @@
+@model dynamic
+@{
+    ViewData["Title"] = "सर्वेक्षण प्रविष्टिहरू";
+    int currentPage = ViewBag.CurrentPage ?? 1;
+    int totalPages = ViewBag.TotalPages ?? 1;
+    int? wardNo = ViewBag.WardNo;
+    int totalItems = ViewBag.TotalItems ?? 0;
+}
+
+<style>
+    .action-col {
+        box-shadow: -2px 0 4px rgba(0, 0, 0, 0.08);
+    }
+    .table-responsive {
+        overflow-x: auto;
+    }
+</style>
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <h2 class="fw-bold mb-1"><i class="bi bi-clipboard-data me-2"></i>सर्वेक्षण प्रविष्टिहरू</h2>
+            <p class="text-muted mb-0">कुल @totalItems प्रविष्टिहरू</p>
+        </div>
+        <div class="d-flex gap-2">
+            <a href="/Admin" class="btn btn-outline-secondary btn-sm">
+                <i class="bi bi-arrow-left me-1"></i>ड्यासबोर्ड
+            </a>
+            <a href="/Admin/CreateSurveyEntry" class="btn btn-primary btn-sm">
+                <i class="bi bi-plus-circle me-1"></i>नयाँ थप्नुहोस्
+            </a>
+        </div>
+    </div>
+    <div>
+        @if (ViewBag.IsTrash == true)
+        {
+            <a href="/Admin/SurveyEntries" class="btn btn-sm btn-outline-secondary">
+                <i class="bi bi-arrow-left me-1"></i>सक्रिय प्रविष्टिहरूमा फर्कनुहोस्
+            </a>
+        }
+        else
+        {
+            <a href="/Admin/SurveyEntriesTrash" class="btn btn-sm btn-outline-danger">
+                <i class="bi bi-trash me-1"></i>ट्रेस हेर्नुहोस् (@(ViewBag.DeletedCount ?? 0))
+            </a>
+        }
+    </div>
+
+    @{
+        // Read from ViewBag
+        string? subjectArea = ViewBag.SubjectArea;
+        string? filterStatus = ViewBag.Status;
+        string? search = ViewBag.Search;
+        var subjectAreas = ViewBag.SubjectAreas as List<string> ?? new List<string>();
+    }
+
+    <!-- Advanced filter card -->
+    <div class="card mb-3 shadow-sm border-0">
+        <div class="card-header bg-light py-2 d-flex justify-content-between align-items-center"
+             style="cursor:pointer;" onclick="this.nextElementSibling.classList.toggle('d-none')" id="filterToggle">
+            <span class="fw-bold small">
+                <i class="bi bi-funnel me-1"></i>उन्नत खोज / फिल्टर
+            </span>
+            <span class="badge bg-primary">
+                @(new[]{ wardNo?.ToString(), subjectArea, filterStatus, search }
+                    .Count(v => !string.IsNullOrEmpty(v))) फिल्टर सक्रिय
+            </span>
+        </div>
+        <div class="card-body py-2">
+            <form method="get" class="row g-2 align-items-end">
+                <!-- Ward -->
+                <div class="col-md-2">
+                    <label class="form-label small fw-semibold">वडा नं.</label>
+                    <input type="number" name="wardNo" value="@wardNo"
+                           class="form-control form-control-sm" placeholder="सबै" min="1" max="9" />
+                </div>
+                <!-- Subject Area -->
+                <div class="col-md-3">
+                    <label class="form-label small fw-semibold">विषय क्षेत्र (Subject Area)</label>
+                    <select name="subjectArea" class="form-select form-select-sm">
+                        <option value="">— सबै —</option>
+                        <option value="educational_institution" selected="@(subjectArea == "educational_institution" ? "selected" : null)">शैक्षिक संस्था (Educational Institution)</option>
+                        <option value="health_institution"      selected="@(subjectArea == "health_institution"      ? "selected" : null)">स्वास्थ्य संस्था (Health Institution)</option>
+                        <option value="building"                selected="@(subjectArea == "building"                ? "selected" : null)">भवन (Building)</option>
+                        <option value="security_body"           selected="@(subjectArea == "security_body"           ? "selected" : null)">सुरक्षा निकाय (Security Body)</option>
+                        <option value="financial_institution"   selected="@(subjectArea == "financial_institution"   ? "selected" : null)">वित्तीय संस्था (Financial Institution)</option>
+                        <option value="hotel_resort"            selected="@(subjectArea == "hotel_resort"            ? "selected" : null)">होटल/रिसोर्ट (Hotel / Resort)</option>
+                        <option value="bridge"                  selected="@(subjectArea == "bridge"                  ? "selected" : null)">पुल/पुलेसा (Bridge)</option>
+                        <option value="industry"                selected="@(subjectArea == "industry"                ? "selected" : null)">उद्योग (Industry)</option>
+                        <option value="ngo_club_group"          selected="@(subjectArea == "ngo_club_group"          ? "selected" : null)">गैरसरकारी संस्था/क्लब (NGO / Club / Group)</option>
+                        <option value="land_use"                selected="@(subjectArea == "land_use"                ? "selected" : null)">भू-उपयोग (Land Use)</option>
+                        <option value="natural_resource"        selected="@(subjectArea == "natural_resource"        ? "selected" : null)">प्राकृतिक श्रोत (Natural Resource)</option>
+                        <option value="cultural_heritage"       selected="@(subjectArea == "cultural_heritage"       ? "selected" : null)">सांस्कृतिक सम्पदा (Cultural Heritage)</option>
+                        <option value="trade_business"          selected="@(subjectArea == "trade_business"          ? "selected" : null)">व्यापार/व्यवसाय (Trade / Business)</option>
+                        <option value="forest"                  selected="@(subjectArea == "forest"                  ? "selected" : null)">वन र वनस्पति (Forest)</option>
+                        <option value="road"                    selected="@(subjectArea == "road"                    ? "selected" : null)">सडक पूर्वाधार (Road)</option>
+                        <option value="ward_statistics"         selected="@(subjectArea == "ward_statistics"         ? "selected" : null)">वडा सांख्यिकी (Ward Statistics)</option>
+                    </select>
+                </div>
+                <!-- Validation Status -->
+                <div class="col-md-2">
+                    <label class="form-label small fw-semibold">अनुमोदन स्थिति</label>
+                    <select name="status" class="form-select form-select-sm">
+                        <option value="">— सबै —</option>
+                        <option value="approved" selected="@(filterStatus == "approved" ? "selected" : null)">स्वीकृत (Approved)</option>
+                        <option value="pending"  selected="@(filterStatus == "pending"  ? "selected" : null)">विचाराधीन (Pending)</option>
+                        <option value="rejected" selected="@(filterStatus == "rejected" ? "selected" : null)">अस्वीकृत (Rejected)</option>
+                    </select>
+                </div>
+                <!-- Text Search -->
+                <div class="col-md-3">
+                    <label class="form-label small fw-semibold">खोज्नुहोस्</label>
+                    <input type="text" name="search" value="@search"
+                           class="form-control form-control-sm"
+                           placeholder="नाम, फोन, UUID..." />
+                </div>
+                <!-- Buttons -->
+                <div class="col-md-2 d-flex gap-1">
+                    <button type="submit" class="btn btn-primary btn-sm flex-fill">
+                        <i class="bi bi-search"></i> खोज
+                    </button>
+                    <a href="/Admin/SurveyEntries" class="btn btn-outline-secondary btn-sm">
+                        <i class="bi bi-x"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body p-0">
+            <div class="table-responsive" style="max-height: 680px;">
+                <table class="table table-hover align-middle mb-0 table-sm" style="font-size: 0.85rem; white-space: nowrap;">
+                    <thead class="table-light" style="position: sticky; top: 0; z-index: 10;">
+                    <tr>
+                        <th style="min-width: 60px;">ID</th>
+                        <th style="min-width: 50px;">वडा</th>
+                        <th style="min-width: 110px;">गणक (Enumerator)</th>
+                        <th style="min-width: 90px;">प्रयोगकर्ता नाम</th>
+                        <th style="min-width: 95px;">फोन</th>
+                        <th style="min-width: 95px;">डिभाइस आईडी</th>
+                        <th style="min-width: 90px;">प्रविष्टिकर्ता</th>
+                        <th style="min-width: 70px;">अवस्था</th>
+                        <th style="min-width: 85px;">प्रमाणीकरण</th>
+                        <th style="min-width: 100px;">विषय</th>
+                        <th style="min-width: 100px;">नगरपालिका</th>
+                        <th style="min-width: 65px;">ODK आईडी</th>
+                        <th style="min-width: 70px;">संस्करण</th>
+                        <th class="text-end action-col" 
+                            style="min-width: 170px; position: sticky; right: 0; background: #f8f9fa; z-index: 11;">
+                            कार्यहरू
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            bool hasData = false;
+                            if (Model != null)
+                            {
+                                foreach (var _ in Model)
+                                {
+                                    hasData = true;
+                                    break;
+                                }
+                            }
+                        }
+
+                        @if (hasData)
+                        {
+                            foreach (var entry in Model)
+                            {
+                                <tr>
+                                    <td>@entry.Id</td>
+                                    <td>@entry.WardNo</td>
+                                    <td class="text-truncate" style="max-width: 130px;" title="@entry.EnumeratorName">@entry.EnumeratorName</td>
+                                    <td class="text-truncate" style="max-width: 100px;" title="@entry.Username">@entry.Username</td>
+                                    <td>@entry.PhoneNumber</td>
+                                    <td class="text-truncate" style="max-width: 110px;" title="@entry.DeviceId">@entry.DeviceId</td>
+                                    <td class="text-truncate" style="max-width: 100px;" title="@entry.SubmittedBy">@entry.SubmittedBy</td>
+                                    <td><span class="badge bg-secondary">@entry.Status</span></td>
+                                    <td>@entry.ValidationStatus</td>
+                                    <td class="text-truncate" style="max-width: 120px;" title="@entry.SubjectArea">@entry.SubjectArea</td>
+                                    <td class="text-truncate" style="max-width: 110px;" title="@entry.Municipality">@entry.Municipality</td>
+                                    <td>@entry.OdkId</td>
+                                    <td>@entry.Version</td>
+                                                                        <td class="text-end action-col" 
+                                        style="position: sticky; right: 0; background: white; z-index: 5; min-width: 170px;">
+                                        @if (ViewBag.IsTrash == true)
+                                        {
+                                            <form asp-action="RestoreSurveyEntry" method="post" style="display:inline;">
+                                                <input type="hidden" name="id" value="@entry.Id" />
+                                                <button type="submit" class="btn btn-sm btn-success">पुनर्स्थापित</button>
+                                            </form>
+                                            <form asp-action="HardDeleteSurveyEntry" method="post" style="display:inline;"
+                                                  onsubmit="return confirm('⚠️ यो प्रविष्टि स्थायी रूपमा मेटिनेछ। निश्चित हुनुहुन्छ?');">
+                                                <input type="hidden" name="id" value="@entry.Id" />
+                                                <button type="submit" class="btn btn-sm btn-danger">स्थायी मेटाउनुहोस्</button>
+                                            </form>
+                                        }
+                                        else
+                                        {
+                                            <a href="/Admin/EditSurveyEntry/@entry.Id" class="btn btn-sm btn-outline-primary">सम्पादन</a>
+                                            <form asp-action="DeleteSurveyEntry" method="post" style="display:inline;"
+                                                  onsubmit="return confirm('के तपाईं यो प्रविष्टि ट्रेसमा सार्न चाहनुहुन्छ?');">
+                                                <input type="hidden" name="id" value="@entry.Id" />
+                                                <button type="submit" class="btn btn-sm btn-outline-danger">मेटाउनुहोस्</button>
+                                            </form>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="14" class="text-center py-4 text-muted">कुनै प्रविष्टि भेटिएन।</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+        <!-- Smart compact pagination (prevents stretching) -->
+    @if (totalPages > 1)
+    {
+        <nav class="mt-3">
+            <ul class="pagination pagination-sm justify-content-center flex-wrap">
+                <!-- First -->
+                @if (currentPage > 1)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="/Admin/SurveyEntries?page=1&wardNo=@wardNo&subjectArea=@subjectArea&status=@filterStatus&search=@search">«</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="/Admin/SurveyEntries?page=@(currentPage - 1)&wardNo=@wardNo&subjectArea=@subjectArea&status=@filterStatus&search=@search">‹</a>
+                    </li>
+                }
+
+                @{
+                    int start = Math.Max(1, currentPage - 2);
+                    int end = Math.Min(totalPages, currentPage + 2);
+
+                    if (start > 1)
+                    {
+                        <li class="page-item"><a class="page-link" href="/Admin/SurveyEntries?page=1&wardNo=@wardNo&subjectArea=@subjectArea&status=@filterStatus&search=@search">1</a></li>
+                        if (start > 2)
+                        {
+                            <li class="page-item disabled"><span class="page-link">…</span></li>
+                        }
+                    }
+
+                    for (int p = start; p <= end; p++)
+                    {
+                        <li class="page-item @(p == currentPage ? "active" : "")">
+                            <a class="page-link" href="/Admin/SurveyEntries?page=@p&wardNo=@wardNo&subjectArea=@subjectArea&status=@filterStatus&search=@search">@p</a>
+                        </li>
+                    }
+
+                    if (end < totalPages)
+                    {
+                        if (end < totalPages - 1)
+                        {
+                            <li class="page-item disabled"><span class="page-link">…</span></li>
+                        }
+                        <li class="page-item"><a class="page-link" href="/Admin/SurveyEntries?page=@totalPages&wardNo=@wardNo&subjectArea=@subjectArea&status=@filterStatus&search=@search">@totalPages</a></li>
+                    }
+                }
+
+                <!-- Next / Last -->
+                @if (currentPage < totalPages)
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="/Admin/SurveyEntries?page=@(currentPage + 1)&wardNo=@wardNo&subjectArea=@subjectArea&status=@filterStatus&search=@search">›</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="/Admin/SurveyEntries?page=@totalPages&wardNo=@wardNo&subjectArea=@subjectArea&status=@filterStatus&search=@search">»</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    }
+</div>

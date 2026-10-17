@@ -1,0 +1,331 @@
+@model VrindavanProfile.Web.Data.DbEntities.Household
+@{
+    ViewData["Title"] = "घरपरिवार सुविधाहरू र सेवा";
+}
+
+<div class="container py-4">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <h2 class="fw-bold mb-1">
+                <i class="bi bi-building me-2"></i>सुविधाहरू र सेवा
+            </h2>
+            <p class="text-muted mb-0 small">
+                वडा @Model.WardNo — @Model.SettlementName
+                @if (!string.IsNullOrEmpty(Model.RespondentName))
+                {
+                    <span>| उत्तरदाता: @Model.RespondentName</span>
+                }
+            </p>
+        </div>
+        <a href="/Admin/ManageHouseholdData/@Model.Id" class="btn btn-outline-secondary btn-sm">
+            <i class="bi bi-arrow-left me-1"></i>डेटा व्यवस्थापन
+        </a>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+
+    <form asp-action="HouseholdCategoryFacilities" method="post">
+        <input type="hidden" asp-for="Id" />
+
+        <!-- Section 1: Drinking Water -->
+        <div class="card mb-3">
+            <div class="card-header" style="background: #0EA5E9; color: #fff;">
+                <h6 class="mb-0"><i class="bi bi-droplet me-2"></i>पानी (खानेपानी)</h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label small fw-semibold">पानीको स्रोत <span class="text-danger">*</span></label>
+                        <select asp-for="DrinkingWaterSource" class="form-select form-select-sm">
+                            <option value="">-- छान्नुहोस् --</option>
+                            <option value="नल">नल (पाइप)</option>
+                            <option value="इनार">इनार</option>
+                            <option value="धारा">धारा</option>
+                            <option value="ट्युबवेल">ट्युबवेल</option>
+                            <option value="झरना/नदी">झरना/नदी</option>
+                            <option value="वर्षा">वर्षाको पानी</option>
+                            <option value="ट्रक/ट्यांकर">ट्रक/ट्यांकर</option>
+                            <option value="अन्य">अन्य</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label small fw-semibold">अन्य पानी स्रोत</label>
+                        <input asp-for="DrinkingWaterOther" class="form-control form-control-sm"
+                               placeholder="अन्य भएमा उल्लेख गर्नुहोस्" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Cooking Fuel -->
+        <div class="card mb-3">
+            <div class="card-header" style="background: #F59E0B; color: #fff;">
+                <h6 class="mb-0"><i class="bi bi-fire me-2"></i>खाना पकाउने इन्धन</h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label small fw-semibold">प्राथमिक इन्धन <span class="text-danger">*</span></label>
+                        <select asp-for="CookingFuelPrimary" class="form-select form-select-sm">
+                            <option value="">-- छान्नुहोस् --</option>
+                            <option value="ग्याँस">ग्याँस (LPG)</option>
+                            <option value="बिजुली">बिजुली</option>
+                            <option value="दाउरा">दाउरा/काठ</option>
+                            <option value="कोइला">कोइला</option>
+                            <option value="गोबर गोली">गोबर गोली</option>
+                            <option value="प्रोपेन">प्रोपेन</option>
+                            <option value="किर्ते">किर्ते/बायोगैस</option>
+                            <option value="आर्सन">आर्सन</option>
+                            <option value="अन्य">अन्य</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label small fw-semibold">द्वितीय इन्धन</label>
+                        <select asp-for="CookingFuelSecondary" class="form-select form-select-sm">
+                            <option value="">-- छान्नुहोस् --</option>
+                            <option value="ग्याँस">ग्याँस (LPG)</option>
+                            <option value="बिजुली">बिजुली</option>
+                            <option value="दाउरा">दाउरा/काठ</option>
+                            <option value="कोइला">कोइला</option>
+                            <option value="गोबर गोली">गोबर गोली</option>
+                            <option value="किर्ते">किर्ते/बायोगैस</option>
+                            <option value="छैन">छैन</option>
+                            <option value="अन्य">अन्य</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label small fw-semibold">चुल्होको प्रकार</label>
+                        <select asp-for="StoveType" class="form-select form-select-sm">
+                            <option value="">-- छान्नुहोस् --</option>
+                            <option value="खुल्ला">खुल्ला (Three Stone)</option>
+                            <option value="चिम्डी">चिम्डी (Mud stove)</option>
+                            <option value="ग्याँस चुल्हो">ग्याँस चुल्हो</option>
+                            <option value="इलेक्ट्रिक चुल्हो">इलेक्ट्रिक चुल्हो</option>
+                            <option value="अन्य">अन्य</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Lighting -->
+        <div class="card mb-3">
+            <div class="card-header" style="background: #8B5CF6; color: #fff;">
+                <h6 class="mb-0"><i class="bi bi-lightbulb me-2"></i>बत्ती (ज्योत)</h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label small fw-semibold">बत्तीको स्रोत <span class="text-danger">*</span></label>
+                        <select asp-for="LightSource" class="form-select form-select-sm">
+                            <option value="">-- छान्नुहोस् --</option>
+                            <option value="बिजुली">बिजुली (प्रमुख)</option>
+                            <option value="सोलार">सोलार (Solar)</option>
+                            <option value="जेनेरेटर">जेनेरेटर</option>
+                            <option value="मट्टीतेल">मट्टीतेल</option>
+                            <option value="मैनबत्ती">मैनबत्ती</option>
+                            <option value="केरोसिन">केरोसिन</option>
+                            <option value="अन्य">अन्य</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label small fw-semibold">अन्य बत्ती स्रोत</label>
+                        <input asp-for="LightSourceOther" class="form-control form-control-sm"
+                               placeholder="अन्य भएमा उल्लेख गर्नुहोस्" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Sanitation & Waste -->
+        <div class="card mb-3">
+            <div class="card-header" style="background: #10B981; color: #fff;">
+                <h6 class="mb-0"><i class="bi bi-trash me-2"></i>सरसफाई र फोहोर</h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label small fw-semibold">शौचालयको प्रकार <span class="text-danger">*</span></label>
+                        <select asp-for="ToiletType" class="form-select form-select-sm">
+                            <option value="">-- छान्नुहोस् --</option>
+                            <option value="फ्लस">फ्लस (पक्की)</option>
+                            <option value="पिट">पिट (Pit Latrine)</option>
+                            <option value="कम्पोस्ट">कम्पोस्ट</option>
+                            <option value="खुल्ले">खुल्ले (Open Defecation)</option>
+                            <option value="बायो">बायो (Bio)</option>
+                            <option value="अन्य">अन्य</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label small fw-semibold">फोहोर व्यवस्थापन</label>
+                        <select asp-for="WasteManagement" class="form-select form-select-sm">
+                            <option value="">-- छान्नुहोस् --</option>
+                            <option value="नगरपालिका">नगरपालिका संकलन</option>
+                            <option value="जलाउने">जलाउने</option>
+                            <option value="गाड्ने">गाड्ने</option>
+                            <option value="हाल्ने">हाल्ने (नदी/खोला)</option>
+                            <option value="रेसाइकल">रेसाइकल</option>
+                            <option value="कम्पोस्ट">कम्पोस्ट मल</option>
+                            <option value="अन्य">अन्य</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5: Distance to Services -->
+        <div class="card mb-3">
+            <div class="card-header" style="background: #6366F1; color: #fff;">
+                <h6 class="mb-0"><i class="bi bi-arrow-left-right me-2"></i>सेवामा पहुँच (यातायात समय)</h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <label class="form-label small fw-semibold">बजारसम्म</label>
+                        <select asp-for="MarketTravelTime" class="form-select form-select-sm">
+                            <option value="">-- छान्नुहोस् --</option>
+                            <option value="१५ मिनेटभित्र">१५ मिनेटभित्र</option>
+                            <option value="३० मिनेट">३० मिनेट</option>
+                            <option value="१ घण्टा">१ घण्टा</option>
+                            <option value="२ घण्टा">२ घण्टा</option>
+                            <option value="२+ घण्टा">२+ घण्टा</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label class="form-label small fw-semibold">प्राथमिक स्वास्थ्य</label>
+                        <select asp-for="FirstHealthVisit" class="form-select form-select-sm">
+                            <option value="">-- छान्नुहोस् --</option>
+                            <option value="१५ मिनेटभित्र">१५ मिनेटभित्र</option>
+                            <option value="३० मिनेट">३० मिनेट</option>
+                            <option value="१ घण्टा">१ घण्टा</option>
+                            <option value="२ घण्टा">२ घण्टा</option>
+                            <option value="२+ घण्टा">२+ घण्टा</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label class="form-label small fw-semibold">अस्पतालसम्म</label>
+                        <select asp-for="HospitalTravelTime" class="form-select form-select-sm">
+                            <option value="">-- छान्नुहोस् --</option>
+                            <option value="१५ मिनेटभित्र">१५ मिनेटभित्र</option>
+                            <option value="३० मिनेट">३० मिनेट</option>
+                            <option value="१ घण्टा">१ घण्टा</option>
+                            <option value="२ घण्टा">२ घण्टा</option>
+                            <option value="२+ घण्टा">२+ घण्टा</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label class="form-label small fw-semibold">विद्यालयसम्म</label>
+                        <select asp-for="SchoolTravelTime" class="form-select form-select-sm">
+                            <option value="">-- छान्नुहोस् --</option>
+                            <option value="१५ मिनेटभित्र">१५ मिनेटभित्र</option>
+                            <option value="३० मिनेट">३० मिनेट</option>
+                            <option value="१ घण्टा">१ घण्टा</option>
+                            <option value="२ घण्टा">२ घण्टा</option>
+                            <option value="२+ घण्टा">२+ घण्टा</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 6: Child Labor -->
+        <div class="card mb-3">
+            <div class="card-header" style="background: #EC4899; color: #fff;">
+                <h6 class="mb-0"><i class="bi bi-person me-2"></i>बाल श्रम</h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label small fw-semibold">बाल श्रममा संलग्न <span class="text-danger">*</span></label>
+                        <select asp-for="ChildLabor" class="form-select form-select-sm">
+                            <option value="">-- छान्नुहोस् --</option>
+                            <option value="छैन">छैन</option>
+                            <option value="छ">छ</option>
+                            <option value="केही परिवार">केही परिवार</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 7: Education Access -->
+        <div class="card mb-3">
+            <div class="card-header" style="background: #14B8A6; color: #fff;">
+                <h6 class="mb-0"><i class="bi bi-mortarboard me-2"></i>विद्यालय पहुँच</h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8 mb-3">
+                        <label class="form-label small fw-semibold">कुन प्रकारको विद्यालयमा पहुँच?</label>
+                        <div class="d-flex flex-wrap gap-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="schoolGovt"
+                                       @(Model.SchoolTypeGovt == 1 ? "checked" : "")
+                                       onchange="updateSchoolSummary()" />
+                                <label class="form-check-label small" for="schoolGovt">सरकारी</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="schoolPrivate"
+                                       @(Model.SchoolTypePrivate == 1 ? "checked" : "")
+                                       onchange="updateSchoolSummary()" />
+                                <label class="form-check-label small" for="schoolPrivate">निजी</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="schoolMadrasa"
+                                       @(Model.SchoolTypeMadrasa == 1 ? "checked" : "")
+                                       onchange="updateSchoolSummary()" />
+                                <label class="form-check-label small" for="schoolMadrasa">मदरसा</label>
+                            </div>
+                        </div>
+                        <!-- Hidden fields for the model binding -->
+                        <input type="hidden" asp-for="SchoolTypeGovt" id="schoolTypeGovt" />
+                        <input type="hidden" asp-for="SchoolTypePrivate" id="schoolTypePrivate" />
+                        <input type="hidden" asp-for="SchoolTypeMadrasa" id="schoolTypeMadrasa" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label small fw-semibold">विद्यालय सारांश (स्वतः भरिन्छ)</label>
+                        <input asp-for="SchoolTypeSummary" class="form-control form-control-sm" id="schoolTypeSummary"
+                               readonly placeholder="स्वतः भरिन्छ" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="d-flex gap-2 justify-content-end mb-4">
+            <a href="/Admin/ManageHouseholdData/@Model.Id" class="btn btn-outline-secondary">
+                रद्द गर्नुहोस्
+            </a>
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-save me-1"></i>सुविधाहरू सेभ गर्नुहोस्
+            </button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        function updateSchoolSummary() {
+            var parts = [];
+            if (document.getElementById('schoolGovt').checked) parts.push('सरकारी');
+            if (document.getElementById('schoolPrivate').checked) parts.push('निजी');
+            if (document.getElementById('schoolMadrasa').checked) parts.push('मदरसा');
+
+            document.getElementById('schoolTypeSummary').value = parts.join(', ');
+
+            // Update hidden fields
+            document.getElementById('schoolTypeGovt').value = document.getElementById('schoolGovt').checked ? '1' : '0';
+            document.getElementById('schoolTypePrivate').value = document.getElementById('schoolPrivate').checked ? '1' : '0';
+            document.getElementById('schoolTypeMadrasa').value = document.getElementById('schoolMadrasa').checked ? '1' : '0';
+        }
+
+        // Init on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            updateSchoolSummary();
+        });
+    </script>
+}

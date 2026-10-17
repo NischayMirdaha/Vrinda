@@ -1,0 +1,75 @@
+@using VrindavanProfile.Web.Data
+@using Microsoft.EntityFrameworkCore
+@inject AppDbContext db
+@{
+    Layout = null;
+}
+<pre style="font-size:12px; padding:20px; background:#f5f5f5;">
+=== GENDER VALUES ===
+@{
+    var genders = await db.FamilyMembers.AsNoTracking()
+        .Where(fm => fm.Gender != null)
+        .GroupBy(fm => fm.Gender)
+        .Select(g => new { Val = g.Key!, Cnt = g.Count() })
+        .OrderByDescending(x => x.Cnt)
+        .ToListAsync();
+    foreach (var g in genders)
+    {
+        <text>[@g.Val] hex=[@string.Join(" ", g.Val.Select(c => $"U+{((int)c):X4}"))] count=@g.Cnt</text>
+    }
+}
+
+=== TOP 5 CASTE VALUES ===
+@{
+    var castes = await db.FamilyMembers.AsNoTracking()
+        .Where(fm => fm.Caste != null && fm.Caste != "")
+        .GroupBy(fm => fm.Caste)
+        .Select(g => new { Val = g.Key!, Cnt = g.Count() })
+        .OrderByDescending(x => x.Cnt)
+        .Take(5)
+        .ToListAsync();
+    foreach (var c in castes)
+    {
+        <text>[@c.Val] count=@c.Cnt</text>
+    }
+}
+
+=== TOP 5 RELIGION VALUES ===
+@{
+    var rels = await db.FamilyMembers.AsNoTracking()
+        .Where(fm => fm.Religion != null && fm.Religion != "")
+        .GroupBy(fm => fm.Religion)
+        .Select(g => new { Val = g.Key!, Cnt = g.Count() })
+        .OrderByDescending(x => x.Cnt)
+        .Take(5)
+        .ToListAsync();
+    foreach (var r in rels)
+    {
+        <text>[@r.Val] count=@r.Cnt</text>
+    }
+}
+
+=== TOP 5 DRINKING WATER VALUES ===
+@{
+    var waters = await db.Households.AsNoTracking()
+        .Where(h => h.DrinkingWaterSource != null && h.DrinkingWaterSource != "")
+        .GroupBy(h => h.DrinkingWaterSource)
+        .Select(g => new { Val = g.Key!, Cnt = g.Count() })
+        .OrderByDescending(x => x.Cnt)
+        .Take(5)
+        .ToListAsync();
+    foreach (var w in waters)
+    {
+        <text>[@w.Val] count=@w.Cnt</text>
+    }
+}
+
+=== HOUSEHOLD COUNT ===
+@await db.Households.CountAsync()
+
+=== FAMILY MEMBER COUNT ===
+@await db.FamilyMembers.CountAsync()
+
+=== HOUSE DETAIL COUNT ===
+@await db.HouseDetails.CountAsync()
+</pre>

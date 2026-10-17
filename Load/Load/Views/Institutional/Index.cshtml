@@ -1,0 +1,33 @@
+@{ ViewData["Title"] = "Institutional Import"; }
+
+<div class="container mt-4">
+    <h1>🏛️ Institutional Survey Import</h1>
+
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger">@ViewBag.Error</div>
+    }
+
+    <div class="card">
+        <div class="card-body">
+            <form asp-controller="Institutional" asp-action="Upload"
+                  method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label">Select all institutional JSON files</label>
+                    <input type="file" name="files" class="form-control"
+                           accept=".json" multiple required />
+                    <small class="text-muted">
+                        Select all sequential files at once (Ctrl+click).
+                        They will be processed in filename order.
+                    </small>
+                </div>
+                <button type="submit" class="btn btn-success btn-lg"
+                    onclick="this.disabled=true; this.innerText='Importing...'; this.form.submit();">
+                    🏛️ Import All Files
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <a href="/" class="btn btn-outline-secondary mt-3">← Home</a>
+</div>

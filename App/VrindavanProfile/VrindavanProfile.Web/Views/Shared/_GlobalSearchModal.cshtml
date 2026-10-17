@@ -1,0 +1,453 @@
+@*
+    Global Search Overlay — included in _Layout.cshtml
+    Triggered via navbar search button or Ctrl+K
+*@
+
+<!-- Global Search Overlay (hidden by default) -->
+<div id="globalSearchOverlay" class="global-search-overlay" style="display:none" role="dialog" aria-modal="true" aria-label="विश्वव्यापी खोज">
+    <div class="global-search-backdrop" onclick="closeGlobalSearch()" aria-hidden="true"></div>
+    <div class="global-search-dialog" role="document">
+        <!-- Search Input -->
+        <div class="global-search-input-wrap">
+            <i class="bi bi-search global-search-icon" aria-hidden="true"></i>
+            <label for="globalSearchOverlayInput" class="visually-hidden">तालिका, शीर्षक वा नम्बर खोज्नुहोस्</label>
+            <input type="text"
+                   id="globalSearchOverlayInput"
+                   class="global-search-input"
+                   placeholder="तालिका, शीर्षक वा नम्बर खोज्नुहोस्..."
+                   autocomplete="off"
+                   aria-label="खोज पाठ"
+                   role="combobox"
+                   aria-expanded="true"
+                   aria-controls="globalSearchResults"
+                   aria-autocomplete="list" />
+            <kbd class="global-search-kbd" onclick="closeGlobalSearch()" aria-label="बन्द गर्नुहोस्">ESC</kbd>
+        </div>
+
+        <!-- Results Container -->
+        <div class="global-search-results" id="globalSearchResults" role="listbox" aria-label="खोज परिणामहरू">
+            <div class="global-search-loading text-center py-4" role="status">
+                <div class="spinner-border spinner-border-sm text-muted" aria-hidden="true"></div>
+                <small class="text-muted ms-2">खोज सूची लोड हुँदैछ...</small>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="global-search-footer">
+            <small class="text-muted">
+                <kbd aria-label="माथि तल">↑↓</kbd> नेभिगेट &nbsp;
+                <kbd aria-label="एन्टर">↵</kbd> खोल्नुहोस् &nbsp;
+                <kbd aria-label="इस्केप">Esc</kbd> बन्द &nbsp;|&nbsp;
+                <a href="/Search?q=" class="text-decoration-none" style="color:var(--primary)">विस्तृत खोज</a>
+            </small>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* ─── Global Search Overlay ─── */
+    .global-search-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 100000;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: 12vh;
+    }
+
+    .global-search-backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+    }
+
+    .global-search-dialog {
+        position: relative;
+        width: 640px;
+        max-width: 92vw;
+        max-height: 70vh;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        animation: searchSlideIn 0.2s ease-out;
+    }
+
+    @@keyframes searchSlideIn {
+        from { opacity: 0; transform: translateY(-16px) scale(0.98); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .global-search-input-wrap {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 20px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .global-search-icon {
+        font-size: 1.2rem;
+        color: var(--primary);
+        flex-shrink: 0;
+    }
+
+    .global-search-input {
+        flex: 1;
+        border: none;
+        outline: none;
+        font-size: 1.1rem;
+        font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif;
+        color: var(--text-dark);
+        background: transparent;
+    }
+
+    .global-search-input::placeholder {
+        color: #aaa;
+    }
+
+    .global-search-kbd {
+        font-size: 0.65rem;
+        padding: 2px 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background: #f5f5f5;
+        color: #888;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+
+    .global-search-results {
+        flex: 1;
+        overflow-y: auto;
+        padding: 8px;
+        max-height: 50vh;
+    }
+
+    .global-search-footer {
+        padding: 8px 20px;
+        border-top: 1px solid #eee;
+        background: #f8f9fa;
+    }
+
+    /* ─── Result Items ─── */
+    .gs-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 12px;
+        border-radius: 10px;
+        cursor: pointer;
+        text-decoration: none;
+        color: inherit;
+        transition: background 0.1s;
+    }
+
+    .gs-item:hover,
+    .gs-item.gs-active {
+        background: rgba(45, 106, 79, 0.06);
+    }
+
+    .gs-item.gs-active {
+        outline: 2px solid var(--primary-light);
+    }
+
+    .gs-item-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .gs-item-icon i {
+        color: #fff;
+        font-size: 0.9rem;
+    }
+
+    .gs-item-body {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .gs-item-title {
+        font-weight: 600;
+        font-size: 0.88rem;
+        color: var(--text-dark);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .gs-item-meta {
+        font-size: 0.72rem;
+        color: #888;
+    }
+
+    .gs-item-arrow {
+        color: #ccc;
+        flex-shrink: 0;
+    }
+
+    .gs-section-label {
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: var(--text-muted);
+        padding: 8px 12px 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .gs-no-results {
+        text-align: center;
+        padding: 32px 16px;
+        color: var(--text-muted);
+    }
+
+    .gs-no-results i {
+        font-size: 2rem;
+        opacity: 0.3;
+    }
+
+    /* Mobile */
+    @@media (max-width: 576px) {
+        .global-search-overlay {
+            padding-top: 6vh;
+        }
+
+        .global-search-dialog {
+            max-width: 98vw;
+            border-radius: 12px;
+        }
+
+        .global-search-input {
+            font-size: 1rem;
+        }
+    }
+
+    @@media print {
+        .global-search-overlay { display: none !important; }
+        .nav-search-btn { display: none !important; }
+    }
+</style>
+
+<script>
+    // ═══════════════════════════════════════════════════
+    // Global Search Overlay Controller
+    // ═══════════════════════════════════════════════════
+    (function () {
+        var overlay, input, resultsContainer;
+        var searchIndex = null;     // cached search data
+        var activeIndex = -1;
+        var isLoading = false;
+
+        // ─── Open / Close ──────────────────────────────
+        window.openGlobalSearch = function (prefill) {
+            overlay = document.getElementById('globalSearchOverlay');
+            input = document.getElementById('globalSearchOverlayInput');
+            resultsContainer = document.getElementById('globalSearchResults');
+
+            overlay.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+
+            if (prefill) {
+                input.value = prefill;
+            } else {
+                input.value = '';
+            }
+
+            input.focus();
+
+            // Load search index if not loaded
+            if (!searchIndex && !isLoading) {
+                loadSearchIndex();
+            } else if (searchIndex) {
+                performSearch(input.value);
+            }
+        };
+
+        window.closeGlobalSearch = function () {
+            var ov = document.getElementById('globalSearchOverlay');
+            if (ov) {
+                ov.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        };
+
+        // ─── Load Search Index ─────────────────────────
+        function loadSearchIndex() {
+            isLoading = true;
+            fetch('/Search/Api')
+                .then(function (r) { return r.json(); })
+                .then(function (data) {
+                    searchIndex = data;
+                    isLoading = false;
+                    performSearch(input.value);
+                })
+                .catch(function (err) {
+                    console.error('Search index load failed:', err);
+                    isLoading = false;
+                    resultsContainer.innerHTML =
+                        '<div class="gs-no-results"><p>खोज सूची लोड गर्न सकिएन। <a href="/Search">खोज पृष्ठ</a> प्रयोग गर्नुहोस्।</p></div>';
+                });
+        }
+
+        // ─── Perform Search ────────────────────────────
+        function performSearch(query) {
+            if (!searchIndex) return;
+
+            var q = (query || '').toLowerCase().trim();
+            activeIndex = -1;
+
+            var results;
+            if (!q) {
+                // Show all items (first 50)
+                results = searchIndex.slice(0, 50);
+            } else {
+                results = searchIndex.filter(function (item) {
+                    return item.title.toLowerCase().indexOf(q) >= 0 ||
+                           item.category.toLowerCase().indexOf(q) >= 0 ||
+                           (item.description && item.description.toLowerCase().indexOf(q) >= 0) ||
+                           String(item.tableNumber) === q;
+                });
+            }
+
+            renderResults(results, q);
+        }
+
+        // ─── Render Results ────────────────────────────
+        function renderResults(results, query) {
+            if (results.length === 0) {
+                resultsContainer.innerHTML =
+                    '<div class="gs-no-results">' +
+                        '<i class="bi bi-search d-block mb-2"></i>' +
+                        '<p class="mb-0 fw-semibold">कुनै परिणाम भेटिएन</p>' +
+                        '<small>अन्य शब्द वा तालिका नम्बर प्रयोग गर्नुहोस्</small>' +
+                    '</div>';
+                return;
+            }
+
+            // Group by section
+            var grouped = {};
+            var sectionOrder = ['Page', 'Household', 'Institution'];
+            var sectionLabels = { 'Page': 'पृष्ठहरू', 'Household': 'घरपरिवार तालिका', 'Institution': 'संस्थागत तालिका' };
+
+            results.forEach(function (item) {
+                if (!grouped[item.section]) grouped[item.section] = [];
+                grouped[item.section].push(item);
+            });
+
+            var html = '';
+            sectionOrder.forEach(function (sec) {
+                if (!grouped[sec] || grouped[sec].length === 0) return;
+                html += '<div class="gs-section-label">' + (sectionLabels[sec] || sec) + '</div>';
+
+                grouped[sec].forEach(function (item) {
+                    var title = item.title;
+                    if (query) {
+                        var regex = new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+                        title = title.replace(regex, '<mark class="search-hl">$1</mark>');
+                    }
+
+                    html += '<a href="' + item.url + '" class="gs-item" role="option" onclick="closeGlobalSearch()">' +
+                                '<div class="gs-item-icon" style="background:' + item.accentColor + '">' +
+                                    '<i class="' + item.icon + '"></i>' +
+                                '</div>' +
+                                '<div class="gs-item-body">' +
+                                    '<div class="gs-item-title">' + title + '</div>' +
+                                    '<div class="gs-item-meta">' +
+                                        (item.tableNumber > 0 ? 'तालिका ' + item.tableNumber + ' · ' : '') +
+                                        item.sectionLabel + ' · ' + item.category +
+                                    '</div>' +
+                                '</div>' +
+                                '<i class="bi bi-chevron-right gs-item-arrow"></i>' +
+                            '</a>';
+                });
+            });
+
+            // Show "see all" link if results were truncated
+            if (results.length >= 50 && query) {
+                html += '<div class="text-center py-2">' +
+                    '<a href="/Search?q=' + encodeURIComponent(query) + '" class="text-decoration-none small" style="color:var(--primary)" onclick="closeGlobalSearch()">' +
+                        '<i class="bi bi-arrow-right me-1"></i>सबै ' + results.length + ' परिणाम हेर्नुहोस्' +
+                    '</a></div>';
+            }
+
+            resultsContainer.innerHTML = html;
+        }
+
+        // ─── Keyboard Events (on the overlay input) ───
+        document.addEventListener('DOMContentLoaded', function () {
+            var inp = document.getElementById('globalSearchOverlayInput');
+            if (!inp) return;
+
+            inp.addEventListener('input', function () {
+                if (searchIndex) {
+                    performSearch(inp.value);
+                }
+            });
+
+            inp.addEventListener('keydown', function (e) {
+                var items = resultsContainer.querySelectorAll('.gs-item');
+                var visibleItems = Array.from(items);
+
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    activeIndex = Math.min(activeIndex + 1, visibleItems.length - 1);
+                    updateActiveItem(visibleItems);
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    activeIndex = Math.max(activeIndex - 1, -1);
+                    updateActiveItem(visibleItems);
+                } else if (e.key === 'Enter') {
+                    if (activeIndex >= 0 && visibleItems[activeIndex]) {
+                        e.preventDefault();
+                        window.location = visibleItems[activeIndex].getAttribute('href');
+                    } else if (visibleItems.length === 1) {
+                        // If only one result, go to it
+                        window.location = visibleItems[0].getAttribute('href');
+                    } else if (inp.value.trim()) {
+                        // Go to full search page
+                        window.location = '/Search?q=' + encodeURIComponent(inp.value.trim());
+                    }
+                } else if (e.key === 'Escape') {
+                    closeGlobalSearch();
+                }
+            });
+
+            // Also handle Escape on the overlay level
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    var ov = document.getElementById('globalSearchOverlay');
+                    if (ov && ov.style.display !== 'none') {
+                        closeGlobalSearch();
+                    }
+                }
+            });
+        });
+
+        function updateActiveItem(items) {
+            items.forEach(function (item, i) {
+                item.classList.toggle('gs-active', i === activeIndex);
+            });
+            if (activeIndex >= 0 && items[activeIndex]) {
+                items[activeIndex].scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+            }
+        }
+
+        // ─── Global Keyboard Shortcut: Ctrl+K ─────────
+        document.addEventListener('keydown', function (e) {
+            // Ctrl+K or Cmd+K to open search
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                openGlobalSearch();
+            }
+        });
+    })();
+</script>

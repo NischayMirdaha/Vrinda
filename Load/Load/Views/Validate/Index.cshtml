@@ -1,0 +1,41 @@
+@{ ViewData["Title"] = "JSON Validator"; }
+
+<div class="container mt-4">
+    <h1>🔍 JSON File Validator</h1>
+    <p class="text-muted">Check your JSON file before importing.</p>
+
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger">@ViewBag.Error</div>
+    }
+
+    <div class="card">
+        <div class="card-body">
+            <form asp-controller="Validate" asp-action="Check"
+                  method="post" enctype="multipart/form-data">
+
+                <div class="mb-3">
+                    <label class="form-label">File Type</label>
+                    <select name="fileType" class="form-select">
+                        <option value="institutional">Institutional (survey_entry)</option>
+                        <option value="household">Household (main)</option>
+                        <option value="family">Family Members (group_family)</option>
+                        <option value="house_detail">House Details (group_housebrief)</option>
+                        <option value="death">Death Records (group_death)</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Select JSON File</label>
+                    <input type="file" name="file" class="form-control"
+                           accept=".json" required />
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg"
+                    onclick="this.disabled=true; this.innerText='Validating...'; this.form.submit();">
+                    🔍 Validate
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

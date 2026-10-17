@@ -1,0 +1,204 @@
+﻿@model List<VrindavanProfile.Web.Controllers.InstitutionListItem>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = ViewBag.DisplayName;
+    string activeArea = ViewBag.SubjectArea;
+    // Safe cast — InstitutionCategoryItem is a plain POCO, not a ValueTuple, so ViewBag cast is reliable
+        var configs = ViewBag.ConfigList as
+        List<VrindavanProfile.Web.Controllers.InstitutionCategoryItem>;
+}
+    <div class="container py-4">
+        <!-- Page Header with Back, New Entry, Trash links -->
+        <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+            <div>
+                <a href="/Admin" class="btn btn-outline-secondary btn-sm me-2">
+                    <i class="bi bi-arrow-left me-1"></i>ड्यासबोर्ड
+                </a>
+                <span class="fw-bold fs-5">
+                    <i class="bi bi-bank me-2 text-primary"></i>@ViewBag.DisplayName
+                </span>
+            </div>
+            <div class="d-flex gap-2">
+                <a href="/Admin/CreateInstitution?subjectArea=@activeArea"
+                   class="btn btn-primary btn-sm">
+                    <i class="bi bi-plus-circle me-1"></i>नयाँ प्रविष्टि थप्नुहोस्
+                </a>
+                <a href="/Admin/InstitutionsTrash?subjectArea=@activeArea"
+                   class="btn btn-outline-warning btn-sm">
+                    <i class="bi bi-trash me-1"></i>ट्रेस हेर्नुहोस्
+                </a>
+            </div>
+        </div>
+
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success shadow-sm">@TempData["SuccessMessage"]</div>
+        }
+
+        <!-- Search / Filter Card -->
+        <div class="card mb-3 shadow-sm border-0">
+            <div class="card-body py-2">
+                <form method="get" class="row g-2 align-items-end">
+                    <input type="hidden" name="subjectArea" value="@activeArea" />
+                    <div class="col-md-4">
+                        <label class="form-label small">खोज्नुहोस् (नाम / प्रविष्टिकर्ता)</label>
+                        <input type="text" name="search" value="@ViewBag.Search"
+                               class="form-control form-control-sm"
+                               placeholder="नाम वा enumerator खोज्नुहोस्..." />
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label small">वडा नं.</label>
+                        <input type="number" name="wardNo" value="@ViewBag.WardNo"
+                               class="form-control form-control-sm" placeholder="सबै" min="1" max="9" />
+                    </div>
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-primary btn-sm">
+                            <i class="bi bi-search me-1"></i>खोज्नुहोस्
+                        </button>
+                        <a href="/Admin/Institutions?subjectArea=@activeArea"
+                           class="btn btn-outline-secondary btn-sm">रिसेट</a>
+                    </div>
+                    <div class="col-md-3 text-end text-muted small">
+                        कुल: @ViewBag.TotalItems प्रविष्टिहरू
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+        <!-- Category Selector Sidebar -->
+        <div class="col-md-3 mb-4">
+            <div class="card shadow-sm border-0" style="border-radius: 10px;">
+                <div class="card-header bg-light fw-bold py-3"><i class="bi bifilter-square me-2"></i>विवरण प्रकारहरू</div>
+                <div class="list-group list-group-flush">
+                    @foreach (var entry in configs ?? new())
+                    {
+                        <a href="/Admin/Institutions?subjectArea=@entry.Key"
+                           class="list-group-item list-group-item-action d-flex align-items-center py-2
+        @(activeArea == entry.Key ? "active bg-primary border-primary" : "")">
+                            <i class="bi @entry.Icon me-2 text-muted
+        @(activeArea == entry.Key ? "text-white" : "")"></i>
+                            <span class="small">@entry.DisplayName</span>
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+        <!-- Main Data Table -->
+            <div class="col-md-9">
+                <div class="card shadow-sm border-0" style="border-radius: 10px;">
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th class="py-3 px-4" style="width: 80px;">आइडी</th>
+                                        <th class="py-3">नाम / प्रकार</th>
+                                        <th class="py-3 text-center" style="width: 100px;">वडा नं</th>
+                                        <th class="py-3">तथ्याङ्क प्र विष्टि कर्ता</th>
+                                        <th class="py-3 text-end px-4" style="width:200px;">कार्यहरू</th>
+                                    </tr>
+                                </thead>
+                    <tbody>
+                    @if (Model.Count == 0)
+                    {
+                        <tr>
+                            <td colspan="5" class="text-center py-5
+                    text-muted">
+                                <i class="bi bi-folder2-open
+                    display-4 d-block mb-3"></i>
+                                यो विधामा कुनै पनि तथ्याङ्कहरू फेला परेनन्।
+                            </td>
+                        </tr>
+                    }
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="px-4 fw-bold textmuted">@item.Id</td>
+                            <td class="fw-semibold textdark">@item.Name</td>
+                            <td class="text-center"><span
+                                                        class="badge bg-secondary">@item.WardNo</span></td>
+                            <td>
+                                <div
+                                    class="small">@item.EnumeratorName</div>
+                                <div class="text-muted small"
+                                     style="font-size: 11px;">@item.SubmissionTime</div>
+                            </td>
+                            <td class="text-end px-4">
+                                <a href="/Admin/EditInstitution/@item.Id?subjectArea=@activeArea"
+                                   class="btn btn-outline-primary btn-sm me-1">
+                                    <i class="bi bi-pencil"></i> सम्पादन
+                                </a>
+                                <form asp-action="DeleteInstitution" method="post" class="d-inline"
+                                      onsubmit="return confirm('के तपाईं यो संस्था ट्रेसमा सार्न चाहनुहुन्छ?')">
+                                    <input type="hidden" name="id" value="@item.Id" />
+                                    <input type="hidden" name="subjectArea" value="@activeArea" />
+                                    <button type="submit" class="btn btn-outline-danger btn-sm">
+                                        <i class="bi bi-trash"></i> मेटाउनुहोस्
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Advanced Pagination -->
+        @if (ViewBag.TotalPages > 1)
+        {
+            int currentPage = ViewBag.CurrentPage;
+            int totalPages = ViewBag.TotalPages;
+            int delta = 2; // Number of pages to show on each side of current page
+
+            <nav class="mt-4">
+                <ul class="pagination justify-content-center">
+                    <!-- Previous Button -->
+                    <li class="page-item @(currentPage == 1 ? "disabled" : "")">
+                        <a class="page-link" href="/Admin/Institutions?subjectArea=@activeArea&page=@(currentPage - 1)" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+
+                    <!-- First Page -->
+                    @if (currentPage > delta + 2)
+                    {
+                        <li class="page-item">
+                            <a class="page-link" href="/Admin/Institutions?subjectArea=@activeArea&page=1">1</a>
+                        </li>
+                        <li class="page-item disabled">
+                            <span class="page-link">...</span>
+                        </li>
+                    }
+
+                    <!-- Page Numbers -->
+                    @for (int i = Math.Max(1, currentPage - delta); i <= Math.Min(totalPages, currentPage + delta); i++)
+                    {
+                        <li class="page-item @(currentPage == i ? "active" : "")">
+                            <a class="page-link" href="/Admin/Institutions?subjectArea=@activeArea&page=@i">@i</a>
+                        </li>
+                    }
+
+                    <!-- Last Page -->
+                    @if (currentPage < totalPages - delta - 1)
+                    {
+                        <li class="page-item disabled">
+                            <span class="page-link">...</span>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="/Admin/Institutions?subjectArea=@activeArea&page=@totalPages">@totalPages</a>
+                        </li>
+                    }
+
+                    <!-- Next Button -->
+                    <li class="page-item @(currentPage == totalPages ? "disabled" : "")">
+                        <a class="page-link" href="/Admin/Institutions?subjectArea=@activeArea&page=@(currentPage + 1)" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,304 @@
+﻿@model VrindavanProfile.Web.Data.DbEntities.Household
+@{
+    ViewData["Title"] = "घर, विपद र जोखिम विवरण";
+}
+
+<div class="container py-4">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <h2 class="fw-bold mb-1">
+                <i class="bi bi-house me-2"></i>घर, विपद र जोखिम
+            </h2>
+            <p class="text-muted mb-0 small">
+                वडा @Model.WardNo — @Model.SettlementName
+                @if (!string.IsNullOrEmpty(Model.RespondentName))
+                {
+                    <span>| उत्तरदाता: @Model.RespondentName</span>
+                }
+            </p>
+        </div>
+        <a href="/Admin/ManageHouseholdData/@Model.Id" class="btn btn-outline-secondary btn-sm">
+            <i class="bi bi-arrow-left me-1"></i>डेटा व्यवस्थापन
+        </a>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+
+    <form asp-action="HouseholdCategoryOther" method="post">
+        <input type="hidden" asp-for="Id" />
+
+        <!-- Section 1: House Details -->
+        <div class="card mb-3">
+            <div class="card-header" style="background: #8B5CF6; color: #fff;">
+                <h6 class="mb-0"><i class="bi bi-house-door me-2"></i>घरको विवरण</h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label small fw-semibold">घरको सङ्ख्या</label>
+                        <input asp-for="HouseCount" class="form-control form-control-sm" type="number"
+                               min="0" placeholder="कति वटा घर?" />
+                        <small class="text-muted">एउटै घरपरिवारमा कति वटा घर छन्?</small>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label small fw-semibold">भूकम्प प्रतिरोधी</label>
+                        <select asp-for="EarthquakeResistant" class="form-select form-select-sm">
+                            <option value="">-- छान्नुहोस् --</option>
+                            <option value="छ">छ</option>
+                            <option value="छैन">छैन</option>
+                            <option value="थाहा छैन">थाहा छैन</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label small fw-semibold">विपदले क्षति गरेको</label>
+                        <select asp-for="DisasterDamaged" class="form-select form-select-sm">
+                            <option value="">-- छान्नुहोस् --</option>
+                            <option value="छ">छ</option>
+                            <option value="छैन">छैन</option>
+                        </select>
+                    </div>
+                    <div class="col-12 mb-2">
+                        <label class="form-label small fw-semibold">घरसम्बन्धी नोट</label>
+                        <textarea asp-for="HouseInfoNote" class="form-control form-control-sm" rows="2"
+                                  placeholder="घरको बनोट, संरचना, मर्मत सम्बन्धी टिपोट..."></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Subsidy & Rebuild -->
+        <div class="card mb-3">
+            <div class="card-header" style="background: #F59E0B; color: #fff;">
+                <h6 class="mb-0"><i class="bi bi-cash-stack me-2"></i>अनुदान र पुनर्निर्माण</h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label small fw-semibold">अनुदान प्राप्त</label>
+                        <select asp-for="ReceivedSubsidy" class="form-select form-select-sm">
+                            <option value="">-- छान्नुहोस् --</option>
+                            <option value="छ">छ</option>
+                            <option value="छैन">छैन</option>
+                            <option value="आवेदन गरेको">आवेदन गरेको</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label small fw-semibold">अनुदान किस्ता</label>
+                        <select asp-for="SubsidyInstallments" class="form-select form-select-sm">
+                            <option value="">-- छान्नुहोस् --</option>
+                            <option value="१ किस्ता">१ किस्ता</option>
+                            <option value="२ किस्ता">२ किस्ता</option>
+                            <option value="३ किस्ता">३ किस्ता</option>
+                            <option value="पूर्ण भुक्तानी">पूर्ण भुक्तानी</option>
+                            <option value="छैन">छैन</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label small fw-semibold">घर पुनः निर्माण</label>
+                        <select asp-for="HouseRebuilt" class="form-select form-select-sm">
+                            <option value="">-- छान्नुहोस् --</option>
+                            <option value="छ">छ</option>
+                            <option value="छैन">छैन</option>
+                            <option value="निर्माणाधीन">निर्माणाधीन</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label small fw-semibold">परिवार जोखिम योजना</label>
+                        <select asp-for="HasFamilyRiskPlan" class="form-select form-select-sm">
+                            <option value="">-- छान्नुहोस् --</option>
+                            <option value="छ">छ</option>
+                            <option value="छैन">छैन</option>
+                        </select>
+                        <small class="text-muted">विपदमा उद्धार योजना</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Disaster Risk Checkboxes -->
+        <div class="card mb-3">
+            <div class="card-header" style="background: #DC143C; color: #fff;">
+                <h6 class="mb-0"><i class="bi bi-exclamation-triangle me-2"></i>विपद जोखिम — कुन कुन जोखिम छ?</h6>
+            </div>
+            <div class="card-body">
+                <p class="small text-muted mb-3">यस घरपरिवार कुन प्रकारको विपदको जोखिममा छ?</p>
+
+                <div class="row">
+                    <div class="col-md-4 col-lg-3 mb-3">
+                        <div class="form-check card p-2" style="border-radius: 8px; border: 1px solid #fca5a5;">
+                            <input class="form-check-input" type="checkbox" id="riskEarthquake"
+                                   @(Model.RiskEarthquake == 1 ? "checked" : "") onchange="updateDisasterSummary()" />
+                            <label class="form-check-label d-flex align-items-center gap-2" for="riskEarthquake">
+                                <span style="font-size: 1.2rem;">🌍</span>
+                                <strong>भूकम्प</strong>
+                            </label>
+                        </div>
+                        <input type="hidden" asp-for="RiskEarthquake" id="riskEarthquakeVal" />
+                    </div>
+
+                    <div class="col-md-4 col-lg-3 mb-3">
+                        <div class="form-check card p-2" style="border-radius: 8px; border: 1px solid #93c5fd;">
+                            <input class="form-check-input" type="checkbox" id="riskFlood"
+                                   @(Model.RiskFlood == 1 ? "checked" : "") onchange="updateDisasterSummary()" />
+                            <label class="form-check-label d-flex align-items-center gap-2" for="riskFlood">
+                                <span style="font-size: 1.2rem;">🌊</span>
+                                <strong>बाढी/हिलो</strong>
+                            </label>
+                        </div>
+                        <input type="hidden" asp-for="RiskFlood" id="riskFloodVal" />
+                    </div>
+
+                    <div class="col-md-4 col-lg-3 mb-3">
+                        <div class="form-check card p-2" style="border-radius: 8px; border: 1px solid #86efac;">
+                            <input class="form-check-input" type="checkbox" id="riskLandslide"
+                                   @(Model.RiskLandslide == 1 ? "checked" : "") onchange="updateDisasterSummary()" />
+                            <label class="form-check-label d-flex align-items-center gap-2" for="riskLandslide">
+                                <span style="font-size: 1.2rem;">⛰️</span>
+                                <strong>पहिरो</strong>
+                            </label>
+                        </div>
+                        <input type="hidden" asp-for="RiskLandslide" id="riskLandslideVal" />
+                    </div>
+
+                    <div class="col-md-4 col-lg-3 mb-3">
+                        <div class="form-check card p-2" style="border-radius: 8px; border: 1px solid #fde047;">
+                            <input class="form-check-input" type="checkbox" id="riskLightning"
+                                   @(Model.RiskLightning == 1 ? "checked" : "") onchange="updateDisasterSummary()" />
+                            <label class="form-check-label d-flex align-items-center gap-2" for="riskLightning">
+                                <span style="font-size: 1.2rem;">⚡</span>
+                                <strong>चट्याङ/बिजुली</strong>
+                            </label>
+                        </div>
+                        <input type="hidden" asp-for="RiskLightning" id="riskLightningVal" />
+                    </div>
+
+                    <div class="col-md-4 col-lg-3 mb-3">
+                        <div class="form-check card p-2" style="border-radius: 8px; border: 1px solid #fdba74;">
+                            <input class="form-check-input" type="checkbox" id="riskStorm"
+                                   @(Model.RiskStorm == 1 ? "checked" : "") onchange="updateDisasterSummary()" />
+                            <label class="form-check-label d-flex align-items-center gap-2" for="riskStorm">
+                                <span style="font-size: 1.2rem;">🌪️</span>
+                                <strong>आँधीबेरी</strong>
+                            </label>
+                        </div>
+                        <input type="hidden" asp-for="RiskStorm" id="riskStormVal" />
+                    </div>
+
+                    <div class="col-md-4 col-lg-3 mb-3">
+                        <div class="form-check card p-2" style="border-radius: 8px; border: 1px solid #a5b4fc;">
+                            <input class="form-check-input" type="checkbox" id="riskColdWave"
+                                   @(Model.RiskColdWave == 1 ? "checked" : "") onchange="updateDisasterSummary()" />
+                            <label class="form-check-label d-flex align-items-center gap-2" for="riskColdWave">
+                                <span style="font-size: 1.2rem;">❄️</span>
+                                <strong>चिसो लहर</strong>
+                            </label>
+                        </div>
+                        <input type="hidden" asp-for="RiskColdWave" id="riskColdWaveVal" />
+                    </div>
+
+                    <div class="col-md-4 col-lg-3 mb-3">
+                        <div class="form-check card p-2" style="border-radius: 8px; border: 1px solid #6ee7b7;">
+                            <input class="form-check-input" type="checkbox" id="riskInundation"
+                                   @(Model.RiskInundation == 1 ? "checked" : "") onchange="updateDisasterSummary()" />
+                            <label class="form-check-label d-flex align-items-center gap-2" for="riskInundation">
+                                <span style="font-size: 1.2rem;">🌧️</span>
+                                <strong>जलभराव</strong>
+                            </label>
+                        </div>
+                        <input type="hidden" asp-for="RiskInundation" id="riskInundationVal" />
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label small fw-semibold">जोखिम सारांश (स्वतः भरिन्छ)</label>
+                        <input asp-for="DisasterRiskSummary" class="form-control form-control-sm" id="disasterRiskSummary"
+                               readonly placeholder="चयन गरिएका जोखिमहरू..." />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label small fw-semibold">जोखिम स्तर</label>
+                        <select asp-for="DisasterRisk" class="form-select form-select-sm">
+                            <option value="">-- छान्नुहोस् --</option>
+                            <option value="उच्च">उच्च</option>
+                            <option value="मध्यम">मध्यम</option>
+                            <option value="न्यून">न्यून</option>
+                            <option value="छैन">छैन</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Closing Notes -->
+        <div class="card mb-3">
+            <div class="card-header" style="background: #0D9488; color: #fff;">
+                <h6 class="mb-0"><i class="bi bi-card-text me-2"></i>अतिरिक्त नोट र दूरी</h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label small fw-semibold">समापन नोट</label>
+                        <textarea asp-for="ClosingNote" class="form-control form-control-sm" rows="3"
+                                  placeholder="सर्वेक्षण समापन टिपोट, विशेष कैफियत..."></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label small fw-semibold">केन्द्रबाट दूरी (अर्को)</label>
+                        <input asp-for="DistanceFromCenter2" class="form-control form-control-sm"
+                               placeholder="अर्को मापन वा नोट..." />
+                        <small class="text-muted">distance_from_center_2 — अतिरिक्त दूरी विवरण</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="d-flex gap-2 justify-content-end mb-4">
+            <a href="/Admin/ManageHouseholdData/@Model.Id" class="btn btn-outline-secondary">
+                रद्द गर्नुहोस्
+            </a>
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-save me-1"></i>जोखिम विवरण सेभ गर्नुहोस्
+            </button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        var riskNames = {
+            'riskEarthquake': 'भूकम्प',
+            'riskFlood': 'बाढी/हिलो',
+            'riskLandslide': 'पहिरो',
+            'riskLightning': 'चट्याङ',
+            'riskStorm': 'आँधीबेरी',
+            'riskColdWave': 'चिसो लहर',
+            'riskInundation': 'जलभराव'
+        };
+
+        function updateDisasterSummary() {
+            var selected = [];
+
+            for (var key in riskNames) {
+                var checkbox = document.getElementById(key);
+                var valField = document.getElementById(key + 'Val');
+                if (valField) {
+                    valField.value = checkbox.checked ? '1' : '0';
+                    if (checkbox.checked) {
+                        selected.push(riskNames[key]);
+                    }
+                }
+            }
+
+            document.getElementById('disasterRiskSummary').value =
+                selected.length > 0 ? selected.join(', ') : 'कुनै जोखिम चयन गरिएको छैन';
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            updateDisasterSummary();
+        });
+    </script>
+}

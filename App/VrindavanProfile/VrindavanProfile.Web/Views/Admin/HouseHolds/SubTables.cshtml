@@ -1,0 +1,741 @@
+@model VrindavanProfile.Web.Models.ViewModels.HouseholdSubTablesViewModel
+@using VrindavanProfile.Web.Services
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "उप-तालिका व्यवस्थापन";
+    string activeTab = ViewBag.ActiveTab ?? "family";
+
+    // Today in BS (for JS seed)
+    var (todayBsY, todayBsM, todayBsD) = NepaliDateHelper.GetTodayBs();
+}
+
+@* ─── embedded styles for DOB picker ─── *@
+<style>
+    .dob-picker-row { display: flex; gap: .35rem; align-items: center; }
+    .dob-picker-row select { flex: 1; min-width: 0; }
+    .age-badge {
+        display: inline-block;
+        background: #e8f5e9;
+        color: #2e7d32;
+        border: 1px solid #a5d6a7;
+        border-radius: 20px;
+        padding: 1px 10px;
+        font-size: .78rem;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+    .age-badge.no-dob { background: #fafafa; color: #888; border-color: #ddd; }
+</style>
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <h3 class="fw-bold mb-1"><i class="bi bi-people me-2"></i>पारिवारिक तथा भवन विवरणहरू</h3>
+            <p class="text-muted small mb-0">@ViewBag.Info</p>
+        </div>
+        <a href="/Admin/Households" class="btn btn-outline-secondary btn-sm">
+            <i class="bi bi-arrow-left"></i> घरपरिवार सूचीमा फर्कनुहोस्
+        </a>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success shadow-sm">@TempData["SuccessMessage"]</div>
+    }
+
+    <!-- Tab Navigation -->
+    <ul class="nav nav-tabs mb-4" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link @(activeTab == "family" ? "active fw-bold" : "")"
+               href="/Admin/ManageSubTables/@Model.HouseholdId?tab=family"><i class="bi bi-person-badge me-2"></i>पारिवारिक सदस्य हरू (@Model.FamilyMembers.Count)</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link @(activeTab == "house" ? "active fw-bold" : "")"
+               href="/Admin/ManageSubTables/@Model.HouseholdId?tab=house"><i class="bi bi-house me-2"></i>घर विवरणहरू (@Model.HouseDetails.Count)</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link @(activeTab == "death" ? "active fw-bold" : "")"
+               href="/Admin/ManageSubTables/@Model.HouseholdId?tab=death"><i class="bi bi-heartbreak me-2"></i>मृत्यु विवरणहरू (@Model.DeathRecords.Count)</a>
+        </li>
+    </ul>
+
+    <div class="tab-content bg-white p-4 rounded shadow-sm border">
+        <!-- ─── TAB 1: FAMILY MEMBERS ─── -->
+        @if (activeTab == "family")
+        {
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="fw-bold mb-0">सदस्य विवरण थप्नुहोस्</h5>
+            </div>
+
+            <!-- Add Family Form -->
+            <form asp-action="AddFamilyMember" method="post" class="border-bottom pb-4 mb-4">
+                <input type="hidden" name="householdId" value="@Model.HouseholdId" />
+                <div class="row g-2">
+                    <div class="col-md-3">
+                        <label class="form-label small fw-semibold">नाम (Full Name) <span class="text-danger">*</span></label>
+                        <input name="FullName" class="form-control form-control-sm" required />
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label small fw-semibold">थर (Surname)</label>
+                        <input name="Surname" class="form-control form-control-sm" />
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label small fw-semibold">लिङ्ग <span class="text-danger">*</span></label>
+                        <select name="Gender" class="form-select form-select-sm" required>
+                            <option value="पुरूष">पुरूष</option>
+                            <option value="महिला">महिला</option>
+                            <option value="अन्य">अन्य</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label small fw-semibold">नाता</label>
+                        <input name="RelationToHead" class="form-control form-control-sm" placeholder="उदा: घरमुली" />
+                    </div>
+                </div>
+
+                <!-- DOB Picker Row -->
+                <div class="row g-2 mt-1 align-items-end">
+                    <div class="col-12 col-md-auto">
+                        <label class="form-label small fw-semibold mb-1">
+                            <i class="bi bi-calendar3 me-1 text-primary"></i>जन्म मिति (BS)
+                            <span class="text-muted fw-normal small">— वा उमेर प्रविष्ट गर्नुहोस्</span>
+                        </label>
+                        <div class="dob-picker-row">
+                            <select id="addYear"  class="form-select form-select-sm" title="साल"></select>
+                            <select id="addMonth" class="form-select form-select-sm" title="महिना"></select>
+                            <select id="addDay"   class="form-select form-select-sm" title="गते"></select>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <label class="form-label small fw-semibold mb-1">उमेर (वर्ष)</label>
+                        <input id="addAgeInput" name="Age" type="number" min="0" max="130"
+                               class="form-control form-control-sm" style="width:75px"
+                               placeholder="वर्ष" />
+                    </div>
+                    <div class="col-auto">
+                        <div class="mb-1" style="height:1.25rem"></div>
+                        <span id="addAgeBadge" class="age-badge no-dob">—</span>
+                    </div>
+                    <input type="hidden" name="DobBs" id="addDobBs" />
+                </div>
+
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="bi bi-plus"></i> सदस्य थप्नुहोस्
+                    </button>
+                </div>
+            </form>
+
+            <!-- Family Members Table -->
+            <div class="table-responsive">
+                <table class="table align-middle table-hover">
+                    <thead class="table-light">
+                        <tr>
+                            <th>नाम थर</th>
+                            <th>लिङ्ग</th>
+                            <th>जन्म मिति (BS)</th>
+                            <th>उमेर (आजको)</th>
+                            <th>नाता</th>
+                            <th>कार्य</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var fm in Model.FamilyMembers)
+                        {
+                            <tr>
+                                <td>@fm.FullName @fm.Surname</td>
+                                <td>@fm.Gender</td>
+                                <td>
+                                    @if (!string.IsNullOrEmpty(fm.DobBs))
+                                    {
+                                        <span class="badge bg-light text-dark border">@fm.DobBs</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="text-muted small">—</span>
+                                    }
+                                </td>
+                                <td>
+                                    @if (fm.AgeFromDob.HasValue)
+                                    {
+                                        <span class="age-badge">@fm.AgeFromDob वर्ष</span>
+                                    }
+                                    else if (fm.Age.HasValue)
+                                    {
+                                        <span class="age-badge no-dob">@((int)fm.Age.Value) वर्ष</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="text-muted">—</span>
+                                    }
+                                </td>
+                                <td>@fm.RelationToHead</td>
+                                <td>
+                                    <div class="d-flex gap-1">
+                                        <button type="button" class="btn btn-outline-warning btn-sm"
+                                                onclick="openEditFamilyModal('@fm.Id','@fm.FullName','@fm.Surname','@fm.Gender','@fm.Age','@fm.RelationToHead','@fm.DobBs')">
+                                            <i class="bi bi-pencil"></i> सम्पादन
+                                        </button>
+                                        <form asp-action="DeleteFamilyMember" method="post" onsubmit="return confirm('के तपाईं यो सदस्य हटाउन चाहनुहुन्छ?')" class="d-inline">
+                                            <input type="hidden" name="id" value="@fm.Id" />
+                                            <button type="submit" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i> हटाउनुहोस्</button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+
+        <!-- ─── TAB 2: HOUSE DETAILS ─── -->
+        @if (activeTab == "house")
+        {
+            <form asp-action="AddHouseDetail" method="post" class="row border-bottom pb-4 mb-4">
+                <input type="hidden" name="householdId" value="@Model.HouseholdId" />
+                <div class="col-md-3 mb-2">
+                    <label class="form-label small">स्वामित्वको प्रकार</label>
+                    <input name="OwnershipType" class="form-control form-control-sm" placeholder="उदा: निजी" />
+                </div>
+                <div class="col-md-3 mb-2">
+                    <label class="form-label small">कुल कोठाहरू</label>
+                    <input name="TotalRooms" type="number" class="form-control form-control-sm" />
+                </div>
+                <div class="col-md-3 mb-2">
+                    <label class="form-label small">घरको छाना प्रकार</label>
+                    <input name="RoofType" class="form-control form-control-sm" />
+                </div>
+                <div class="col-md-3 mb-2 d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary btn-sm w-100"><i class="bi bi-plus"></i> घर विवरण थप्नुहोस्</button>
+                </div>
+            </form>
+
+            <table class="table align-middle">
+                <thead>
+                    <tr>
+                        <th>स्वामित्व</th>
+                        <th>कोठा संख्या</th>
+                        <th>छाना प्रकार</th>
+                        <th>कार्य</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var hd in Model.HouseDetails)
+                    {
+                        <tr>
+                            <td>@hd.OwnershipType</td>
+                            <td>@hd.TotalRooms</td>
+                            <td>@hd.RoofType</td>
+                            <td>
+                                <div class="d-flex gap-1">
+                                    <button type="button" class="btn btn-outline-warning btn-sm"
+                                            onclick="openEditHouseModal('@hd.Id', '@hd.OwnershipType', '@hd.TotalRooms', '@hd.RoofType')">
+                                        <i class="bi bi-pencil"></i> सम्पादन
+                                    </button>
+                                    <form asp-action="DeleteHouseDetail" method="post" onsubmit="return confirm('के तपाईं यो रेकर्ड हटाउन चाहनुहुन्छ?')" class="d-inline">
+                                        <input type="hidden" name="id" value="@hd.Id" />
+                                        <button type="submit" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i> हटाउनुहोस्</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+
+        <!-- ─── TAB 3: DEATH RECORDS ─── -->
+        @if (activeTab == "death")
+        {
+            <form asp-action="AddDeathRecord" method="post" class="row border-bottom pb-4 mb-4">
+                <input type="hidden" name="householdId" value="@Model.HouseholdId" />
+                <div class="col-md-4 mb-2">
+                    <label class="form-label small">मृतकको नाम</label>
+                    <input name="DeceasedName" class="form-control form-control-sm" required />
+                </div>
+                <div class="col-md-2 mb-2">
+                    <label class="form-label small">मृतकको लिङ्ग</label>
+                    <select name="DeceasedGender" class="form-select form-select-sm">
+                        <option value="पुरूष">पुरूष</option>
+                        <option value="महिला">महिला</option>
+                    </select>
+                </div>
+                <div class="col-md-2 mb-2">
+                    <label class="form-label small">मृत्यु उमेर</label>
+                    <input name="DeceasedAgeDetail" type="number" class="form-control form-control-sm" />
+                </div>
+                <div class="col-md-4 mb-2">
+                    <label class="form-label small">कारण विवरण</label>
+                    <input name="CauseSummary" class="form-control form-control-sm" />
+                </div>
+                <div class="col-md-3 mb-2 d-flex align-items-end mt-2">
+                    <button type="submit" class="btn btn-primary btn-sm w-100"><i class="bi bi-plus"></i> मृत्यु रेकर्ड थप्नुहोस्</button>
+                </div>
+            </form>
+
+            <table class="table align-middle">
+                <thead>
+                    <tr>
+                        <th>मृतकको नाम</th>
+                        <th>लिङ्ग</th>
+                        <th>उमेर</th>
+                        <th>कारण</th>
+                        <th>कार्य</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var dr in Model.DeathRecords)
+                    {
+                        <tr>
+                            <td>@dr.DeceasedName</td>
+                            <td>@dr.DeceasedGender</td>
+                            <td>@dr.DeceasedAgeDetail</td>
+                            <td>@dr.CauseSummary</td>
+                            <td>
+                                <div class="d-flex gap-1">
+                                    <button type="button" class="btn btn-outline-warning btn-sm"
+                                            onclick="openEditDeathModal('@dr.Id', '@dr.DeceasedName', '@dr.DeceasedGender', '@dr.DeceasedAgeDetail', '@dr.CauseSummary')">
+                                        <i class="bi bi-pencil"></i> सम्पादन
+                                    </button>
+                                    <form asp-action="DeleteDeathRecord" method="post" onsubmit="return confirm('के तपाईं यो रेकर्ड हटाउन चाहनुहुन्छ?')" class="d-inline">
+                                        <input type="hidden" name="id" value="@dr.Id" />
+                                        <button type="submit" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i> हटाउनुहोस्</button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>
+
+<!-- ─── MODALS FOR EDITING ─── -->
+
+<!-- 1. Edit Family Member Modal -->
+<div class="modal fade" id="editFamilyModal" tabindex="-1" aria-labelledby="editFamilyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <form asp-action="EditFamilyMember" method="post">
+                <input type="hidden" name="Id" id="editFmId" />
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editFamilyModalLabel">
+                        <i class="bi bi-person-gear me-2"></i>पारिवारिक सदस्य विवरण सम्पादन
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">नाम (Full Name)</label>
+                            <input name="FullName" id="editFmFullName" class="form-control" required />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">थर (Surname)</label>
+                            <input name="Surname" id="editFmSurname" class="form-control" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">लिङ्ग (Gender)</label>
+                            <select name="Gender" id="editFmGender" class="form-select" required>
+                                <option value="पुरूष">पुरूष</option>
+                                <option value="महिला">महिला</option>
+                                <option value="अन्य">अन्य</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">नाता (Relation to Head)</label>
+                            <input name="RelationToHead" id="editFmRelation" class="form-control" />
+                        </div>
+
+                        <!-- DOB Picker for Edit -->
+                        <div class="col-12">
+                            <label class="form-label fw-semibold">
+                                <i class="bi bi-calendar3 me-1 text-primary"></i>जन्म मिति (BS)
+                            </label>
+                            <div class="dob-picker-row mb-2">
+                                <select id="editYear"  class="form-select" title="साल"></select>
+                                <select id="editMonth" class="form-select" title="महिना"></select>
+                                <select id="editDay"   class="form-select" title="गते"></select>
+                            </div>
+                            <input type="hidden" name="DobBs" id="editDobBs" />
+                            <div class="d-flex align-items-center gap-2 mt-1">
+                                <span class="small text-muted">गणना गरिएको उमेर:</span>
+                                <span id="editAgeBadge" class="age-badge no-dob">—</span>
+                                <span class="small text-muted ms-2">— वा म्यानुअल उमेर:</span>
+                                <input id="editAgeInput" name="Age" type="number" min="0" max="130"
+                                       class="form-control form-control-sm" style="width:70px"
+                                       title="म्यानुअल उमेर (जन्म मिति नभएमा)" />
+                            </div>
+                            <div class="mt-1">
+                                <small class="text-info">
+                                    <i class="bi bi-info-circle me-1"></i>
+                                    जन्म मिति दिनुभयो भने उमेर स्वचालित रूपमा गणना हुनेछ।
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">रद्द गर्नुहोस्</button>
+                    <button type="submit" class="btn btn-primary">सुरक्षित गर्नुहोस्</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- 2. Edit House Detail Modal -->
+<div class="modal fade" id="editHouseModal" tabindex="-1" aria-labelledby="editHouseModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form asp-action="EditHouseDetail" method="post">
+                <input type="hidden" name="Id" id="editHdId" />
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editHouseModalLabel">घर विवरण सम्पादन</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">स्वामित्वको प्रकार</label>
+                        <input name="OwnershipType" id="editHdOwnership" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">कुल कोठाहरू</label>
+                        <input name="TotalRooms" id="editHdRooms" type="number" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">घरको छाना प्रकार</label>
+                        <input name="RoofType" id="editHdRoof" class="form-control" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">रद्द गर्नुहोस्</button>
+                    <button type="submit" class="btn btn-primary">सुरक्षित गर्नुहोस्</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- 3. Edit Death Record Modal -->
+<div class="modal fade" id="editDeathModal" tabindex="-1" aria-labelledby="editDeathModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form asp-action="EditDeathRecord" method="post">
+                <input type="hidden" name="Id" id="editDrId" />
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editDeathModalLabel">मृत्यु विवरण सम्पादन</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">मृतकको नाम</label>
+                        <input name="DeceasedName" id="editDrName" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">मृतकको लिङ्ग</label>
+                        <select name="DeceasedGender" id="editDrGender" class="form-select">
+                            <option value="पुरूष">पुरूष</option>
+                            <option value="महिला">महिला</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">मृत्यु उमेर</label>
+                        <input name="DeceasedAgeDetail" id="editDrAge" type="number" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">कारण विवरण</label>
+                        <input name="CauseSummary" id="editDrCause" class="form-control" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">रद्द गर्नुहोस्</button>
+                    <button type="submit" class="btn btn-primary">सुरक्षित गर्नुहोस्</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<script>
+// ════════════════════════════════════════════════════════════
+// Bikram Sambat Calendar Data & Helpers (client-side mirror)
+// ════════════════════════════════════════════════════════════
+const BS_START_YEAR = 1975;
+const BS_YEAR_DATA = [
+    [31,31,32,31,32,31,30,29,30,29,30,30],[31,32,31,32,31,30,30,30,29,29,30,31], // 1975–76
+    [31,32,31,32,31,30,30,30,29,30,29,31],[31,31,31,32,31,31,29,30,30,29,29,31], // 1977–78
+    [31,31,32,31,31,31,30,29,30,29,30,30],[31,31,32,32,31,30,30,29,30,29,30,30], // 1979–80
+    [31,32,31,32,31,30,30,30,29,29,30,31],[31,32,31,32,31,30,30,30,29,30,29,31], // 1981–82
+    [31,31,31,32,31,31,29,30,30,29,30,30],[31,31,32,31,31,31,30,29,30,29,30,30], // 1983–84
+    [31,31,32,32,31,30,30,29,30,29,30,30],[31,32,31,32,31,30,30,30,29,29,30,31], // 1985–86
+    [30,32,31,32,31,30,30,30,29,30,29,31],[31,31,32,31,31,31,30,29,30,29,30,30], // 1987–88
+    [31,31,32,32,31,30,30,29,30,29,30,30],[31,32,31,32,31,30,30,30,29,29,30,31], // 1989–90
+    [31,32,31,32,31,30,30,30,29,30,29,31],[31,31,31,32,31,31,29,30,30,29,30,30], // 1991–92
+    [31,31,32,31,31,31,30,29,30,29,30,30],[31,31,32,32,31,30,30,29,30,29,30,30], // 1993–94
+    [31,32,31,32,31,30,30,30,29,29,30,31],[30,32,31,32,31,30,30,30,29,30,29,31], // 1995–96
+    [31,31,32,31,31,31,30,29,30,29,30,30],[31,31,32,31,31,31,30,29,30,29,30,30], // 1997–98
+    [31,31,32,32,31,30,30,29,30,29,30,30],[30,32,31,32,31,30,30,30,29,30,29,31], // 1999–2000
+    [31,31,32,31,31,31,30,29,30,29,30,30],[31,31,32,32,31,30,30,30,29,30,30,30], // 2001–02
+    [31,32,31,32,31,30,30,30,29,30,30,30],[31,32,31,32,31,30,30,30,29,30,29,31], // 2003–04
+    [31,32,31,32,31,30,30,30,29,30,29,31],[31,31,32,31,32,30,30,30,29,30,30,30], // 2005–06
+    [30,32,31,32,31,30,30,30,29,30,30,30],[31,31,32,31,31,31,30,29,30,29,30,30], // 2007–08
+    [31,31,32,31,31,31,30,29,30,29,30,30],[31,31,32,32,31,30,30,29,30,29,30,30], // 2009–10
+    [31,32,31,32,31,30,30,30,29,29,30,31],[31,32,31,32,31,30,30,30,29,30,29,31], // 2011–12
+    [31,31,31,32,31,31,29,30,30,29,29,31],[31,31,32,31,31,31,30,29,30,29,30,30], // 2013–14
+    [31,31,32,32,31,30,30,29,30,29,30,30],[31,32,31,32,31,30,30,30,29,29,30,31], // 2015–16
+    [30,32,31,32,31,30,30,30,29,30,29,31],[31,31,32,31,31,31,30,29,30,29,30,30], // 2017–18
+    [31,31,32,31,31,31,30,29,30,29,30,30],[31,31,32,32,31,30,30,29,30,29,30,30], // 2019–20
+    [31,32,31,32,31,30,30,30,29,29,30,31],[31,32,31,32,31,30,30,30,29,30,29,31], // 2021–22
+    [31,31,31,32,31,31,29,30,30,29,29,31],[31,31,32,31,31,31,30,29,30,29,30,30], // 2023–24
+    [31,31,32,32,31,30,30,29,30,29,30,30],[31,32,31,32,31,30,30,30,29,29,30,31], // 2025–26
+    [30,32,31,32,31,30,30,30,29,30,29,31],[31,31,32,31,31,31,30,29,30,29,30,30], // 2027–28
+    [31,31,32,31,31,31,30,29,30,29,30,30],[31,31,32,32,31,30,30,29,30,29,30,30], // 2029–30
+    [31,32,31,32,31,30,30,30,29,29,30,31],[31,32,31,32,31,30,30,30,29,30,29,31], // 2031–32
+    [31,31,31,32,31,31,29,30,30,29,29,31],[31,31,32,31,31,31,30,29,30,29,30,30], // 2033–34
+    [31,31,32,32,31,30,30,29,30,29,30,30],[31,32,31,32,31,30,30,30,29,29,30,31], // 2035–36
+    [30,32,31,32,31,30,30,30,29,30,29,31],[31,31,32,31,31,31,30,29,30,29,30,30], // 2037–38
+    [31,31,32,31,31,31,30,29,30,29,30,30],[31,31,32,32,31,30,30,29,30,29,30,30], // 2039–40
+    [31,32,31,32,31,30,30,30,29,29,30,31],[31,32,31,32,31,30,30,30,29,30,29,31], // 2041–42
+    [31,31,31,32,31,31,29,30,30,29,29,31],[31,31,32,31,31,31,30,29,30,29,30,30], // 2043–44
+    [31,31,32,32,31,30,30,29,30,29,30,30],[31,32,31,32,31,30,30,30,29,29,30,31], // 2045–46
+    [30,32,31,32,31,30,30,30,29,30,29,31],[31,31,32,31,31,31,30,29,30,29,30,30], // 2047–48
+    [31,31,32,31,31,31,30,29,30,29,30,30],[31,32,31,32,31,30,30,30,29,29,30,30], // 2049–50
+    [31,31,32,32,31,30,30,30,29,30,30,30],[30,32,31,32,31,30,30,30,29,30,30,30], // 2051–52
+    [31,31,32,31,31,30,30,30,29,30,30,30],[31,31,32,31,31,30,30,30,29,30,30,30], // 2053–54
+    [31,32,31,32,31,30,30,30,29,29,30,30],[31,32,31,32,31,30,30,30,29,30,29,31], // 2055–56
+    [31,31,32,31,31,31,30,29,30,29,30,30],[31,31,32,31,31,31,30,29,30,29,30,30], // 2057–58
+    [31,31,32,32,31,30,30,29,30,29,30,30],[31,32,31,32,31,30,30,30,29,29,30,31], // 2059–60
+    [31,32,31,32,31,30,30,30,29,30,29,31],[31,31,31,32,31,31,29,30,29,30,29,31], // 2061–62
+    [31,31,32,31,31,31,30,29,30,29,30,30],[31,31,32,31,32,30,30,29,30,29,30,30], // 2063–64
+    [31,32,31,32,31,30,30,30,29,29,30,31],[31,32,31,32,31,30,30,30,29,30,29,31], // 2065–66
+    [31,31,31,32,31,31,29,30,30,29,29,31],[31,31,32,31,31,31,30,29,30,29,30,30], // 2067–68
+    [31,31,32,32,31,30,30,29,30,29,30,30],[31,32,31,32,31,30,30,30,29,29,30,31], // 2069–70
+    [31,32,31,32,31,30,30,30,29,30,29,31],[31,31,32,31,31,31,29,30,30,29,29,31], // 2071–72
+    [31,31,32,31,31,31,30,29,30,29,30,30],[31,31,32,32,31,30,30,29,30,29,30,30], // 2073–74
+    [31,32,31,32,31,30,30,30,29,29,30,31],[31,32,31,32,31,30,30,30,29,30,29,31], // 2075–76
+    [31,31,31,32,31,31,30,29,30,29,30,30],[31,31,32,31,31,31,30,29,30,29,30,30], // 2077–78
+    [31,31,32,31,32,30,30,29,30,29,30,30],[31,32,31,32,31,30,30,30,29,29,30,31], // 2079–80
+    [31,32,31,32,31,30,30,30,29,30,29,31],[31,31,32,31,31,31,29,30,30,29,29,31], // 2081–82
+    [31,31,32,31,31,31,30,29,30,29,30,30],[31,31,32,31,32,30,30,29,30,29,30,30], // 2083–84
+    [31,32,31,32,31,30,30,30,29,29,30,31],[31,32,31,32,31,30,30,30,29,30,29,31], // 2085–86
+    [31,31,31,32,31,31,29,30,30,29,29,31],[31,31,32,31,31,31,30,29,30,29,30,30], // 2087–88
+    [31,31,32,32,31,30,30,29,30,29,30,30],[31,32,31,32,31,30,30,30,29,29,30,31], // 2089–90
+    [31,32,31,32,31,30,30,30,29,30,29,31],[31,31,31,32,31,31,29,30,30,29,29,31], // 2091–92
+    [31,31,32,31,31,31,30,29,30,29,30,30],[31,31,32,32,31,30,30,29,30,29,30,30], // 2093–94
+    [31,32,31,32,31,30,30,30,29,29,30,31],                                         // 2095
+];
+const BS_END_YEAR = BS_START_YEAR + BS_YEAR_DATA.length - 1; // 2095
+
+const BS_MONTHS_NP = ['बैशाख','जेठ','असार','साउन','भदौ','असोज','कार्तिक','मंसिर','पुस','माघ','फागुन','चैत'];
+
+// Today in BS (from server)
+const TODAY_BS = { y: @todayBsY, m: @todayBsM, d: @todayBsD };
+
+function daysInBsMonth(year, month) {
+    const idx = year - BS_START_YEAR;
+    if (idx < 0 || idx >= BS_YEAR_DATA.length || month < 1 || month > 12) return 30;
+    return BS_YEAR_DATA[idx][month - 1];
+}
+
+function calcAgeBs(y, m, d) {
+    let age = TODAY_BS.y - y;
+    if (TODAY_BS.m < m || (TODAY_BS.m === m && TODAY_BS.d < d)) age--;
+    return age < 0 ? 0 : age;
+}
+
+function pad2(n) { return String(n).padStart(2,'0'); }
+
+function buildYearOptions(selId, selectedYear) {
+    const sel = document.getElementById(selId);
+    sel.innerHTML = '<option value="">— साल —</option>';
+    for (let y = TODAY_BS.y; y >= BS_START_YEAR; y--) {
+        const opt = document.createElement('option');
+        opt.value = y;
+        opt.textContent = y;
+        if (y === selectedYear) opt.selected = true;
+        sel.appendChild(opt);
+    }
+}
+
+function buildMonthOptions(selId, selectedMonth) {
+    const sel = document.getElementById(selId);
+    sel.innerHTML = '<option value="">— महिना —</option>';
+    BS_MONTHS_NP.forEach((name, i) => {
+        const opt = document.createElement('option');
+        opt.value = i + 1;
+        opt.textContent = `${i+1}. ${name}`;
+        if ((i + 1) === selectedMonth) opt.selected = true;
+        sel.appendChild(opt);
+    });
+}
+
+function buildDayOptions(selId, year, month, selectedDay) {
+    const sel = document.getElementById(selId);
+    const maxDay = year ? daysInBsMonth(parseInt(year), parseInt(month || 1)) : 32;
+    const currentVal = selectedDay || parseInt(sel.value) || 1;
+    sel.innerHTML = '<option value="">— गते —</option>';
+    for (let d = 1; d <= maxDay; d++) {
+        const opt = document.createElement('option');
+        opt.value = d;
+        opt.textContent = d;
+        if (d === currentVal) opt.selected = true;
+        sel.appendChild(opt);
+    }
+}
+
+// ── Initialise ADD form pickers ───────────────────────────
+function initAddPicker() {
+    buildYearOptions('addYear', null);
+    buildMonthOptions('addMonth', null);
+    buildDayOptions('addDay', null, null, null);
+
+    ['addYear','addMonth','addDay'].forEach(id => {
+        document.getElementById(id).addEventListener('change', syncAddDob);
+    });
+
+    // Also watch manual age input → derive DOB
+    document.getElementById('addAgeInput').addEventListener('input', function() {
+        const age = parseInt(this.value);
+        if (!isNaN(age) && age >= 0) {
+            const birthY = TODAY_BS.y - age;
+            setPickerValues('add', birthY, TODAY_BS.m, TODAY_BS.d);
+            syncAddDob();
+        }
+    });
+}
+
+function setPickerValues(prefix, y, m, d) {
+    const ySel = document.getElementById(prefix + 'Year');
+    const mSel = document.getElementById(prefix + 'Month');
+    const dSel = document.getElementById(prefix + 'Day');
+    // Rebuild to match selections
+    buildYearOptions(prefix + 'Year', y);
+    buildMonthOptions(prefix + 'Month', m);
+    buildDayOptions(prefix + 'Day', y, m, d);
+}
+
+function syncAddDob() {
+    const y = parseInt(document.getElementById('addYear').value);
+    const m = parseInt(document.getElementById('addMonth').value);
+    const d = parseInt(document.getElementById('addDay').value);
+    const dobInput = document.getElementById('addDobBs');
+    const badge   = document.getElementById('addAgeBadge');
+    const ageIn   = document.getElementById('addAgeInput');
+
+    if (y && m && d) {
+        // Rebuild day options if year/month changed
+        buildDayOptions('addDay', y, m, d);
+        const dob = `${y}-${pad2(m)}-${pad2(d)}`;
+        dobInput.value = dob;
+        const age = calcAgeBs(y, m, d);
+        badge.textContent = age + ' वर्ष';
+        badge.classList.remove('no-dob');
+        ageIn.value = age;
+    } else {
+        dobInput.value = '';
+        badge.textContent = '—';
+        badge.classList.add('no-dob');
+    }
+}
+
+// ── Initialise EDIT modal pickers ───────────────────────────
+function initEditPicker(y, m, d) {
+    buildYearOptions('editYear', y);
+    buildMonthOptions('editMonth', m);
+    buildDayOptions('editDay', y, m, d);
+
+    ['editYear','editMonth','editDay'].forEach(id => {
+        document.getElementById(id).addEventListener('change', syncEditDob);
+    });
+
+    document.getElementById('editAgeInput').addEventListener('input', function() {
+        const age = parseInt(this.value);
+        if (!isNaN(age) && age >= 0) {
+            const birthY = TODAY_BS.y - age;
+            setPickerValues('edit', birthY, TODAY_BS.m, TODAY_BS.d);
+            syncEditDob();
+        }
+    });
+    syncEditDob();
+}
+
+function syncEditDob() {
+    const y = parseInt(document.getElementById('editYear').value);
+    const m = parseInt(document.getElementById('editMonth').value);
+    const d = parseInt(document.getElementById('editDay').value);
+    const dobInput = document.getElementById('editDobBs');
+    const badge   = document.getElementById('editAgeBadge');
+    const ageIn   = document.getElementById('editAgeInput');
+
+    if (y && m && d) {
+        buildDayOptions('editDay', y, m, d);
+        const dob = `${y}-${pad2(m)}-${pad2(d)}`;
+        dobInput.value = dob;
+        const age = calcAgeBs(y, m, d);
+        badge.textContent = age + ' वर्ष';
+        badge.classList.remove('no-dob');
+        ageIn.value = age;
+    } else {
+        dobInput.value = '';
+        badge.textContent = '—';
+        badge.classList.add('no-dob');
+    }
+}
+
+// ── Modal opener ────────────────────────────────────────────
+function openEditFamilyModal(id, fullName, surname, gender, age, relation, dobBs) {
+    document.getElementById('editFmId').value       = id;
+    document.getElementById('editFmFullName').value  = fullName;
+    document.getElementById('editFmSurname').value   = surname;
+    document.getElementById('editFmGender').value    = gender;
+    document.getElementById('editFmRelation').value  = relation;
+
+    // Remove old change listeners by cloning the selects
+    ['editYear','editMonth','editDay'].forEach(selId => {
+        const el = document.getElementById(selId);
+        const clone = el.cloneNode(false);
+        el.parentNode.replaceChild(clone, el);
+    });
+    document.getElementById('editAgeInput').value = age || '';
+
+    let bsY = null, bsM = null, bsD = null;
+    if (dobBs && dobBs.match(/^\d{4}-\d{2}-\d{2}$/)) {
+        const parts = dobBs.split('-');
+        bsY = parseInt(parts[0]);
+        bsM = parseInt(parts[1]);
+        bsD = parseInt(parts[2]);
+    } else if (age && parseInt(age) > 0) {
+        bsY = TODAY_BS.y - parseInt(age);
+        bsM = TODAY_BS.m;
+        bsD = TODAY_BS.d;
+    }
+
+    initEditPicker(bsY, bsM, bsD);
+    new bootstrap.Modal(document.getElementById('editFamilyModal')).show();
+}
+
+function openEditHouseModal(id, ownership, rooms, roof) {
+    document.getElementById('editHdId').value        = id;
+    document.getElementById('editHdOwnership').value  = ownership;
+    document.getElementById('editHdRooms').value      = rooms;
+    document.getElementById('editHdRoof').value       = roof;
+    new bootstrap.Modal(document.getElementById('editHouseModal')).show();
+}
+
+function openEditDeathModal(id, name, gender, age, cause) {
+    document.getElementById('editDrId').value    = id;
+    document.getElementById('editDrName').value  = name;
+    document.getElementById('editDrGender').value = gender;
+    document.getElementById('editDrAge').value   = age;
+    document.getElementById('editDrCause').value = cause;
+    new bootstrap.Modal(document.getElementById('editDeathModal')).show();
+}
+
+// ── Boot ────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', initAddPicker);
+</script>
+}

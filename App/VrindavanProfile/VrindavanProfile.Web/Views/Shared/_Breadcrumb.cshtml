@@ -1,0 +1,98 @@
+@*
+    Breadcrumb Partial (Part 11B)
+    
+    Pages set breadcrumb data via ViewData["BreadcrumbItems"] — a list of (Label, Url) tuples.
+    If not set, auto-detects from controller/action.
+    
+    Usage in pages:
+        ViewData["BreadcrumbItems"] = new List<(string Label, string Url)> {
+            ("गृहपृष्ठ", "/"),
+            ("घरपरिवार तथ्याङ्क", "/Household"),
+        };
+        // Last item (current page) is auto-appended from ViewData["Title"]
+*@
+
+@{
+    var items = ViewData["BreadcrumbItems"] as List<(string Label, string? Url)>;
+    var currentTitle = ViewData["Title"]?.ToString() ?? "";
+    
+    // Auto-detect breadcrumb if not explicitly set
+    if (items == null)
+    {
+        items = new List<(string Label, string? Url)>();
+        items.Add(("गृहपृष्ठ", "/"));
+        
+        var controller = ViewContext.RouteData.Values["Controller"]?.ToString();
+        var action = ViewContext.RouteData.Values["Action"]?.ToString();
+        
+        // Determine parent section
+        switch (controller)
+        {
+            case "Ward":
+                items.Add(("वडा प्रोफाइल", "/Ward"));
+                break;
+            case "Household":
+                items.Add(("घरपरिवार तथ्याङ्क", "/Household"));
+                break;
+            case "Institution":
+                items.Add(("संस्थागत तथ्याङ्क", "/Institution"));
+                break;
+            case "Map":
+                items.Add(("अन्तरक्रियात्मक नक्सा", null));
+                break;
+            case "Search":
+                items.Add(("खोज्नुहोस्", null));
+                break;
+        }
+    }
+    
+    // Don't show breadcrumb on home page (only "गृहपृष्ठ" == current title)
+    var isHomePage = items.Count == 1 && 
+        (currentTitle == "वृन्दावन नगरपालिका — समग्र तथ्याङ्क" || 
+         currentTitle == "वृन्दावन नगरपालिका डिजिटल प्रोफाइल" ||
+         (ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" && 
+          ViewContext.RouteData.Values["Action"]?.ToString() == "Index"));
+    
+    if (isHomePage && items.Count <= 1) return;
+}
+
+<nav aria-label="breadcrumb" class="container pt-3 no-print">
+    <ol class="breadcrumb mb-0 small" style="font-size:0.82rem">
+        @for (var i = 0; i < items.Count; i++)
+        {
+            var item = items[i];
+            var isLast = (i == items.Count - 1) && !string.IsNullOrEmpty(currentTitle) && currentTitle != items[items.Count - 1].Label;
+            
+            if (!string.IsNullOrEmpty(item.Url) && i < items.Count - 1)
+            {
+                <li class="breadcrumb-item">
+                    <a href="@item.Url" class="text-decoration-none">
+                        @if (i == 0)
+                        {
+                            <i class="bi bi-house-door me-1" style="font-size:0.75rem"></i>
+                        }
+                        @item.Label
+                    </a>
+                </li>
+            }
+            else
+            {
+                <li class="breadcrumb-item">
+                    @if (i == 0)
+                    {
+                        <i class="bi bi-house-door me-1" style="font-size:0.75rem"></i>
+                    }
+                    @item.Label
+                </li>
+            }
+        }
+        
+        <!-- Current page (active) -->
+        @if (!string.IsNullOrEmpty(currentTitle) && items.Count > 0 && currentTitle != items[items.Count - 1].Label)
+        {
+            <li class="breadcrumb-item active" aria-current="page">
+                @currentTitle
+            </li>
+        }
+    </ol>
+</nav>

@@ -1,0 +1,404 @@
+/* ============================================
+   VRINDAVAN MUNICIPALITY — PRINT STYLES
+   Part 14: Ocean Blue + Nepal Flag print colors
+   ============================================ */
+
+@media print {
+    /* ─── Reset ─── */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* ─── Hide non-essential elements ─── */
+    nav,
+    .navbar,
+    .sub-header,
+    footer:not(.print-page-footer),
+    .no-print,
+    .print-actions,
+    .export-btn-group,
+    .breadcrumb,
+    .btn:not(.print-keep),
+    button:not(.print-keep),
+    .dataTables_filter,
+    .dataTables_length,
+    .dataTables_paginate,
+    .dataTables_info,
+    .sort-icon,
+    #tableSearch,
+    #categoryFilter,
+    .ward-selector,
+    .ward-selector-bar,
+    .map-filter-bar,
+    .map-sidebar,
+    .sidebar-toggle,
+    .chart-skeleton,
+    .hero-section,
+    .card-footer,
+    .input-group,
+    .form-select,
+    .category-jump-links,
+    #noResults,
+    .section-title::after {
+        display: none !important;
+    }
+
+    /* ─── Body & Page ─── */
+    body {
+        background: #FFFFFF !important;
+        color: #1A2332 !important;
+        font-size: 10px !important;
+        line-height: 1.4 !important;
+        margin: 0 !important;
+        padding: 10px !important;
+    }
+
+    @page {
+        margin: 12mm;
+        size: A4 portrait;
+    }
+
+    @page :first {
+        margin-top: 8mm;
+    }
+
+    /* ─── Links ─── */
+    a {
+        color: #1A2332 !important;
+        text-decoration: none !important;
+    }
+
+    /* ─── Page break control ─── */
+    .page-break-before {
+        page-break-before: always !important;
+    }
+
+    .page-break-after {
+        page-break-after: always !important;
+    }
+
+    .page-break-inside-avoid,
+    .page-break-avoid {
+        page-break-inside: avoid !important;
+    }
+
+    tr,
+    .stat-card,
+    .chart-card,
+    .table-card-wrapper,
+    .table-card-col,
+    .table-container,
+    .card {
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tfoot {
+        display: table-footer-group;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+    }
+
+    /* ─── Table Styles ─── */
+    .table-container {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+    }
+
+    .data-table,
+    table {
+        font-size: 9px !important;
+        width: 100% !important;
+        border-collapse: collapse !important;
+    }
+
+    /* Part 14: Navy thead for print */
+    .data-table thead th,
+    table thead th {
+        background-color: #003B6F !important;
+        color: #FFFFFF !important;
+        padding: 4px 6px !important;
+        font-size: 8px !important;
+        border: 1px solid #002147 !important;
+    }
+
+    .data-table tbody td,
+    table tbody td {
+        padding: 3px 6px !important;
+        font-size: 9px !important;
+        border: 1px solid #cdd5df !important;
+    }
+
+    /* Part 14: Crimson tfoot for print */
+    .data-table tfoot td,
+    table tfoot td {
+        background-color: #DC143C !important;
+        color: #FFFFFF !important;
+        padding: 4px 6px !important;
+        font-size: 9px !important;
+        border: 1px solid #B01030 !important;
+    }
+
+    /* ─── Collapse fix ─── */
+    .collapse {
+        display: block !important;
+        height: auto !important;
+    }
+
+    /* ─── Card & Container ─── */
+    .card,
+    .stat-card,
+    .chart-card,
+    .table-container,
+    .table-list-card {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+        break-inside: avoid;
+    }
+
+    .card-body {
+        padding: 8px !important;
+    }
+
+    /* ─── Section Titles ─── */
+    .section-title {
+        color: #003B6F !important;
+        font-size: 14px !important;
+        border-bottom: 2px solid #DC143C !important;
+        padding-bottom: 4px !important;
+        margin-top: 16px !important;
+    }
+
+    .section-title::after {
+        display: none !important;
+    }
+
+    /* ─── Stat Cards ─── */
+    .stat-card {
+        border: 1px solid #cdd5df !important;
+        border-left: 3px solid #003B6F !important;
+        border-radius: 4px !important;
+        padding: 6px 8px !important;
+        margin-bottom: 4px !important;
+    }
+
+    .stat-card .stat-value {
+        font-size: 1rem !important;
+        color: #003B6F !important;
+    }
+
+    .stat-card .stat-label {
+        font-size: 0.7rem !important;
+    }
+
+    .stat-card .stat-card-bg-circle,
+    .stat-card .stat-icon-wrapper {
+        display: none !important;
+    }
+
+    /* ─── Chart Cards ─── */
+    .chart-card {
+        page-break-inside: avoid;
+        margin-bottom: 12px !important;
+    }
+
+    .chart-card .card-header {
+        background: #003B6F !important;
+        border-bottom: 2px solid #DC143C !important;
+        padding: 6px 10px !important;
+    }
+
+    .chart-card .card-header h6 {
+        font-size: 0.82rem !important;
+        color: #FFFFFF !important;
+    }
+
+    .chart-card .card-header::after {
+        display: none !important;
+    }
+
+    .chart-card canvas {
+        max-height: 200px !important;
+        width: 100% !important;
+    }
+
+    /* ─── Print Header ─── */
+    .print-header {
+        display: block !important;
+        border-bottom: 2px solid #003B6F !important;
+        margin-bottom: 10px !important;
+        padding-bottom: 8px !important;
+        text-align: center;
+    }
+
+    /* ─── Print-Only Elements ─── */
+    .print-only {
+        display: block !important;
+    }
+
+    .print-only-inline {
+        display: inline !important;
+    }
+
+    .print-only-flex {
+        display: flex !important;
+    }
+
+    /* ─── Watermark ─── */
+    .print-watermark {
+        display: block !important;
+        position: fixed;
+        bottom: 8mm;
+        right: 12mm;
+        font-size: 7px;
+        color: #bbb;
+    }
+
+    /* ─── Hero Section ─── */
+    .hero-section {
+        background: #fff !important;
+        color: #1A2332 !important;
+        padding: 8px 0 !important;
+    }
+
+    .hero-section h1,
+    .hero-section h2,
+    .hero-section p {
+        color: #1A2332 !important;
+    }
+
+    /* ─── Table Grid ─── */
+    .table-card-wrapper,
+    .table-card-col {
+        border: none !important;
+        margin-bottom: 2px !important;
+    }
+
+    .table-card-wrapper .card,
+    .table-card-col .card {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 2px 0 !important;
+    }
+
+    .table-card-wrapper .card-body,
+    .table-card-col .card-body {
+        padding: 4px 8px !important;
+    }
+
+    /* ─── Dashboard Print Layout ─── */
+    .container {
+        max-width: 100% !important;
+        padding: 0 4px !important;
+    }
+
+    .row {
+        page-break-inside: avoid;
+    }
+
+    /* ─── Map Print ─── */
+    #mapContainer {
+        height: 400px !important;
+        width: 100% !important;
+    }
+
+    .leaflet-control-container {
+        display: none !important;
+    }
+
+    .leaflet-control-zoom,
+    .leaflet-control-attribution {
+        display: none !important;
+    }
+}
+
+/* ═══════════════════════════════════════════════════
+   SCREEN-ONLY
+   ═══════════════════════════════════════════════════ */
+
+@media screen {
+    .print-only,
+    .print-only-inline,
+    .print-only-flex,
+    .print-watermark {
+        display: none !important;
+    }
+
+    .export-btn-group {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .export-btn-group .btn {
+        font-size: 0.78rem;
+        border-radius: 6px;
+        padding: 4px 10px;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        transition: all 0.2s ease;
+    }
+
+    .export-btn-group .btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 2px 8px rgba(0, 59, 111, 0.12);
+    }
+
+    .export-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 99999;
+    }
+
+    .export-overlay.active {
+        display: flex;
+    }
+
+    .export-overlay .export-dialog {
+        background: #fff;
+        border-radius: 12px;
+        padding: 24px 32px;
+        text-align: center;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        min-width: 280px;
+    }
+
+    .export-overlay .export-dialog .spinner-border {
+        width: 3rem;
+        height: 3rem;
+        color: var(--primary);
+    }
+
+    .export-overlay .export-dialog h6 {
+        margin-top: 12px;
+        color: var(--text-dark);
+    }
+
+    .export-overlay .export-dialog p {
+        font-size: 0.82rem;
+        color: var(--text-muted);
+    }
+
+    .export-overlay .export-dialog .progress {
+        height: 4px;
+        margin-top: 12px;
+        border-radius: 2px;
+    }
+
+    .export-overlay .export-dialog .progress-bar {
+        background: var(--primary);
+    }
+}

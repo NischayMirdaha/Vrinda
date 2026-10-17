@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="@((ViewData["CurrentLang"] as string) ?? "ne")">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - वृन्दावन नगरपालिका डिजिटल प्रोफाइल</title>
+
+    @* ─── SEO Meta Tags ─── *@
+    <meta name="description" content="@((ViewData["MetaDescription"] as string) ?? "वृन्दावन नगरपालिका, रुपन्देही, लुम्बिनी प्रदेशको डिजिटल प्रोफाइल — घरपरिवार तथा संस्थागत सर्वेक्षणको तथ्याङ्कमा आधारित विकास योजना प्रणाली")"/>
+    <meta name="keywords" content="वृन्दावन नगरपालिका, डिजिटल प्रोफाइल, रौतहट जिल्ला, मधेश प्रदेश, घरपरिवार सर्वेक्षण, तथ्याङ्क, Vrindavan Municipality" />
+    <meta name="author" content="वृन्दावन नगरपालिका"/>
+    <meta name="robots" content="index, follow"/>
+    <meta name="theme-color" content="#003B6F"/>
+    <link rel="canonical" href="@Context.Request.Scheme://@Context.Request.Host@Context.Request.Path"/>
+
+    @* ─── Open Graph Tags ─── *@
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="वृन्दावन नगरपालिका डिजिटल प्रोफाइल"/>
+    <meta property="og:title" content="@(ViewData["Title"] ?? "वृन्दावन नगरपालिका डिजिटल प्रोफाइल")"/>
+    <meta property="og:description" content="@((ViewData["MetaDescription"] as string) ?? "वृन्दावन नगरपालिकाको तथ्याङ्कमा आधारित डिजिटल प्रोफाइल प्रणाली")"/>
+    <meta property="og:locale" content="ne_NP"/>
+    <meta property="og:url" content="@Context.Request.Scheme://@Context.Request.Host@Context.Request.Path"/>
+
+    @* ─── Twitter Card ─── *@
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="@(ViewData["Title"] ?? "वृन्दावन नगरपालिका")"/>
+    <meta name="twitter:description" content="वृन्दावन नगरपालिका — डिजिटल प्रोफाइल प्रणाली"/>
+
+    @* ─── JSON-LD ─── *@
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "GovernmentOrganization",
+        "name": "वृन्दावन नगरपालिका",
+        "alternateName": "Vrindavan Municipality",
+        "address": {
+            "@@type": "PostalAddress",
+            "addressLocality": "वृन्दावन",
+                    "addressRegion": "रौतहट",
+            "addressCountry": "NP"
+        },
+        "url": "@Context.Request.Scheme://@Context.Request.Host",
+        "description": "वृन्दावन नगरपालिकाको तथ्याङ्कमा आधारित डिजिटल प्रोफाइल प्रणाली"
+    }
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+    <link rel="stylesheet" href="~/css/themes.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/tables.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/charts.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/print.css" asp-append-version="true" media="print"/>
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body>
+
+@* ─── Skip to content ─── *@
+<a href="#main-content" class="skip-link">
+    <i class="bi bi-skip-forward me-1" aria-hidden="true"></i><span data-i18n="skip.main_content">मुख्य सामग्रीमा जानुहोस्</span>
+</a>
+
+<!-- Top Navbar -->
+<header role="banner">
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm" style="background: linear-gradient(135deg, #002147 0%, #003B6F 50%, #0066B3 100%);" aria-label="मुख्य नेभिगेसन">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="/" aria-label="वृन्दावन नगरपालिका — गृहपृष्ठ">
+                <i class="bi bi-building" aria-hidden="true"></i>
+                <span data-i18n="app.brand">वृन्दावन नगरपालिका</span>
+                <span style="display:inline-block;width:3px;height:22px;background:#DC143C;border-radius:2px;margin-left:4px" aria-hidden="true"></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                    aria-controls="mainNav" aria-expanded="false" aria-label="नेभिगेसन टगल गर्नुहोस्">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" ? "active" : "")" href="/" aria-current="@(ViewContext.RouteData.Values["Controller"]?.ToString() == "Home" ? "page" : null)">
+                            <i class="bi bi-house-door me-1" aria-hidden="true"></i><span data-i18n="nav.home">गृहपृष्ठ</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Ward" ? "active" : "")" href="/Ward">
+                            <i class="bi bi-geo-alt me-1" aria-hidden="true"></i><span data-i18n="nav.ward">वडा प्रोफाइल</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Household" ? "active" : "")" href="/Household">
+                            <i class="bi bi-people me-1" aria-hidden="true"></i><span data-i18n="nav.household">घरपरिवार</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Institution" ? "active" : "")" href="/Institution">
+                            <i class="bi bi-bank me-1" aria-hidden="true"></i><span data-i18n="nav.institution">संस्थागत</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Map" ? "active" : "")" href="/Map">
+                            <i class="bi bi-map me-1" aria-hidden="true"></i><span data-i18n="nav.map">नक्सा</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="~/Report/report.pdf"
+                           download="वृन्दावन-नगरपालिका-प्रतिवेदन.pdf"
+                           class="btn btn-sm nav-download-btn ms-2 mt-1"
+                           style="background:rgba(40,167,69,0.25);color:#fff;border:1px solid rgba(40,167,69,0.5);border-radius:8px;font-size:0.82rem;padding:4px 14px"
+                           aria-label="प्रतिवेदन डाउनलोड गर्नुहोस्">
+                            <i class="bi bi-file-earmark-pdf me-1" aria-hidden="true"></i>
+                            <span data-i18n="nav.download">प्रतिवेदन</span>
+                            <i class="bi bi-download ms-1" aria-hidden="true" style="font-size:0.7rem;opacity:0.8"></i>
+                        </a>
+                    </li>
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle me-1"></i>
+                                <span>@User.Identity.Name</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="adminDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="/Admin">
+                                        <i class="bi bi-gear me-2"></i>व्यवस्थापन ड्यासबोर्ड
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider"/></li>
+                                <li>
+                                    <form asp-controller="Auth" asp-action="Logout" method="post" class="d-inline">
+                                        <button type="submit" class="dropdown-item text-danger">
+                                            <i class="bi bi-box-arrow-right me-2"></i>लगआउट
+                                        </button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Auth" ? "active" : "")"
+                               href="/Auth/Login">
+                                <i class="bi bi-lock me-1" aria-hidden="true"></i>
+                                <span>लगइन</span>
+                            </a>
+                        </li>
+                    }
+                    <!-- Search Button -->
+                    <li class="nav-item">
+                        <button class="btn btn-sm nav-search-btn ms-2 mt-1" onclick="openGlobalSearch()"
+                                style="background:rgba(220,20,60,0.25);color:#fff;border:1px solid rgba(220,20,60,0.4);border-radius:8px;font-size:0.82rem;padding:4px 14px"
+                                aria-label="खोज्नुहोस् (Ctrl+K)">
+                            <i class="bi bi-search me-1" aria-hidden="true"></i><span data-i18n="nav.search">खोज्नुहोस्</span>
+                            <kbd style="font-size:0.55rem;padding:1px 5px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.2);border-radius:3px;margin-left:6px;opacity:0.7" aria-hidden="true">⌘K</kbd>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sub-header bar -->
+    <div class="sub-header text-center py-2" style="background-color: var(--accent); color: #fff;" role="complementary" aria-label="नगरपालिका जानकारी">
+        <small class="fw-semibold">
+            <i class="bi bi-telephone me-1" aria-hidden="true"></i>
+                <span data-i18n="app.municipality_full">वृन्दावन नगरपालिका, रौतहट जिल्ला, मधेश प्रदेश</span>
+            &nbsp;<span style="opacity:0.4">|</span>&nbsp;
+            <i class="bi bi-bar-chart me-1" aria-hidden="true"></i>
+            <span data-i18n="app.digital_profile">डिजिटल प्रोफाइल प्रणाली</span>
+        </small>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main role="main" id="main-content" class="pb-4">
+    <partial name="_Breadcrumb"/>
+    @RenderBody()
+</main>
+
+<!-- Global Search Overlay -->
+<partial name="_GlobalSearchModal"/>
+
+<footer class="footer mt-5 py-4" style="background: linear-gradient(180deg, #002147 0%, #003B6F 100%); color: rgba(255,255,255,0.85); border-top: 3px solid #DC143C;" role="contentinfo">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <h6 class="text-white fw-bold mb-2">
+                    <i class="bi bi-building me-1" aria-hidden="true"></i>
+                    <span data-i18n="app.brand">वृन्दावन नगरपालिका</span>
+                </h6>
+                <p class="small mb-0" style="color:rgba(255,255,255,0.7)">
+                        <span data-i18n="footer.about_location">रौतहट जिल्ला, मधेश प्रदेश, नेपाल</span><br />
+                    <span data-i18n="footer.about_system">डिजिटल प्रोफाइल प्रणाली — तथ्याङ्कमा आधारित विकास योजना</span>
+                </p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h6 class="text-white fw-bold mb-2">
+                    <i class="bi bi-link-45deg me-1" aria-hidden="true"></i>
+                    <span data-i18n="footer.quick_links">छिटो लिङ्क</span>
+                </h6>
+                <ul class="list-unstyled small mb-0">
+                    <li><a href="/" class="text-reset text-decoration-none" data-i18n="nav.home">गृहपृष्ठ</a></li>
+                    <li><a href="/Ward" class="text-reset text-decoration-none" data-i18n="nav.ward">वडा प्रोफाइल</a></li>
+                    <li><a href="/Household" class="text-reset text-decoration-none" data-i18n="charts.household_data">घरपरिवार तथ्याङ्क</a></li>
+                    <li><a href="/Institution" class="text-reset text-decoration-none" data-i18n="charts.institution_data">संस्थागत तथ्याङ्क</a></li>
+                    <li><a href="/Map" class="text-reset text-decoration-none" data-i18n="nav.map">नक्सा</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h6 class="text-white fw-bold mb-2">
+                    <i class="bi bi-info-circle me-1" aria-hidden="true"></i>
+                    <span data-i18n="footer.about_title">यस बारे</span>
+                </h6>
+                <p class="small mb-0" style="color:rgba(255,255,255,0.7)" data-i18n="footer.about_text">
+                    यो प्रणालीले वृन्दावन नगरपालिकाको घरपरिवार तथा संस्थागत सर्वेक्षणको तथ्याङ्कलाई डिजिटल रूपमा प्रस्तुत गर्दछ।
+                </p>
+            </div>
+        </div>
+        <hr style="border-color: rgba(255,255,255,0.15);"/>
+        <div class="text-center small" style="color:rgba(255,255,255,0.6)">
+            <div class="mb-1">
+                © @DateTime.Now.Year <span data-i18n="app.brand">वृन्दावन नगरपालिका</span> — <span data-i18n="app.copyright">सर्वाधिकार सुरक्षित</span>
+            </div>
+            <div style="font-size: 0.75rem; opacity: 0.8;">
+                Technical Support By: <a href="http://mrats.com.np" target="_blank" class="text-white text-decoration-none" style="border-bottom: 1px dotted rgba(255,255,255,0.5)">MRATS</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="~/js/table-export.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

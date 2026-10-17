@@ -1,0 +1,21 @@
+
+# Large local datasets
+/SingleJson/Converty_group_family/Sheet1.json
+/SingleJson/Household/Sheet1.json
+/Analyzed/Converty_Brindaban_Institutional_Information/2. Brindaban Municipality_In....json
+
+# .NET build output
+**/bin/
+**/obj/
+
+/SingleJson/Household/Sheet1.json
+/SingleJson/Converty_group_family/Sheet1.json
+/Analyzed/Converty_Brindaban_Institutional_Information/
+**/bin/
+**/obj/
+
+/SingleJson/Household/Sheet1.json
+/SingleJson/Converty_group_family/Sheet1.json
+/Analyzed/Converty_Brindaban_Institutional_Information/
+**/bin/
+**/obj/

@@ -1,0 +1,82 @@
+@model VrindavanProfile.Web.Data.DbEntities.AppUser
+@{
+    ViewData["Title"] = "प्रशासक सम्पादन";
+}
+
+<div class="container py-4" style="max-width: 620px;">
+    <a href="/Admin/Users" class="btn btn-sm btn-outline-secondary mb-3" style="border-radius: 20px;">
+        <i class="bi bi-arrow-left me-1"></i>सूचीमा फर्कनुहोस्
+    </a>
+    <h2 class="fw-bold mb-1"><i class="bi bi-pencil-square me-2 text-secondary"></i>प्रशासक सम्पादन</h2>
+    <p class="text-muted small mb-4">भूमिका, पासवर्ड, सक्रियता परिवर्तन गर्नुहोस्।</p>
+
+    <div class="card border-0 shadow-sm p-4" style="border-radius: 16px;">
+        <form action="/Admin/EditUser/@Model.Id" method="post" id="editUserForm">
+            @Html.AntiForgeryToken()
+
+            <div asp-validation-summary="All" class="text-danger small mb-3"></div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">युजरनेम</label>
+                <input type="text" class="form-control bg-light" value="@Model.Username"
+                       readonly style="border-radius: 10px;" />
+                <div class="form-text text-muted">युजरनेम परिवर्तन गर्न मिल्दैन।</div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">इमेल <span class="text-danger">*</span></label>
+                <input type="email" name="email" class="form-control" required
+                       value="@Model.Email" style="border-radius: 10px;" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">नयाँ पासवर्ड <span class="text-muted">(खाली छोड्नुस् — परिवर्तन नगर्ने)</span></label>
+                <input type="password" name="password" class="form-control"
+                       placeholder="••••••••" style="border-radius: 10px;" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">प्रणाली भूमिका <span class="text-danger">*</span></label>
+                <select name="role" id="roleSelect" class="form-select" style="border-radius: 10px;"
+                        onchange="toggleWardField()">
+                    <option value="admin" selected="@(Model.Role == "admin")">मुख्य प्रशासक (Super Admin) — सबै वडाको पूर्ण पहुँच</option>
+                    <option value="ward_admin" selected="@(Model.Role == "ward_admin")">वडा प्रशासक (Ward Admin) — तोकिएको वडामा मात्र पहुँच</option>
+                </select>
+            </div>
+
+            <div class="mb-3" id="wardGroup"
+                 style="display: @(Model.Role == "ward_admin" ? "block" : "none");">
+                <label class="form-label fw-semibold">तोकिएको वडा</label>
+                <select name="wardNo" id="wardNoSelect" class="form-select" style="border-radius: 10px;">
+                    @for (int w = 1; w <= 9; w++)
+                    {
+                        <option value="@w" selected="@(Model.WardNo == w)">वडा नं. @w</option>
+                    }
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" name="isActive" value="true"
+                           id="isActiveSwitch" @(Model.IsActive ? "checked" : "") />
+                    <label class="form-check-label fw-semibold" for="isActiveSwitch">
+                        खाता सक्रिय (Active)
+                    </label>
+                    <div class="form-text">बन्द गर्दा यो प्रशासकले लगइन गर्न पाउँदैन।</div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 fw-semibold py-2" style="border-radius: 10px;">
+                <i class="bi bi-save me-1"></i>परिवर्तन सुरक्षित गर्नुहोस्
+            </button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function toggleWardField() {
+        var role  = document.getElementById('roleSelect').value;
+        var group = document.getElementById('wardGroup');
+        group.style.display = role === 'ward_admin' ? 'block' : 'none';
+    }
+</script>

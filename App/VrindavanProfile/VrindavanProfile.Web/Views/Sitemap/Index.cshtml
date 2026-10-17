@@ -1,0 +1,71 @@
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "नक्सा साइट (Sitemap) — वृन्दावन नगरपालिका";
+}
+
+<div class="container py-5">
+    <!-- Header -->
+    <div class="text-center mb-5">
+        <h2 class="fw-bold mb-2" style="color: #003B6F;"><i class="bi bi-diagram-3 me-2"></i>डिजिटल प्रोफाइल सडक-नक्सा (Sitemap)</h2>
+        <p class="text-muted">वृन्दावन नगरपालिका डिजिटल प्रोफाइल प्रणालीका सम्पूर्ण विवरणहरूको सूचीकृत अनुक्रमणिका</p>
+        <div style="width: 80px; height: 4px; background: #C5A55A; margin: 0 auto; border-radius: 2px;"></div>
+    </div>
+
+    <div class="row">
+        <!-- Col 1: Portal Core & Ward Links -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-0 h-100" style="border-radius: 12px;">
+                <div class="card-header bg-dark text-white py-3"><i class="bi bi-house me-2"></i>मुख्य पोर्टल पृष्ठहरू</div>
+                <div class="card-body">
+                    <ul class="list-unstyled lh-lg">
+                        <li><a href="/" class="text-decoration-none text-dark"><i class="bi bi-chevron-right text-warning small"></i> गृहपृष्ठ (Dashboard)</a></li>
+                        <li><a href="/Home/About" class="text-decoration-none text-dark"><i class="bi bi-chevron-right text-warning small"></i> नगरपालिका बारे (About Us)</a></li>
+                        <li><a href="/Ward" class="text-decoration-none text-dark"><i class="bi bi-chevron-right text-warning small"></i> वडा प्रोफाइल (Ward Profiles)</a></li>
+                        <li><a href="/Ward/Compare" class="text-decoration-none text-dark"><i class="bi bi-chevron-right text-warning small"></i> वडाहरूको तुलनात्मक विश्लेषण</a></li>
+                        <li><a href="/Map" class="text-decoration-none text-dark"><i class="bi bi-chevron-right text-warning small"></i> भौगोलिक नक्सा (GIS Webmap)</a></li>
+                        <li><a href="/Search" class="text-decoration-none text-dark"><i class="bi bi-chevron-right text-warning small"></i> डाटा खोज पृष्ठ (Search)</a></li>
+                        <li><a href="/Auth/Login" class="text-decoration-none text-dark"><i class="bi bi-chevron-right text-warning small"></i> प्रशासकीय लगइन</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Col 2: Institutional Tables -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-0 h-100" style="border-radius: 12px;">
+                <div class="card-header bg-primary text-white py-3"><i class="bi bi-bank me-2"></i>संस्थागत डाटा सूचकहरू (१-४३)</div>
+                <div class="card-body" style="max-height: 400px; overflow-y: auto;">
+                    <ul class="list-unstyled lh-lg">
+                        @for (int i = 1; i <= 43; i++)
+                        {
+                            <li>
+                                <a href="/Institution/Table/@i" class="text-decoration-none text-dark small">
+                                    <i class="bi bi-file-text text-muted me-1"></i> संस्थागत सूचकांक तालिका @i
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Col 3: Household Tables -->
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-0 h-100" style="border-radius: 12px;">
+                <div class="card-header bg-success text-white py-3"><i class="bi bi-house-door me-2"></i>घरपरिवार डाटा सूचकहरू (१-६५)</div>
+                <div class="card-body" style="max-height: 400px; overflow-y: auto;">
+                    <ul class="list-unstyled lh-lg">
+                        @for (int i = 1; i <= 65; i++)
+                        {
+                            <li>
+                                <a href="/Household/Table/@i" class="text-decoration-none text-dark small">
+                                    <i class="bi bi-file-text text-muted me-1"></i> घरपरिवार सूचकांक तालिका @i
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

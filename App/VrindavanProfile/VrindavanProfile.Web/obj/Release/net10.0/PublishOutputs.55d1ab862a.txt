@@ -1,0 +1,13 @@
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Release\net10.0\PubTmp\Out\VrindavanProfile.Web.exe
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Release\net10.0\PubTmp\Out\appsettings.Development.json
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Release\net10.0\PubTmp\Out\appsettings.json
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Release\net10.0\PubTmp\Out\appsettings.Production.json
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Release\net10.0\PubTmp\Out\VrindavanProfile.Web.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Release\net10.0\PubTmp\Out\VrindavanProfile.Web.runtimeconfig.json
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Release\net10.0\PubTmp\Out\VrindavanProfile.Web.pdb
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Release\net10.0\PubTmp\Out\Microsoft.EntityFrameworkCore.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Release\net10.0\PubTmp\Out\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Release\net10.0\PubTmp\Out\Microsoft.EntityFrameworkCore.Relational.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Release\net10.0\PubTmp\Out\Npgsql.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Release\net10.0\PubTmp\Out\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Release\net10.0\PubTmp\Out\VrindavanProfile.Web.deps.json

@@ -1,0 +1,247 @@
+﻿@model VrindavanProfile.Web.Data.DbEntities.Household
+@{
+    ViewData["Title"] = "घरपरिवार — प्राथमिक विवरण";
+    long id = ViewBag.HouseholdId;
+}
+
+<div class="container py-4">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <h2 class="fw-bold mb-1">
+                <i class="bi bi-info-circle me-2"></i>प्राथमिक विवरण
+            </h2>
+            <p class="text-muted mb-0 small">@ViewBag.HouseholdInfo</p>
+        </div>
+        <a href="/Admin/ManageHouseholdData/@id" class="btn btn-outline-secondary btn-sm">
+            <i class="bi bi-arrow-left me-1"></i>डाटा व्यवस्थापनमा फर्कनुहोस्
+        </a>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+
+    <form asp-action="HouseholdCategoryBasic" method="post">
+        <input type="hidden" asp-for="Id" />
+
+        <!-- Section 1: Basic Household Info -->
+        <div class="card mb-3">
+            <div class="card-header" style="background: var(--primary); color: white;">
+                <h6 class="mb-0"><i class="bi bi-house-door me-2"></i>घरपरिवार आधारभूत विवरण</h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">वडा नं. <span class="text-danger">*</span></label>
+                        <input asp-for="WardNo" class="form-control" type="number" required />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">घर क्रम संख्या</label>
+                        <input asp-for="HouseSerialNo" class="form-control" type="number" step="any" />
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">बस्तीको नाम</label>
+                        <input asp-for="SettlementName" class="form-control" />
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">गणकको नाम</label>
+                        <input asp-for="EnumeratorName" class="form-control" />
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">नगरपालिका</label>
+                        <input asp-for="Municipality" class="form-control" value="वृन्दावन नगरपालिका" />
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">स्थिति</label>
+                        <input asp-for="Status" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Respondent Info -->
+        <div class="card mb-3">
+            <div class="card-header" style="background: var(--primary); color: white;">
+                <h6 class="mb-0"><i class="bi bi-person me-2"></i>उत्तरदाता विवरण</h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">उत्तरदाताको नाम</label>
+                        <input asp-for="RespondentName" class="form-control" />
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">उत्तरदाताको फोन नम्बर</label>
+                        <input asp-for="RespondentPhone" class="form-control" />
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">घरमूलीसँगको सम्बन्ध</label>
+                        <input asp-for="RespondentRelation" class="form-control" />
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">सम्बन्ध (अन्य)</label>
+                        <input asp-for="RespondentRelationOther" class="form-control" />
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">परिवार सदस्य संख्या</label>
+                        <input asp-for="FamilyMemberCount" class="form-control" type="number" step="any" />
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">उपकरण आईडी</label>
+                        <input asp-for="DeviceId" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Migration & Residence -->
+        <div class="card mb-3">
+            <div class="card-header" style="background: var(--primary); color: white;">
+                <h6 class="mb-0"><i class="bi bi-arrow-right-circle me-2"></i>बसाइँसराइ र बसोबास</h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">पछिल्लो 5 वर्षमा बसाइँ सरेको ?</label>
+                        <select asp-for="MigratedLast5Years" class="form-select">
+                            <option value="">— चयन गर्नुहोस् —</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">कहाँबाट बसाइँ सरेको ?</label>
+                        <input asp-for="MigratedFrom" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">बसोबासको प्रकार</label>
+                        <select asp-for="ResidenceType" class="form-select">
+                            <option value="">— चयन गर्नुहोस् —</option>
+                            <option value="Permanent">स्थायी</option>
+                            <option value="Temporary">अस्थायी</option>
+                            <option value="Rental">भाडामा</option>
+                            <option value="Other">अन्य</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">स्थायी ठेगाना</label>
+                        <input asp-for="PermanentAddress" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">अर्को वडाको विवरण</label>
+                        <input asp-for="OtherWard" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">नागरिकता स्थिति</label>
+                        <select asp-for="CitizenshipStatus" class="form-select">
+                            <option value="">— चयन गर्नुहोस् —</option>
+                            <option value="Yes">छ</option>
+                            <option value="No">छैन</option>
+                            <option value="Pending">पेन्डिङ</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Death Records -->
+        <div class="card mb-3">
+            <div class="card-header" style="background: var(--primary); color: white;">
+                <h6 class="mb-0"><i class="bi bi-heartbreak me-2"></i>मृत्यु विवरण</h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">गत वर्षमा मृत्यु भएको ?</label>
+                        <select asp-for="DeathInLastYear" class="form-select">
+                            <option value="">— चयन गर्नुहोस् —</option>
+                            <option value="Yes">हो</option>
+                            <option value="No">होइन</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">मृत्यु संख्या</label>
+                        <input asp-for="DeathCount" class="form-control" type="number" step="any" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5: Livestock & Insurance -->
+        <div class="card mb-3">
+            <div class="card-header" style="background: var(--primary); color: white;">
+                <h6 class="mb-0"><i class="bi bi-shield-check me-2"></i>पशुपालन र बीमा</h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">पशु बीमा गरेको ?</label>
+                        <select asp-for="LivestockInsured" class="form-select">
+                            <option value="">— चयन गर्नुहोस् —</option>
+                            <option value="Yes">हो</option>
+                            <option value="No">होइन</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">बीमित पशु संख्या</label>
+                        <input asp-for="LivestockInsuredCount" class="form-control" type="number" step="any" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">नजिकको बजारको नाम</label>
+                        <input asp-for="NearestMarketName" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 6: Location (Road) -->
+        <div class="card mb-3">
+            <div class="card-header" style="background: var(--primary); color: white;">
+                <h6 class="mb-0"><i class="bi bi-geo-alt me-2"></i>स्थान र सडक विवरण</h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">सडकको नाम</label>
+                        <input asp-for="RoadName" class="form-control" />
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">सडकको प्रकार</label>
+                        <select asp-for="RoadType" class="form-select">
+                            <option value="">— चयन गर्नुहोस् —</option>
+                            <option value="Paved">कालोपत्रे</option>
+                            <option value="Gravelled">गिट्टी</option>
+                            <option value="Earthen">माटो</option>
+                            <option value="Other">अन्य</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">केन्द्रबाट दूरी</label>
+                        <input asp-for="DistanceFromCenter" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="mt-3">
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-save me-1"></i>सेभ गर्नुहोस्
+            </button>
+            <a href="/Admin/ManageHouseholdData/@id" class="btn btn-outline-secondary">रद्द गर्नुहोस्</a>
+        </div>
+    </form>
+</div>

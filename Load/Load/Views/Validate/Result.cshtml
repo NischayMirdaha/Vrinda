@@ -1,0 +1,192 @@
+@model Load.Models.JsonValidationResult
+@{ ViewData["Title"] = "Validation Result"; }
+
+<div class="container mt-4">
+    <h1>
+        @(Model.IsValid ? "✅" : "❌")
+        Validation: @Model.FileName
+    </h1>
+
+    <!-- Summary cards -->
+    <div class="row mb-4">
+        <div class="col-md-2">
+            <div class="card text-center @(Model.IsValid ? "bg-success" : "bg-danger") text-white">
+                <div class="card-body">
+                    <h4>@(Model.IsValid ? "VALID" : "INVALID")</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card text-center bg-primary text-white">
+                <div class="card-body">
+                    <h4>@Model.TotalRows.ToString("N0")</h4>
+                    <small>Rows</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card text-center bg-info text-white">
+                <div class="card-body">
+                    <h4>@Model.KeysPerRow</h4>
+                    <small>Keys/Row</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card text-center bg-secondary text-white">
+                <div class="card-body">
+                    <h4>@((Model.FileSizeBytes / 1024.0 / 1024.0).ToString("F1")) MB</h4>
+                    <small>File Size</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card text-center bg-success text-white">
+                <div class="card-body">
+                    <h4>@Model.NonNullCountFirstRow</h4>
+                    <small>Non-null (Row 1)</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card text-center bg-warning text-dark">
+                <div class="card-body">
+                    <h4>@Model.NullCountFirstRow</h4>
+                    <small>Null (Row 1)</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checks -->
+    <div class="card mb-3">
+        <div class="card-header"><strong>Structure Checks</strong></div>
+        <div class="card-body">
+            <ul class="list-unstyled">
+                <li>@(Model.IsPlainArray ? "✅" : "❌") Plain array format [...]</li>
+                <li>@(Model.HasConsistentKeys ? "✅" : "⚠️") Consistent keys across all rows</li>
+                <li>@(Model.TotalRows > 0 ? "✅" : "❌") Has data rows (@Model.TotalRows)</li>
+                <li>@(Model.RequiredKeysMissing.Count == 0 ? "✅" : "❌") Required keys present</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Required keys -->
+    @if (Model.RequiredKeysFound.Any())
+    {
+        <div class="card mb-3">
+            <div class="card-header bg-success text-white">
+                Required Keys Found (@Model.RequiredKeysFound.Count)
+            </div>
+            <div class="card-body">
+                @foreach (var k in Model.RequiredKeysFound)
+                {
+                    <span class="badge bg-success me-1">@k</span>
+                }
+            </div>
+        </div>
+    }
+
+    @if (Model.RequiredKeysMissing.Any())
+    {
+        <div class="card mb-3 border-danger">
+            <div class="card-header bg-danger text-white">
+                Required Keys MISSING (@Model.RequiredKeysMissing.Count)
+            </div>
+            <div class="card-body">
+                @foreach (var k in Model.RequiredKeysMissing)
+                {
+                    <span class="badge bg-danger me-1">@k</span>
+                }
+            </div>
+        </div>
+    }
+
+    <!-- Subject areas (institutional) -->
+    @if (Model.SampleSubjectAreas.Any())
+    {
+        <div class="card mb-3">
+            <div class="card-header">Subject Areas Found</div>
+            <div class="card-body">
+                @foreach (var s in Model.SampleSubjectAreas)
+                {
+                    <span class="badge bg-info me-1 mb-1">@s</span>
+                }
+            </div>
+        </div>
+    }
+
+    <!-- Errors -->
+    @if (Model.Errors.Any())
+    {
+        <div class="card mb-3 border-danger">
+            <div class="card-header bg-danger text-white">
+                Errors (@Model.Errors.Count)
+            </div>
+            <div class="card-body" style="max-height:300px; overflow-y:auto;">
+                <ul>
+                    @foreach (var e in Model.Errors) { <li>@e</li> }
+                </ul>
+            </div>
+        </div>
+    }
+
+    <!-- Warnings -->
+    @if (Model.Warnings.Any())
+    {
+        <div class="card mb-3 border-info">
+            <div class="card-header">Warnings / Info</div>
+            <div class="card-body" style="max-height:200px; overflow-y:auto;">
+                <ul>
+                    @foreach (var w in Model.Warnings) { <li>@w</li> }
+                </ul>
+            </div>
+        </div>
+    }
+
+    <!-- Key summary -->
+    @if (Model.KeySummary.Any())
+    {
+        <div class="card mb-3">
+            <div class="card-header">
+                Key Summary (first 50 of @Model.KeysPerRow)
+            </div>
+            <div class="card-body" style="max-height:400px; overflow-y:auto;">
+                <table class="table table-sm table-striped">
+                    <thead class="table-dark" style="position:sticky;top:0;">
+                        <tr>
+                            <th>#</th>
+                            <th>Key</th>
+                            <th>Type</th>
+                            <th>Sample</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.KeySummary.Count; i++)
+                        {
+                            var ki = Model.KeySummary[i];
+                            <tr>
+                                <td>@(i + 1)</td>
+                                <td style="max-width:400px;word-break:break-all;">
+                                    <small>@ki.Key</small>
+                                </td>
+                                <td>
+                                    <span class="badge bg-@(ki.DataType switch {
+                                        "string" => "secondary",
+                                        "float" => "primary",
+                                        "integer" => "info",
+                                        "null" => "warning",
+                                        _ => "dark"
+                                    })">@ki.DataType</span>
+                                </td>
+                                <td><small>@ki.SampleValue</small></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+
+    <a href="@Url.Action("Index")" class="btn btn-primary">← Validate Another</a>
+</div>

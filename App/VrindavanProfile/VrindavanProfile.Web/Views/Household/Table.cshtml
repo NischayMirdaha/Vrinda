@@ -1,0 +1,252 @@
+@model VrindavanProfile.Web.Models.ViewModels.TableViewModel
+@{
+    ViewData["Title"] = Model.PageTitle;
+    var hasWardColumn = Model.Rows.Any(r => r.WardNo.HasValue);
+    var nextTable = Model.TableNumber < Model.MaxTableNumber ? Model.TableNumber + 1 : (int?)null;
+    var prevTable = Model.TableNumber > 1 ? Model.TableNumber - 1 : (int?)null;
+    var sectionUrl = Model.SectionUrl;       // "/Household" or "/Institution"
+    var sectionTitle = Model.SectionTitle;   // "घरपरिवार तथ्याङ्क" or "संस्थागत तथ्याङ्क"
+
+    // Set breadcrumbs for the partial (Part 11B)
+    ViewData["BreadcrumbItems"] = new List<(string Label, string? Url)> {
+        ("गृहपृष्ठ", "/"),
+        (sectionTitle, sectionUrl)
+    };
+    ViewData["Title"] = $"तालिका नं. {Model.TableNumber}";
+}
+
+<!-- Title Bar -->
+<section class="container py-3">
+    <div class="d-flex flex-wrap justify-content-between align-items-start gap-3">
+        <div>
+            <h4 class="fw-bold mb-1" style="color: var(--primary);">
+                <span class="badge me-2" style="background-color: var(--accent); color: var(--text-dark);">तालिका @Model.TableNumber</span>
+                @Model.Title
+            </h4>
+            @if (!string.IsNullOrEmpty(Model.Description))
+            {
+                <p class="text-muted mb-0 small">@Model.Description</p>
+            }
+            @if (!string.IsNullOrEmpty(Model.DataSource))
+            {
+                <small class="text-muted"><i class="bi bi-database me-1"></i>स्रोत: @Model.DataSource</small>
+            }
+        </div>
+        <div class="d-flex gap-2 flex-wrap">
+            @if (Model.FilteredWardNo.HasValue)
+            {
+                <a href="@sectionUrl/Table/@Model.TableNumber" class="btn btn-sm btn-outline-secondary">
+                    <i class="bi bi-grid me-1"></i>सबै वडा
+                </a>
+            }
+            <div class="export-btn-group">
+                <!-- Column Filter Toggle (Part 11D) -->
+                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleRowSearch()" title="पङ्क्ति खोज">
+                    <i class="bi bi-funnel"></i>
+                </button>
+                <!-- Column Visibility Toggle (Part 11D) -->
+                <div class="position-relative d-inline-block">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="toggleColVisibilityPanel()" title="स्तम्भ देखाउनुहोस्/लुकाउनुहोस्">
+                        <i class="bi bi-layout-three-columns"></i>
+                    </button>
+                    <div class="col-toggle-panel" id="colTogglePanel">
+                        <div class="fw-bold small mb-2" style="color:var(--primary)">
+                            <i class="bi bi-layout-three-columns me-1"></i>स्तम्भ देखाउनुहोस् / लुकाउनुहोस्
+                        </div>
+                        @for (int i = 0; i < Model.ColumnHeaders.Count; i++)
+                        {
+                            <label>
+                                <input type="checkbox" checked onchange="toggleTableColumn(@i, this)" />
+                                @Model.ColumnHeaders[i]
+                            </label>
+                        }
+                    </div>
+                </div>
+                <a href="@sectionUrl/Print/@Model.TableNumber@(Model.FilteredWardNo.HasValue ? $"?wardNo={Model.FilteredWardNo}" : "")" target="_blank" class="btn btn-sm btn-outline-primary">
+                    <i class="bi bi-printer me-1"></i>प्रिन्ट
+                </a>
+                <button type="button" class="btn btn-sm btn-outline-primary" onclick="exportTablePDF()">
+                    <i class="bi bi-file-earmark-pdf me-1"></i>PDF
+                </button>
+                <button type="button" class="btn btn-sm btn-outline-success" onclick="exportTableCSV()">
+                    <i class="bi bi-file-earmark-spreadsheet me-1"></i>CSV
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Ward Filter -->
+@if (hasWardColumn)
+{
+    <section class="container mb-3">
+        <div class="d-flex flex-wrap gap-2 align-items-center">
+            <span class="fw-semibold small"><i class="bi bi-funnel me-1"></i>वडा छान्नुहोस्:</span>
+            <a href="@sectionUrl/Table/@Model.TableNumber" class="btn btn-sm @(Model.FilteredWardNo == null ? "btn-primary" : "btn-outline-secondary") py-0 px-2" style="font-size:0.78rem;">
+                सबै
+            </a>
+            @foreach (var ward in Model.Rows.Where(r => r.WardNo.HasValue).Select(r => r.WardNo!.Value).OrderBy(w => w))
+            {
+                var isActive = Model.FilteredWardNo == ward;
+                <a href="@sectionUrl/Table/@Model.TableNumber?wardNo=@ward" class="btn btn-sm @(isActive ? "btn-primary" : "btn-outline-secondary") py-0 px-2" style="font-size:0.78rem;">
+                    @ward
+                </a>
+            }
+        </div>
+    </section>
+}
+
+<!-- Data Table -->
+<section class="container mb-4" id="printArea">
+    <div class="table-container">
+        @if (Model.HasData)
+        {
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover align-middle mb-0 data-table" id="mainTable">
+                    <thead>
+                        <tr style="background-color: var(--primary); color: white;">
+                            <th class="text-center" style="min-width: 100px;">@Model.ColumnHeaders[0]</th>
+                            @for (int i = 1; i < Model.ColumnHeaders.Count; i++)
+                            {
+                                <th class="text-center">@Model.ColumnHeaders[i]</th>
+                            }
+                        </tr>
+                        <!-- Column filter row (Part 11D) — hidden by default -->
+                        <tr class="col-filter-row" id="colFilterRow" style="display:none">
+                            @for (int i = 0; i < Model.ColumnHeaders.Count; i++)
+                            {
+                                <th class="p-1">
+                                    <input type="text" placeholder="खोज्नुहोस्..." data-col="@i" class="col-filter-input" oninput="filterColumn(@i, this.value)" />
+                                </th>
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var row in Model.Rows)
+                        {
+                            <tr>
+                                <td class="fw-semibold">@row.RowLabel</td>
+                                @for (int i = 0; i < row.Cells.Count; i++)
+                                {
+                                    <td class="text-center">@row.Cells[i]</td>
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                    @if (Model.TotalRow != null)
+                    {
+                        <tfoot>
+                            <tr class="fw-bold" style="background-color: var(--accent); color: var(--text-dark);">
+                                <td>@Model.TotalRow.RowLabel</td>
+                                @for (int i = 0; i < Model.TotalRow.Cells.Count; i++)
+                                {
+                                    <td class="text-center">@Model.TotalRow.Cells[i]</td>
+                                }
+                            </tr>
+                        </tfoot>
+                    }
+                </table>
+            </div>
+        }
+        else
+        {
+            <div class="text-center py-5">
+                <i class="bi bi-inbox" style="font-size: 3rem; color: var(--text-muted);"></i>
+                <p class="mt-3 text-muted">यो तालिकाको लागि तथ्याङ्क उपलब्ध छैन।</p>
+            </div>
+        }
+    </div>
+</section>
+
+<!-- Navigation -->
+<section class="container mb-5">
+    <div class="d-flex justify-content-between">
+        @if (prevTable.HasValue)
+        {
+            <a href="@sectionUrl/Table/@prevTable" class="btn btn-sm btn-outline-secondary">
+                <i class="bi bi-arrow-left me-1"></i>तालिका @prevTable
+            </a>
+        }
+        else
+        {
+            <span></span>
+        }
+        @if (nextTable.HasValue)
+        {
+            <a href="@sectionUrl/Table/@nextTable" class="btn btn-sm btn-outline-primary">
+                तालिका @nextTable <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+        }
+    </div>
+</section>
+
+@section Scripts {
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/datatables.net-bs5@2.2.2/css/dataTables.bootstrap5.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/datatables.net@2.2.2/js/dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/datatables.net-bs5@2.2.2/js/dataTables.bootstrap5.min.js"></script>
+    <link rel="stylesheet" href="~/css/tables.css" asp-append-version="true" />
+    <script src="~/js/table-export.js" asp-append-version="true"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var table = document.getElementById('mainTable');
+            if (table) {
+                $('#mainTable').DataTable({
+                    paging: false,
+                    searching: false,
+                    info: false,
+                    ordering: true,
+                    order: [],
+                    language: {
+                        emptyTable: "तथ्याङ्क उपलब्ध छैन"
+                    }
+                });
+            }
+        });
+
+        // Part 11D: Toggle column filter row visibility
+        function toggleRowSearch() {
+            var row = document.getElementById('colFilterRow');
+            if (row) {
+                row.style.display = row.style.display === 'none' ? '' : 'none';
+                // Clear all filters when hiding
+                if (row.style.display === 'none') {
+                    row.querySelectorAll('input').forEach(function (inp) { inp.value = ''; });
+                    showAllRows();
+                }
+            }
+        }
+
+        // Part 11D: Filter rows by column value
+        function filterColumn(colIndex, query) {
+            var q = query.toLowerCase().trim();
+            var table = document.getElementById('mainTable');
+            if (!table) return;
+            var rows = table.querySelectorAll('tbody tr');
+
+            // Get all active column filters
+            var filters = {};
+            document.querySelectorAll('.col-filter-input').forEach(function (inp) {
+                var val = inp.value.toLowerCase().trim();
+                if (val) filters[parseInt(inp.dataset.col)] = val;
+            });
+
+            rows.forEach(function (row) {
+                var match = true;
+                Object.keys(filters).forEach(function (col) {
+                    var cell = row.children[parseInt(col)];
+                    if (cell) {
+                        var text = cell.textContent.toLowerCase().trim();
+                        if (text.indexOf(filters[col]) < 0) match = false;
+                    }
+                });
+                row.style.display = match ? '' : 'none';
+            });
+        }
+
+        function showAllRows() {
+            var table = document.getElementById('mainTable');
+            if (!table) return;
+            table.querySelectorAll('tbody tr').forEach(function (r) { r.style.display = ''; });
+        }
+    </script>
+}

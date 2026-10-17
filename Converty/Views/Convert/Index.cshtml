@@ -1,0 +1,600 @@
+@{
+    ViewData["Title"] = "Excel to JSON Converter";
+}
+
+<div class="converter-page">
+
+    <!-- ── Hero ───────────────────────────────────────────────────────────── -->
+    <div class="hero">
+        <div class="hero-glow"></div>
+        <div class="hero-content">
+            <div class="logo-badge">
+                <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+                    <rect width="38" height="38" rx="10" fill="url(#lg1)"/>
+                    <path d="M10 14h8M10 19h18M10 24h12" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+                    <path d="M26 11l4 4-4 4" stroke="#a5f3fc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <defs>
+                        <linearGradient id="lg1" x1="0" y1="0" x2="38" y2="38" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#6366f1"/>
+                            <stop offset="1" stop-color="#06b6d4"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <h1 class="hero-title">Converty</h1>
+            <p class="hero-subtitle">Convert Excel spreadsheets into JSON — every sheet, every row, millions of records.</p>
+        </div>
+    </div>
+
+    <!-- ── Error banner ───────────────────────────────────────────────────── -->
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert-error" id="errorBanner">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" stroke="#f87171" stroke-width="2"/>
+                <path d="M12 8v4M12 16h.01" stroke="#f87171" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>@TempData["Error"]</span>
+            <button onclick="document.getElementById('errorBanner').remove()" class="dismiss-btn">&times;</button>
+        </div>
+    }
+
+    <!-- ── Upload card ────────────────────────────────────────────────────── -->
+    <div class="card upload-card" id="uploadCard">
+        <form id="uploadForm" method="post" enctype="multipart/form-data">
+
+            <!-- Drop zone -->
+            <div class="drop-zone" id="dropZone">
+                <input type="file" id="excelFile" name="excelFile" accept=".xlsx,.xls,.xlsb" class="file-input" />
+                <div class="drop-icon">
+                    <svg width="48" height="48" fill="none" viewBox="0 0 24 24">
+                        <path d="M12 16V8M12 8l-3 3M12 8l3 3" stroke="url(#iconGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M20 16.7A4 4 0 0 0 18 9h-1.26A8 8 0 1 0 4 16.7" stroke="url(#iconGrad)" stroke-width="1.8" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="iconGrad" x1="4" y1="4" x2="20" y2="20" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#818cf8"/>
+                                <stop offset="1" stop-color="#22d3ee"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <p class="drop-title" id="dropTitle">Drag &amp; drop your Excel file here</p>
+                <p class="drop-hint">or click to browse &nbsp;·&nbsp; .xlsx &nbsp;·&nbsp; .xls &nbsp;·&nbsp; .xlsb</p>
+                <div class="file-pill" id="filePill" style="display:none">
+                    <span class="pill-icon">📄</span>
+                    <span id="fileName"></span>
+                    <span id="fileSize" class="pill-size"></span>
+                </div>
+            </div>
+
+            <!-- Progress section -->
+            <div id="progressSection" style="display:none" class="progress-container">
+                <div class="progress-status" id="progressStatus">Uploading file...</div>
+                <div class="progress-bar-track">
+                    <div class="progress-bar-fill" id="progressBarFill"></div>
+                </div>
+                <div class="progress-substatus" id="progressSubstatus">Preparing Excel data stream</div>
+            </div>
+
+            <!-- Info row -->
+            <div class="info-row" id="infoRow">
+                <div class="info-chip">
+                    <svg width="15" height="15" fill="none" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="#34d399" stroke-width="2"/></svg>
+                    Row 1 used as headers
+                </div>
+                <div class="info-chip">
+                    <svg width="15" height="15" fill="none" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="#34d399" stroke-width="2"/></svg>
+                    Download split parts or single JSON
+                </div>
+                <div class="info-chip">
+                    <svg width="15" height="15" fill="none" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="#34d399" stroke-width="2"/></svg>
+                    Handles millions of rows
+                </div>
+                <div class="info-chip">
+                    <svg width="15" height="15" fill="none" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="#34d399" stroke-width="2"/></svg>
+                    Empty cells → null
+                </div>
+            </div>
+
+            <!-- Convert button -->
+            <button type="submit" class="convert-btn" id="convertBtn" disabled>
+                <span class="btn-text">
+                    <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
+                        <path d="M4 4v5h5M20 20v-5h-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4.06 15A9 9 0 1 0 6 6.04" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    Convert spreadsheet
+                </span>
+            </button>
+
+        </form>
+    </div>
+
+    <!-- ── Download Dashboard ──────────────────────────────────────────────── -->
+    <div id="downloadDashboard" style="display:none" class="card download-dashboard">
+        <!-- Rendered dynamically by JavaScript -->
+    </div>
+
+    <!-- ── How it works ───────────────────────────────────────────────────── -->
+    <div class="how-section" id="howSection">
+        <h2 class="section-title">How it works</h2>
+        <div class="steps-row">
+            <div class="step-card">
+                <div class="step-num">01</div>
+                <div class="step-icon">📂</div>
+                <h3>Upload Excel</h3>
+                <p>Upload any .xlsx, .xls, or .xlsb file — any size, any number of sheets.</p>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step-card">
+                <div class="step-num">02</div>
+                <div class="step-icon">⚡</div>
+                <h3>Stream &amp; Convert</h3>
+                <p>Data is read row-by-row and streamed directly to JSON — no memory limits.</p>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step-card">
+                <div class="step-num">03</div>
+                <div class="step-icon">📦</div>
+                <h3>Choose &amp; Download</h3>
+                <p>Pick split parts or single heavy JSON per sheet, and download instantly.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+<script>
+    const dropZone         = document.getElementById('dropZone');
+    const fileInput        = document.getElementById('excelFile');
+    const dropTitle        = document.getElementById('dropTitle');
+    const filePill         = document.getElementById('filePill');
+    const fileName         = document.getElementById('fileName');
+    const fileSize         = document.getElementById('fileSize');
+    const convertBtn       = document.getElementById('convertBtn');
+    const form             = document.getElementById('uploadForm');
+    const progressSection  = document.getElementById('progressSection');
+    const progressBarFill  = document.getElementById('progressBarFill');
+    const progressStatus   = document.getElementById('progressStatus');
+    const progressSubstatus = document.getElementById('progressSubstatus');
+    const infoRow          = document.getElementById('infoRow');
+    const uploadCard       = document.getElementById('uploadCard');
+    const downloadDashboard = document.getElementById('downloadDashboard');
+    const howSection       = document.getElementById('howSection');
+
+    let activeResultData   = null;
+
+    // ── Click to browse ──────────────────────────────────────────────────────
+    dropZone.addEventListener('click', () => {
+        if (!progressSection.style.display || progressSection.style.display === 'none') {
+            fileInput.click();
+        }
+    });
+
+    // ── Drag over ───────────────────────────────────────────────────────────
+    dropZone.addEventListener('dragover', e => {
+        e.preventDefault();
+        if (progressSection.style.display && progressSection.style.display !== 'none') return;
+        dropZone.classList.add('dragover');
+    });
+    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+
+    // ── Drop ────────────────────────────────────────────────────────────────
+    dropZone.addEventListener('drop', e => {
+        e.preventDefault();
+        if (progressSection.style.display && progressSection.style.display !== 'none') return;
+        dropZone.classList.remove('dragover');
+        const file = e.dataTransfer.files[0];
+        if (file) setFile(file);
+    });
+
+    // ── File input change ────────────────────────────────────────────────────
+    fileInput.addEventListener('change', () => {
+        if (fileInput.files.length > 0) setFile(fileInput.files[0]);
+    });
+
+    function setFile(file) {
+        const allowed = ['.xlsx', '.xls', '.xlsb'];
+        const ext = '.' + file.name.split('.').pop().toLowerCase();
+        if (!allowed.includes(ext)) {
+            alert('Please select a valid Excel file (.xlsx, .xls, .xlsb)');
+            return;
+        }
+        
+        const dt = new DataTransfer();
+        dt.items.add(file);
+        fileInput.files = dt.files;
+
+        fileName.textContent = file.name;
+        fileSize.textContent = formatBytes(file.size);
+        filePill.style.display = 'flex';
+        dropTitle.textContent  = 'File ready';
+        convertBtn.disabled    = false;
+        dropZone.classList.add('has-file');
+    }
+
+    function formatBytes(bytes) {
+        if (bytes === 0) return '0 B';
+        if (bytes < 1024)       return bytes + ' B';
+        if (bytes < 1048576)    return (bytes / 1024).toFixed(1) + ' KB';
+        if (bytes < 1073741824) return (bytes / 1048576).toFixed(1) + ' MB';
+        return (bytes / 1073741824).toFixed(2) + ' GB';
+    }
+
+    // ── Helper to read/delete cookie ─────────────────────────────────────────
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+        return null;
+    }
+
+    function deleteCookie(name) {
+        document.cookie = name + '=; Max-Age=-99999999; path=/;';
+    }
+
+    // ── Submit via AJAX ──────────────────────────────────────────────────────
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        if (fileInput.files.length === 0) return;
+
+        // Hide upload controls, show progress UI
+        dropZone.style.display = 'none';
+        infoRow.style.display  = 'none';
+        convertBtn.style.display = 'none';
+        progressSection.style.display = 'block';
+
+        progressBarFill.style.width = '0%';
+        progressStatus.textContent = 'Uploading spreadsheet...';
+        progressSubstatus.textContent = '0%';
+
+        const formData = new FormData();
+        formData.append('excelFile', fileInput.files[0]);
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', '/Convert/Upload', true);
+
+        // Upload progress
+        xhr.upload.addEventListener('progress', event => {
+            if (event.lengthComputable) {
+                const percent = Math.round((event.loaded / event.total) * 100);
+                progressBarFill.style.width = percent + '%';
+                progressStatus.textContent = `Uploading spreadsheet... ${percent}%`;
+                progressSubstatus.textContent = `${formatBytes(event.loaded)} of ${formatBytes(event.total)}`;
+            }
+        });
+
+        // Response handler
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                try {
+                    const result = JSON.parse(xhr.responseText);
+                    activeResultData = result;
+                    renderDashboard(result);
+                } catch (err) {
+                    showError('Failed to parse server response.');
+                    resetUploadState();
+                }
+            } else {
+                let errorMsg = 'An error occurred during conversion.';
+                try {
+                    const errorObj = JSON.parse(xhr.responseText);
+                    if (errorObj && errorObj.error) {
+                        errorMsg = errorObj.error;
+                    }
+                } catch (e) {}
+                showError(errorMsg);
+                resetUploadState();
+            }
+        };
+
+        xhr.onerror = function () {
+            showError('A network error occurred. Please try again.');
+            resetUploadState();
+        };
+
+        // If upload is finished but server is converting, update text
+        xhr.upload.onload = function () {
+            progressBarFill.style.width = '100%';
+            progressStatus.textContent = 'Converting data...';
+            progressSubstatus.textContent = 'Parsing rows, executing schema analysis and writing JSON outputs...';
+        };
+
+        xhr.send(formData);
+    });
+
+    function showError(msg) {
+        const errBanner = document.getElementById('errorBanner');
+        if (errBanner) errBanner.remove();
+
+        const bannerHtml = `
+            <div class="alert-error" id="errorBanner">
+                <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" stroke="#f87171" stroke-width="2"/>
+                    <path d="M12 8v4M12 16h.01" stroke="#f87171" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span>${msg}</span>
+                <button onclick="document.getElementById('errorBanner').remove()" class="dismiss-btn">&times;</button>
+            </div>
+        `;
+        document.querySelector('.converter-page').insertAdjacentHTML('afterbegin', bannerHtml);
+    }
+
+    function resetUploadState() {
+        dropZone.style.display = 'block';
+        infoRow.style.display  = 'flex';
+        convertBtn.style.display = 'flex';
+        progressSection.style.display = 'none';
+        fileInput.value = '';
+        filePill.style.display = 'none';
+        dropTitle.textContent  = 'Drag & drop your Excel file here';
+        convertBtn.disabled    = true;
+        dropZone.classList.remove('has-file');
+    }
+
+    // ── Render Dashboard ─────────────────────────────────────────────────────
+    function renderDashboard(data) {
+        uploadCard.style.display = 'none';
+        howSection.style.display = 'none';
+        
+        let sheetsHtml = '';
+        
+        downloadDashboard.innerHTML = `
+            <div class="dashboard-header">
+                <div class="dashboard-title-area">
+                    <h2>Conversion Complete</h2>
+                    <p>Processed spreadsheet: <strong style="color: var(--text-1);">${data.excelFileName}</strong></p>
+                </div>
+                <button type="button" class="reset-btn" id="btnReset">Convert Another</button>
+            </div>
+
+            <div class="sheets-list" id="sheetsContainer"></div>
+
+            <div class="global-options-panel">
+                <div class="panel-row">
+                    <div class="quick-actions">
+                        <button type="button" class="action-outline-btn" id="btnSelectSplitAll">Split Parts For All</button>
+                        <button type="button" class="action-outline-btn" id="btnSelectSingleAll">Single JSON For All</button>
+                    </div>
+                    <div>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="chkIncludeMetadata" checked>
+                            Include Schema Metadata Report (${formatBytes(data.metadataFileSize)})
+                        </label>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-text">
+                        <h5>Selected for ZIP Package</h5>
+                        <p id="lblSummaryText">Calculating summary...</p>
+                    </div>
+                </div>
+
+                <button type="button" class="convert-btn download-action-btn" id="btnDownloadSelected">
+                    <span class="btn-text">
+                        <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
+                            <path d="M12 15V3m0 12l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Download Selected Data
+                    </span>
+                    <span class="btn-loading" style="display:none">
+                        <span class="spinner"></span>
+                        Packaging files… please wait
+                    </span>
+                </button>
+            </div>
+        `;
+
+        const sheetsContainer = document.getElementById('sheetsContainer');
+
+        data.sheets.forEach((sheet, idx) => {
+            // Check if size exceeds 23MB (MaxFileBytes equivalent)
+            const isLarge = sheet.singleFileSize >= (23 * 1024 * 1024);
+            const sizeDetails = isLarge 
+                ? `<span class="stat-badge sheet-badge-split">Split: ${sheet.splitFiles.length} parts</span> <span class="stat-badge sheet-badge-single">Single: ${formatBytes(sheet.singleFileSize)}</span>`
+                : `<span class="stat-badge">${formatBytes(sheet.singleFileSize)}</span>`;
+
+            let selectorHtml = '';
+            if (isLarge) {
+                // Large sheet: give option to split (default), single, or exclude
+                selectorHtml = `
+                    <div class="download-mode-selector" data-sheet-index="${idx}">
+                        <label class="mode-option" title="Download split parts (each <24MB)">
+                            <input type="radio" name="mode_${idx}" value="split" checked>
+                            <span class="mode-label">Split Parts (${sheet.splitFiles.length})</span>
+                        </label>
+                        <label class="mode-option" title="Download as single heavy JSON file">
+                            <input type="radio" name="mode_${idx}" value="single">
+                            <span class="mode-label">Single JSON</span>
+                        </label>
+                        <label class="mode-option" title="Do not download this sheet">
+                            <input type="radio" name="mode_${idx}" value="none">
+                            <span class="mode-label">Exclude</span>
+                        </label>
+                    </div>
+                `;
+            } else {
+                // Small sheet: only need single JSON or exclude
+                selectorHtml = `
+                    <div class="download-mode-selector" data-sheet-index="${idx}">
+                        <label class="mode-option" title="Download as JSON file">
+                            <input type="radio" name="mode_${idx}" value="single" checked>
+                            <span class="mode-label">JSON File</span>
+                        </label>
+                        <label class="mode-option" title="Do not download this sheet">
+                            <input type="radio" name="mode_${idx}" value="none">
+                            <span class="mode-label">Exclude</span>
+                        </label>
+                    </div>
+                `;
+            }
+
+            const sheetCardHtml = `
+                <div class="sheet-card" data-sheet-index="${idx}" data-large="${isLarge}">
+                    <div class="sheet-meta">
+                        <div class="sheet-icon-badge">📊</div>
+                        <div class="sheet-details">
+                            <h4>${sheet.name}</h4>
+                            <div class="sheet-stats">
+                                <span class="stat-badge">${sheet.rowCount.toLocaleString()} rows</span>
+                                <span class="stat-badge">${sheet.columnCount} columns</span>
+                                ${sizeDetails}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-actions">
+                        ${selectorHtml}
+                    </div>
+                </div>
+            `;
+            sheetsContainer.insertAdjacentHTML('beforeend', sheetCardHtml);
+        });
+
+        // ── Wire up event listeners for dashboard controls ──────────────────
+        document.getElementById('btnReset').addEventListener('click', () => {
+            downloadDashboard.style.display = 'none';
+            uploadCard.style.display = 'block';
+            howSection.style.display = 'block';
+            resetUploadState();
+        });
+
+        document.getElementById('btnSelectSplitAll').addEventListener('click', () => {
+            data.sheets.forEach((sheet, idx) => {
+                const radioSplit = document.querySelector(`input[name="mode_${idx}"][value="split"]`);
+                if (radioSplit) {
+                    radioSplit.checked = true;
+                }
+            });
+            updateSummary();
+        });
+
+        document.getElementById('btnSelectSingleAll').addEventListener('click', () => {
+            data.sheets.forEach((sheet, idx) => {
+                const radioSingle = document.querySelector(`input[name="mode_${idx}"][value="single"]`);
+                if (radioSingle) {
+                    radioSingle.checked = true;
+                }
+            });
+            updateSummary();
+        });
+
+        document.getElementById('chkIncludeMetadata').addEventListener('change', updateSummary);
+
+        // Bind updateSummary to radio changes
+        data.sheets.forEach((sheet, idx) => {
+            const radios = document.querySelectorAll(`input[name="mode_${idx}"]`);
+            radios.forEach(r => r.addEventListener('change', updateSummary));
+        });
+
+        document.getElementById('btnDownloadSelected').addEventListener('click', executeDownload);
+
+        // Initial summary calculation
+        updateSummary();
+
+        downloadDashboard.style.display = 'block';
+    }
+
+    // ── Update Summary calculations ──────────────────────────────────────────
+    function updateSummary() {
+        if (!activeResultData) return;
+
+        let totalFilesCount = 0;
+        let totalBytes = 0;
+        let selectedSheetsCount = 0;
+
+        activeResultData.sheets.forEach((sheet, idx) => {
+            const selectedMode = document.querySelector(`input[name="mode_${idx}"]:checked`).value;
+            if (selectedMode === 'single') {
+                totalFilesCount += 1;
+                totalBytes += sheet.singleFileSize;
+                selectedSheetsCount += 1;
+            } else if (selectedMode === 'split') {
+                totalFilesCount += sheet.splitFiles.length;
+                sheet.splitFiles.forEach(f => totalBytes += f.fileSize);
+                selectedSheetsCount += 1;
+            }
+        });
+
+        const includeMetadata = document.getElementById('chkIncludeMetadata').checked;
+        if (includeMetadata) {
+            totalFilesCount += 1;
+            totalBytes += activeResultData.metadataFileSize;
+        }
+
+        const lblSummaryText = document.getElementById('lblSummaryText');
+        if (selectedSheetsCount === 0 && !includeMetadata) {
+            lblSummaryText.innerHTML = `<span style="color: var(--red);">No files selected. Please select at least one item to download.</span>`;
+            document.getElementById('btnDownloadSelected').disabled = true;
+        } else {
+            lblSummaryText.innerHTML = `
+                Selected <strong>${selectedSheetsCount}</strong> of <strong>${activeResultData.sheets.length}</strong> sheets. 
+                Package will contain <strong>${totalFilesCount}</strong> files, totaling <strong>${formatBytes(totalBytes)}</strong> (uncompressed).
+            `;
+            document.getElementById('btnDownloadSelected').disabled = false;
+        }
+    }
+
+    // ── Formulate and Submit Download ────────────────────────────────────────
+    function executeDownload() {
+        if (!activeResultData) return;
+
+        const btn = document.getElementById('btnDownloadSelected');
+        const text = btn.querySelector('.btn-text');
+        const loading = btn.querySelector('.btn-loading');
+
+        // Clear any old complete cookie
+        deleteCookie('ConvertyDownloadComplete');
+
+        btn.disabled = true;
+        text.style.display = 'none';
+        loading.style.display = 'flex';
+
+        // Build a dynamic form and submit it to trigger download
+        const dlForm = document.createElement('form');
+        dlForm.method = 'POST';
+        dlForm.action = '/Convert/Download';
+        dlForm.style.display = 'none';
+
+        const addField = (name, val) => {
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = name;
+            input.value = val;
+            dlForm.appendChild(input);
+        };
+
+        addField('SessionId', activeResultData.sessionId);
+        addField('ExcelFileName', activeResultData.excelFileName);
+        addField('IncludeMetadata', document.getElementById('chkIncludeMetadata').checked);
+
+        let inputIndex = 0;
+        activeResultData.sheets.forEach((sheet, idx) => {
+            const mode = document.querySelector(`input[name="mode_${idx}"]:checked`).value;
+            addField(`Sheets[${inputIndex}].SheetName`, sheet.name);
+            addField(`Sheets[${inputIndex}].SafeName`, sheet.safeName);
+            addField(`Sheets[${inputIndex}].DownloadMode`, mode);
+            inputIndex++;
+        });
+
+        document.body.appendChild(dlForm);
+        dlForm.submit();
+        document.body.removeChild(dlForm);
+
+        // Polling cookie to know when download completes/starts
+        const checkTimer = setInterval(() => {
+            if (getCookie('ConvertyDownloadComplete') === 'true') {
+                clearInterval(checkTimer);
+                deleteCookie('ConvertyDownloadComplete');
+                
+                // Reset button state
+                btn.disabled = false;
+                text.style.display = 'flex';
+                loading.style.display = 'none';
+            }
+        }, 500);
+    }
+</script>
+}
+

@@ -1,0 +1,230 @@
+@model List<VrindavanProfile.Web.Models.ViewModels.TableMeta>
+@{
+    ViewData["Title"] = "घरपरिवार तथ्याङ्क";
+    var grouped = Model.GroupBy(t => t.Category).ToList();
+    var categories = grouped.Select(g => g.Key).ToList();
+
+    // Breadcrumbs (Part 11B)
+    ViewData["BreadcrumbItems"] = new List<(string Label, string? Url)> {
+        ("गृहपृष्ठ", "/")
+    };
+}
+
+<!-- Hero -->
+<section class="py-4" style="background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--secondary) 100%); color: white;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h2 class="fw-bold mb-1">घरपरिवार तथ्याङ्क</h2>
+                <p class="mb-0 opacity-90">६५ वटा तालिकाहरू — वडा अनुसार विस्तृत तथ्याङ्क हेर्नुहोस्</p>
+            </div>
+            <div class="col-lg-4 text-end d-none d-lg-block">
+                <i class="bi bi-table" style="font-size: 3.5rem; opacity: 0.25;"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container py-4">
+    <div class="row">
+        <!-- Table of Contents Sidebar (Part 11C) -->
+        <div class="col-lg-3 mb-4 d-none d-lg-block">
+            <div class="toc-sidebar no-print" id="tocSidebar">
+                <div class="toc-sidebar-header">
+                    <h6 class="mb-0 fw-bold"><i class="bi bi-list-nested me-2"></i>विषयसूची</h6>
+                </div>
+                <div class="toc-sidebar-body">
+                    @foreach (var group in grouped)
+                    {
+                        <div class="toc-section" data-category="@group.Key">
+                            <div class="toc-section-title" onclick="toggleTocSection(this)">
+                                <span>
+                                    <i class="bi @group.First().Icon me-1" style="color:@group.First().AccentColor"></i>
+                                    @group.Key
+                                </span>
+                                <span class="toc-count">@group.Count()</span>
+                            </div>
+                            <div class="toc-section-items">
+                                @foreach (var table in group.OrderBy(t => t.TableNumber))
+                                {
+                                    <a href="#table-@table.TableNumber" class="toc-item" data-number="@table.TableNumber">
+                                        <span class="toc-item-num">@table.TableNumber</span>
+                                        @table.Title
+                                    </a>
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="col-lg-9">
+            <!-- Search + Filter Bar -->
+            <div class="row mb-4">
+                <div class="col-md-6 mb-2 mb-md-0">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+                        <input type="text" id="tableSearch" class="form-control" placeholder="तालिका खोज्नुहोस्..." />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <select id="categoryFilter" class="form-select">
+                        <option value="">सबै कोटिहरू</option>
+                        @foreach (var cat in categories)
+                        {
+                            <option value="@cat">@cat</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-2 text-end d-flex align-items-center justify-content-end gap-2">
+                    <div class="export-btn-group no-print">
+                        <button class="btn btn-sm btn-outline-primary" onclick="printPage()">
+                            <i class="bi bi-printer"></i>
+                        </button>
+                    </div>
+                    <span class="badge bg-secondary" id="tableCount">@Model.Count तालिकाहरू</span>
+                </div>
+            </div>
+
+            <!-- Table Groups -->
+            @foreach (var group in grouped)
+            {
+                <div class="table-category mb-4" data-category="@group.Key" id="cat-@group.Key.GetHashCode()">
+                    <h5 class="section-title d-flex align-items-center gap-2">
+                        <i class="bi @group.First().Icon" style="color: @group.First().AccentColor;"></i>
+                        @group.Key
+                        <span class="badge bg-light text-dark ms-2" style="font-size: 0.7rem;">@group.Count() तालिका</span>
+                    </h5>
+                    <div class="row g-3">
+                        @foreach (var table in group.OrderBy(t => t.TableNumber))
+                        {
+                            <div class="col-md-6 col-lg-6 table-card-wrapper" data-category="@table.Category" data-title="@table.Title" data-number="@table.TableNumber" id="table-@table.TableNumber">
+                                <a href="/Household/Table/@table.TableNumber" class="text-decoration-none">
+                                    <div class="card h-100 table-list-card" style="border-left: 3px solid @table.AccentColor;">
+                                        <div class="card-body py-3 px-3">
+                                            <div class="d-flex align-items-start gap-2">
+                                                <div class="flex-shrink-0">
+                                                    <span class="badge rounded-pill" style="background-color: @table.AccentColor; font-size: 0.75rem; min-width: 32px;">
+                                                        @table.TableNumber
+                                                    </span>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="mb-1 fw-semibold" style="font-size: 0.9rem; color: var(--text-dark);">@table.Title</h6>
+                                                    @if (!string.IsNullOrEmpty(table.Description))
+                                                    {
+                                                        <p class="mb-0 small text-muted" style="font-size: 0.78rem;">@table.Description</p>
+                                                    }
+                                                </div>
+                                                <i class="bi bi-chevron-right text-muted flex-shrink-0"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+
+            <!-- No results message -->
+            <div id="noResults" class="text-center py-5 d-none">
+                <i class="bi bi-search" style="font-size: 3rem; color: var(--text-muted);"></i>
+                <p class="mt-3 text-muted">कुनै तालिका भेटिएन। अन्य शब्दले खोज्नुहोस्।</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        (function () {
+            var search = document.getElementById('tableSearch');
+            var filter = document.getElementById('categoryFilter');
+            var countEl = document.getElementById('tableCount');
+            var noResults = document.getElementById('noResults');
+
+            function applyFilters() {
+                var q = (search.value || '').toLowerCase();
+                var cat = filter.value;
+                var cards = document.querySelectorAll('.table-card-wrapper');
+                var groups = document.querySelectorAll('.table-category');
+                var visible = 0;
+
+                cards.forEach(function (card) {
+                    var title = (card.dataset.title || '').toLowerCase();
+                    var cardCat = card.dataset.category || '';
+                    var num = card.dataset.number || '';
+                    var matchSearch = !q || title.indexOf(q) >= 0 || num.indexOf(q) >= 0;
+                    var matchCat = !cat || cardCat === cat;
+                    if (matchSearch && matchCat) {
+                        card.classList.remove('d-none');
+                        visible++;
+                    } else {
+                        card.classList.add('d-none');
+                    }
+                });
+
+                groups.forEach(function (group) {
+                    var visibleCards = group.querySelectorAll('.table-card-wrapper:not(.d-none)');
+                    group.classList.toggle('d-none', visibleCards.length === 0);
+                });
+
+                // Sync TOC sidebar
+                document.querySelectorAll('.toc-section').forEach(function (sec) {
+                    var secCat = sec.dataset.category;
+                    var matchCat = !cat || secCat === cat;
+                    sec.style.display = matchCat ? '' : 'none';
+                });
+                document.querySelectorAll('.toc-item').forEach(function (item) {
+                    var num = item.dataset.number;
+                    var card = document.querySelector('.table-card-wrapper[data-number="' + num + '"]');
+                    item.style.display = (card && !card.classList.contains('d-none')) ? '' : 'none';
+                });
+
+                countEl.textContent = visible + ' तालिकाहरू';
+                noResults.classList.toggle('d-none', visible > 0);
+            }
+
+            search.addEventListener('input', applyFilters);
+            filter.addEventListener('change', applyFilters);
+
+            // ─── TOC: Toggle sections ───
+            document.querySelectorAll('.toc-section-title').forEach(function (title) {
+                title.addEventListener('click', function () {
+                    this.closest('.toc-section').classList.toggle('open');
+                });
+            });
+
+            // Open all TOC sections initially
+            document.querySelectorAll('.toc-section').forEach(function (sec) {
+                sec.classList.add('open');
+            });
+
+            // ─── TOC: Highlight active on scroll ───
+            var tocItems = document.querySelectorAll('.toc-item');
+            var tableCards = document.querySelectorAll('.table-card-wrapper');
+
+            function updateTocActive() {
+                var scrollTop = window.scrollY + 120;
+                var activeNum = null;
+
+                tableCards.forEach(function (card) {
+                    if (card.classList.contains('d-none')) return;
+                    if (card.offsetTop <= scrollTop) {
+                        activeNum = card.dataset.number;
+                    }
+                });
+
+                tocItems.forEach(function (item) {
+                    item.classList.toggle('active', item.dataset.number === activeNum);
+                });
+            }
+
+            window.addEventListener('scroll', updateTocActive);
+            updateTocActive();
+        })();
+    </script>
+    <script src="~/js/table-export.js" asp-append-version="true"></script>
+}

@@ -1,0 +1,52 @@
+@{
+    Layout = "_LayoutClean";
+    ViewData["Title"] = "नयाँ प्रशासक दर्ता";
+}
+
+<div class="d-flex align-items-center justify-content-center min-vh-100" style="background: linear-gradient(135deg, #002147 0%, #003B6F 100%);">
+    <div class="card shadow-lg border-0 p-4 text-white" style="width: 100%; maxwidth: 440px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(12px); border-radius: 16px;">
+        <div class="text-center mb-4">
+            <h3 class="fw-bold mb-1" style="color: #C5A55A;">नयाँ प्रशासक दर्ता</h3>
+            <p class="small text-white-50">वृन्दावन नगरपालिका डिजिटल प्रोफाइल</p>
+        </div>
+        @if (!Html.ViewData.ModelState.IsValid)
+        {
+            <div class="alert alert-danger py-2 border-0 small"
+                 style="background: rgba(220, 20, 60, 0.2); color: #FFD2D2;">
+                <div asp-validation-summary="All"></div>
+            </div>
+        }
+        <form asp-action="Register" method="post">
+            <div class="mb-3">
+                <label class="form-label small text-white-50">युजरनेम</label>
+                <input name="username" class="form-control bg-transparent textwhite border-white-20" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label small text-white-50">इमेल ठेगाना</label>
+                <input name="email" type="email" class="form-control bgtransparent text-white border-white-20" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label small text-white-50">पासवर्ड</label>
+                <input name="password" type="password" class="form-control bgtransparent text-white border-white-20" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label small text-white-50">पासवर्ड पुष्टि
+                    गर्नुहोस्</label>
+                <input name="confirmPassword" type="password" class="formcontrol bg-transparent text-white border-white-20" required />
+            </div>
+            <button type="submit" class="btn btn-warning w-100 fw-bold mt-2 py-2" style="background: #C5A55A; border: none; color: #002147;">
+                खाता सिर्जना गर्नुहोस्
+            </button>
+        </form>
+        <div class="text-center mt-3">
+            <a href="/Admin" class="text-white-50 small text-decoration-none">
+                <i class="bi bi-arrow-left me-1"></i>ड्यासबोर्डमा फर्कनुहोस्
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+ .border-white-20 { border-color: rgba(255, 255, 255, 0.2) !important; }
+ .form-control:focus { background-color: rgba(255,255,255,0.05) !important; border-color: #C5A55A !important; color: white !important; box-shadow: none; }
+</style>

@@ -1,0 +1,3837 @@
+﻿========================================================================
+                 CONVERTY EXCEL SCHEMA METADATA REPORT                  
+========================================================================
+Generated on: 2026-06-05 13:17:57
+Total Sheets: 1
+
+========================================================================
+SHEET: 2. Brindaban Municipality_In...
+========================================================================
+Total Rows:    1,326
+Total Columns: 478
+
+------------------------------------------------------------------------
+COLUMN 1:
+------------------------------------------------------------------------
+Header Name:   start
+Inferred Type: DateTime (Recommended SQL: DATETIME2)
+Max Length:    0 characters
+Completeness:  1,326 of 1,326 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 2:
+------------------------------------------------------------------------
+Header Name:   end
+Inferred Type: DateTime (Recommended SQL: DATETIME2)
+Max Length:    0 characters
+Completeness:  1,326 of 1,326 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 3:
+------------------------------------------------------------------------
+Header Name:   today
+Inferred Type: DateTime (Recommended SQL: DATETIME2)
+Max Length:    0 characters
+Completeness:  1,326 of 1,326 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 4:
+------------------------------------------------------------------------
+Header Name:   username
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    17 characters
+Completeness:  1,326 of 1,326 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 5:
+------------------------------------------------------------------------
+Header Name:   deviceid
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    24 characters
+Completeness:  1,326 of 1,326 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 6:
+------------------------------------------------------------------------
+Header Name:   phonenumber
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 7:
+------------------------------------------------------------------------
+Header Name:   नमस्कार ! म ................ वृन्दावन नगरपालिकाले नगर वस्तुस्थिति विवरण तयारी कार्यविधि, २०७८ मा आधारित भई तयार गर्न गइरहेको नगर प्रोफाइल (Municipality Profile) का लागि वार्डमा भएका विभिन्‍न संस्थाहरुको जानकारी सङ्कलनका लागि आएको छु । तपाइले उपलब्ध गराउनु भएको जानकारी सूचनाको हक अनुसार गोप्य राखिने छ । सत्यतथ्य जानकारी उपलब्ध गराइ सहयोग गरिदिनु होला ।
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 8:
+------------------------------------------------------------------------
+Header Name:   १.१ वृन्दावन नगरपालिका
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 9:
+------------------------------------------------------------------------
+Header Name:   १.२ वडा नं
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  1,326 of 1,326 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 10:
+------------------------------------------------------------------------
+Header Name:   १.३ फर्म भर्ने व्यक्तिको नाम
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    25 characters
+Completeness:  1,326 of 1,326 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 11:
+------------------------------------------------------------------------
+Header Name:   विषयगतक्षेत्र छान्नुहोस्
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(100))
+Max Length:    66 characters
+Completeness:  1,326 of 1,326 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 12:
+------------------------------------------------------------------------
+Header Name:   १. शैक्षिक संस्थाको प्रकार
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    34 characters
+Completeness:  7 of 1,326 rows (0.53%)
+
+------------------------------------------------------------------------
+COLUMN 13:
+------------------------------------------------------------------------
+Header Name:   २. शैक्षिक संस्थाको विवरण
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    36 characters
+Completeness:  7 of 1,326 rows (0.53%)
+
+------------------------------------------------------------------------
+COLUMN 14:
+------------------------------------------------------------------------
+Header Name:   ३. नाम
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(100))
+Max Length:    57 characters
+Completeness:  7 of 1,326 rows (0.53%)
+
+------------------------------------------------------------------------
+COLUMN 15:
+------------------------------------------------------------------------
+Header Name:   ४. शैक्षिक संस्था स्थापना भएको मिति
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    10 characters
+Completeness:  7 of 1,326 rows (0.53%)
+
+------------------------------------------------------------------------
+COLUMN 16:
+------------------------------------------------------------------------
+Header Name:   ५. सम्पर्क नं
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    10 characters
+Completeness:  7 of 1,326 rows (0.53%)
+
+------------------------------------------------------------------------
+COLUMN 17:
+------------------------------------------------------------------------
+Header Name:   ६. इमेल वा वेबसाईट
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    26 characters
+Completeness:  4 of 1,326 rows (0.30%)
+
+------------------------------------------------------------------------
+COLUMN 18:
+------------------------------------------------------------------------
+Header Name:   स्वीकृत दरबन्दी (महिला)
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 19:
+------------------------------------------------------------------------
+Header Name:   १. पूर्व प्राथमिक
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 20:
+------------------------------------------------------------------------
+Header Name:   २. आधारभूत
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 21:
+------------------------------------------------------------------------
+Header Name:   ३. माध्यमिक
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 22:
+------------------------------------------------------------------------
+Header Name:   स्वीकृत दरबन्दी (पुरुष)
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 23:
+------------------------------------------------------------------------
+Header Name:   ४. पूर्व प्राथमिक
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 24:
+------------------------------------------------------------------------
+Header Name:   ५. आधारभूत
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 25:
+------------------------------------------------------------------------
+Header Name:   ६. माध्यमिक
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 26:
+------------------------------------------------------------------------
+Header Name:   कार्यरत महिला शिक्षिका
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 27:
+------------------------------------------------------------------------
+Header Name:   १. पूर्व प्राथमिक_2
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 28:
+------------------------------------------------------------------------
+Header Name:   २. आधारभूत_2
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 29:
+------------------------------------------------------------------------
+Header Name:   ३. माध्यमिक_2
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 30:
+------------------------------------------------------------------------
+Header Name:   कार्यरत शिक्षक (पुरुष)
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 31:
+------------------------------------------------------------------------
+Header Name:   ४. पूर्व प्राथमिक_2
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 32:
+------------------------------------------------------------------------
+Header Name:   ५. आधारभूत_2
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 33:
+------------------------------------------------------------------------
+Header Name:   ६.  माध्यमिक
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 34:
+------------------------------------------------------------------------
+Header Name:   ७. विषयगत शिक्षकको व्यवस्था  छ / छैन
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    3 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 35:
+------------------------------------------------------------------------
+Header Name:   ८.१.   इन्टरनेट सुविधा (भएको/ नभएको)
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    5 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 36:
+------------------------------------------------------------------------
+Header Name:   ८.२.  कति शिक्षक (पुरुष) इन्टरनेट सुविधा प्रयोग गर्छन
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 37:
+------------------------------------------------------------------------
+Header Name:   ८.३.  कति शिक्षिका (महिला) इन्टरनेट सुविधा प्रयोग गर्छन
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 38:
+------------------------------------------------------------------------
+Header Name:   विधार्थी संख्या (छात्रा)
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 39:
+------------------------------------------------------------------------
+Header Name:   १. पूर्व प्राथमिक_3
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 40:
+------------------------------------------------------------------------
+Header Name:   २. आधारभूत_3
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 41:
+------------------------------------------------------------------------
+Header Name:   ३. माध्यमिक_3
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 42:
+------------------------------------------------------------------------
+Header Name:   विधार्थी संख्या (छात्र )
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 43:
+------------------------------------------------------------------------
+Header Name:   ४. पूर्व प्राथमिक_3
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 44:
+------------------------------------------------------------------------
+Header Name:   ५. आधारभूत_3
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 45:
+------------------------------------------------------------------------
+Header Name:   ६. माध्यमिक_2
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 46:
+------------------------------------------------------------------------
+Header Name:   ७. खुद भर्ना दर पूर्व प्राथमिक
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 47:
+------------------------------------------------------------------------
+Header Name:   ८. खुद भर्ना दर आधारभूत
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 48:
+------------------------------------------------------------------------
+Header Name:   ९. खुद भर्ना दर माध्यमिक
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 49:
+------------------------------------------------------------------------
+Header Name:   १०. निरन्तरता दर पूर्व प्राथमिक
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 50:
+------------------------------------------------------------------------
+Header Name:   ११. निरन्तरता दर आधारभूत
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 51:
+------------------------------------------------------------------------
+Header Name:   १२ निरन्तरता दर माध्यमिक
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 52:
+------------------------------------------------------------------------
+Header Name:   १३. सिकाई उपलब्धी दर कक्षा ८
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  5 of 1,326 rows (0.38%)
+
+------------------------------------------------------------------------
+COLUMN 53:
+------------------------------------------------------------------------
+Header Name:   १४.सिकाई उपलब्धी दर कक्षा १०
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 54:
+------------------------------------------------------------------------
+Header Name:   १५. सिकाई उपलब्धी दर कक्षा १२
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  5 of 1,326 rows (0.38%)
+
+------------------------------------------------------------------------
+COLUMN 55:
+------------------------------------------------------------------------
+Header Name:   १६. उतिर्ण दर दर कक्षा ८
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 56:
+------------------------------------------------------------------------
+Header Name:   १७. उतिर्ण दर दर कक्षा १०
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 57:
+------------------------------------------------------------------------
+Header Name:   १८. उतिर्ण दर कक्षा १२
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  5 of 1,326 rows (0.38%)
+
+------------------------------------------------------------------------
+COLUMN 58:
+------------------------------------------------------------------------
+Header Name:   १. कच्ची भवन संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 59:
+------------------------------------------------------------------------
+Header Name:   २. कच्ची कोठा संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 60:
+------------------------------------------------------------------------
+Header Name:   ३. पक्की कोठा संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 61:
+------------------------------------------------------------------------
+Header Name:   ४. पक्की भवन संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 62:
+------------------------------------------------------------------------
+Header Name:   ५. पुस्तकालय तथा अध्ययन केन्द्र छ कि छैन ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    3 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 63:
+------------------------------------------------------------------------
+Header Name:   ६. विज्ञान प्रयोगशाला छ कि छैन ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    3 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 64:
+------------------------------------------------------------------------
+Header Name:   ७. डेस्क बेञ्च कति विद्यार्थीलाइ पुग्ने गरी छ ?
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  5 of 1,326 rows (0.38%)
+
+------------------------------------------------------------------------
+COLUMN 65:
+------------------------------------------------------------------------
+Header Name:   ८. खेलमैदान छ कि छैन ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    3 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 66:
+------------------------------------------------------------------------
+Header Name:   ९.  कम्पाउण्ड वालको प्रकार कस्तो छ ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    12 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 67:
+------------------------------------------------------------------------
+Header Name:   १०. विद्यालयमा शौचालयको सुविधा कस्तो छ ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    35 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 68:
+------------------------------------------------------------------------
+Header Name:   ३. एकीकृत पाठ्यक्रम (भएको/ नभएको)
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    5 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 69:
+------------------------------------------------------------------------
+Header Name:   ११. विद्यालयमा स्वच्छ खानेपानीको सुविधा छ कि छैन ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    18 characters
+Completeness:  5 of 1,326 rows (0.38%)
+
+------------------------------------------------------------------------
+COLUMN 70:
+------------------------------------------------------------------------
+Header Name:   १. अपाङ्ग विद्याथी श्रोत कक्षा (भएको/ नभएको)
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    5 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 71:
+------------------------------------------------------------------------
+Header Name:   २. बाल क्लब गठन(भएको/ नभएको)
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    5 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 72:
+------------------------------------------------------------------------
+Header Name:   ३. बालमैत्री शिक्षण विधिका प्रयोग भएको/ नभएको)
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 73:
+------------------------------------------------------------------------
+Header Name:   ४. विद्यालय सुधार योजना तयारी तथा अद्यावधि(भएको/ नभएको)
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    5 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 74:
+------------------------------------------------------------------------
+Header Name:   १. जम्मा विद्यार्थी छात्र
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 75:
+------------------------------------------------------------------------
+Header Name:   २. जम्मा विद्यार्थी छात्रा
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 76:
+------------------------------------------------------------------------
+Header Name:   ३. आधारभूत शिक्षा पुरा गर्ने विद्यार्थी छात्र
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 77:
+------------------------------------------------------------------------
+Header Name:   ४. आधारभूत शिक्षा पुरा गर्ने विद्यार्थी छात्रा
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 78:
+------------------------------------------------------------------------
+Header Name:   ५. छात्रवृत्ती वा अन्य सुविधा पाउने विद्यार्थी छात्र
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 79:
+------------------------------------------------------------------------
+Header Name:   ६. छात्रवृत्ती वा अन्य सुविधा पाउने विद्यार्थी छात्रा
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 80:
+------------------------------------------------------------------------
+Header Name:   ७. दिवा खाजा खान पाउने विद्यार्थी छात्र
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 81:
+------------------------------------------------------------------------
+Header Name:   ८. दिवा खाजा खान पाउने विद्यार्थी छात्रा
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 82:
+------------------------------------------------------------------------
+Header Name:   ९. कक्षा ९ मा प्राविधिक विषयमा भर्ना हुने विद्यार्थी छात्र
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  5 of 1,326 rows (0.38%)
+
+------------------------------------------------------------------------
+COLUMN 83:
+------------------------------------------------------------------------
+Header Name:   १०. कक्षा ९ मा प्राविधिक विषयमा भर्ना हुने विद्यार्थी छात्रा
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 84:
+------------------------------------------------------------------------
+Header Name:   ११. विज्ञान विषयमा कक्षा ११ मा भर्ना हुने विद्यार्थी छात्र
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 85:
+------------------------------------------------------------------------
+Header Name:   १२. विज्ञान विषयमा कक्षा ११ मा भर्ना हुने विद्यार्थी छात्रा
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 86:
+------------------------------------------------------------------------
+Header Name:   १. छात्रवृत्तीको किसिम अनुसार <span style="color:red">दलित छात्र </span> वर्ग को लागि छात्रवृत्ती  सुविधाको संख्या कति छ ?
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 87:
+------------------------------------------------------------------------
+Header Name:   २. छात्रवृत्तीको किसिम अनुसार <span style="color:red">दलित छात्रा </span>. वर्ग को लागि छात्रवृत्ती  सुविधाको संख्या कति छ ?
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 88:
+------------------------------------------------------------------------
+Header Name:   ३. छात्रवृत्तीको किसिम अनुसार <span style="color:red">अपाङ्ग छात्र </span>  वर्ग को लागि छात्रवृत्ती  सुविधाको संख्या कति छ ?
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 89:
+------------------------------------------------------------------------
+Header Name:   ४. छात्रवृत्तीको किसिम अनुसार <span style="color:red">अपाङ्ग छात्रा </span>. वर्ग को लागि छात्रवृत्ती  सुविधाको संख्या कति छ ?
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 90:
+------------------------------------------------------------------------
+Header Name:   ५. छात्रवृत्तीको किसिम अनुसार <span style="color:red">जेहेन्दार छात्र </span>  वर्ग को लागि छात्रवृत्ती  सुविधाको संख्या कति छ ?
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 91:
+------------------------------------------------------------------------
+Header Name:   ६. छात्रवृत्तीको किसिम अनुसार <span style="color:red">जेहेन्दार छात्रा </span>. वर्ग को लागि छात्रवृत्ती  सुविधाको संख्या कति छ ?
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 92:
+------------------------------------------------------------------------
+Header Name:   ७. छात्रवृत्तीको किसिम अनुसार <span style="color:red">विपन्न छात्र</span>  वर्ग को लागि छात्रवृत्ती  सुविधाको संख्या कति छ ?
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 93:
+------------------------------------------------------------------------
+Header Name:   ८. छात्रवृत्तीको किसिम अनुसार <span style="color:red">विपन्न छात्रा </span> वर्ग को लागि छात्रवृत्ती  सुविधाको संख्या कति छ ?
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 94:
+------------------------------------------------------------------------
+Header Name:   ९. छात्रवृत्तीको किसिम अनुसार <span style="color:red">अन्य सुविधा छात्र  </span>. वर्ग को लागि छात्रवृत्ती  सुविधाको संख्या कति छ ?
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 95:
+------------------------------------------------------------------------
+Header Name:   १०. छात्रवृत्तीको किसिम अनुसार <span style="color:red">अन्य सुविधा छात्रा </span> वर्ग को लागि छात्रवृत्ती  सुविधाको संख्या कति छ ?
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 96:
+------------------------------------------------------------------------
+Header Name:   ११. छात्रवृत्तीको किसिम अनुसार <span style="color:red">अन्य मुस्लिम छात्र </span> वर्ग को लागि छात्रवृत्ती  सुविधाको संख्या कति छ ?
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 97:
+------------------------------------------------------------------------
+Header Name:   १२. छात्रवृत्तीको किसिम अनुसार <span style="color:red">अन्य मुस्लिम छात्रा </span> वर्ग को लागि छात्रवृत्ती  सुविधाको संख्या कति छ ?
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 98:
+------------------------------------------------------------------------
+Header Name:   १.९ विद्यालय व्यवस्थापन समितिको नियमित गठन/पुनर्गठनको अवस्था के छ ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    25 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 99:
+------------------------------------------------------------------------
+Header Name:   १.१० विद्यालय व्यवस्थापन समितिको नियमित बैठ बस्‍ने गरेको छ ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    15 characters
+Completeness:  4 of 1,326 rows (0.30%)
+
+------------------------------------------------------------------------
+COLUMN 100:
+------------------------------------------------------------------------
+Header Name:   १.११ जियो कोड
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    46 characters
+Completeness:  7 of 1,326 rows (0.53%)
+
+------------------------------------------------------------------------
+COLUMN 101:
+------------------------------------------------------------------------
+Header Name:   _१.११ जियो कोड_latitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  7 of 1,326 rows (0.53%)
+
+------------------------------------------------------------------------
+COLUMN 102:
+------------------------------------------------------------------------
+Header Name:   _१.११ जियो कोड_longitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  7 of 1,326 rows (0.53%)
+
+------------------------------------------------------------------------
+COLUMN 103:
+------------------------------------------------------------------------
+Header Name:   _१.११ जियो कोड_altitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    17 characters
+Completeness:  7 of 1,326 rows (0.53%)
+
+------------------------------------------------------------------------
+COLUMN 104:
+------------------------------------------------------------------------
+Header Name:   _१.११ जियो कोड_precision
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    8 characters
+Completeness:  7 of 1,326 rows (0.53%)
+
+------------------------------------------------------------------------
+COLUMN 105:
+------------------------------------------------------------------------
+Header Name:   १.१२ फोटो
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    17 characters
+Completeness:  7 of 1,326 rows (0.53%)
+
+------------------------------------------------------------------------
+COLUMN 106:
+------------------------------------------------------------------------
+Header Name:   १.१२ फोटो_URL
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(255))
+Max Length:    171 characters
+Completeness:  7 of 1,326 rows (0.53%)
+
+------------------------------------------------------------------------
+COLUMN 107:
+------------------------------------------------------------------------
+Header Name:   १. स्वास्थ्य संस्थाको प्रकार
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    26 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 108:
+------------------------------------------------------------------------
+Header Name:   अन्य भए स्वास्थ्य संस्थाको प्रकार
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 109:
+------------------------------------------------------------------------
+Header Name:   २. नाम
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    33 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 110:
+------------------------------------------------------------------------
+Header Name:   ३. ठेगाना
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    22 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 111:
+------------------------------------------------------------------------
+Header Name:   ४. सम्पर्क नं
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    10 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 112:
+------------------------------------------------------------------------
+Header Name:   ५. इमेल वा वेबसाईट
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    26 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 113:
+------------------------------------------------------------------------
+Header Name:   ६. चिकित्सक संख्या <span style="color:red">(दरवन्दी)</span>
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  4 of 1,326 rows (0.30%)
+
+------------------------------------------------------------------------
+COLUMN 114:
+------------------------------------------------------------------------
+Header Name:   ७. चिकित्सक संख्या <span style="color:red">(कार्यरत)</span>
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  4 of 1,326 rows (0.30%)
+
+------------------------------------------------------------------------
+COLUMN 115:
+------------------------------------------------------------------------
+Header Name:   ८. अन्य स्वास्थ्यकर्मीको संख्या <span style="color:red">(दरवन्दी)</span>
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  4 of 1,326 rows (0.30%)
+
+------------------------------------------------------------------------
+COLUMN 116:
+------------------------------------------------------------------------
+Header Name:   ९. अन्य स्वास्थ्यकर्मीको संख्या <span style="color:red">(कार्यरत)</span>
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  5 of 1,326 rows (0.38%)
+
+------------------------------------------------------------------------
+COLUMN 117:
+------------------------------------------------------------------------
+Header Name:   १०. स्वास्थ्य संस्थामा उपलब्ध सेवा तथा सुविधा
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(100))
+Max Length:    51 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 118:
+------------------------------------------------------------------------
+Header Name:   १०. स्वास्थ्य संस्थामा उपलब्ध सेवा तथा सुविधा/प्रसुति सेवा
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 119:
+------------------------------------------------------------------------
+Header Name:   १०. स्वास्थ्य संस्थामा उपलब्ध सेवा तथा सुविधा/ल्याब
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 120:
+------------------------------------------------------------------------
+Header Name:   १०. स्वास्थ्य संस्थामा उपलब्ध सेवा तथा सुविधा/क्लिनिक
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 121:
+------------------------------------------------------------------------
+Header Name:   १०. स्वास्थ्य संस्थामा उपलब्ध सेवा तथा सुविधा/एक्सरे सेवा
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 122:
+------------------------------------------------------------------------
+Header Name:   १०. स्वास्थ्य संस्थामा उपलब्ध सेवा तथा सुविधा/खोप सेवा
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 123:
+------------------------------------------------------------------------
+Header Name:   १०. स्वास्थ्य संस्थामा उपलब्ध सेवा तथा सुविधा/एससिटि
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 124:
+------------------------------------------------------------------------
+Header Name:   १०. स्वास्थ्य संस्थामा उपलब्ध सेवा तथा सुविधा/परामर्श सेवा
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 125:
+------------------------------------------------------------------------
+Header Name:   १०. स्वास्थ्य संस्थामा उपलब्ध सेवा तथा सुविधा/सुरक्षित मातृत्व सेवा
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 126:
+------------------------------------------------------------------------
+Header Name:   १०. स्वास्थ्य संस्थामा उपलब्ध सेवा तथा सुविधा/रक्त संचार सेवा
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 127:
+------------------------------------------------------------------------
+Header Name:   ११. बि सी जी (BCG ) खोप लिने बालबालिका संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  4 of 1,326 rows (0.30%)
+
+------------------------------------------------------------------------
+COLUMN 128:
+------------------------------------------------------------------------
+Header Name:   १२. प्रेभालांस (Provalance) डी.पी.टि, हे.प.बी, हे.प.बी३, खोप लिने बालबालिका संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  4 of 1,326 rows (0.30%)
+
+------------------------------------------------------------------------
+COLUMN 129:
+------------------------------------------------------------------------
+Header Name:   १३. पोलियो तेस्रो खोप लिने बालबालिका संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  4 of 1,326 rows (0.30%)
+
+------------------------------------------------------------------------
+COLUMN 130:
+------------------------------------------------------------------------
+Header Name:   १४. दादुरा रुबेल्ला (Rubella) खोप लिने बालबालिका संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  4 of 1,326 rows (0.30%)
+
+------------------------------------------------------------------------
+COLUMN 131:
+------------------------------------------------------------------------
+Header Name:   १५. जापानिज इनसेफलाइटिस (J.E) खोप लिने बालबालिका संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  4 of 1,326 rows (0.30%)
+
+------------------------------------------------------------------------
+COLUMN 132:
+------------------------------------------------------------------------
+Header Name:   १६.   ५ वर्ष मुनिका बालबालिका अनुगमन गरिएका संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  4 of 1,326 rows (0.30%)
+
+------------------------------------------------------------------------
+COLUMN 133:
+------------------------------------------------------------------------
+Header Name:   १७.   ५ वर्ष मुनिका बालबालिका अनुगमन गरिएका संख्या मध्ये कुपोषित
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  4 of 1,326 rows (0.30%)
+
+------------------------------------------------------------------------
+COLUMN 134:
+------------------------------------------------------------------------
+Header Name:   १८. गत बर्षको गर्बावती  प्रसुति सेवा भएको  संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 135:
+------------------------------------------------------------------------
+Header Name:   १९. पहिलो टि टि खोप लिने गर्भवती  संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 136:
+------------------------------------------------------------------------
+Header Name:   २०. पहिलो खोप लिएको एक महिना पछि  टि टि खोप लिने गर्भवती संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 137:
+------------------------------------------------------------------------
+Header Name:   २१.  गर्भावस्थाको ४ पटक जाच गराउने गर्भवती संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 138:
+------------------------------------------------------------------------
+Header Name:   २२.  स्वास्थ्य सस्थामा सुरक्षित प्रसुति सेवा भएको  संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 139:
+------------------------------------------------------------------------
+Header Name:   २३.  दक्ष स्वास्थ्यकर्मीको  सहयोगमा घरमा  प्रसुति सेवा भएको  संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 140:
+------------------------------------------------------------------------
+Header Name:   २४.  स्वास्थ्यकर्मीको अनुउपस्थितिमा घरमा  प्रसुति सेवा भएको  संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 141:
+------------------------------------------------------------------------
+Header Name:   २५.  गर्भावस्थाको प्रसुति अवस्था / सुत्केरी पछिको ६ हप्ता भित्र मृत्यु भएका महिला
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 142:
+------------------------------------------------------------------------
+Header Name:   २६. जीवित नवजात शिशु संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 143:
+------------------------------------------------------------------------
+Header Name:   २७. मृत जन्म नवजात शिशु संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 144:
+------------------------------------------------------------------------
+Header Name:   २८. जन्मेको २८ दिनभित्र मृत्यु भएका नवजात शिशु संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 145:
+------------------------------------------------------------------------
+Header Name:   २९.  १५-४८ बर्षका महिलाको संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    4 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 146:
+------------------------------------------------------------------------
+Header Name:   ३०.  परिवार नियोजनको <span style="color:red">(स्थायी ) </span>  साधन प्रयोग गर्ने महिला
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    4 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 147:
+------------------------------------------------------------------------
+Header Name:   ३१. परिवार नियोजनको <span style="color:red">(अस्थायी ) </span> साधन प्रयोग गर्ने महिला
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 148:
+------------------------------------------------------------------------
+Header Name:   ३२.  परिवार नियोजनको <span style="color:red">स्थायी </span> साधन प्रयोग गर्ने पुरुष
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 149:
+------------------------------------------------------------------------
+Header Name:   ३३. परिवार नियोजनको <span style="color:red">अस्थायी </span> साधन प्रयोग गर्ने पुरुष
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 150:
+------------------------------------------------------------------------
+Header Name:   ३४ महिला स्वास्थ्य स्वोयम सेविका  संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 151:
+------------------------------------------------------------------------
+Header Name:   ३५. जियो कोड
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    47 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 152:
+------------------------------------------------------------------------
+Header Name:   _३५. जियो कोड_latitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 153:
+------------------------------------------------------------------------
+Header Name:   _३५. जियो कोड_longitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 154:
+------------------------------------------------------------------------
+Header Name:   _३५. जियो कोड_altitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    17 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 155:
+------------------------------------------------------------------------
+Header Name:   _३५. जियो कोड_precision
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    8 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 156:
+------------------------------------------------------------------------
+Header Name:   ३६. फोटो
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    17 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 157:
+------------------------------------------------------------------------
+Header Name:   ३६. फोटो_URL
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(255))
+Max Length:    171 characters
+Completeness:  6 of 1,326 rows (0.45%)
+
+------------------------------------------------------------------------
+COLUMN 158:
+------------------------------------------------------------------------
+Header Name:   प्रश्नोत्तर समाप्त ।
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 159:
+------------------------------------------------------------------------
+Header Name:   १. भवनको प्रकार
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    21 characters
+Completeness:  25 of 1,326 rows (1.89%)
+
+------------------------------------------------------------------------
+COLUMN 160:
+------------------------------------------------------------------------
+Header Name:   १.१ भवन कुन प्रयोजनका लागि बनेको हो ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    22 characters
+Completeness:  27 of 1,326 rows (2.04%)
+
+------------------------------------------------------------------------
+COLUMN 161:
+------------------------------------------------------------------------
+Header Name:   १.१ भवन कुन प्रयोजनका लागि बनेको हो ?/कच्‍ची
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  27 of 1,326 rows (2.04%)
+
+------------------------------------------------------------------------
+COLUMN 162:
+------------------------------------------------------------------------
+Header Name:   १.१ भवन कुन प्रयोजनका लागि बनेको हो ?/पक्‍की
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  27 of 1,326 rows (2.04%)
+
+------------------------------------------------------------------------
+COLUMN 163:
+------------------------------------------------------------------------
+Header Name:   १.१ भवन कुन प्रयोजनका लागि बनेको हो ?/अर्ध पक्‍की
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  27 of 1,326 rows (2.04%)
+
+------------------------------------------------------------------------
+COLUMN 164:
+------------------------------------------------------------------------
+Header Name:   १.१ भवन कुन प्रयोजनका लागि बनेको हो ?/प्रशासनिक कार्यका लागि
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  27 of 1,326 rows (2.04%)
+
+------------------------------------------------------------------------
+COLUMN 165:
+------------------------------------------------------------------------
+Header Name:   १.१ भवन कुन प्रयोजनका लागि बनेको हो ?/शिक्षा
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  27 of 1,326 rows (2.04%)
+
+------------------------------------------------------------------------
+COLUMN 166:
+------------------------------------------------------------------------
+Header Name:   १.१ भवन कुन प्रयोजनका लागि बनेको हो ?/स्वास्थ्य
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  27 of 1,326 rows (2.04%)
+
+------------------------------------------------------------------------
+COLUMN 167:
+------------------------------------------------------------------------
+Header Name:   १.१ भवन कुन प्रयोजनका लागि बनेको हो ?/कृषि
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  27 of 1,326 rows (2.04%)
+
+------------------------------------------------------------------------
+COLUMN 168:
+------------------------------------------------------------------------
+Header Name:   १.१ भवन कुन प्रयोजनका लागि बनेको हो ?/सहकारी
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  27 of 1,326 rows (2.04%)
+
+------------------------------------------------------------------------
+COLUMN 169:
+------------------------------------------------------------------------
+Header Name:   १.१ भवन कुन प्रयोजनका लागि बनेको हो ?/सभा सम्मेलन
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  27 of 1,326 rows (2.04%)
+
+------------------------------------------------------------------------
+COLUMN 170:
+------------------------------------------------------------------------
+Header Name:   १.१ भवन कुन प्रयोजनका लागि बनेको हो ?/अन्य
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  27 of 1,326 rows (2.04%)
+
+------------------------------------------------------------------------
+COLUMN 171:
+------------------------------------------------------------------------
+Header Name:   अन्य के हो खुलाउनु होला ।
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    37 characters
+Completeness:  21 of 1,326 rows (1.58%)
+
+------------------------------------------------------------------------
+COLUMN 172:
+------------------------------------------------------------------------
+Header Name:   १.२ भवनमा सालाखाला कति मान्छे अटाउछन ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    3 characters
+Completeness:  24 of 1,326 rows (1.81%)
+
+------------------------------------------------------------------------
+COLUMN 173:
+------------------------------------------------------------------------
+Header Name:   १.३ भवनको प्रयोगको अवस्था कस्तो छ ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    14 characters
+Completeness:  27 of 1,326 rows (2.04%)
+
+------------------------------------------------------------------------
+COLUMN 174:
+------------------------------------------------------------------------
+Header Name:   अन्यमा छान्दा खुलाउनु होला ।
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 175:
+------------------------------------------------------------------------
+Header Name:   १.४ भवनमा स्वामित्व कस्को छ ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    13 characters
+Completeness:  27 of 1,326 rows (2.04%)
+
+------------------------------------------------------------------------
+COLUMN 176:
+------------------------------------------------------------------------
+Header Name:   २. नाम_2
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    37 characters
+Completeness:  27 of 1,326 rows (2.04%)
+
+------------------------------------------------------------------------
+COLUMN 177:
+------------------------------------------------------------------------
+Header Name:   ३. ठेगाना_2
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    38 characters
+Completeness:  27 of 1,326 rows (2.04%)
+
+------------------------------------------------------------------------
+COLUMN 178:
+------------------------------------------------------------------------
+Header Name:   ४. सम्पर्क नं_2
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    10 characters
+Completeness:  27 of 1,326 rows (2.04%)
+
+------------------------------------------------------------------------
+COLUMN 179:
+------------------------------------------------------------------------
+Header Name:   ५. भवनको प्रकार
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    6 characters
+Completeness:  27 of 1,326 rows (2.04%)
+
+------------------------------------------------------------------------
+COLUMN 180:
+------------------------------------------------------------------------
+Header Name:   ६. भवन निर्माणको अवस्था
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    21 characters
+Completeness:  27 of 1,326 rows (2.04%)
+
+------------------------------------------------------------------------
+COLUMN 181:
+------------------------------------------------------------------------
+Header Name:   ७. निर्माण सम्पन्‍न मिति
+Inferred Type: DateTime (Recommended SQL: DATETIME2)
+Max Length:    0 characters
+Completeness:  20 of 1,326 rows (1.51%)
+
+------------------------------------------------------------------------
+COLUMN 182:
+------------------------------------------------------------------------
+Header Name:   ८. भवनका जम्मा तला
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  26 of 1,326 rows (1.96%)
+
+------------------------------------------------------------------------
+COLUMN 183:
+------------------------------------------------------------------------
+Header Name:   ९. भवनका जम्मा कोठा
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  25 of 1,326 rows (1.89%)
+
+------------------------------------------------------------------------
+COLUMN 184:
+------------------------------------------------------------------------
+Header Name:   १०. जियो कोड
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    48 characters
+Completeness:  27 of 1,326 rows (2.04%)
+
+------------------------------------------------------------------------
+COLUMN 185:
+------------------------------------------------------------------------
+Header Name:   _१०. जियो कोड_latitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  27 of 1,326 rows (2.04%)
+
+------------------------------------------------------------------------
+COLUMN 186:
+------------------------------------------------------------------------
+Header Name:   _१०. जियो कोड_longitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  27 of 1,326 rows (2.04%)
+
+------------------------------------------------------------------------
+COLUMN 187:
+------------------------------------------------------------------------
+Header Name:   _१०. जियो कोड_altitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    18 characters
+Completeness:  27 of 1,326 rows (2.04%)
+
+------------------------------------------------------------------------
+COLUMN 188:
+------------------------------------------------------------------------
+Header Name:   _१०. जियो कोड_precision
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    8 characters
+Completeness:  27 of 1,326 rows (2.04%)
+
+------------------------------------------------------------------------
+COLUMN 189:
+------------------------------------------------------------------------
+Header Name:   ११. फोटो
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    17 characters
+Completeness:  27 of 1,326 rows (2.04%)
+
+------------------------------------------------------------------------
+COLUMN 190:
+------------------------------------------------------------------------
+Header Name:   ११. फोटो_URL
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(255))
+Max Length:    171 characters
+Completeness:  27 of 1,326 rows (2.04%)
+
+------------------------------------------------------------------------
+COLUMN 191:
+------------------------------------------------------------------------
+Header Name:   १. सुरक्षा निकायको प्रकार
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    11 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 192:
+------------------------------------------------------------------------
+Header Name:   २.  कति  जना सुरक्षा कर्मी हुनुहुन्छ
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 193:
+------------------------------------------------------------------------
+Header Name:   ३.   नाम
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    23 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 194:
+------------------------------------------------------------------------
+Header Name:   ४. ठेगाना
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    21 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 195:
+------------------------------------------------------------------------
+Header Name:   ५.  सम्पर्क नं
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    10 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 196:
+------------------------------------------------------------------------
+Header Name:   ६. इमेल वा वेबसाईट_2
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    21 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 197:
+------------------------------------------------------------------------
+Header Name:   ७. जियो कोड
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    44 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 198:
+------------------------------------------------------------------------
+Header Name:   _७. जियो कोड_latitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 199:
+------------------------------------------------------------------------
+Header Name:   _७. जियो कोड_longitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 200:
+------------------------------------------------------------------------
+Header Name:   _७. जियो कोड_altitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    4 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 201:
+------------------------------------------------------------------------
+Header Name:   _७. जियो कोड_precision
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    6 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 202:
+------------------------------------------------------------------------
+Header Name:   ८. फोटो
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    17 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 203:
+------------------------------------------------------------------------
+Header Name:   ८. फोटो_URL
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(255))
+Max Length:    171 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 204:
+------------------------------------------------------------------------
+Header Name:   १. बैंक तथा वित्तिय संस्थाको प्रकार
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    16 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 205:
+------------------------------------------------------------------------
+Header Name:   २. नाम_3
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    40 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 206:
+------------------------------------------------------------------------
+Header Name:   ३. ठेगाना_3
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    14 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 207:
+------------------------------------------------------------------------
+Header Name:   ४. सम्पर्क नं_3
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    10 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 208:
+------------------------------------------------------------------------
+Header Name:   ५. इमेल वा वेबसाईट_2
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    32 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 209:
+------------------------------------------------------------------------
+Header Name:   ६. भवनको स्तर
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    12 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 210:
+------------------------------------------------------------------------
+Header Name:   ७. भवनको  आफ्नै छ  वा आफ्नै हो कि होइन
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    9 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 211:
+------------------------------------------------------------------------
+Header Name:   ८. महिला  शेयर  सदस्य  संख्या
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 212:
+------------------------------------------------------------------------
+Header Name:   ९. पुरुष शेयर  सदस्य संख्या
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 213:
+------------------------------------------------------------------------
+Header Name:   १०. सहकारीको  प्रकार
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 214:
+------------------------------------------------------------------------
+Header Name:   १०. सहकारीको  प्रकार/महिला सदस्य सहकारी
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 215:
+------------------------------------------------------------------------
+Header Name:   १०. सहकारीको  प्रकार/पुरुस सदस्य सहकारी
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 216:
+------------------------------------------------------------------------
+Header Name:   १०. सहकारीको  प्रकार/संयुक्त सहकारी
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 217:
+------------------------------------------------------------------------
+Header Name:   १०. सहकारीको  प्रकार/कृषि बचत सहकारी
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 218:
+------------------------------------------------------------------------
+Header Name:   १०. सहकारीको  प्रकार/ऋण सहकारी
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 219:
+------------------------------------------------------------------------
+Header Name:   १०. सहकारीको  प्रकार/बहुउद्देश्यीय सहकारी
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 220:
+------------------------------------------------------------------------
+Header Name:   १०. सहकारीको  प्रकार/अन्य
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 221:
+------------------------------------------------------------------------
+Header Name:   अन्य भए उल्लेख गर्नुस
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 222:
+------------------------------------------------------------------------
+Header Name:   ११. सहकारी कुल  शेर पुजी
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 223:
+------------------------------------------------------------------------
+Header Name:   १२.सहकारी कुल  बचत पुजी
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 224:
+------------------------------------------------------------------------
+Header Name:   १३. ऋण  लिएको महिला ऋणी  संख्या
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 225:
+------------------------------------------------------------------------
+Header Name:   १४. ऋण लिएको पुरुष ऋणी संख्या
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 226:
+------------------------------------------------------------------------
+Header Name:   १५. अधित्कम ऋण प्रबाह या  जारी गरेको रकम
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 227:
+------------------------------------------------------------------------
+Header Name:   १६. न्युतम ऋण प्रबाह  या  जारी गरेको रकम
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 228:
+------------------------------------------------------------------------
+Header Name:   १७. सहकारी ऋण  को  प्रकार उलेख गर्नुस
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 229:
+------------------------------------------------------------------------
+Header Name:   १७. सहकारी ऋण  को  प्रकार उलेख गर्नुस/कृषि ऋण कर्जा
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 230:
+------------------------------------------------------------------------
+Header Name:   १७. सहकारी ऋण  को  प्रकार उलेख गर्नुस/पशुपालन ऋण कर्जा
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 231:
+------------------------------------------------------------------------
+Header Name:   १७. सहकारी ऋण  को  प्रकार उलेख गर्नुस/भवन निर्माण कर्जा  ऋण
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 232:
+------------------------------------------------------------------------
+Header Name:   १७. सहकारी ऋण  को  प्रकार उलेख गर्नुस/हाएर पर्चेसे कर्जा
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 233:
+------------------------------------------------------------------------
+Header Name:   १७. सहकारी ऋण  को  प्रकार उलेख गर्नुस/औषधि उपचार ऋण
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 234:
+------------------------------------------------------------------------
+Header Name:   १७. सहकारी ऋण  को  प्रकार उलेख गर्नुस/घर निर्माण कर्जा ऋण
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 235:
+------------------------------------------------------------------------
+Header Name:   १७. सहकारी ऋण  को  प्रकार उलेख गर्नुस/अन्य
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 236:
+------------------------------------------------------------------------
+Header Name:   अन्य भए उलेख गर्नुस
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 237:
+------------------------------------------------------------------------
+Header Name:   १८. सरकारी सस्था सहयोग प्राप्त भए  सहयोग  रकम  उल्लेख  गर्नुस
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 238:
+------------------------------------------------------------------------
+Header Name:   १९. सहकारीको लागि बाह्य सहयोग छ छैन ?
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 239:
+------------------------------------------------------------------------
+Header Name:   १९. सहकारीको लागि बाह्य सहयोग छ छैन ?/सरकारी  सस्थाको   सहयोग छ
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 240:
+------------------------------------------------------------------------
+Header Name:   १९. सहकारीको लागि बाह्य सहयोग छ छैन ?/गै. स. स. को  सहयोग छ
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 241:
+------------------------------------------------------------------------
+Header Name:   १९. सहकारीको लागि बाह्य सहयोग छ छैन ?/सहयोग  छैन
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 242:
+------------------------------------------------------------------------
+Header Name:   अन्य  सहयोग  छ छैन
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 243:
+------------------------------------------------------------------------
+Header Name:   अन्य  सहयोग  छ छैन/फर्निचर सहयोग
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 244:
+------------------------------------------------------------------------
+Header Name:   अन्य  सहयोग  छ छैन/जिन्सी सहयोग
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 245:
+------------------------------------------------------------------------
+Header Name:   अन्य  सहयोग  छ छैन/तालिम /Tranings
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 246:
+------------------------------------------------------------------------
+Header Name:   अन्य  सहयोग  छ छैन/क्षमता  विकास
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 247:
+------------------------------------------------------------------------
+Header Name:   अन्य  सहयोग  छ छैन/कम्प्युटर  / Associaries सहयोग
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 248:
+------------------------------------------------------------------------
+Header Name:   अन्य  सहयोग  छ छैन/Stationary/logistics  सहयोग
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 249:
+------------------------------------------------------------------------
+Header Name:   अन्य  सहयोग  छ छैन/अन्य
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 250:
+------------------------------------------------------------------------
+Header Name:   २०. गै.  स. स. सस्था बाट सहयोग प्राप्त  भए  रकम उल्लेख  गर्नुस
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 251:
+------------------------------------------------------------------------
+Header Name:   २१. GPS लिनिहोस
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    46 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 252:
+------------------------------------------------------------------------
+Header Name:   _२१. GPS लिनिहोस_latitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 253:
+------------------------------------------------------------------------
+Header Name:   _२१. GPS लिनिहोस_longitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 254:
+------------------------------------------------------------------------
+Header Name:   _२१. GPS लिनिहोस_altitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    17 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 255:
+------------------------------------------------------------------------
+Header Name:   _२१. GPS लिनिहोस_precision
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    6 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 256:
+------------------------------------------------------------------------
+Header Name:   २२. फोटो
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    17 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 257:
+------------------------------------------------------------------------
+Header Name:   २२. फोटो_URL
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(255))
+Max Length:    171 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 258:
+------------------------------------------------------------------------
+Header Name:   १. होटल/रिसोर्टको प्रकार
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    11 characters
+Completeness:  8 of 1,326 rows (0.60%)
+
+------------------------------------------------------------------------
+COLUMN 259:
+------------------------------------------------------------------------
+Header Name:   २. उत्तरदाताको नाम
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    16 characters
+Completeness:  8 of 1,326 rows (0.60%)
+
+------------------------------------------------------------------------
+COLUMN 260:
+------------------------------------------------------------------------
+Header Name:   ३ होटेल रेष्टुरेन्टको नाम
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    41 characters
+Completeness:  8 of 1,326 rows (0.60%)
+
+------------------------------------------------------------------------
+COLUMN 261:
+------------------------------------------------------------------------
+Header Name:   ४. ठेगाना_2
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    16 characters
+Completeness:  8 of 1,326 rows (0.60%)
+
+------------------------------------------------------------------------
+COLUMN 262:
+------------------------------------------------------------------------
+Header Name:   ५. दर्ता भएको छ कि छैन
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    3 characters
+Completeness:  8 of 1,326 rows (0.60%)
+
+------------------------------------------------------------------------
+COLUMN 263:
+------------------------------------------------------------------------
+Header Name:   ६. कहाँ दर्ता छ ? दर्ता भएको निकायको नाम लेख्‍नु होला ।
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 264:
+------------------------------------------------------------------------
+Header Name:   ७. सम्पर्क नं
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    10 characters
+Completeness:  8 of 1,326 rows (0.60%)
+
+------------------------------------------------------------------------
+COLUMN 265:
+------------------------------------------------------------------------
+Header Name:   ८. इमेल वा वेबसाईट
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    28 characters
+Completeness:  8 of 1,326 rows (0.60%)
+
+------------------------------------------------------------------------
+COLUMN 266:
+------------------------------------------------------------------------
+Header Name:   ९. जियो कोड
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    47 characters
+Completeness:  8 of 1,326 rows (0.60%)
+
+------------------------------------------------------------------------
+COLUMN 267:
+------------------------------------------------------------------------
+Header Name:   _९. जियो कोड_latitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  8 of 1,326 rows (0.60%)
+
+------------------------------------------------------------------------
+COLUMN 268:
+------------------------------------------------------------------------
+Header Name:   _९. जियो कोड_longitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  8 of 1,326 rows (0.60%)
+
+------------------------------------------------------------------------
+COLUMN 269:
+------------------------------------------------------------------------
+Header Name:   _९. जियो कोड_altitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    17 characters
+Completeness:  8 of 1,326 rows (0.60%)
+
+------------------------------------------------------------------------
+COLUMN 270:
+------------------------------------------------------------------------
+Header Name:   _९. जियो कोड_precision
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    6 characters
+Completeness:  8 of 1,326 rows (0.60%)
+
+------------------------------------------------------------------------
+COLUMN 271:
+------------------------------------------------------------------------
+Header Name:   १०.  फोटो
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    17 characters
+Completeness:  8 of 1,326 rows (0.60%)
+
+------------------------------------------------------------------------
+COLUMN 272:
+------------------------------------------------------------------------
+Header Name:   १०.  फोटो_URL
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(255))
+Max Length:    171 characters
+Completeness:  8 of 1,326 rows (0.60%)
+
+------------------------------------------------------------------------
+COLUMN 273:
+------------------------------------------------------------------------
+Header Name:   १. पुल/पुलेसाको प्रकार
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    9 characters
+Completeness:  42 of 1,326 rows (3.17%)
+
+------------------------------------------------------------------------
+COLUMN 274:
+------------------------------------------------------------------------
+Header Name:   २. पुल/पुलेसाको अवस्था
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    6 characters
+Completeness:  42 of 1,326 rows (3.17%)
+
+------------------------------------------------------------------------
+COLUMN 275:
+------------------------------------------------------------------------
+Header Name:   ३. जिर्ण भएको पुललाइ के के मर्मत गर्नु पर्ने देखिन्छ
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(255))
+Max Length:    138 characters
+Completeness:  20 of 1,326 rows (1.51%)
+
+------------------------------------------------------------------------
+COLUMN 276:
+------------------------------------------------------------------------
+Header Name:   ३. जिर्ण भएको पुललाइ के के मर्मत गर्नु पर्ने देखिन्छ/तार /बार /डन्डी उकेको देखिन्छ
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  20 of 1,326 rows (1.51%)
+
+------------------------------------------------------------------------
+COLUMN 277:
+------------------------------------------------------------------------
+Header Name:   ३. जिर्ण भएको पुललाइ के के मर्मत गर्नु पर्ने देखिन्छ/साईड वाल  पर्खाल भत्केको देखिन्छ
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  20 of 1,326 rows (1.51%)
+
+------------------------------------------------------------------------
+COLUMN 278:
+------------------------------------------------------------------------
+Header Name:   ३. जिर्ण भएको पुललाइ के के मर्मत गर्नु पर्ने देखिन्छ/पुलको बाटोमा प्वाल परेको देखिन्छ
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  20 of 1,326 rows (1.51%)
+
+------------------------------------------------------------------------
+COLUMN 279:
+------------------------------------------------------------------------
+Header Name:   ३. जिर्ण भएको पुललाइ के के मर्मत गर्नु पर्ने देखिन्छ/पुलको जग चिरा परको / भत्किन लागेको देखिन्छ
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  20 of 1,326 rows (1.51%)
+
+------------------------------------------------------------------------
+COLUMN 280:
+------------------------------------------------------------------------
+Header Name:   ३. जिर्ण भएको पुललाइ के के मर्मत गर्नु पर्ने देखिन्छ/पुलको जग नै भासेको / हल्लिने देखिन्छ
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  20 of 1,326 rows (1.51%)
+
+------------------------------------------------------------------------
+COLUMN 281:
+------------------------------------------------------------------------
+Header Name:   ४. पुलको लम्बाइ मिटरमा भन्‍नु होला
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    4 characters
+Completeness:  42 of 1,326 rows (3.17%)
+
+------------------------------------------------------------------------
+COLUMN 282:
+------------------------------------------------------------------------
+Header Name:   ५. पुलको चौडाइ मिटरमा भन्नु होला
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  42 of 1,326 rows (3.17%)
+
+------------------------------------------------------------------------
+COLUMN 283:
+------------------------------------------------------------------------
+Header Name:   ६.  उत्तरदाताको नाम
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    21 characters
+Completeness:  42 of 1,326 rows (3.17%)
+
+------------------------------------------------------------------------
+COLUMN 284:
+------------------------------------------------------------------------
+Header Name:   ७. ठेगाना
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    28 characters
+Completeness:  42 of 1,326 rows (3.17%)
+
+------------------------------------------------------------------------
+COLUMN 285:
+------------------------------------------------------------------------
+Header Name:   ८. फोटो_2
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    17 characters
+Completeness:  42 of 1,326 rows (3.17%)
+
+------------------------------------------------------------------------
+COLUMN 286:
+------------------------------------------------------------------------
+Header Name:   ८. फोटो_URL_2
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(255))
+Max Length:    171 characters
+Completeness:  42 of 1,326 rows (3.17%)
+
+------------------------------------------------------------------------
+COLUMN 287:
+------------------------------------------------------------------------
+Header Name:   ९ जियोकोड लिनु होला ।
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    48 characters
+Completeness:  39 of 1,326 rows (2.94%)
+
+------------------------------------------------------------------------
+COLUMN 288:
+------------------------------------------------------------------------
+Header Name:   _९ जियोकोड लिनु होला । _latitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  39 of 1,326 rows (2.94%)
+
+------------------------------------------------------------------------
+COLUMN 289:
+------------------------------------------------------------------------
+Header Name:   _९ जियोकोड लिनु होला । _longitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  39 of 1,326 rows (2.94%)
+
+------------------------------------------------------------------------
+COLUMN 290:
+------------------------------------------------------------------------
+Header Name:   _९ जियोकोड लिनु होला । _altitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    17 characters
+Completeness:  39 of 1,326 rows (2.94%)
+
+------------------------------------------------------------------------
+COLUMN 291:
+------------------------------------------------------------------------
+Header Name:   _९ जियोकोड लिनु होला । _precision
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    8 characters
+Completeness:  39 of 1,326 rows (2.94%)
+
+------------------------------------------------------------------------
+COLUMN 292:
+------------------------------------------------------------------------
+Header Name:   १. उद्योगको स्वामित्व
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    4 characters
+Completeness:  16 of 1,326 rows (1.21%)
+
+------------------------------------------------------------------------
+COLUMN 293:
+------------------------------------------------------------------------
+Header Name:   २. उद्योगको प्रकार
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    5 characters
+Completeness:  17 of 1,326 rows (1.28%)
+
+------------------------------------------------------------------------
+COLUMN 294:
+------------------------------------------------------------------------
+Header Name:   ३. उत्पादन हुने वस्तु
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    26 characters
+Completeness:  17 of 1,326 rows (1.28%)
+
+------------------------------------------------------------------------
+COLUMN 295:
+------------------------------------------------------------------------
+Header Name:   ३.१ यहाँ माथि उल्लेख गरेका बाहेक अरु केहि भएर खुलाउनु होला ।
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    13 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 296:
+------------------------------------------------------------------------
+Header Name:   ४. अन्य उत्पादन हुने वस्तु
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 297:
+------------------------------------------------------------------------
+Header Name:   ५. रोजगारी विवरण
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 298:
+------------------------------------------------------------------------
+Header Name:   ५.१ महिला
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  17 of 1,326 rows (1.28%)
+
+------------------------------------------------------------------------
+COLUMN 299:
+------------------------------------------------------------------------
+Header Name:   ५.२ पुरुष
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  17 of 1,326 rows (1.28%)
+
+------------------------------------------------------------------------
+COLUMN 300:
+------------------------------------------------------------------------
+Header Name:   ५.३ जम्मा
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  17 of 1,326 rows (1.28%)
+
+------------------------------------------------------------------------
+COLUMN 301:
+------------------------------------------------------------------------
+Header Name:   ६. उद्योग दर्ता छ कि छैन
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    3 characters
+Completeness:  16 of 1,326 rows (1.21%)
+
+------------------------------------------------------------------------
+COLUMN 302:
+------------------------------------------------------------------------
+Header Name:   ७. कुन निकायमा दर्ता छ
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    29 characters
+Completeness:  13 of 1,326 rows (0.98%)
+
+------------------------------------------------------------------------
+COLUMN 303:
+------------------------------------------------------------------------
+Header Name:   ८. उत्तरदाताको नाम
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    20 characters
+Completeness:  17 of 1,326 rows (1.28%)
+
+------------------------------------------------------------------------
+COLUMN 304:
+------------------------------------------------------------------------
+Header Name:   ९. सम्पर्क नं
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    10 characters
+Completeness:  17 of 1,326 rows (1.28%)
+
+------------------------------------------------------------------------
+COLUMN 305:
+------------------------------------------------------------------------
+Header Name:   १०. ठेगाना
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    22 characters
+Completeness:  17 of 1,326 rows (1.28%)
+
+------------------------------------------------------------------------
+COLUMN 306:
+------------------------------------------------------------------------
+Header Name:   ११. जियो कोड
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    46 characters
+Completeness:  16 of 1,326 rows (1.21%)
+
+------------------------------------------------------------------------
+COLUMN 307:
+------------------------------------------------------------------------
+Header Name:   _११. जियो कोड_latitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  16 of 1,326 rows (1.21%)
+
+------------------------------------------------------------------------
+COLUMN 308:
+------------------------------------------------------------------------
+Header Name:   _११. जियो कोड_longitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  16 of 1,326 rows (1.21%)
+
+------------------------------------------------------------------------
+COLUMN 309:
+------------------------------------------------------------------------
+Header Name:   _११. जियो कोड_altitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    17 characters
+Completeness:  16 of 1,326 rows (1.21%)
+
+------------------------------------------------------------------------
+COLUMN 310:
+------------------------------------------------------------------------
+Header Name:   _११. जियो कोड_precision
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    6 characters
+Completeness:  16 of 1,326 rows (1.21%)
+
+------------------------------------------------------------------------
+COLUMN 311:
+------------------------------------------------------------------------
+Header Name:   १२. फोटो
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    17 characters
+Completeness:  17 of 1,326 rows (1.28%)
+
+------------------------------------------------------------------------
+COLUMN 312:
+------------------------------------------------------------------------
+Header Name:   १२. फोटो_URL
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(255))
+Max Length:    171 characters
+Completeness:  17 of 1,326 rows (1.28%)
+
+------------------------------------------------------------------------
+COLUMN 313:
+------------------------------------------------------------------------
+Header Name:   १. गैसस/क्लब/समूहको प्रकार
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    50 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 314:
+------------------------------------------------------------------------
+Header Name:   १.१ संस्था वा क्लव वा समूहको नाम
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    41 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 315:
+------------------------------------------------------------------------
+Header Name:   २. उत्तरदाताको नाम_2
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    9 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 316:
+------------------------------------------------------------------------
+Header Name:   ४. ठेगाना_3
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    10 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 317:
+------------------------------------------------------------------------
+Header Name:   ५. सम्पर्क नं_2
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    10 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 318:
+------------------------------------------------------------------------
+Header Name:   ६.स्थापना मिति विक्रम सम्वतमा लेख्‍नुहोला ।
+Inferred Type: DateTime (Recommended SQL: DATETIME2)
+Max Length:    0 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 319:
+------------------------------------------------------------------------
+Header Name:   ७.दर्ता भएको निकाय
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    28 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 320:
+------------------------------------------------------------------------
+Header Name:   ८.लेखापरीक्षण अनुसार बार्षिक ट्रान्जेक्शन रकम रुपैयाँमा लेख्‍नु होला ।
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    1 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 321:
+------------------------------------------------------------------------
+Header Name:   ९.मुख्य विकासका प्राथमिकताका क्षेत्र
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    21 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 322:
+------------------------------------------------------------------------
+Header Name:   अन्य भनेको खुलाउनु होला ।
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 323:
+------------------------------------------------------------------------
+Header Name:   १०.दातृ निकायहरुको सूची
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    21 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 324:
+------------------------------------------------------------------------
+Header Name:   ११.संस्थाको कार्यक्षेत्र
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    12 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 325:
+------------------------------------------------------------------------
+Header Name:   १२.हाल सञ्‍चालित कार्यक्रमहरुको संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 326:
+------------------------------------------------------------------------
+Header Name:   १३. हाल जम्मा कार्यरत कर्मचारी संख्या
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    1 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 327:
+------------------------------------------------------------------------
+Header Name:   १४. जम्मा महिला सदस्य संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 328:
+------------------------------------------------------------------------
+Header Name:   १५. जम्मा पुरुष सदस्य संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 329:
+------------------------------------------------------------------------
+Header Name:   १६. सेवाग्राही जम्मा महिला संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 330:
+------------------------------------------------------------------------
+Header Name:   १७. सेवाग्राही जम्मा पुरुष संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 331:
+------------------------------------------------------------------------
+Header Name:   १८.  जियो कोड
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    45 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 332:
+------------------------------------------------------------------------
+Header Name:   _१८.  जियो कोड_latitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 333:
+------------------------------------------------------------------------
+Header Name:   _१८.  जियो कोड_longitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 334:
+------------------------------------------------------------------------
+Header Name:   _१८.  जियो कोड_altitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    17 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 335:
+------------------------------------------------------------------------
+Header Name:   _१८.  जियो कोड_precision
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    4 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 336:
+------------------------------------------------------------------------
+Header Name:   १९. फोटो
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    17 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 337:
+------------------------------------------------------------------------
+Header Name:   १९. फोटो_URL
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(255))
+Max Length:    171 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 338:
+------------------------------------------------------------------------
+Header Name:   १. भु-उपयोगको प्रकार
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(100))
+Max Length:    64 characters
+Completeness:  5 of 1,326 rows (0.38%)
+
+------------------------------------------------------------------------
+COLUMN 339:
+------------------------------------------------------------------------
+Header Name:   १.१ भूक्षेत्रमा स्वामित्व
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    13 characters
+Completeness:  5 of 1,326 rows (0.38%)
+
+------------------------------------------------------------------------
+COLUMN 340:
+------------------------------------------------------------------------
+Header Name:   १.२ भूक्षेत्रमा चार किल्ला सीमाना
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(100))
+Max Length:    56 characters
+Completeness:  5 of 1,326 rows (0.38%)
+
+------------------------------------------------------------------------
+COLUMN 341:
+------------------------------------------------------------------------
+Header Name:   १.३ केहि इतिहास छ ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    40 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 342:
+------------------------------------------------------------------------
+Header Name:   २. सार्वजनिक क्षेत्रको प्रकार छान्नुहोस
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    13 characters
+Completeness:  3 of 1,326 rows (0.23%)
+
+------------------------------------------------------------------------
+COLUMN 343:
+------------------------------------------------------------------------
+Header Name:   ३. विपद् तथा संवेदनशील क्षेत्र
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    15 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 344:
+------------------------------------------------------------------------
+Header Name:   ३. विपद् तथा संवेदनशील क्षेत्र/बाढी
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 345:
+------------------------------------------------------------------------
+Header Name:   ३. विपद् तथा संवेदनशील क्षेत्र/पहिरो
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 346:
+------------------------------------------------------------------------
+Header Name:   ३. विपद् तथा संवेदनशील क्षेत्र/नदी कट्टान
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 347:
+------------------------------------------------------------------------
+Header Name:   ३. विपद् तथा संवेदनशील क्षेत्र/ढुबान
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 348:
+------------------------------------------------------------------------
+Header Name:   ३. विपद् तथा संवेदनशील क्षेत्र/सुख्खा
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 349:
+------------------------------------------------------------------------
+Header Name:   ३.१ जम्मा क्षेत्रफल कति छ
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    4 characters
+Completeness:  5 of 1,326 rows (0.38%)
+
+------------------------------------------------------------------------
+COLUMN 350:
+------------------------------------------------------------------------
+Header Name:   ४. उत्तरदाताको नाम
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    13 characters
+Completeness:  5 of 1,326 rows (0.38%)
+
+------------------------------------------------------------------------
+COLUMN 351:
+------------------------------------------------------------------------
+Header Name:   ५. ठेगाना
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    22 characters
+Completeness:  5 of 1,326 rows (0.38%)
+
+------------------------------------------------------------------------
+COLUMN 352:
+------------------------------------------------------------------------
+Header Name:   ६. जियो कोड
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    48 characters
+Completeness:  5 of 1,326 rows (0.38%)
+
+------------------------------------------------------------------------
+COLUMN 353:
+------------------------------------------------------------------------
+Header Name:   _६. जियो कोड_latitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  5 of 1,326 rows (0.38%)
+
+------------------------------------------------------------------------
+COLUMN 354:
+------------------------------------------------------------------------
+Header Name:   _६. जियो कोड_longitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  5 of 1,326 rows (0.38%)
+
+------------------------------------------------------------------------
+COLUMN 355:
+------------------------------------------------------------------------
+Header Name:   _६. जियो कोड_altitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    17 characters
+Completeness:  5 of 1,326 rows (0.38%)
+
+------------------------------------------------------------------------
+COLUMN 356:
+------------------------------------------------------------------------
+Header Name:   _६. जियो कोड_precision
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    8 characters
+Completeness:  5 of 1,326 rows (0.38%)
+
+------------------------------------------------------------------------
+COLUMN 357:
+------------------------------------------------------------------------
+Header Name:   ८. फोटो_3
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    17 characters
+Completeness:  5 of 1,326 rows (0.38%)
+
+------------------------------------------------------------------------
+COLUMN 358:
+------------------------------------------------------------------------
+Header Name:   ८. फोटो_URL_3
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(255))
+Max Length:    171 characters
+Completeness:  5 of 1,326 rows (0.38%)
+
+------------------------------------------------------------------------
+COLUMN 359:
+------------------------------------------------------------------------
+Header Name:   १. प्राकृतिक श्रोतको प्रकार
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    23 characters
+Completeness:  16 of 1,326 rows (1.21%)
+
+------------------------------------------------------------------------
+COLUMN 360:
+------------------------------------------------------------------------
+Header Name:   १.१ नाम (जस्तै दूधकुण्ड पोखरी)
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    26 characters
+Completeness:  16 of 1,326 rows (1.21%)
+
+------------------------------------------------------------------------
+COLUMN 361:
+------------------------------------------------------------------------
+Header Name:   १.२ जम्मा क्षेत्रफल
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  16 of 1,326 rows (1.21%)
+
+------------------------------------------------------------------------
+COLUMN 362:
+------------------------------------------------------------------------
+Header Name:   १.३ यस क्षेत्रमा पर्ने जम्मा घरधुरीहरु
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  16 of 1,326 rows (1.21%)
+
+------------------------------------------------------------------------
+COLUMN 363:
+------------------------------------------------------------------------
+Header Name:   १.४ स्वामित्व कस्को छ
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    13 characters
+Completeness:  16 of 1,326 rows (1.21%)
+
+------------------------------------------------------------------------
+COLUMN 364:
+------------------------------------------------------------------------
+Header Name:   १.५ सीमाना
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    44 characters
+Completeness:  16 of 1,326 rows (1.21%)
+
+------------------------------------------------------------------------
+COLUMN 365:
+------------------------------------------------------------------------
+Header Name:   १.६ केहि इतिहास छ ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(100))
+Max Length:    54 characters
+Completeness:  12 of 1,326 rows (0.90%)
+
+------------------------------------------------------------------------
+COLUMN 366:
+------------------------------------------------------------------------
+Header Name:   २. उत्तरदाताको नाम_3
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    25 characters
+Completeness:  16 of 1,326 rows (1.21%)
+
+------------------------------------------------------------------------
+COLUMN 367:
+------------------------------------------------------------------------
+Header Name:   ३. ठेगाना_4
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    27 characters
+Completeness:  16 of 1,326 rows (1.21%)
+
+------------------------------------------------------------------------
+COLUMN 368:
+------------------------------------------------------------------------
+Header Name:   ४. जियो कोड
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    47 characters
+Completeness:  16 of 1,326 rows (1.21%)
+
+------------------------------------------------------------------------
+COLUMN 369:
+------------------------------------------------------------------------
+Header Name:   _४. जियो कोड_latitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  16 of 1,326 rows (1.21%)
+
+------------------------------------------------------------------------
+COLUMN 370:
+------------------------------------------------------------------------
+Header Name:   _४. जियो कोड_longitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  16 of 1,326 rows (1.21%)
+
+------------------------------------------------------------------------
+COLUMN 371:
+------------------------------------------------------------------------
+Header Name:   _४. जियो कोड_altitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    17 characters
+Completeness:  16 of 1,326 rows (1.21%)
+
+------------------------------------------------------------------------
+COLUMN 372:
+------------------------------------------------------------------------
+Header Name:   _४. जियो कोड_precision
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    8 characters
+Completeness:  16 of 1,326 rows (1.21%)
+
+------------------------------------------------------------------------
+COLUMN 373:
+------------------------------------------------------------------------
+Header Name:   ६. फोटो
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    17 characters
+Completeness:  16 of 1,326 rows (1.21%)
+
+------------------------------------------------------------------------
+COLUMN 374:
+------------------------------------------------------------------------
+Header Name:   ६. फोटो_URL
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(255))
+Max Length:    171 characters
+Completeness:  16 of 1,326 rows (1.21%)
+
+------------------------------------------------------------------------
+COLUMN 375:
+------------------------------------------------------------------------
+Header Name:   १. संस्कृतिक सम्पदाको प्रकार
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    9 characters
+Completeness:  206 of 1,326 rows (15.54%)
+
+------------------------------------------------------------------------
+COLUMN 376:
+------------------------------------------------------------------------
+Header Name:   २. संस्कृतिक सम्पदाको नाम
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    46 characters
+Completeness:  202 of 1,326 rows (15.23%)
+
+------------------------------------------------------------------------
+COLUMN 377:
+------------------------------------------------------------------------
+Header Name:   २.१ वार्षिक आम्दानी कति हुन्छ ?
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    6 characters
+Completeness:  110 of 1,326 rows (8.30%)
+
+------------------------------------------------------------------------
+COLUMN 378:
+------------------------------------------------------------------------
+Header Name:   २.२ वार्षिक भ्रमण गर्ने आगन्तुकको संख्या कति होला ?
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    5 characters
+Completeness:  132 of 1,326 rows (9.95%)
+
+------------------------------------------------------------------------
+COLUMN 379:
+------------------------------------------------------------------------
+Header Name:   २.३ यस सम्पदाले ओगटेको जम्मा क्षेत्रफल कति छ  ? वर्ग किमि मा भन्नु होला ।
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  121 of 1,326 rows (9.13%)
+
+------------------------------------------------------------------------
+COLUMN 380:
+------------------------------------------------------------------------
+Header Name:   २.४ सम्पदा निर्माण भएको साल कहिले हो  ?
+Inferred Type: DateTime (Recommended SQL: DATETIME2)
+Max Length:    0 characters
+Completeness:  195 of 1,326 rows (14.71%)
+
+------------------------------------------------------------------------
+COLUMN 381:
+------------------------------------------------------------------------
+Header Name:   २.५ पर्यटकहरुका लागि गाइडहरुको व्यवस्थापन गरिएको छ ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    3 characters
+Completeness:  201 of 1,326 rows (15.16%)
+
+------------------------------------------------------------------------
+COLUMN 382:
+------------------------------------------------------------------------
+Header Name:   २.५.१ संख्या कति छ
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  5 of 1,326 rows (0.38%)
+
+------------------------------------------------------------------------
+COLUMN 383:
+------------------------------------------------------------------------
+Header Name:   २.६ महत्व/ धार्मिक महत्व केहि भए उल्लेख गर्नु होला ।
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(255))
+Max Length:    163 characters
+Completeness:  152 of 1,326 rows (11.46%)
+
+------------------------------------------------------------------------
+COLUMN 384:
+------------------------------------------------------------------------
+Header Name:   २.७ सीमाना
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(100))
+Max Length:    89 characters
+Completeness:  136 of 1,326 rows (10.26%)
+
+------------------------------------------------------------------------
+COLUMN 385:
+------------------------------------------------------------------------
+Header Name:   २.८ केहि इतिहास छ ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(255))
+Max Length:    185 characters
+Completeness:  123 of 1,326 rows (9.28%)
+
+------------------------------------------------------------------------
+COLUMN 386:
+------------------------------------------------------------------------
+Header Name:   ३. उत्तरदाताको नाम
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    39 characters
+Completeness:  200 of 1,326 rows (15.08%)
+
+------------------------------------------------------------------------
+COLUMN 387:
+------------------------------------------------------------------------
+Header Name:   ४. ठेगाना_4
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    39 characters
+Completeness:  202 of 1,326 rows (15.23%)
+
+------------------------------------------------------------------------
+COLUMN 388:
+------------------------------------------------------------------------
+Header Name:   ५. जियो कोड
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    49 characters
+Completeness:  201 of 1,326 rows (15.16%)
+
+------------------------------------------------------------------------
+COLUMN 389:
+------------------------------------------------------------------------
+Header Name:   _५. जियो कोड_latitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  201 of 1,326 rows (15.16%)
+
+------------------------------------------------------------------------
+COLUMN 390:
+------------------------------------------------------------------------
+Header Name:   _५. जियो कोड_longitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  201 of 1,326 rows (15.16%)
+
+------------------------------------------------------------------------
+COLUMN 391:
+------------------------------------------------------------------------
+Header Name:   _५. जियो कोड_altitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    17 characters
+Completeness:  201 of 1,326 rows (15.16%)
+
+------------------------------------------------------------------------
+COLUMN 392:
+------------------------------------------------------------------------
+Header Name:   _५. जियो कोड_precision
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    8 characters
+Completeness:  201 of 1,326 rows (15.16%)
+
+------------------------------------------------------------------------
+COLUMN 393:
+------------------------------------------------------------------------
+Header Name:   ६. फोटो_2
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    18 characters
+Completeness:  202 of 1,326 rows (15.23%)
+
+------------------------------------------------------------------------
+COLUMN 394:
+------------------------------------------------------------------------
+Header Name:   ६. फोटो_URL_2
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(255))
+Max Length:    172 characters
+Completeness:  202 of 1,326 rows (15.23%)
+
+------------------------------------------------------------------------
+COLUMN 395:
+------------------------------------------------------------------------
+Header Name:   १. व्यापार तथा व्यवसायको स्वामित्व
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    6 characters
+Completeness:  790 of 1,326 rows (59.58%)
+
+------------------------------------------------------------------------
+COLUMN 396:
+------------------------------------------------------------------------
+Header Name:   १.१ व्यापार वा व्यवसायको नाम
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(100))
+Max Length:    56 characters
+Completeness:  793 of 1,326 rows (59.80%)
+
+------------------------------------------------------------------------
+COLUMN 397:
+------------------------------------------------------------------------
+Header Name:   २. उत्तरदाताको नाम_4
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    34 characters
+Completeness:  791 of 1,326 rows (59.65%)
+
+------------------------------------------------------------------------
+COLUMN 398:
+------------------------------------------------------------------------
+Header Name:   ३. ठेगाना_5
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    40 characters
+Completeness:  790 of 1,326 rows (59.58%)
+
+------------------------------------------------------------------------
+COLUMN 399:
+------------------------------------------------------------------------
+Header Name:   ४. व्यवसाय सञ्चालनकर्ताको नाम
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    26 characters
+Completeness:  696 of 1,326 rows (52.49%)
+
+------------------------------------------------------------------------
+COLUMN 400:
+------------------------------------------------------------------------
+Header Name:   ५.  सम्पर्क नं_2
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    10 characters
+Completeness:  794 of 1,326 rows (59.88%)
+
+------------------------------------------------------------------------
+COLUMN 401:
+------------------------------------------------------------------------
+Header Name:   ६. व्यवसाय दर्ता छ कि छैन
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    3 characters
+Completeness:  790 of 1,326 rows (59.58%)
+
+------------------------------------------------------------------------
+COLUMN 402:
+------------------------------------------------------------------------
+Header Name:   ७. व्यवसाय दर्ता नं
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    9 characters
+Completeness:  81 of 1,326 rows (6.11%)
+
+------------------------------------------------------------------------
+COLUMN 403:
+------------------------------------------------------------------------
+Header Name:   ८. कहाँ दर्ता भएको छ
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    34 characters
+Completeness:  81 of 1,326 rows (6.11%)
+
+------------------------------------------------------------------------
+COLUMN 404:
+------------------------------------------------------------------------
+Header Name:   ९. जियो कोड_2
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    48 characters
+Completeness:  788 of 1,326 rows (59.43%)
+
+------------------------------------------------------------------------
+COLUMN 405:
+------------------------------------------------------------------------
+Header Name:   _९. जियो कोड_latitude_2
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  788 of 1,326 rows (59.43%)
+
+------------------------------------------------------------------------
+COLUMN 406:
+------------------------------------------------------------------------
+Header Name:   _९. जियो कोड_longitude_2
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  788 of 1,326 rows (59.43%)
+
+------------------------------------------------------------------------
+COLUMN 407:
+------------------------------------------------------------------------
+Header Name:   _९. जियो कोड_altitude_2
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    18 characters
+Completeness:  788 of 1,326 rows (59.43%)
+
+------------------------------------------------------------------------
+COLUMN 408:
+------------------------------------------------------------------------
+Header Name:   _९. जियो कोड_precision_2
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    8 characters
+Completeness:  788 of 1,326 rows (59.43%)
+
+------------------------------------------------------------------------
+COLUMN 409:
+------------------------------------------------------------------------
+Header Name:   १०. फोटो
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    18 characters
+Completeness:  790 of 1,326 rows (59.58%)
+
+------------------------------------------------------------------------
+COLUMN 410:
+------------------------------------------------------------------------
+Header Name:   १०. फोटो_URL
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(255))
+Max Length:    172 characters
+Completeness:  790 of 1,326 rows (59.58%)
+
+------------------------------------------------------------------------
+COLUMN 411:
+------------------------------------------------------------------------
+Header Name:   १. वनको नाम
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    36 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 412:
+------------------------------------------------------------------------
+Header Name:   २. वनको प्रकार
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    12 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 413:
+------------------------------------------------------------------------
+Header Name:   ३. यस वडामा उक्त वनले ओगटेको क्षेत्रफल
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    3 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 414:
+------------------------------------------------------------------------
+Header Name:   ४. वनमा आवद्ध जम्मा घरधुरी संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 415:
+------------------------------------------------------------------------
+Header Name:   ५. वनमा पाइने मुख्य मुख्य विरुवाहरुको नाम
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    19 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 416:
+------------------------------------------------------------------------
+Header Name:   ६. वनमा पाइने मुख्य मुख्य जनावर तथा पशुपन्छीहरुको नाम
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    5 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 417:
+------------------------------------------------------------------------
+Header Name:   ७. कुनै जडिबुटीहरु पनि पाउछ भने नाम लेख्‍नुहोस ।
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    2 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 418:
+------------------------------------------------------------------------
+Header Name:   ८. वनबाट बार्षिक आम्दानी रकम रुपैयामा भन्नु होला ।
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    6 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 419:
+------------------------------------------------------------------------
+Header Name:   ९. वनबाट निकासीहुने काष्ठ उत्पादनको  वार्षिक परिमाण मेट्रिक टनमा भन्‍नु होला
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    4 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 420:
+------------------------------------------------------------------------
+Header Name:   १०. वनबाट निकासीहुने गैरकाष्ठ उत्पादनको  वार्षिक परिमाण मेट्रिक टनमा भन्‍नु होला
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    5 characters
+Completeness:  1 of 1,326 rows (0.08%)
+
+------------------------------------------------------------------------
+COLUMN 421:
+------------------------------------------------------------------------
+Header Name:   ११ वनको जियोकोड लिनु होला ।
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    46 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 422:
+------------------------------------------------------------------------
+Header Name:   _११ वनको जियोकोड लिनु होला । _latitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 423:
+------------------------------------------------------------------------
+Header Name:   _११ वनको जियोकोड लिनु होला । _longitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 424:
+------------------------------------------------------------------------
+Header Name:   _११ वनको जियोकोड लिनु होला । _altitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    17 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 425:
+------------------------------------------------------------------------
+Header Name:   _११ वनको जियोकोड लिनु होला । _precision
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 426:
+------------------------------------------------------------------------
+Header Name:   १. सडकको नाम यदि भएमा । नभएमा नो नेम लेख्‍नुहोला ।
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(100))
+Max Length:    65 characters
+Completeness:  186 of 1,326 rows (14.03%)
+
+------------------------------------------------------------------------
+COLUMN 427:
+------------------------------------------------------------------------
+Header Name:   २. सडकको प्रकार
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    28 characters
+Completeness:  187 of 1,326 rows (14.10%)
+
+------------------------------------------------------------------------
+COLUMN 428:
+------------------------------------------------------------------------
+Header Name:   ३. यस वडामा उक्त सडकको लम्बाइ
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    4 characters
+Completeness:  187 of 1,326 rows (14.10%)
+
+------------------------------------------------------------------------
+COLUMN 429:
+------------------------------------------------------------------------
+Header Name:   ४. सडकको चौडाई
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  187 of 1,326 rows (14.10%)
+
+------------------------------------------------------------------------
+COLUMN 430:
+------------------------------------------------------------------------
+Header Name:   ५. सडक निर्माण गरिएको साल
+Inferred Type: DateTime (Recommended SQL: DATETIME2)
+Max Length:    0 characters
+Completeness:  187 of 1,326 rows (14.10%)
+
+------------------------------------------------------------------------
+COLUMN 431:
+------------------------------------------------------------------------
+Header Name:   ६. उत्तरदाताको नाम
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    22 characters
+Completeness:  187 of 1,326 rows (14.10%)
+
+------------------------------------------------------------------------
+COLUMN 432:
+------------------------------------------------------------------------
+Header Name:   ७. सडकको फोटो
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    17 characters
+Completeness:  185 of 1,326 rows (13.95%)
+
+------------------------------------------------------------------------
+COLUMN 433:
+------------------------------------------------------------------------
+Header Name:   ७. सडकको फोटो_URL
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(255))
+Max Length:    171 characters
+Completeness:  185 of 1,326 rows (13.95%)
+
+------------------------------------------------------------------------
+COLUMN 434:
+------------------------------------------------------------------------
+Header Name:   ८. जियो कोड लिनुहोस
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    49 characters
+Completeness:  187 of 1,326 rows (14.10%)
+
+------------------------------------------------------------------------
+COLUMN 435:
+------------------------------------------------------------------------
+Header Name:   _८. जियो कोड लिनुहोस_latitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  187 of 1,326 rows (14.10%)
+
+------------------------------------------------------------------------
+COLUMN 436:
+------------------------------------------------------------------------
+Header Name:   _८. जियो कोड लिनुहोस_longitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  187 of 1,326 rows (14.10%)
+
+------------------------------------------------------------------------
+COLUMN 437:
+------------------------------------------------------------------------
+Header Name:   _८. जियो कोड लिनुहोस_altitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    18 characters
+Completeness:  187 of 1,326 rows (14.10%)
+
+------------------------------------------------------------------------
+COLUMN 438:
+------------------------------------------------------------------------
+Header Name:   _८. जियो कोड लिनुहोस_precision
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    8 characters
+Completeness:  187 of 1,326 rows (14.10%)
+
+------------------------------------------------------------------------
+COLUMN 439:
+------------------------------------------------------------------------
+Header Name:   १.१ यस आर्थिक वर्षमा वडामा दर्ता भएका जम्मा जन्म दर्ता संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 440:
+------------------------------------------------------------------------
+Header Name:   १.२ यस आर्थिक वर्षमा वडामा दर्ता भएका जम्मा विवाह दर्ता संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 441:
+------------------------------------------------------------------------
+Header Name:   १.३ यस आर्थिक वर्षमा वडामा दर्ता भएका मृत्यू दर्ता संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 442:
+------------------------------------------------------------------------
+Header Name:   १.४ यस आर्थिक वर्षमा वडामा दर्ता भएका जम्मा सम्बन्ध विच्छेद दर्ता संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 443:
+------------------------------------------------------------------------
+Header Name:   १.५ यस आर्थिक वर्षमा वडामा दर्ता भएका जम्मा बसाइ सराइ गएका घरपरिवारको संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 444:
+------------------------------------------------------------------------
+Header Name:   १.६ यस आर्थिक वर्षमा वडामा दर्ता भएका जम्मा बसाइ सराइ आएका घरपरिवारको संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 445:
+------------------------------------------------------------------------
+Header Name:   १.७ यस आर्थिक वर्षमा वडामा दर्ता भएका जम्मा नागरिक्ताका सिफारिस संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 446:
+------------------------------------------------------------------------
+Header Name:   १.८ यस आर्थिक वर्षमा वडामा दर्ता भएका जम्मा पासपोर्टको सिफारिस संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 447:
+------------------------------------------------------------------------
+Header Name:   २.१ जेष्ठ नागरिक महिला संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 448:
+------------------------------------------------------------------------
+Header Name:   २.२ जेष्ठ नागरिक पुरुष संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 449:
+------------------------------------------------------------------------
+Header Name:   २.३ जेष्ठ नागरिकहरुले बुझेको यस आ व को जम्मा रकम रुपैयामा
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    7 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 450:
+------------------------------------------------------------------------
+Header Name:   २.४ यस आ व मा भत्ता बुझेका जम्मा एकल महिला संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 451:
+------------------------------------------------------------------------
+Header Name:   २.५ यस आ व मा एकल महिलाले बुझेको जम्मा रकम रुपैयामा
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    6 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 452:
+------------------------------------------------------------------------
+Header Name:   २.६ यस आ व मा भत्ता बुझ्‍ने पूर्ण अपाङ्ग पुरुष संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 453:
+------------------------------------------------------------------------
+Header Name:   २.७ यस आ व मा भत्ता बुझ्‍ने पूर्ण अपाङ्ग महिला संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 454:
+------------------------------------------------------------------------
+Header Name:   २.८ यस आ व मा पूर्ण अपाङ्ग महिला पुरुषले बुझेको जम्मा रकम रुपैयाँमा
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    5 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 455:
+------------------------------------------------------------------------
+Header Name:   २.९ यस आ व मा भत्ता बुझ्‍ने आंशिक अपाङ्ग पुरुष संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 456:
+------------------------------------------------------------------------
+Header Name:   २.१० यस आ व मा भत्ता बुझ्‍ने आंशिक अपाङ्ग महिला संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 457:
+------------------------------------------------------------------------
+Header Name:   २.११ यस आ व मा आंशिक अपाङ्ग महिला पुरुषले बुझेको जम्मा रकम रुपैयाँमा
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    6 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 458:
+------------------------------------------------------------------------
+Header Name:   २.१२ यस आ व मा बाल सुरक्षा भत्ता बुझ्‍ने बालक संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 459:
+------------------------------------------------------------------------
+Header Name:   २.१३ यस आ व मा बाल सुरक्षा भत्ता बुझ्‍ने बालिका संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    3 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 460:
+------------------------------------------------------------------------
+Header Name:   २.१४ यस आ व मा बालबालिकाले बुझेको बाल सुरक्षा भत्ता रकम रुपैयाँमा
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    7 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 461:
+------------------------------------------------------------------------
+Header Name:   २.१५ यस आ व मा दलित भत्ता बुझ्‍ने पुरुष संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 462:
+------------------------------------------------------------------------
+Header Name:   २.१६ यस आ व मा दलित भत्ता बुझ्‍ने महिला संख्या
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 463:
+------------------------------------------------------------------------
+Header Name:   २.१७ यस आ व मा दलित महिला पुरुषले बुझेको दलित भत्ता रकम रुपैयामा
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    6 characters
+Completeness:  2 of 1,326 rows (0.15%)
+
+------------------------------------------------------------------------
+COLUMN 464:
+------------------------------------------------------------------------
+Header Name:   वडा कार्यालयको जियोकोड
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    33 characters
+Completeness:  4 of 1,326 rows (0.30%)
+
+------------------------------------------------------------------------
+COLUMN 465:
+------------------------------------------------------------------------
+Header Name:   _वडा कार्यालयको जियोकोड_latitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  4 of 1,326 rows (0.30%)
+
+------------------------------------------------------------------------
+COLUMN 466:
+------------------------------------------------------------------------
+Header Name:   _वडा कार्यालयको जियोकोड_longitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    10 characters
+Completeness:  4 of 1,326 rows (0.30%)
+
+------------------------------------------------------------------------
+COLUMN 467:
+------------------------------------------------------------------------
+Header Name:   _वडा कार्यालयको जियोकोड_altitude
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    4 characters
+Completeness:  4 of 1,326 rows (0.30%)
+
+------------------------------------------------------------------------
+COLUMN 468:
+------------------------------------------------------------------------
+Header Name:   _वडा कार्यालयको जियोकोड_precision
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    6 characters
+Completeness:  4 of 1,326 rows (0.30%)
+
+------------------------------------------------------------------------
+COLUMN 469:
+------------------------------------------------------------------------
+Header Name:   _id
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    9 characters
+Completeness:  1,326 of 1,326 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 470:
+------------------------------------------------------------------------
+Header Name:   _uuid
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    36 characters
+Completeness:  1,326 of 1,326 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 471:
+------------------------------------------------------------------------
+Header Name:   _submission_time
+Inferred Type: DateTime (Recommended SQL: DATETIME2)
+Max Length:    0 characters
+Completeness:  1,326 of 1,326 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 472:
+------------------------------------------------------------------------
+Header Name:   _validation_status
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 473:
+------------------------------------------------------------------------
+Header Name:   _notes
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 474:
+------------------------------------------------------------------------
+Header Name:   _status
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    17 characters
+Completeness:  1,326 of 1,326 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 475:
+------------------------------------------------------------------------
+Header Name:   _submitted_by
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    17 characters
+Completeness:  1,326 of 1,326 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 476:
+------------------------------------------------------------------------
+Header Name:   __version__
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    22 characters
+Completeness:  1,326 of 1,326 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 477:
+------------------------------------------------------------------------
+Header Name:   _tags
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 1,326 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 478:
+------------------------------------------------------------------------
+Header Name:   _index
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    4 characters
+Completeness:  1,326 of 1,326 rows (100.00%)
+
+

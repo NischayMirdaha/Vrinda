@@ -1,0 +1,110 @@
+@model VrindavanProfile.Web.Models.ViewModels.WardProfileViewModel
+
+<!-- Ward Selector Bar -->
+<div class="ward-selector-bar mb-4">
+    <div class="container">
+        <div class="row align-items-center py-3">
+            <div class="col-auto">
+                <label for="wardDropdown" class="fw-semibold mb-0 me-2">
+                    <i class="bi bi-geo-alt me-1"></i>वडा छान्नुहोस्:
+                </label>
+            </div>
+            <div class="col-auto">
+                <select id="wardDropdown" class="form-select form-select-sm" style="min-width: 200px;">
+                    <option value="">— सम्पूर्ण नगरपालिका —</option>
+                    @foreach (var ward in Model.Wards)
+                    {
+                        <option value="@ward.WardNo" selected="@(Model.SelectedWard == ward.WardNo)">
+                            @ward.WardName (@ward.HouseholdCount घरपरिवार, @ward.Population जनसंख्या)
+                        </option>
+                    }
+                </select>
+            </div>
+            <div class="col-auto">
+                <button id="btnWardGo" class="btn btn-sm btn-primary" style="background-color: var(--primary); border-color: var(--primary);">
+                    <i class="bi bi-search me-1"></i>हेर्नुहोस्
+                </button>
+            </div>
+            <div class="col-auto ms-auto d-none d-md-block">
+                <small class="text-muted">
+                    @if (Model.SelectedWard.HasValue)
+                    {
+                        <span>
+                            <i class="bi bi-pin-map me-1"></i>
+                            वडा नं. @Model.SelectedWard —
+                            @Model.Wards.FirstOrDefault(w => w.WardNo == Model.SelectedWard)?.HouseholdCount घरपरिवार
+                        </span>
+                    }
+                    else
+                    {
+                        <span>
+                            <i class="bi bi-building me-1"></i>
+                            सम्पूर्ण वृन्दावन नगरपालिका —
+                            @Model.Wards.Sum(w => w.HouseholdCount) घरपरिवार,
+                            @Model.Wards.Sum(w => w.Population) जनसंख्या
+                        </span>
+                    }
+                </small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Ward Overview Cards (collapsible) -->
+@if (Model.Wards.Any())
+{
+    <div class="container mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <h6 class="mb-0 fw-bold" style="color: var(--primary);">
+                <i class="bi bi-grid me-1"></i>वडा समाप्ति
+            </h6>
+            <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#wardOverviewCollapse">
+                <i class="bi bi-chevron-down me-1"></i>तालिका देखाउनुहोस्
+            </button>
+        </div>
+        <div class="collapse" id="wardOverviewCollapse">
+            <div class="table-responsive">
+                <table class="table table-sm table-bordered table-hover align-middle mb-0" style="font-size: 0.85rem;">
+                    <thead style="background-color: var(--primary); color: white;">
+                        <tr>
+                            <th class="text-center">वडा नं.</th>
+                            <th class="text-center">घरपरिवार</th>
+                            <th class="text-center">जनसंख्या</th>
+                            <th class="text-center">पुरूष</th>
+                            <th class="text-center">महिला</th>
+                            <th class="text-center">कार्य</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var ward in Model.Wards)
+                        {
+                            var isActive = Model.SelectedWard == ward.WardNo;
+                            <tr class="@(isActive ? "table-active fw-bold" : "")" style="cursor: pointer;" data-ward="@ward.WardNo">
+                                <td class="text-center">@ward.WardName</td>
+                                <td class="text-center">@ward.HouseholdCount</td>
+                                <td class="text-center">@ward.Population</td>
+                                <td class="text-center" style="color: #457B9D;">@ward.MaleCount</td>
+                                <td class="text-center" style="color: #D4A373;">@ward.FemaleCount</td>
+                                <td class="text-center">
+                                    <a href="/Ward?wardNo=@ward.WardNo" class="btn btn-sm btn-outline-primary py-0 px-2" style="font-size: 0.75rem;">
+                                        <i class="bi bi-eye me-1"></i>हेर्नुहोस्
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot style="background-color: var(--accent); font-weight: bold;">
+                        <tr>
+                            <td class="text-center">जम्मा</td>
+                            <td class="text-center">@Model.Wards.Sum(w => w.HouseholdCount)</td>
+                            <td class="text-center">@Model.Wards.Sum(w => w.Population)</td>
+                            <td class="text-center" style="color: #457B9D;">@Model.Wards.Sum(w => w.MaleCount)</td>
+                            <td class="text-center" style="color: #D4A373;">@Model.Wards.Sum(w => w.FemaleCount)</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+}

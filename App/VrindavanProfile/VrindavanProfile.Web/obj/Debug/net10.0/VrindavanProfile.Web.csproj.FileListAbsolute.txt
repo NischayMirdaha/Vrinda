@@ -1,0 +1,1059 @@
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.csproj.AssemblyReference.cache
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/rpswa.dswa.cache.json
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.GeneratedMSBuildEditorConfig.editorconfig
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.AssemblyInfoInputs.cache
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.AssemblyInfo.cs
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.csproj.CoreCompileInputs.cache
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.MvcApplicationPartsAssemblyInfo.cache
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.RazorAssemblyInfo.cache
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.RazorAssemblyInfo.cs
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/appsettings.Development.json
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/appsettings.json
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.staticwebassets.runtime.json
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.staticwebassets.endpoints.json
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.deps.json
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.runtimeconfig.json
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.pdb
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Humanizer.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.Build.Framework.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.CSharp.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.Workspaces.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.ExternalAccess.RazorCompiler.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Design.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Relational.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.Extensions.DependencyModel.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.VisualStudio.SolutionPersistence.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Mono.TextTemplating.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Newtonsoft.Json.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Npgsql.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.CodeDom.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.Composition.AttributedModel.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.Composition.Convention.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.Composition.Hosting.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.Composition.Runtime.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.Composition.TypedParts.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/rjimswa.dswa.cache.json
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/rjsmrazor.dswa.cache.json
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/rjsmcshtml.dswa.cache.json
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/scopedcss/bundle/VrindavanProfile.Web.styles.css
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/scopedcss/projectbundle/VrindavanProfile.Web.bundle.scp.css
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/j6mkw52k4d-{0}-utlb92dhnw-utlb92dhnw.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/fgt4tqgubr-{0}-1wup93564d-1wup93564d.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/cpj9hup8xv-{0}-61n19gt1b8-61n19gt1b8.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/t8o0ch52os-{0}-8t327c82aa-8t327c82aa.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/ol5ivo3rwj-{0}-bqjiyaj88i-bqjiyaj88i.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/zlxy3zuk4q-{0}-c2jlpeoesf-c2jlpeoesf.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/nnp2dp3ud6-{0}-erw9l3u2r3-erw9l3u2r3.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/4y5o5dyc4b-{0}-aexeepp0ev-aexeepp0ev.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/cgnm4m4edi-{0}-d7shbmvgxk-d7shbmvgxk.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/jx7pw74089-{0}-ausgxo2sd3-ausgxo2sd3.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/1i8nqg32yc-{0}-k8d9w2qqmf-k8d9w2qqmf.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/l4ylqriuz8-{0}-cosvhxvwiu-cosvhxvwiu.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/ju6dyallqb-{0}-ub07r2b239-ub07r2b239.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/aw0o0cjjz3-{0}-fvhpjtyr6v-fvhpjtyr6v.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/kdz913qm4r-{0}-b7pk76d08c-b7pk76d08c.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/289dezquz0-{0}-fsbi9cje9m-fsbi9cje9m.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/92xr6a7dkt-{0}-rzd6atqjts-rzd6atqjts.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/mt441pl3tf-{0}-ee0r1s7dh0-ee0r1s7dh0.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/2iy7f96v9e-{0}-dxx9fxp4il-dxx9fxp4il.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/0vfbbk8jmy-{0}-jd9uben2k1-jd9uben2k1.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/4xeuapbt0h-{0}-khv3u5hwcm-khv3u5hwcm.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/l5hikvt8mo-{0}-r4e9w2rdcm-r4e9w2rdcm.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/u44pwj9xl3-{0}-lcd1t2u6c8-lcd1t2u6c8.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/q794vkq3fe-{0}-c2oey78nd0-c2oey78nd0.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/qe9wpcemk8-{0}-tdbxkamptv-tdbxkamptv.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/7409zrhnzz-{0}-j5mq2jizvt-j5mq2jizvt.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/naiq8fb7f6-{0}-06098lyss8-06098lyss8.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/vhb3wzeuyg-{0}-nvvlpmu67g-nvvlpmu67g.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/95qrujf8mc-{0}-s35ty4nyc5-s35ty4nyc5.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/4vkya3nnxu-{0}-pj5nd1wqec-pj5nd1wqec.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/3w80bae1ct-{0}-46ein0sx1k-46ein0sx1k.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/plvlktxza1-{0}-v0zj4ognzu-v0zj4ognzu.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/9jwn7aptmx-{0}-37tfw0ft22-37tfw0ft22.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/ch19hptahf-{0}-hrwsygsryq-hrwsygsryq.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/jloggw9hgo-{0}-pk9g2wxc8p-pk9g2wxc8p.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/v5muf8dlkh-{0}-ft3s53vfgj-ft3s53vfgj.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/j4dwnhw9eq-{0}-6cfz1n2cew-6cfz1n2cew.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/ixoj47sfrp-{0}-6pdc2jztkx-6pdc2jztkx.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/l39ai590nd-{0}-493y06b0oq-493y06b0oq.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/0pyre7umkm-{0}-iovd86k7lj-iovd86k7lj.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/56ec75okr0-{0}-vr1egmr9el-vr1egmr9el.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/8augfp1la3-{0}-kbrnm935zg-kbrnm935zg.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/wg2k9892zl-{0}-jj8uyg4cgr-jj8uyg4cgr.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/4s43hhnzgv-{0}-y7v9cxd14o-y7v9cxd14o.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/pkzwnyq66b-{0}-notf2xhcfb-notf2xhcfb.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/cmtfiuu4e4-{0}-h1s4sie4z3-h1s4sie4z3.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/z04j395zcm-{0}-63fj8s7r0e-63fj8s7r0e.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/njqtrp2a8b-{0}-0j3bgjxly4-0j3bgjxly4.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/0m3rntpjmr-{0}-47otxtyo56-47otxtyo56.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/v73v6fhnzn-{0}-4v8eqarkd7-4v8eqarkd7.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/xyym1ws03s-{0}-356vix0kms-356vix0kms.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/74wvsos3t7-{0}-83jwlth58m-83jwlth58m.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/fuawz1jpbk-{0}-mrlpezrjn3-mrlpezrjn3.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/7yehg3llay-{0}-lzl9nlhx6b-lzl9nlhx6b.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/huqe11s0fl-{0}-ag7o75518u-ag7o75518u.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/g0e3w6iong-{0}-x0q3zqp4vz-x0q3zqp4vz.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/1vpb4rl8bz-{0}-0i3buxo5is-0i3buxo5is.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/pvhuq124um-{0}-o1o13a6vjx-o1o13a6vjx.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/y7jwn9df5r-{0}-ttgo8qnofa-ttgo8qnofa.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/t8darqaxa9-{0}-2z0ns9nrw6-2z0ns9nrw6.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/yaaz2ibw8h-{0}-muycvpuwrr-muycvpuwrr.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/qb03u4hzut-{0}-87fc7y1x7t-87fc7y1x7t.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/8pzo2n9m51-{0}-mlv21k5csn-mlv21k5csn.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/atnxd1w5lh-{0}-gmhc5gjnpt-gmhc5gjnpt.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/az9mpsd5ak-{0}-gmhc5gjnpt-gmhc5gjnpt.gz
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/staticwebassets.build.json
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/staticwebassets.build.json.cache
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/staticwebassets.development.json
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/staticwebassets.build.endpoints.json
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/swae.build.ex.cache
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/Vrindava.E0F55C1E.Up2Date
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/refint/VrindavanProfile.Web.dll
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.pdb
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.genruntimeconfig.cache
+/home/user/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/ref/VrindavanProfile.Web.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/appsettings.Development.json
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/appsettings.json
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.staticwebassets.runtime.json
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.staticwebassets.endpoints.json
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.exe
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.deps.json
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.runtimeconfig.json
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.pdb
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Humanizer.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.Build.Framework.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.CSharp.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.Workspaces.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.ExternalAccess.RazorCompiler.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Design.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Relational.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.Extensions.DependencyModel.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.VisualStudio.SolutionPersistence.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Mono.TextTemplating.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Newtonsoft.Json.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Npgsql.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.CodeDom.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.Composition.AttributedModel.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.Composition.Convention.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.Composition.Hosting.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.Composition.Runtime.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.Composition.TypedParts.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.Workspaces.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.Workspaces.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.Workspaces.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.csproj.AssemblyReference.cache
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/rpswa.dswa.cache.json
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.GeneratedMSBuildEditorConfig.editorconfig
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.AssemblyInfoInputs.cache
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.AssemblyInfo.cs
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.csproj.CoreCompileInputs.cache
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.MvcApplicationPartsAssemblyInfo.cache
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.RazorAssemblyInfo.cache
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.RazorAssemblyInfo.cs
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/rjimswa.dswa.cache.json
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/rjsmrazor.dswa.cache.json
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/rjsmcshtml.dswa.cache.json
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/scopedcss/bundle/VrindavanProfile.Web.styles.css
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/scopedcss/projectbundle/VrindavanProfile.Web.bundle.scp.css
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/r5vos99xrg-{0}-6vds8t6d4k-6vds8t6d4k.gz
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/6je3d1zfx6-{0}-6atjdzg624-6atjdzg624.gz
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/z4amsehmt5-{0}-omn5tfb0ll-omn5tfb0ll.gz
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/fgt4tqgubr-{0}-uedkvdkub9-uedkvdkub9.gz
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/cpj9hup8xv-{0}-61n19gt1b8-61n19gt1b8.gz
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/4eorqxb7l3-{0}-v7plr4op29-v7plr4op29.gz
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/t8o0ch52os-{0}-ggnrbjjibv-ggnrbjjibv.gz
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/zwoq0nxyjw-{0}-mldd3wvbgh-mldd3wvbgh.gz
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/w3wpbm50v8-{0}-rkrf3ri92u-rkrf3ri92u.gz
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/xyym1ws03s-{0}-356vix0kms-356vix0kms.gz
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/g0e3w6iong-{0}-x0q3zqp4vz-x0q3zqp4vz.gz
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/8pzo2n9m51-{0}-mlv21k5csn-mlv21k5csn.gz
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/h689h19ouc-{0}-u5znmj9bzr-u5znmj9bzr.gz
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/staticwebassets.build.json
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/staticwebassets.build.json.cache
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/staticwebassets.development.json
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/staticwebassets.build.endpoints.json
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/swae.build.ex.cache
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/Vrindava.E0F55C1E.Up2Date
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/refint/VrindavanProfile.Web.dll
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.pdb
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.genruntimeconfig.cache
+e:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/ref/VrindavanProfile.Web.dll
+E:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/1oxfwn71iw-{0}-cntow91mys-cntow91mys.gz
+E:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/cclu340nme-{0}-qglizudld8-qglizudld8.gz
+E:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/j6mkw52k4d-{0}-xw0jr1zo0f-xw0jr1zo0f.gz
+E:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/klsjjzg5o7-{0}-nwh0zi2k9f-nwh0zi2k9f.gz
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/appsettings.Development.json
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/appsettings.json
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.staticwebassets.runtime.json
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.staticwebassets.endpoints.json
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.deps.json
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.runtimeconfig.json
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.pdb
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Humanizer.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.Build.Framework.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.CSharp.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.Workspaces.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.ExternalAccess.RazorCompiler.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Design.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Relational.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.Extensions.DependencyModel.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.VisualStudio.SolutionPersistence.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Mono.TextTemplating.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Newtonsoft.Json.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Npgsql.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.CodeDom.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.Composition.AttributedModel.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.Composition.Convention.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.Composition.Hosting.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.Composition.Runtime.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.Composition.TypedParts.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.csproj.AssemblyReference.cache
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/rpswa.dswa.cache.json
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.GeneratedMSBuildEditorConfig.editorconfig
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.AssemblyInfoInputs.cache
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.AssemblyInfo.cs
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.csproj.CoreCompileInputs.cache
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.MvcApplicationPartsAssemblyInfo.cache
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.RazorAssemblyInfo.cache
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.RazorAssemblyInfo.cs
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/rjimswa.dswa.cache.json
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/rjsmrazor.dswa.cache.json
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/rjsmcshtml.dswa.cache.json
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/scopedcss/bundle/VrindavanProfile.Web.styles.css
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/scopedcss/projectbundle/VrindavanProfile.Web.bundle.scp.css
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/r5vos99xrg-{0}-6vds8t6d4k-6vds8t6d4k.gz
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/6je3d1zfx6-{0}-6atjdzg624-6atjdzg624.gz
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/j6mkw52k4d-{0}-xw0jr1zo0f-xw0jr1zo0f.gz
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/z4amsehmt5-{0}-omn5tfb0ll-omn5tfb0ll.gz
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/fgt4tqgubr-{0}-uedkvdkub9-uedkvdkub9.gz
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/cpj9hup8xv-{0}-61n19gt1b8-61n19gt1b8.gz
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/klsjjzg5o7-{0}-nwh0zi2k9f-nwh0zi2k9f.gz
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/4eorqxb7l3-{0}-v7plr4op29-v7plr4op29.gz
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/t8o0ch52os-{0}-ggnrbjjibv-ggnrbjjibv.gz
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/zwoq0nxyjw-{0}-mldd3wvbgh-mldd3wvbgh.gz
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/w3wpbm50v8-{0}-rkrf3ri92u-rkrf3ri92u.gz
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/1oxfwn71iw-{0}-cntow91mys-cntow91mys.gz
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/cclu340nme-{0}-qglizudld8-qglizudld8.gz
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/xyym1ws03s-{0}-356vix0kms-356vix0kms.gz
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/g0e3w6iong-{0}-x0q3zqp4vz-x0q3zqp4vz.gz
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/8pzo2n9m51-{0}-mlv21k5csn-mlv21k5csn.gz
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/h689h19ouc-{0}-u5znmj9bzr-u5znmj9bzr.gz
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/atnxd1w5lh-{0}-y8cb8fp5od-y8cb8fp5od.gz
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/az9mpsd5ak-{0}-y8cb8fp5od-y8cb8fp5od.gz
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/staticwebassets.build.json
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/staticwebassets.build.json.cache
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/staticwebassets.development.json
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/staticwebassets.build.endpoints.json
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/swae.build.ex.cache
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/Vrindava.E0F55C1E.Up2Date
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/refint/VrindavanProfile.Web.dll
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.pdb
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.genruntimeconfig.cache
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/ref/VrindavanProfile.Web.dll
+E:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/atnxd1w5lh-{0}-y26b3iocqx-y26b3iocqx.gz
+E:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/az9mpsd5ak-{0}-y26b3iocqx-y26b3iocqx.gz
+E:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/tdx2th2pes-{0}-94eyr1dhmm-94eyr1dhmm.gz
+/run/media/clover/New Volume/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/tdx2th2pes-{0}-94eyr1dhmm-94eyr1dhmm.gz
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/appsettings.Development.json
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/appsettings.json
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/docs/gadm41_NPL_4.json/gadm41_NPL_4.json
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.staticwebassets.runtime.json
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.staticwebassets.endpoints.json
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.deps.json
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.runtimeconfig.json
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.pdb
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Humanizer.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.Build.Framework.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.CSharp.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.Workspaces.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.ExternalAccess.RazorCompiler.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Design.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Relational.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.Extensions.DependencyModel.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.VisualStudio.SolutionPersistence.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Mono.TextTemplating.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Newtonsoft.Json.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Npgsql.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.CodeDom.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.Composition.AttributedModel.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.Composition.Convention.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.Composition.Hosting.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.Composition.Runtime.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.Composition.TypedParts.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.csproj.AssemblyReference.cache
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/rpswa.dswa.cache.json
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.GeneratedMSBuildEditorConfig.editorconfig
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.AssemblyInfoInputs.cache
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.AssemblyInfo.cs
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.csproj.CoreCompileInputs.cache
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.MvcApplicationPartsAssemblyInfo.cache
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.RazorAssemblyInfo.cache
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.RazorAssemblyInfo.cs
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/rjimswa.dswa.cache.json
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/rjsmrazor.dswa.cache.json
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/rjsmcshtml.dswa.cache.json
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/scopedcss/bundle/VrindavanProfile.Web.styles.css
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/scopedcss/projectbundle/VrindavanProfile.Web.bundle.scp.css
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/r5vos99xrg-{0}-6vds8t6d4k-6vds8t6d4k.gz
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/6je3d1zfx6-{0}-6atjdzg624-6atjdzg624.gz
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/j6mkw52k4d-{0}-xw0jr1zo0f-xw0jr1zo0f.gz
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/z4amsehmt5-{0}-omn5tfb0ll-omn5tfb0ll.gz
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/fgt4tqgubr-{0}-uedkvdkub9-uedkvdkub9.gz
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/cpj9hup8xv-{0}-61n19gt1b8-61n19gt1b8.gz
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/tdx2th2pes-{0}-94eyr1dhmm-94eyr1dhmm.gz
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/klsjjzg5o7-{0}-nwh0zi2k9f-nwh0zi2k9f.gz
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/4eorqxb7l3-{0}-v7plr4op29-v7plr4op29.gz
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/t8o0ch52os-{0}-ggnrbjjibv-ggnrbjjibv.gz
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/zwoq0nxyjw-{0}-mldd3wvbgh-mldd3wvbgh.gz
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/w3wpbm50v8-{0}-rkrf3ri92u-rkrf3ri92u.gz
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/1oxfwn71iw-{0}-cntow91mys-cntow91mys.gz
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/cclu340nme-{0}-qglizudld8-qglizudld8.gz
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/xyym1ws03s-{0}-356vix0kms-356vix0kms.gz
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/g0e3w6iong-{0}-x0q3zqp4vz-x0q3zqp4vz.gz
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/8pzo2n9m51-{0}-mlv21k5csn-mlv21k5csn.gz
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/h689h19ouc-{0}-u5znmj9bzr-u5znmj9bzr.gz
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/atnxd1w5lh-{0}-y8cb8fp5od-y8cb8fp5od.gz
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/az9mpsd5ak-{0}-y8cb8fp5od-y8cb8fp5od.gz
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/staticwebassets.build.json
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/staticwebassets.build.json.cache
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/staticwebassets.development.json
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/staticwebassets.build.endpoints.json
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/swae.build.ex.cache
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/Vrindava.E0F55C1E.Up2Date
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/refint/VrindavanProfile.Web.dll
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.pdb
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.genruntimeconfig.cache
+/run/media/clover/New Volume1/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/ref/VrindavanProfile.Web.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/appsettings.Development.json
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/appsettings.json
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/docs/gadm41_NPL_4.json/gadm41_NPL_4.json
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.staticwebassets.endpoints.json
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.staticwebassets.runtime.json
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.deps.json
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.runtimeconfig.json
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/VrindavanProfile.Web.pdb
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Humanizer.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.Build.Framework.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.CSharp.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.Workspaces.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.ExternalAccess.RazorCompiler.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Design.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Relational.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.Extensions.DependencyModel.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Microsoft.VisualStudio.SolutionPersistence.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Mono.TextTemplating.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Newtonsoft.Json.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Npgsql.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.CodeDom.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.Composition.AttributedModel.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.Composition.Convention.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.Composition.Hosting.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.Composition.Runtime.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/System.Composition.TypedParts.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.csproj.AssemblyReference.cache
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/rpswa.dswa.cache.json
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.GeneratedMSBuildEditorConfig.editorconfig
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.AssemblyInfoInputs.cache
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.AssemblyInfo.cs
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.csproj.CoreCompileInputs.cache
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.MvcApplicationPartsAssemblyInfo.cache
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.RazorAssemblyInfo.cache
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.RazorAssemblyInfo.cs
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/rjimswa.dswa.cache.json
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/rjsmrazor.dswa.cache.json
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/rjsmcshtml.dswa.cache.json
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/scopedcss/bundle/VrindavanProfile.Web.styles.css
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/scopedcss/projectbundle/VrindavanProfile.Web.bundle.scp.css
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/r5vos99xrg-{0}-6vds8t6d4k-6vds8t6d4k.gz
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/6je3d1zfx6-{0}-6atjdzg624-6atjdzg624.gz
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/j6mkw52k4d-{0}-xw0jr1zo0f-xw0jr1zo0f.gz
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/z4amsehmt5-{0}-omn5tfb0ll-omn5tfb0ll.gz
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/fgt4tqgubr-{0}-uedkvdkub9-uedkvdkub9.gz
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/cpj9hup8xv-{0}-61n19gt1b8-61n19gt1b8.gz
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/tdx2th2pes-{0}-94eyr1dhmm-94eyr1dhmm.gz
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/klsjjzg5o7-{0}-nwh0zi2k9f-nwh0zi2k9f.gz
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/4eorqxb7l3-{0}-v7plr4op29-v7plr4op29.gz
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/t8o0ch52os-{0}-ggnrbjjibv-ggnrbjjibv.gz
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/zwoq0nxyjw-{0}-mldd3wvbgh-mldd3wvbgh.gz
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/w3wpbm50v8-{0}-rkrf3ri92u-rkrf3ri92u.gz
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/1oxfwn71iw-{0}-cntow91mys-cntow91mys.gz
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/cclu340nme-{0}-qglizudld8-qglizudld8.gz
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/xyym1ws03s-{0}-356vix0kms-356vix0kms.gz
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/g0e3w6iong-{0}-x0q3zqp4vz-x0q3zqp4vz.gz
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/8pzo2n9m51-{0}-mlv21k5csn-mlv21k5csn.gz
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/h689h19ouc-{0}-u5znmj9bzr-u5znmj9bzr.gz
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/atnxd1w5lh-{0}-y8cb8fp5od-y8cb8fp5od.gz
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/compressed/az9mpsd5ak-{0}-y8cb8fp5od-y8cb8fp5od.gz
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/staticwebassets.build.json
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/staticwebassets.build.json.cache
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/staticwebassets.development.json
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/staticwebassets.build.endpoints.json
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/swae.build.ex.cache
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/Vrindava.E0F55C1E.Up2Date
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/refint/VrindavanProfile.Web.dll
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.pdb
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/VrindavanProfile.Web.genruntimeconfig.cache
+/home/clover/Desktop/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/obj/Debug/net10.0/ref/VrindavanProfile.Web.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\appsettings.Development.json
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\appsettings.json
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\appsettings.Production.json
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\VrindavanProfile.Web.staticwebassets.runtime.json
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\VrindavanProfile.Web.staticwebassets.endpoints.json
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\VrindavanProfile.Web.exe
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\VrindavanProfile.Web.deps.json
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\VrindavanProfile.Web.runtimeconfig.json
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\VrindavanProfile.Web.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\VrindavanProfile.Web.pdb
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Humanizer.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Microsoft.Build.Framework.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Microsoft.CodeAnalysis.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Microsoft.CodeAnalysis.Workspaces.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Microsoft.CodeAnalysis.ExternalAccess.RazorCompiler.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Design.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Relational.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Microsoft.Extensions.DependencyModel.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Microsoft.VisualStudio.SolutionPersistence.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Mono.TextTemplating.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Newtonsoft.Json.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Npgsql.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\System.CodeDom.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\System.Composition.AttributedModel.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\System.Composition.Convention.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\System.Composition.Hosting.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\System.Composition.Runtime.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\System.Composition.TypedParts.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\VrindavanProfile.Web.csproj.AssemblyReference.cache
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\rpswa.dswa.cache.json
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\VrindavanProfile.Web.GeneratedMSBuildEditorConfig.editorconfig
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\VrindavanProfile.Web.AssemblyInfoInputs.cache
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\VrindavanProfile.Web.AssemblyInfo.cs
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\VrindavanProfile.Web.csproj.CoreCompileInputs.cache
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\VrindavanProfile.Web.MvcApplicationPartsAssemblyInfo.cache
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\VrindavanProfile.Web.RazorAssemblyInfo.cache
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\VrindavanProfile.Web.RazorAssemblyInfo.cs
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\rjimswa.dswa.cache.json
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\scopedcss\bundle\VrindavanProfile.Web.styles.css
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\scopedcss\projectbundle\VrindavanProfile.Web.bundle.scp.css
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\r5vos99xrg-{0}-6vds8t6d4k-6vds8t6d4k.gz
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\6je3d1zfx6-{0}-6atjdzg624-6atjdzg624.gz
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\j6mkw52k4d-{0}-xw0jr1zo0f-xw0jr1zo0f.gz
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\z4amsehmt5-{0}-omn5tfb0ll-omn5tfb0ll.gz
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\fgt4tqgubr-{0}-uedkvdkub9-uedkvdkub9.gz
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\cpj9hup8xv-{0}-61n19gt1b8-61n19gt1b8.gz
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\tdx2th2pes-{0}-94eyr1dhmm-94eyr1dhmm.gz
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\klsjjzg5o7-{0}-nwh0zi2k9f-nwh0zi2k9f.gz
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\4eorqxb7l3-{0}-v7plr4op29-v7plr4op29.gz
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\t8o0ch52os-{0}-ggnrbjjibv-ggnrbjjibv.gz
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\zwoq0nxyjw-{0}-mldd3wvbgh-mldd3wvbgh.gz
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\w3wpbm50v8-{0}-rkrf3ri92u-rkrf3ri92u.gz
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\1oxfwn71iw-{0}-cntow91mys-cntow91mys.gz
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\cclu340nme-{0}-qglizudld8-qglizudld8.gz
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\xyym1ws03s-{0}-356vix0kms-356vix0kms.gz
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\g0e3w6iong-{0}-x0q3zqp4vz-x0q3zqp4vz.gz
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\8pzo2n9m51-{0}-mlv21k5csn-mlv21k5csn.gz
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\h689h19ouc-{0}-u5znmj9bzr-u5znmj9bzr.gz
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\wdog4recrq-{0}-qtl5c5st18-qtl5c5st18.gz
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\atnxd1w5lh-{0}-y26b3iocqx-y26b3iocqx.gz
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\az9mpsd5ak-{0}-y26b3iocqx-y26b3iocqx.gz
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\staticwebassets.build.json
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\staticwebassets.build.json.cache
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\staticwebassets.development.json
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\swae.build.ex.cache
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\Vrindava.E0F55C1E.Up2Date
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\VrindavanProfile.Web.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\refint\VrindavanProfile.Web.dll
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\VrindavanProfile.Web.pdb
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\VrindavanProfile.Web.genruntimeconfig.cache
+E:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\ref\VrindavanProfile.Web.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\appsettings.json
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\VrindavanProfile.Web.staticwebassets.runtime.json
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\VrindavanProfile.Web.staticwebassets.endpoints.json
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\VrindavanProfile.Web.exe
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\VrindavanProfile.Web.deps.json
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\VrindavanProfile.Web.runtimeconfig.json
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\VrindavanProfile.Web.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\VrindavanProfile.Web.pdb
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Humanizer.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Microsoft.Build.Framework.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Microsoft.CodeAnalysis.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Microsoft.CodeAnalysis.ExternalAccess.RazorCompiler.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Microsoft.Extensions.DependencyModel.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Microsoft.VisualStudio.SolutionPersistence.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Mono.TextTemplating.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Newtonsoft.Json.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Npgsql.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\System.CodeDom.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\System.Composition.AttributedModel.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\System.Composition.Convention.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\System.Composition.Hosting.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\System.Composition.Runtime.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\System.Composition.TypedParts.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\VrindavanProfile.Web.csproj.AssemblyReference.cache
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\rpswa.dswa.cache.json
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\VrindavanProfile.Web.GeneratedMSBuildEditorConfig.editorconfig
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\VrindavanProfile.Web.AssemblyInfoInputs.cache
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\VrindavanProfile.Web.AssemblyInfo.cs
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\VrindavanProfile.Web.csproj.CoreCompileInputs.cache
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\VrindavanProfile.Web.MvcApplicationPartsAssemblyInfo.cache
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\VrindavanProfile.Web.RazorAssemblyInfo.cache
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\VrindavanProfile.Web.RazorAssemblyInfo.cs
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\rjimswa.dswa.cache.json
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\scopedcss\bundle\VrindavanProfile.Web.styles.css
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\scopedcss\projectbundle\VrindavanProfile.Web.bundle.scp.css
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\r5vos99xrg-{0}-6vds8t6d4k-6vds8t6d4k.gz
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\6je3d1zfx6-{0}-6atjdzg624-6atjdzg624.gz
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\j6mkw52k4d-{0}-xw0jr1zo0f-xw0jr1zo0f.gz
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\z4amsehmt5-{0}-omn5tfb0ll-omn5tfb0ll.gz
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\fgt4tqgubr-{0}-uedkvdkub9-uedkvdkub9.gz
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\cpj9hup8xv-{0}-61n19gt1b8-61n19gt1b8.gz
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\tdx2th2pes-{0}-94eyr1dhmm-94eyr1dhmm.gz
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\klsjjzg5o7-{0}-nwh0zi2k9f-nwh0zi2k9f.gz
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\4eorqxb7l3-{0}-v7plr4op29-v7plr4op29.gz
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\t8o0ch52os-{0}-ggnrbjjibv-ggnrbjjibv.gz
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\zwoq0nxyjw-{0}-mldd3wvbgh-mldd3wvbgh.gz
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\w3wpbm50v8-{0}-rkrf3ri92u-rkrf3ri92u.gz
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\1oxfwn71iw-{0}-cntow91mys-cntow91mys.gz
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\cclu340nme-{0}-qglizudld8-qglizudld8.gz
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\xyym1ws03s-{0}-356vix0kms-356vix0kms.gz
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\g0e3w6iong-{0}-x0q3zqp4vz-x0q3zqp4vz.gz
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\8pzo2n9m51-{0}-mlv21k5csn-mlv21k5csn.gz
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\h689h19ouc-{0}-u5znmj9bzr-u5znmj9bzr.gz
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\wdog4recrq-{0}-qtl5c5st18-qtl5c5st18.gz
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\atnxd1w5lh-{0}-y26b3iocqx-y26b3iocqx.gz
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\compressed\az9mpsd5ak-{0}-y26b3iocqx-y26b3iocqx.gz
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\staticwebassets.build.json
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\staticwebassets.build.json.cache
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\staticwebassets.development.json
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\swae.build.ex.cache
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\Vrindava.E0F55C1E.Up2Date
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\VrindavanProfile.Web.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\refint\VrindavanProfile.Web.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\VrindavanProfile.Web.pdb
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\VrindavanProfile.Web.genruntimeconfig.cache
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\ref\VrindavanProfile.Web.dll
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\bin\Debug\net10.0\dotnet-tools.json
+D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

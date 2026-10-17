@@ -1,0 +1,148 @@
+@model List<VrindavanProfile.Web.Models.ViewModels.TableMeta>
+@{
+    ViewData["Title"] = "संस्थागत तथ्याङ्क";
+    var categories = Model.Select(t => t.Category).Distinct().OrderBy(c => c).ToList();
+
+    // Breadcrumbs (Part 11B)
+    ViewData["BreadcrumbItems"] = new List<(string Label, string? Url)> {
+        ("गृहपृष्ठ", "/")
+    };
+}
+
+<!-- Page Header -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="d-flex align-items-center mb-3">
+            <div class="me-3" style="width:48px;height:48px;border-radius:12px;background:var(--primary);display:flex;align-items:center;justify-content:center">
+                <i class="bi bi-building text-white fs-4"></i>
+            </div>
+            <div class="flex-grow-1">
+                <h1 class="h3 mb-0" style="color:var(--primary)">संस्थागत तथ्याङ्क</h1>
+                <p class="text-muted mb-0">४३ वटा संस्थागत तालिकाहरु — शिक्षा, स्वास्थ्य, वित्त, पूर्वाधार लगायत</p>
+            </div>
+            <div class="export-btn-group no-print">
+                <button class="btn btn-sm btn-outline-primary" onclick="printPage()">
+                    <i class="bi bi-printer"></i> प्रिन्ट
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Search & Filter Bar -->
+<div class="row mb-4">
+    <div class="col-md-5 mb-2 mb-md-0">
+        <div class="input-group">
+            <span class="input-group-text" style="background:var(--primary);color:white;border-color:var(--primary)">
+                <i class="bi bi-search"></i>
+            </span>
+            <input type="text" id="tableSearch" class="form-control" placeholder="तालिका खोज्नुहोस्..." style="border-color:#ccc">
+        </div>
+    </div>
+    <div class="col-md-7">
+        <div class="d-flex flex-wrap gap-1" id="categoryFilters">
+            <button class="btn btn-sm active" data-cat="all"
+                    style="border-radius:20px;font-size:0.8rem;background:var(--primary);color:white">
+                सबै <span class="badge bg-white text-dark" style="font-size:0.7rem">@Model.Count</span>
+            </button>
+            @foreach (var cat in categories)
+            {
+                var count = Model.Count(t => t.Category == cat);
+                <button class="btn btn-sm" data-cat="@cat"
+                        style="border-radius:20px;font-size:0.8rem;background:var(--surface);color:var(--text-dark);border:1px solid #ddd">
+                    @cat <span class="badge" style="background:var(--primary);font-size:0.65rem">@count</span>
+                </button>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- Table Cards Grid -->
+<div class="row" id="tableGrid">
+    @foreach (var table in Model.OrderBy(t => t.Category).ThenBy(t => t.TableNumber))
+    {
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-3 table-card-col" data-cat="@table.Category" data-title="@table.Title">
+            <a href="/Institution/Table/@table.TableNumber" class="text-decoration-none">
+                <div class="card h-100 table-card" style="border-radius:12px;border:1px solid #e0e0e0;transition:all .2s">
+                    <div class="card-body p-3">
+                        <div class="d-flex align-items-start mb-2">
+                            <div class="me-2" style="width:36px;height:36px;border-radius:8px;background:@(table.AccentColor);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                                <i class="@table.Icon text-white" style="font-size:0.95rem"></i>
+                            </div>
+                            <div style="min-width:0">
+                                <span class="badge mb-1" style="background:@(table.AccentColor);font-size:0.65rem;opacity:0.85">
+                                    तालिका @table.TableNumber
+                                </span>
+                                <h6 class="mb-0" style="font-size:0.85rem;color:var(--text-dark);line-height:1.3">@table.Title</h6>
+                            </div>
+                        </div>
+                        @if (!string.IsNullOrEmpty(table.Description))
+                        {
+                            <p class="text-muted mb-0" style="font-size:0.75rem;line-height:1.3">@table.Description</p>
+                        }
+                        <div class="mt-2 d-flex justify-content-between align-items-center">
+                            <span class="badge" style="background:#f0f0f0;color:#666;font-size:0.65rem">@table.Category</span>
+                            <span class="text-muted" style="font-size:0.7rem">@table.DataSource</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    }
+</div>
+
+@section Scripts {
+<script>
+(function() {
+    const searchInput = document.getElementById('tableSearch');
+    const cards = document.querySelectorAll('.table-card-col');
+    const filterBtns = document.querySelectorAll('#categoryFilters button');
+    let activeCategory = 'all';
+
+    // Category filter
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => {
+                b.style.background = 'var(--surface)';
+                b.style.color = 'var(--text-dark)';
+                b.style.border = '1px solid #ddd';
+                b.classList.remove('active');
+            });
+            btn.style.background = 'var(--primary)';
+            btn.style.color = 'white';
+            btn.style.border = 'none';
+            btn.classList.add('active');
+            activeCategory = btn.dataset.cat;
+            applyFilters();
+        });
+    });
+
+    // Search filter
+    searchInput.addEventListener('input', applyFilters);
+
+    function applyFilters() {
+        const query = searchInput.value.toLowerCase().trim();
+        cards.forEach(col => {
+            const cat = col.dataset.cat;
+            const title = col.dataset.title.toLowerCase();
+            const catMatch = activeCategory === 'all' || cat === activeCategory;
+            const searchMatch = !query || title.includes(query);
+            col.style.display = (catMatch && searchMatch) ? '' : 'none';
+        });
+    }
+
+    // Hover effect
+    document.querySelectorAll('.table-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-2px)';
+            card.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+            card.style.boxShadow = '';
+        });
+    });
+})();
+</script>
+<script src="~/js/table-export.js" asp-append-version="true"></script>
+}

@@ -1,0 +1,39 @@
+﻿@{ ViewData["Title"] = "Municipality Profile — Data Import"; }
+
+<div class="container mt-4">
+    <h1>📊 Vrindavan Municipality Digital Profile</h1>
+    <p class="text-muted">Data Import & Management System</p>
+
+    <div class="row mt-4">
+        <div class="col-md-4 mb-3">
+            <div class="card h-100 border-primary">
+                <div class="card-body text-center">
+                    <h3>🔍</h3>
+                    <h5>Validate JSON</h5>
+                    <p class="text-muted">Check file format before importing</p>
+                    <a href="/Validate" class="btn btn-outline-primary">Open Validator</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card h-100 border-success">
+                <div class="card-body text-center">
+                    <h3>🏛️</h3>
+                    <h5>Institutional Import</h5>
+                    <p class="text-muted">Schools, hospitals, roads, bridges...</p>
+                    <a href="/Institutional" class="btn btn-outline-success">Import Data</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card h-100 border-info">
+                <div class="card-body text-center">
+                    <h3>🏠</h3>
+                    <h5>Household Import</h5>
+                    <p class="text-muted">Households, families, crops, livestock...</p>
+                    <a href="/Household" class="btn btn-outline-info">Import Data</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

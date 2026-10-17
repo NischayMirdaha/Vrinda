@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Converty — Convert Excel spreadsheets to JSON instantly. Handles millions of rows, multiple sheets, and sparse data." />
+    <title>@ViewData["Title"] - Converty</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Our CSS only — no Bootstrap needed -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+
+    <!-- ── Navbar ──────────────────────────────────────────────────────── -->
+    <nav class="navbar-custom">
+        <a asp-controller="Convert" asp-action="Index" class="nav-brand">⚡ Converty</a>
+        <div class="nav-links">
+            <a asp-controller="Convert" asp-action="Index">Converter</a>
+        </div>
+    </nav>
+
+    <!-- ── Main Content ────────────────────────────────────────────────── -->
+    <div class="main-wrapper">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- ── Footer ──────────────────────────────────────────────────────── -->
+    <footer class="site-footer">
+        &copy; @DateTime.Now.Year Converty &mdash; Excel to JSON Converter
+    </footer>
+
+    <!-- Scripts -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

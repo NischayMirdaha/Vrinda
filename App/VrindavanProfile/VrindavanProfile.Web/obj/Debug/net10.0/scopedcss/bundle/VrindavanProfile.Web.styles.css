@@ -1,0 +1,57 @@
+/* /Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Part 14: Ocean Blue + Nepal Flag — Layout scoped styles */
+
+a.navbar-brand[b-z93bk66p6p] {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+a[b-z93bk66p6p] {
+    color: var(--primary);
+}
+
+a:hover[b-z93bk66p6p] {
+    color: var(--accent);
+}
+
+.btn-primary[b-z93bk66p6p] {
+    color: #fff;
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-primary:hover[b-z93bk66p6p] {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.nav-pills .nav-link.active[b-z93bk66p6p],
+.nav-pills .show > .nav-link[b-z93bk66p6p] {
+    color: #fff;
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.border-top[b-z93bk66p6p] {
+    border-top: 1px solid var(--surface-alt);
+}
+
+.border-bottom[b-z93bk66p6p] {
+    border-bottom: 1px solid var(--surface-alt);
+}
+
+.box-shadow[b-z93bk66p6p] {
+    box-shadow: var(--shadow);
+}
+
+button.accept-policy[b-z93bk66p6p] {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+.footer[b-z93bk66p6p] {
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+}

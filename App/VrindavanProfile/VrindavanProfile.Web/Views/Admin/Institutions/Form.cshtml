@@ -1,0 +1,477 @@
+@model VrindavanProfile.Web.Controllers.DynamicFormViewModel
+@{
+    Layout = "_Layout";
+    bool isEdit = Model.Id > 0;
+    ViewData["Title"] = isEdit ? $"{Model.DisplayName} — सम्पादन" :
+        $"{Model.DisplayName} — नयाँ थप";
+    // Build translation map helper for columns
+    var labelsNep = new Dictionary<string, string>
+    {
+        // Common & general properties
+        { "Name", "कार्यालय / संस्थाको नाम" },
+        { "Address", "ठेगाना" },
+        { "ContactNo", "सम्पर्क नम्बर" },
+        { "EmailWebsite", "इमेल / वेबसाइट" },
+        { "EstablishedDate", "स्थापना मिति" },
+        { "EstablishedDateBs", "स्थापना मिति (वि.सं.)" },
+        { "RegistrationNo", "दर्ता नम्बर" },
+        { "RegisteredAt", "दर्ता भएको निकाय / मिति" },
+        { "IsRegistered", "दर्ता भएको छ/छैन" },
+        { "Latitude", "अक्षांश" },
+        { "Longitude", "देशान्तर" },
+        { "Altitude", "उचाई" },
+        { "GpsPrecision", "जीपीएस एक्युरेसी" },
+        { "GeoPoint", "भौगोलिक विन्दु (Geo Point)" },
+        { "PhotoUrl", "तस्विरको लिंक" },
+        { "Photo", "फोटो" },
+        { "Description", "विवरण" },
+        { "Notes", "कैफियत / टिप्पणीहरू" },
+        { "Ownership", "स्वामित्वको प्रकार" },
+        { "OwnershipType", "स्वामित्वको प्रकार" },
+        { "TotalRooms", "कुल कोठाहरू" },
+        { "TotalArea", "कुल क्षेत्रफल" },
+        { "RespondentName", "उत्तरदाताको नाम" },
+        { "OperatorName", "सञ्चालकको नाम" },
+
+        // Educational Institution properties
+        { "InstitutionType", "संस्थाको प्रकार" },
+        { "InstitutionDetail", "थप विवरण" },
+        { "ApprovedFemalePrePrimary", "स्वीकृत महिला पूर्व-प्राथमिक दरबन्दी" },
+        { "ApprovedFemaleBasic", "स्वीकृत महिला आधारभूत दरबन्दी" },
+        { "ApprovedFemaleSecondary", "स्वीकृत महिला माध्यमिक दरबन्दी" },
+        { "ApprovedMalePrePrimary", "स्वीकृत पुरुष पूर्व-प्राथमिक दरबन्दी" },
+        { "ApprovedMaleBasic", "स्वीकृत पुरुष आधारभूत दरबन्दी" },
+        { "ApprovedMaleSecondary", "स्वीकृत पुरुष माध्यमिक दरबन्दी" },
+        { "WorkingFemalePrePrimary", "कार्यरत महिला पूर्व-प्राथमिक शिक्षक संख्या" },
+        { "WorkingFemaleBasic", "कार्यरत महिला आधारभूत शिक्षक संख्या" },
+        { "WorkingFemaleSecondary", "कार्यरत महिला माध्यमिक शिक्षक संख्या" },
+        { "WorkingMalePrePrimary", "कार्यरत पुरुष पूर्व-प्राथमिक शिक्षक संख्या" },
+        { "WorkingMaleBasic", "कार्यरत पुरुष आधारभूत शिक्षक संख्या" },
+        { "WorkingMaleSecondary", "कार्यरत पुरुष माध्यमिक शिक्षक संख्या" },
+        { "SubjectTeacherAvailable", "विषयगत शिक्षक उपलब्धता" },
+        { "InternetAvailable", "इन्टरनेटको उपलब्धता" },
+        { "MaleTeachersUsingInternet", "इन्टरनेट प्रयोग गर्ने पुरुष शिक्षक संख्या" },
+        { "FemaleTeachersUsingInternet", "इन्टरनेट प्रयोग गर्ने महिला शिक्षक संख्या" },
+        { "FemaleStudentsPrePrimary", "पूर्व-प्राथमिक तहका छात्रा संख्या" },
+        { "FemaleStudentsBasic", "आधारभूत तहका छात्रा संख्या" },
+        { "FemaleStudentsSecondary", "माध्यमिक तहका छात्रा संख्या" },
+        { "MaleStudentsPrePrimary", "पूर्व-प्राथमिक तहका छात्र संख्या" },
+        { "MaleStudentsBasic", "आधारभूत तहका छात्र संख्या" },
+        { "MaleStudentsSecondary", "माध्यमिक तहका छात्र संख्या" },
+        { "GrossEnrollmentPrePrimary", "कुल भर्ना दर (पूर्व-प्राथमिक)" },
+        { "GrossEnrollmentBasic", "कुल भर्ना दर (आधारभूत)" },
+        { "GrossEnrollmentSecondary", "कुल भर्ना दर (माध्यमिक)" },
+        { "RetentionPrePrimary", "टिकाउ दर (पूर्व-प्राथमिक)" },
+        { "RetentionBasic", "टिकाउ दर (आधारभूत)" },
+        { "RetentionSecondary", "टिकाउ दर (माध्यमिक)" },
+        { "AchievementClass8", "कक्षा ८ को सिकाइ उपलब्धि (%)" },
+        { "AchievementClass10", "कक्षा १० को सिकाइ उपलब्धि (%)" },
+        { "AchievementClass12", "कक्षा १२ को सिकाइ उपलब्धि (%)" },
+        { "PassRateClass8", "कक्षा ८ को उत्तीर्ण दर (%)" },
+        { "PassRateClass10", "कक्षा १० को उत्तीर्ण दर (%)" },
+        { "PassRateClass12", "कक्षा १२ को उत्तीर्ण दर (%)" },
+        { "KutchiBuildingCount", "कच्ची भवन संख्या" },
+        { "KutchiRoomCount", "कच्ची कोठा संख्या" },
+        { "PakkiRoomCount", "पक्की कोठा संख्या" },
+        { "PakkiBuildingCount", "पक्की भवन संख्या" },
+        { "HasLibrary", "पुस्तकालय छ/छैन" },
+        { "HasScienceLab", "विज्ञान प्रयोगशाला छ/छैन" },
+        { "DeskBenchCapacity", "डेस्क बेन्च क्षमता" },
+        { "HasPlayground", "खेलमैदान छ/छैन" },
+        { "CompoundWallType", "घेराबारको प्रकार" },
+        { "ToiletFacility", "शौचालयको सुविधा" },
+        { "IntegratedCurriculum", "एकीकृत पाठ्यक्रम लागू भएको छ/छैन" },
+        { "HasCleanDrinkingWater", "स्वच्छ पिउने पानीको सुविधा छ/छैन" },
+        { "HasDisabledResourceClass", "अपाङ्गतामैत्री स्रोत कक्षा छ/छैन" },
+        { "HasChildClub", "बाल क्लब गठन भएको छ/छैन" },
+        { "ChildFriendlyTeaching", "बालमैत्री शिक्षण विधि प्रयोग भएको छ/छैन" },
+        { "SchoolImprovementPlan", "विद्यालय सुधार योजना (SIP) छ/छैन" },
+        { "TotalMaleStudents", "जम्मा छात्र संख्या" },
+        { "TotalFemaleStudents", "जम्मा छात्रा संख्या" },
+        { "BasicCompletedMale", "आधारभूत तह पूरा गरेका छात्र संख्या" },
+        { "BasicCompletedFemale", "आधारभूत तह पूरा गरेका छात्रा संख्या" },
+        { "ScholarshipMale", "छात्रवृत्ति पाउने छात्र संख्या" },
+        { "ScholarshipFemale", "छात्रवृत्ति पाउने छात्रा संख्या" },
+        { "MiddayMealMale", "दिवा खाजा पाउने छात्र संख्या" },
+        { "MiddayMealFemale", "दिवा खाजा पाउने छात्रा संख्या" },
+        { "TechnicalClass9Male", "प्राविधिक धार (कक्षा ९-१२) मा छात्र संख्या" },
+        { "TechnicalClass9Female", "प्राविधिक धार (कक्षा ९-१२) मा छात्रा संख्या" },
+        { "ScienceClass11Male", "विज्ञान विषय (कक्षा ११-१२) मा छात्र संख्या" },
+        { "ScienceClass11Female", "विज्ञान विषय (कक्षा ११-१२) मा छात्रा संख्या" },
+        { "ScholarshipDalitMale", "दलित छात्रवृत्ति पाउने छात्र संख्या" },
+        { "ScholarshipDalitFemale", "दलित छात्रवृत्ति पाउने छात्रा संख्या" },
+        { "ScholarshipDisabledMale", "अपाङ्गता छात्रवृत्ति पाउने छात्र संख्या" },
+        { "ScholarshipDisabledFemale", "अपाङ्गता छात्रवृत्ति पाउने छात्रा संख्या" },
+        { "ScholarshipTalentedMale", "जेहेन्दार छात्रवृत्ति पाउने छात्र संख्या" },
+        { "ScholarshipTalentedFemale", "जेहेन्दार छात्रवृत्ति पाउने छात्रा संख्या" },
+        { "ScholarshipPoorMale", "विपन्न छात्रवृत्ति पाउने छात्र संख्या" },
+        { "ScholarshipPoorFemale", "विपन्न छात्रवृत्ति पाउने छात्रा संख्या" },
+        { "ScholarshipOtherMale", "अन्य छात्रवृत्ति पाउने छात्र संख्या" },
+        { "ScholarshipOtherFemale", "अन्य छात्रवृत्ति पाउने छात्रा संख्या" },
+        { "ScholarshipMuslimMale", "मुस्लिम छात्रवृत्ति पाउने छात्र संख्या" },
+        { "ScholarshipMuslimFemale", "मुस्लिम छात्रवृत्ति पाउने छात्रा संख्या" },
+        { "SmcFormationStatus", "विद्यालय व्यवस्थापन समिति (SMC) गठन स्थिति" },
+        { "SmcRegularMeeting", "विद्यालय व्यवस्थापन समितिको नियमित बैठक स्थिति" },
+
+        // Health Institution properties
+        { "InstitutionTypeOther", "संस्थाको प्रकार (अन्य)" },
+        { "DoctorsApproved", "चिकित्सक स्वीकृत दरबन्दी" },
+        { "DoctorsWorking", "चिकित्सक कार्यरत संख्या" },
+        { "OtherStaffApproved", "अन्य कर्मचारी स्वीकृत दरबन्दी" },
+        { "OtherStaffWorking", "अन्य कर्मचारी कार्यरत संख्या" },
+        { "ServicesSummary", "उपलब्ध सेवाहरूको विवरण" },
+        { "HasMaternity", "प्रसूति सेवा छ/छैन" },
+        { "HasLab", "प्रयोगशाला (Lab) सेवा छ/छैन" },
+        { "HasClinic", "क्लिनिक सेवा छ/छैन" },
+        { "HasXray", "एक्स-रे (X-Ray) सेवा छ/छैन" },
+        { "HasVaccination", "खोप सेवा छ/छैन" },
+        { "HasCtScan", "सीटी स्क्यान सेवा छ/छैन" },
+        { "HasCounseling", "परामर्श सेवा छ/छैन" },
+        { "HasSafeMotherhood", "सुरक्षित मातृत्व सेवा छ/छैन" },
+        { "HasBloodTransfusion", "रगत संचार सेवा छ/छैन" },
+        { "BcgVaccinated", "बीसीजी खोप लगाएका संख्या" },
+        { "DptHepbVaccinated", "डीपीटी/हेपबी खोप लगाएका संख्या" },
+        { "Polio3rdVaccinated", "तेस्रो पोलियो खोप लगाएका संख्या" },
+        { "MeaslesRubellaVaccinated", "दादुरा/रुबेला खोप लगाएका संख्या" },
+        { "JeVaccinated", "जेई (JE) खोप लगाएका संख्या" },
+        { "Under5Monitored", "५ वर्ष मुनिका तौल अनुगमन गरिएका बालबालिका संख्या" },
+        { "Under5Malnourished", "५ वर्ष मुनिका कुपोषित बालबालिका संख्या" },
+        { "DeliveryLastYear", "गत वर्ष भएको प्रसूति संख्या" },
+        { "Tt1Pregnant", "टिटी खोपको पहिलो मात्रा पाएका गर्भवती संख्या" },
+        { "Tt2Pregnant", "टिटी खोपको दोस्रो मात्रा पाएका गर्भवती संख्या" },
+        { "Anc4visitsPregnant", "कम्तीमा ४ पटक गर्भ जाँच गराएका गर्भवती संख्या" },
+        { "InstitutionalDelivery", "स्वास्थ्य संस्थामा सुत्केरी भएका संख्या" },
+        { "SkilledHomeDelivery", "दक्ष स्वास्थ्यकर्मीबाट घरमा सुत्केरी भएका संख्या" },
+        { "UnskilledHomeDelivery", "अदक्ष व्यक्तिबाट घरमा सुत्केरी भएका संख्या" },
+        { "MaternalDeath6wk", "सुत्केरी भएको ६ हप्ता भित्र मृत्यु भएका आमा संख्या" },
+        { "LiveBirths", "जीवित जन्म संख्या" },
+        { "StillBirths", "मृत जन्म संख्या" },
+        { "NeonatalDeath28d", "२८ दिन भित्र मृत्यु भएका नवजात शिशु संख्या" },
+        { "Women1548", "१५ देखि ४९ वर्षका महिला संख्या" },
+        { "FpPermanentFemale", "परिवार नियोजन स्थायी साधन (महिला) प्रयोगकर्ता संख्या" },
+        { "FpTemporaryFemale", "परिवार नियोजन अस्थायी साधन (महिला) प्रयोगकर्ता संख्या" },
+        { "FpPermanentMale", "परिवार नियोजन स्थायी साधन (पुरुष) प्रयोगकर्ता संख्या" },
+        { "FpTemporaryMale", "परिवार नियोजन अस्थायी साधन (पुरुष) प्रयोगकर्ता संख्या" },
+        { "FchvCount", "महिला स्वास्थ्य स्वयंसेविका (FCHV) संख्या" },
+        { "EndMarker", "अन्तिम मार्कर" },
+
+        // Building properties
+        { "BuildingType", "भवनको प्रकार" },
+        { "PurposeSummary", "प्रयोजनको विवरण" },
+        { "PurposeKutchi", "कच्ची भवन प्रयोजन" },
+        { "PurposePakki", "पक्की भवन प्रयोजन" },
+        { "PurposeSemiPakki", "अर्ध-पक्की भवन प्रयोजन" },
+        { "PurposeAdmin", "प्रशासनिक प्रयोजन" },
+        { "PurposeEducation", "शैक्षिक प्रयोजन" },
+        { "PurposeHealth", "स्वास्थ्य प्रयोजन" },
+        { "PurposeAgriculture", "कृषि प्रयोजन" },
+        { "PurposeCooperative", "सहकारी प्रयोजन" },
+        { "PurposeAssembly", "सभा/समारोह प्रयोजन" },
+        { "PurposeOther", "अन्य प्रयोजन" },
+        { "PurposeOtherDetail", "अन्य प्रयोजनको थप विवरण" },
+        { "Capacity", "क्षमता" },
+        { "UsageStatus", "प्रयोगको अवस्था" },
+        { "UsageStatusOther", "प्रयोगको अवस्था (अन्य)" },
+        { "BuildingMaterial", "भवन निर्माण सामाग्री" },
+        { "ConstructionStatus", "निर्माणको अवस्था" },
+        { "ConstructionDate", "निर्माण मिति" },
+        { "TotalFloors", "कुल तला संख्या" },
+
+        // Security Body properties
+        { "BodyType", "सुरक्षा निकायको प्रकार" },
+        { "PersonnelCount", "सुरक्षाकर्मी संख्या" },
+
+        // Financial Institution properties
+        { "BuildingLevel", "भवनको स्तर" },
+        { "OwnBuilding", "आफ्नै भवन छ/छैन" },
+        { "FemaleShareMembers", "शेयर सदस्य (महिला) संख्या" },
+        { "MaleShareMembers", "शेयर सदस्य (पुरुष) संख्या" },
+        { "CoopTypeSummary", "सहकारीको प्रकार विवरण" },
+        { "CoopFemaleMember", "सहकारी सदस्य (महिला)" },
+        { "CoopMaleMember", "सहकारी सदस्य (पुरुष)" },
+        { "CoopJoint", "सहकारी संयुक्त सदस्य" },
+        { "CoopAgriSavings", "कृषि बचत सहकारी" },
+        { "CoopLoan", "ऋण सहकारी" },
+        { "CoopMultipurpose", "बहुउद्देश्यीय सहकारी" },
+        { "CoopOther", "अन्य सहकारी" },
+        { "CoopOtherDetail", "अन्य सहकारी थप विवरण" },
+        { "TotalShareCapital", "कुल शेयर पूँजी" },
+        { "TotalSavings", "कुल बचत संकलन" },
+        { "FemaleBorrowers", "महिला ऋणी संख्या" },
+        { "MaleBorrowers", "पुरुष ऋणी संख्या" },
+        { "MaxLoanAmount", "अधिकतम ऋण रकम" },
+        { "MinLoanAmount", "न्यूनतम ऋण रकम" },
+        { "LoanTypeSummary", "ऋण प्रवाह क्षेत्र विवरण" },
+        { "LoanAgriculture", "कृषि ऋण" },
+        { "LoanLivestock", "पशुपालन ऋण" },
+        { "LoanBuilding", "घर/भवन निर्माण ऋण" },
+        { "LoanHirePurchase", "सवारी साधन/हायर पर्चेज ऋण" },
+        { "LoanMedical", "उपचार/स्वास्थ्य ऋण" },
+        { "LoanHouse", "घर जग्गा ऋण" },
+        { "LoanOther", "अन्य ऋण" },
+        { "LoanOtherDetail", "अन्य ऋण थप विवरण" },
+        { "GovtSupportAmount", "सरकारी सहयोग रकम" },
+        { "ExternalSupportSummary", "बाह्य सहयोगको विवरण" },
+        { "HasGovtSupport", "सरकारी सहयोग प्राप्त भएको छ/छैन" },
+        { "HasNgoSupport", "गैरसरकारी संस्थाको सहयोग प्राप्त भएको छ/छैन" },
+        { "NoSupport", "सहयोग नपाएको" },
+        { "OtherSupportSummary", "अन्य सहयोग विवरण" },
+        { "SupportFurniture", "सहयोग (फर्निचर)" },
+        { "SupportGoods", "सहयोग (सामानहरू)" },
+        { "SupportTraining", "सहयोग (तालिम)" },
+        { "SupportCapacity", "सहयोग (क्षमता अभिवृद्धि)" },
+        { "SupportComputer", "सहयोग (कम्प्युटर)" },
+        { "SupportStationery", "सहयोग (स्टेशनरी)" },
+        { "SupportOther", "सहयोग (अन्य)" },
+        { "NgoSupportAmount", "गैरसरकारी संस्था सहयोग रकम" },
+
+        // Hotel/Resort properties
+        { "HotelType", "होटल / रिसोर्टको प्रकार" },
+        { "HotelName", "होटल / रिसोर्टको नाम" },
+
+        // Bridge properties
+        { "BridgeType", "पुलको प्रकार" },
+        { "BridgeCondition", "पुलको अवस्था" },
+        { "RepairSummary", "मर्मत सम्भारको आवश्यकता विवरण" },
+        { "RepairWireBar", "मर्मत (तारजाली)" },
+        { "RepairSideWall", "मर्मत (साइड वाल)" },
+        { "RepairRoadHole", "मर्मत (सडक खण्ड खाल्डाखुल्डी)" },
+        { "RepairFoundationCrack", "मर्मत (फाउन्डेसन चर्केको)" },
+        { "RepairFoundationBroken", "मर्मत (फाउन्डेसन भत्केको)" },
+        { "LengthMeters", "लम्बाई (मिटर)" },
+        { "WidthMeters", "चौडाई (मिटर)" },
+
+        // Industry properties
+        { "IndustryType", "उद्योगको प्रकार" },
+        { "Products", "उत्पादित वस्तुहरू" },
+        { "ProductsDetail", "उत्पादित वस्तुको विवरण" },
+        { "OtherProducts", "उत्पादित अन्य वस्तुहरू" },
+        { "EmploymentSummary", "रोजगारी विवरण" },
+        { "EmploymentFemale", "महिला रोजगारी संख्या" },
+        { "EmploymentMale", "पुरुष रोजगारी संख्या" },
+        { "EmploymentTotal", "कुल रोजगारी संख्या" },
+
+        // NGO/Club/Group properties
+        { "OrgType", "संस्थाको प्रकार (NGO/क्लब/समूह)" },
+        { "OrgName", "संस्थाको नाम" },
+        { "AnnualTransaction", "वार्षिक कारोबार रकम (रु.)" },
+        { "PriorityAreas", "प्राथमिकताका क्षेत्रहरू" },
+        { "PriorityOther", "प्राथमिकताका क्षेत्र (अन्य)" },
+        { "DonorList", "वैदेशिक दाताहरूको सूची" },
+        { "WorkingArea", "कार्य क्षेत्र" },
+        { "ActivePrograms", "सञ्चालित सक्रिय कार्यक्रम संख्या" },
+        { "TotalEmployees", "कुल कर्मचारी संख्या" },
+        { "FemaleMembers", "महिला सदस्य संख्या" },
+        { "MaleMembers", "पुरुष सदस्य संख्या" },
+        { "FemaleBeneficiaries", "लाभान्वित महिला संख्या" },
+        { "MaleBeneficiaries", "लाभान्वित पुरुष संख्या" },
+
+        // Land Use properties
+        { "LandType", "जग्गाको प्रकार (कृषि/आवासीय/अन्य)" },
+        { "Boundary", "सिमाना/चौतर्फी सीमा" },
+        { "History", "जग्गाको ऐतिहासिक पृष्ठभूमि" },
+        { "PublicAreaType", "सार्वजनिक क्षेत्रको प्रकार" },
+        { "DisasterSummary", "विपद् जोखिम विवरण" },
+        { "DisasterFlood", "जोखिम (बाढी)" },
+        { "DisasterLandslide", "जोखिम (पहिरो)" },
+        { "DisasterRiverCut", "जोखिम (नदी कटान)" },
+        { "DisasterInundation", "जोखिम (डुबान)" },
+        { "DisasterDrought", "जोखिम (खडेरी)" },
+
+        // Natural Resource properties
+        { "ResourceType", "प्राकृतिक स्रोतको प्रकार" },
+
+        // Cultural Heritage properties
+        { "HeritageType", "सांस्कृतिक सम्पदाको प्रकार" },
+        { "AnnualIncome", "वार्षिक आम्दानी (रु.)" },
+        { "AnnualVisitors", "वार्षिक पर्यटक संख्या" },
+        { "TotalAreaSqkm", "कुल क्षेत्रफल (वर्ग किमी)" },
+        { "ConstructionYear", "निर्माण वर्ष" },
+        { "HasGuides", "गाइडको व्यवस्था छ/छैन" },
+        { "GuideCount", "गाइडहरूको संख्या" },
+        { "Significance", "सांस्कृतिक/ऐतिहासिक महत्त्व" },
+
+        // Trade/Business properties
+        { "BusinessName", "व्यापार/व्यवसायको नाम" },
+
+        // Forest properties
+        { "ForestName", "वनको नाम" },
+        { "ForestType", "वनको प्रकार" },
+        { "AreaInWard", "वडा भित्रको क्षेत्रफल (हेक्टर)" },
+        { "AssociatedHouseholds", "आबद्ध कुल घरधुरी संख्या" },
+        { "MainPlants", "मुख्य रुख/बिरुवाहरू" },
+        { "MainAnimals", "मुख्य वन्यजन्तुहरू" },
+        { "HerbsMedicinal", "जडीबुटीहरू" },
+        { "TimberProductionMt", "काठ उत्पादन (मेट्रिक टन)" },
+        { "NonTimberProductionMt", "गैर-काष्ठ वन पैदावार उत्पादन (मेट्रिक टन)" },
+
+        // Road properties
+        { "RoadName", "सडकको नाम" },
+        { "RoadType", "सडकको प्रकार" },
+        { "LengthInWard", "वडा भित्रको सडक लम्बाई (किमी)" },
+        { "Width", "चौडाई (मिटर)" },
+
+        // Ward Statistics properties
+        { "BirthRegistrations", "जन्म दर्ता संख्या" },
+        { "MarriageRegistrations", "विवाह दर्ता संख्या" },
+        { "DeathRegistrations", "मृत्यु दर्ता संख्या" },
+        { "DivorceRegistrations", "सम्बन्ध विच्छेद संख्या" },
+        { "MigrationOutHouseholds", "बसाइँसराइ गरि जाने घरधुरी संख्या" },
+        { "MigrationInHouseholds", "बसाइँसराइ गरि आउने घरधुरी संख्या" },
+        { "CitizenshipRecommendations", "नागरकता सिफारिस संख्या" },
+        { "PassportRecommendations", "राहदानी (पासपोर्ट) सिफारिस संख्या" },
+        { "SeniorFemale", "ज्येष्ठ नागरिक (महिला) संख्या" },
+        { "SeniorMale", "ज्येष्ठ नागरिक (पुरुष) संख्या" },
+        { "SeniorAllowanceTotal", "ज्येष्ठ नागरिक सामाजिक सुरक्षा भत्ता पाउने कुल संख्या" },
+        { "SingleWomenCount", "एकल महिला संख्या" },
+        { "SingleWomenAllowance", "एकल महिला सामाजिक सुरक्षा भत्ता पाउने संख्या" },
+        { "FullDisabledMale", "पूर्ण अपाङ्गता भएका पुरुष संख्या" },
+        { "FullDisabledFemale", "पूर्ण अपाङ्गता भएका महिला संख्या" },
+        { "FullDisabledAllowance", "पूर्ण अपाङ्गता भत्ता पाउने संख्या" },
+        { "PartialDisabledMale", "आंशिक अपाङ्गता भएका पुरुष संख्या" },
+        { "PartialDisabledFemale", "आंशिक अपाङ्गता भएका महिला संख्या" },
+        { "PartialDisabledAllowance", "आंशिक अपाङ्गता भत्ता पाउने संख्या" },
+        { "ChildProtectionMale", "बाल संरक्षण भत्ता पाउने बालक संख्या" },
+        { "ChildProtectionFemale", "बाल संरक्षण भत्ता पाउने बालिका संख्या" },
+        { "ChildProtectionAllowance", "बाल संरक्षण भत्ता पाउने कुल संख्या" },
+        { "DalitAllowanceMale", "दलित सामाजिक सुरक्षा भत्ता पाउने पुरुष संख्या" },
+        { "DalitAllowanceFemale", "दलित सामाजिक सुरक्षा भत्ता पाउने महिला संख्या" },
+        { "DalitAllowanceTotal", "दलित सामाजिक सुरक्षा भत्ता पाउने कुल संख्या" }
+    };
+}
+<div class="container py-4">
+<div class="d-flex justify-content-between align-items-center mb-3">
+<h3 class="fw-bold mb-0">@ViewData["Title"]</h3>
+<a href="/Admin/Institutions?subjectArea=@Model.SubjectArea" class="btn
+btn-outline-secondary btn-sm">
+    <i class="bi bi-arrow-left"></i> सूचीमा फर्कनुहोस्
+</a>
+</div>
+<form action="/Admin/@(isEdit ? $"EditInstitution/{Model.Id}" : "CreateInstitution")?subjectArea=@Model.SubjectArea" method="post">
+@Html.AntiForgeryToken()
+<input type="hidden" name="subjectArea" value="@Model.SubjectArea" />
+<input type="hidden" name="id" value="@Model.Id" />
+<!-- Card 1: Survey Entry Info -->
+<div class="card mb-4 border-0 shadow-sm">
+    <div class="card-header bg-primary text-white py-3">
+        <h6 class="mb-0"><i class="bi bi-info-circle me-2"></i>आधारभूत
+            सर्वेक्षण प्रविष्टि विवरण</h6>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-3 mb-3">
+                <label class="form-label fw-bold">वडा नं. <span
+                                                              class="text-danger">*</span></label>
+                <input name="SurveyEntry.WardNo" type="number"
+                       class="form-control" value="@Model.SurveyEntry.WardNo" required />
+            </div>
+            <div class="col-md-3 mb-3">
+                <label class="form-label fw-bold">तथ्याङ्क प्रविष्टिकर्ता</label>
+                <input name="SurveyEntry.EnumeratorName" class="formcontrol" value="@Model.SurveyEntry.EnumeratorName" />
+            </div>
+            <div class="col-md-3 mb-3">
+                <label class="form-label fw-bold">सम्पर्क फोन नम्बर</label>
+                <input name="SurveyEntry.PhoneNumber" class="formcontrol" value="@Model.SurveyEntry.PhoneNumber" />
+            </div>
+            <div class="col-md-3 mb-3">
+                <label class="form-label fw-bold">उपकरण पहिचान (Device ID)</label>
+                <input name="SurveyEntry.DeviceId" class="form-control"
+                       value="@Model.SurveyEntry.DeviceId" />
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Card 2: Dynamically Rendered Entity Properties -->
+<div class="card border-0 shadow-sm mb-4">
+    <div class="card-header bg-dark text-white py-3">
+        <h6 class="mb-0"><i class="bi bi-input-cursor-text
+me-2"></i>@Model.DisplayName - विवरण फारम</h6>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            @{
+                var properties = Model.ChildEntity.GetType().GetProperties()
+                    .Where(p => p.Name != "Id" && p.Name !=
+                        "SurveyEntryId" && p.Name != "SurveyEntry")
+                    .OrderBy(p => p.Name);
+                foreach (var prop in properties)
+                {
+                    var propValue = prop.GetValue(Model.ChildEntity);
+                    string labelName =
+                        labelsNep.ContainsKey(prop.Name) ? labelsNep[prop.Name] :
+                            System.Text.RegularExpressions.Regex.Replace(prop.Name, "(\\B[A-Z])", " $1");
+
+                    var t =
+                        Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType;
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label small fw-semibold textsecondary">@labelName</label>
+
+                        @if (t == typeof(double) || t == typeof(int) ||
+                             t == typeof(short) || t == typeof(long))
+                        {
+                            <input name="ChildEntity.@prop.Name"
+                                   type="number" step="any" class="form-control" value="@propValue" />
+                        }
+                        else if (t == typeof(bool))
+                        {
+                            <select name="ChildEntity.@prop.Name"
+                                    class="form-select">
+                                <option value="">— चयन गर्नुहोस् —</option>
+                                <option value="true"
+                                        selected="@(propValue?.ToString() == "True")">हो</option>
+                                <option value="false"
+                                        selected="@(propValue?.ToString() == "False")">होइन</option>
+                            </select>
+                        }
+                        else
+                        {
+                            // Dropdowns for yes/no or selection is applicable, else text input
+                            if (prop.Name.StartsWith("Has") ||
+                                prop.Name.EndsWith("Available") || prop.Name.EndsWith("Status"))
+                            {
+                                <select name="ChildEntity.@prop.Name"
+                                        class="form-select">
+                                    <option value="">— चयन गर्नुहोस् —</option>
+                                    <option value="Yes"
+                                            selected="@(propValue?.ToString() == "Yes")">हो</option>
+                                    <option value="No"
+                                            selected="@(propValue?.ToString() == "No")">होइन</option>
+                                    <option value="Pending"
+                                            selected="@(propValue?.ToString() == "Pending")">विचाराधीन</option>
+                                </select>
+                            }
+                            else if (prop.Name == "Photo" || prop.Name
+                                     == "InstitutionDetail" || prop.Name == "Notes" || prop.Name == "Description")
+                            {
+                                <textarea name="ChildEntity.@prop.Name" class="form-control" rows="2">@propValue</textarea>
+                            }
+                            else
+                            {
+                                <input name="ChildEntity.@prop.Name" class="form-control" value="@propValue" />
+
+                            }
+                        }
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+<div class="card mb-4 border-0 shadow-sm">
+    <div class="card-body">
+        <div class="mb-3">
+            <label class="form-label fw-bold">कैफियत / टिप्पणीहरू</label>
+            <textarea name="SurveyEntry.Notes" class="form-control"
+rows="2">@Model.SurveyEntry.Notes</textarea>
+        </div>
+    </div>
+</div>
+<!-- Action Panel -->
+<div class="mb-5 d-flex gap-2">
+    <button type="submit" class="btn btn-primary px-4 py-2"><i class="bi
+bi-save me-1"></i>डाटा सेभ गर्नुहोस्</button>
+    <a href="/Admin/Institutions?subjectArea=@Model.SubjectArea"
+       class="btn btn-outline-secondary px-4 py-2">रद्द गर्नुहोस्</a>
+</div>
+</form>
+</div>

@@ -1,0 +1,361 @@
+@model VrindavanProfile.Web.Data.DbEntities.Household
+@{
+    ViewData["Title"] = "घरपरिवार स्थान र GPS विवरण";
+    var hasCoords = Model.Latitude.HasValue && Model.Longitude.HasValue;
+    var wardNo = Model.WardNo ?? 0;
+}
+
+<div class="container py-4">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <h2 class="fw-bold mb-1">
+                <i class="bi bi-geo-alt me-2"></i>स्थान र GPS विवरण
+            </h2>
+            <p class="text-muted mb-0 small">
+                वडा @Model.WardNo — @Model.SettlementName
+                @if (!string.IsNullOrEmpty(Model.RespondentName))
+                {
+                    <span>| उत्तरदाता: @Model.RespondentName</span>
+                }
+            </p>
+        </div>
+        <div class="d-flex gap-2">
+            @if (hasCoords)
+            {
+                <a href="/Map?wardNo=@Model.WardNo" class="btn btn-sm btn-outline-info" target="_blank">
+                    <i class="bi bi-map me-1"></i>नक्सामा हेर्नुहोस्
+                </a>
+            }
+            <a href="/Admin/ManageHouseholdData/@Model.Id" class="btn btn-outline-secondary btn-sm">
+                <i class="bi bi-arrow-left me-1"></i>डेटा व्यवस्थापन
+            </a>
+        </div>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+
+    <form asp-action="HouseholdCategoryLocation" method="post">
+        <input type="hidden" asp-for="Id" />
+
+        <div class="row g-3">
+            <!-- Left: Road/Location Info -->
+            <div class="col-lg-5">
+                <div class="card mb-3">
+                    <div class="card-header" style="background: var(--primary); color: #fff;">
+                        <h6 class="mb-0"><i class="bi bi-map me-2"></i>स्थान विवरण</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label small fw-semibold">घर क्रम संख्या (House Serial No)</label>
+                                <input asp-for="HouseSerialNo" class="form-control form-control-sm" readonly />
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label small fw-semibold">टोलको नाम</label>
+                                <input asp-for="SettlementName" class="form-control form-control-sm" readonly />
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label small fw-semibold">सडकको नाम</label>
+                                <input asp-for="RoadName" class="form-control form-control-sm" readonly />
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label small fw-semibold">सडकको प्रकार</label>
+                                <input asp-for="RoadType" class="form-control form-control-sm" readonly />
+                            </div>
+                            <div class="col-12 mb-2">
+                                <label class="form-label small fw-semibold">केन्द्रबाट दूरी</label>
+                                <input asp-for="DistanceFromCenter" class="form-control form-control-sm" readonly />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: GPS Data -->
+            <div class="col-lg-7">
+                <div class="card mb-3">
+                    <div class="card-header" style="background: var(--accent); color: #fff;">
+                        <h6 class="mb-0"><i class="bi bi-crosshair me-2"></i>GPS निर्देशांक</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label small fw-semibold">अक्षांश (Latitude) <span class="text-danger">*</span></label>
+                                <input asp-for="Latitude" class="form-control form-control-sm" type="number" step="any" id="inputLatitude"
+                                       placeholder="27.0000" />
+                                <small class="text-muted">उत्तर (North)</small>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label small fw-semibold">देशान्तर (Longitude) <span class="text-danger">*</span></label>
+                                <input asp-for="Longitude" class="form-control form-control-sm" type="number" step="any" id="inputLongitude"
+                                       placeholder="85.0000" />
+                                <small class="text-muted">पूर्व (East)</small>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label small fw-semibold">उचाई (मिटर)</label>
+                                <input asp-for="Altitude" class="form-control form-control-sm" type="number" step="any" placeholder="मिटर" />
+                                <small class="text-muted">उचाई</small>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label small fw-semibold">जीपीएस सटीकता (मिटर)</label>
+                                <input asp-for="GpsPrecision" class="form-control form-control-sm" type="number" step="any" placeholder="5" />
+                                <small class="text-muted">सटीकता (कम = राम्रो)</small>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label small fw-semibold">भौगोलिक विन्दु (Geo Point)</label>
+                                <input asp-for="GeoPoint" class="form-control form-control-sm" id="inputGeoPoint"
+                                       placeholder="27.0000, 85.0000" />
+                                <small class="text-muted">स्वतः भरिन्छ</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map Preview with Ward Boundary Overlay -->
+        @if (hasCoords)
+        {
+            <div class="card mb-3">
+                <div class="card-header d-flex justify-content-between align-items-center" style="background: var(--primary); color: #fff;">
+                    <h6 class="mb-0"><i class="bi bi-map me-2"></i>नक्सा — वडा @Model.WardNo</h6>
+                    <div>
+                        <span class="badge bg-light text-dark me-1" id="boundaryStatus">
+                            <i class="bi bi-arrow-repeat spin me-1"></i>Loading...
+                        </span>
+                        <button type="button" class="btn btn-sm btn-light" onclick="reloadMap()">
+                            <i class="bi bi-arrow-clockwise"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body p-2">
+                    <div id="mapPreview" style="height: 420px; border-radius: 8px; border: 1px solid #ddd;"></div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-info mb-3">
+                <i class="bi bi-info-circle me-2"></i>
+                GPS निर्देशांक प्रविष्ट गरेपछि म्याप प्रीभ्यू यहाँ देखिनेछ। वडा सीमाना (boundary) पनि देखाइनेछ।
+            </div>
+        }
+
+        <!-- Photo Upload Section -->
+        <div class="card mb-3">
+            <div class="card-header" style="background: var(--accent); color: #fff;">
+                <h6 class="mb-0"><i class="bi bi-camera me-2"></i>घरको फोटो</h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label small fw-semibold">तस्विरको लिंक (Photo URL)</label>
+                        <input asp-for="PhotoUrl" class="form-control form-control-sm" id="inputPhotoUrl"
+                               placeholder="https://..." onchange="updatePhotoPreview()" />
+                        <small class="text-muted">फोटोको URL प्रविष्ट गर्नुहोस्</small>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label small fw-semibold">तस्विर (Base64 / Path)</label>
+                        <input asp-for="Photo" class="form-control form-control-sm"
+                               placeholder="फोटो डेटा वा पथ" />
+                        <small class="text-muted">आधार 64 डेटा वा पथ</small>
+                    </div>
+                </div>
+
+                <div id="photoPreview" class="mt-2 @(string.IsNullOrEmpty(Model.PhotoUrl) ? "d-none" : "")">
+                    <img id="previewImage" src="@Model.PhotoUrl" alt="घरको फोटो"
+                         style="max-width: 100%; max-height: 280px; border-radius: 8px; border: 2px solid var(--surface-alt);"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                    <div class="alert alert-warning small mt-2" style="display:none;">
+                        <i class="bi bi-exclamation-triangle me-2"></i>फोटो लोड हुन सकेन। URL जाँच गर्नुहोस्।
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="d-flex gap-2 justify-content-end mb-4">
+            <a href="/Admin/ManageHouseholdData/@Model.Id" class="btn btn-outline-secondary">
+                रद्द गर्नुहोस्
+            </a>
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-save me-1"></i>GPS र फोटो सेभ गर्नुहोस्
+            </button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <!-- Leaflet CSS + JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <style>
+        .leaflet-popup-content-wrapper { border-radius: 8px; }
+        .leaflet-popup-content { font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif; }
+        #boundaryStatus .bi { display: inline-block; }
+        .spin { animation: spinAnim 1s linear infinite; }
+        @@keyframes spinAnim { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    </style>
+
+    <script>
+        var map = null;
+        var markerLayer = null;
+        var boundaryLayer = null;
+        var currentWard = @wardNo;
+
+        function updateGeoPoint() {
+            var lat = document.getElementById('inputLatitude').value.trim();
+            var lng = document.getElementById('inputLongitude').value.trim();
+            var geo = document.getElementById('inputGeoPoint');
+            if (lat && lng && geo) {
+                geo.value = lat + ', ' + lng;
+            }
+        }
+
+        function updatePhotoPreview() {
+            var url = document.getElementById('inputPhotoUrl').value.trim();
+            var preview = document.getElementById('photoPreview');
+            var img = document.getElementById('previewImage');
+            if (url) {
+                img.src = url;
+                img.style.display = 'block';
+                img.nextElementSibling.style.display = 'none';
+                preview.classList.remove('d-none');
+            }
+        }
+
+        function setBoundaryStatus(text, type) {
+            var el = document.getElementById('boundaryStatus');
+            var iconClass = type === 'success' ? 'bi-check-circle-fill text-success'
+                          : type === 'error' ? 'bi-x-circle-fill text-danger'
+                          : 'bi-arrow-repeat spin text-muted';
+            el.innerHTML = '<i class="bi ' + iconClass + ' me-1"></i>' + text;
+        }
+
+        function loadWardBoundary(mapObj, wardNo) {
+            var boundaryUrl = '/geojson/ward_' + wardNo + '.json';
+            fetch(boundaryUrl)
+                .then(function(response) {
+                    if (!response.ok) throw new Error('Boundary file not found');
+                    return response.json();
+                })
+                .then(function(geojson) {
+                    if (boundaryLayer) {
+                        mapObj.removeLayer(boundaryLayer);
+                    }
+                    boundaryLayer = L.geoJSON(geojson, {
+                        style: function(feature) {
+                            return {
+                                color: '#DC143C',
+                                weight: 2,
+                                opacity: 0.7,
+                                fillColor: '#DC143C',
+                                fillOpacity: 0.08
+                            };
+                        },
+                        onEachFeature: function(feature, layer) {
+                            if (feature.properties && feature.properties.name) {
+                                layer.bindPopup('वडा: ' + feature.properties.name);
+                            }
+                            layer.bindTooltip('वडा ' + wardNo + ' सीमाना', {
+                                permanent: false,
+                                direction: 'center',
+                                className: 'ward-tooltip'
+                            });
+                        }
+                    }).addTo(mapObj);
+
+                    // Fit map to boundary
+                    if (boundaryLayer.getBounds && boundaryLayer.getBounds().isValid()) {
+                        mapObj.fitBounds(boundaryLayer.getBounds(), { padding: [30, 30] });
+                    }
+                    setBoundaryStatus('वडा सीमाना लोड भयो', 'success');
+                })
+                .catch(function(err) {
+                    // No boundary file — just show household marker
+                    setBoundaryStatus('वडा सीमाना उपलब्ध छैन', 'error');
+                    console.log('Ward boundary not found for ward ' + wardNo + ':', err.message);
+                });
+        }
+
+        function initMap(lat, lng) {
+            if (map) {
+                map.remove();
+                map = null;
+            }
+
+            map = L.map('mapPreview').setView([lat, lng], 16);
+
+            // Base tile layer
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            // Custom household marker
+            var houseIcon = L.divIcon({
+                html: '<div style="background:#003B6F;width:36px;height:36px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;"><i class="bi bi-house-door" style="transform:rotate(45deg);color:white;font-size:16px;"></i></div>',
+                className: '',
+                iconSize: [36, 36],
+                iconAnchor: [18, 36],
+                popupAnchor: [0, -36]
+            });
+
+            var popupHtml =
+                '<div style="min-width:180px;font-family:\'Mukta\',sans-serif;">' +
+                '<h6 style="color:#003B6F;margin:0 0 4px 0;font-size:14px;">' +
+                '<i class="bi bi-house-door me-1"></i>@(Model.SettlementName ?? "घरपरिवार")' +
+                '</h6>' +
+                '<p style="margin:0;font-size:12px;color:#666;">वडा @Model.WardNo</p>' +
+                '<p style="margin:2px 0 0 0;font-size:12px;color:#888;">' +
+                '<i class="bi bi-crosshair me-1"></i>' + lat.toFixed(6) + ', ' + lng.toFixed(6) +
+                '</p>' +
+                '</div>';
+
+            var marker = L.marker([lat, lng], { icon: houseIcon }).addTo(map);
+            marker.bindPopup(popupHtml).openPopup();
+
+            // Accuracy circle (GPS precision)
+            var precision = @((Model.GpsPrecision.HasValue ? Model.GpsPrecision.Value : 0).ToString(System.Globalization.CultureInfo.InvariantCulture));
+            if (precision > 0) {
+                L.circle([lat, lng], {
+                    radius: precision,
+                    color: '#0066B3',
+                    weight: 1,
+                    opacity: 0.5,
+                    fillColor: '#0066B3',
+                    fillOpacity: 0.1,
+                    dashArray: '5, 5'
+                }).addTo(map).bindTooltip('GPS सटीकता: ' + precision + 'm', { permanent: false });
+            }
+
+            // Load ward boundary overlay
+            loadWardBoundary(map, currentWard);
+        }
+
+        function reloadMap() {
+            var lat = parseFloat(document.getElementById('inputLatitude').value);
+            var lng = parseFloat(document.getElementById('inputLongitude').value);
+            if (!isNaN(lat) && !isNaN(lng)) {
+                initMap(lat, lng);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Auto-fill geo_point
+            document.getElementById('inputLatitude').addEventListener('input', updateGeoPoint);
+            document.getElementById('inputLongitude').addEventListener('input', updateGeoPoint);
+
+            var lat = @((Model.Latitude.HasValue ? Model.Latitude.Value : 0).ToString(System.Globalization.CultureInfo.InvariantCulture));
+            var lng = @((Model.Longitude.HasValue ? Model.Longitude.Value : 0).ToString(System.Globalization.CultureInfo.InvariantCulture));
+
+            if (lat !== 0 && lng !== 0) {
+                initMap(lat, lng);
+            }
+        });
+    </script>
+}

@@ -1,0 +1,301 @@
+﻿@{
+    ViewData["Title"] = "व्यवस्थापन ड्यासबोर्ड";
+    var isGlobalAdmin = User.IsInRole("admin");
+    var wardClaim     = User.FindFirst("WardNo")?.Value;
+    bool isWardAdmin  = User.IsInRole("ward_admin");
+    string roleBadge  = isGlobalAdmin
+        ? "मुख्य प्रशासक (Super Admin)"
+        : $"वडा नं. {wardClaim} प्रशासक (Ward Admin)";
+}
+
+<div class="container-fluid py-4 px-4">
+
+    <!-- ── Welcome Banner ──────────────────────────────────── -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card border-0 shadow text-white position-relative overflow-hidden"
+                 style="background: linear-gradient(135deg, #002147 0%, #003B6F 55%, #8B0000 100%); border-radius: 18px; min-height: 130px;">
+                <!-- decorative icon -->
+                <div class="position-absolute" style="right: -10px; top: -15px; opacity: 0.07; font-size: 9rem; line-height:1;">
+                    <i class="bi bi-shield-lock"></i>
+                </div>
+                <div class="card-body p-4 d-flex flex-wrap justify-content-between align-items-center position-relative gap-3">
+                    <div>
+                        <span class="badge mb-2 px-3 py-2 fw-semibold"
+                              style="background: rgba(220,20,60,0.85); border-radius: 20px; font-size: 0.78rem; letter-spacing: 0.5px;">
+                            <i class="bi bi-shield-fill-check me-1"></i>@roleBadge
+                        </span>
+                        <h2 class="fw-bold mb-1 fs-3">नमस्कार, @User.Identity?.Name!</h2>
+                        <p class="mb-0 opacity-75 small">वृन्दावन नगरपालिका डिजिटल प्रोफाइल — व्यवस्थापन प्यानल</p>
+                    </div>
+                    <div class="d-flex gap-2 flex-wrap">
+                        @if (isGlobalAdmin)
+                        {
+                            <a href="/Admin/Users" class="btn btn-light fw-semibold px-4"
+                               style="border-radius: 10px; color: #002147;">
+                                <i class="bi bi-people-fill me-1"></i>प्रयोगकर्ता व्यवस्थापन
+                            </a>
+                        }
+                        <form action="/Auth/Logout" method="post" class="d-inline">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn btn-outline-light fw-semibold px-4"
+                                    style="border-radius: 10px;">
+                                <i class="bi bi-box-arrow-right me-1"></i>लगआउट
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Alert messages ─────────────────────────────────── -->
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success border-0 shadow-sm alert-dismissible fade show mb-4"
+             style="border-radius: 12px;" role="alert">
+            <i class="bi bi-check-circle-fill me-2"></i>@TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger border-0 shadow-sm alert-dismissible fade show mb-4"
+             style="border-radius: 12px;" role="alert">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i>@TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    <!-- ── Stat Cards ──────────────────────────────────────── -->
+    <div class="row g-3 mb-4">
+        <div class="col-6 col-lg-3">
+            <div class="card border-0 shadow-sm h-100" style="border-radius: 14px; transition: transform .2s;"
+                 onmouseenter="this.style.transform='translateY(-4px)'" onmouseleave="this.style.transform='none'">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="rounded-3 p-3 me-3" style="background: rgba(37,99,235,0.1);">
+                            <i class="bi bi-people fs-3 text-primary"></i>
+                        </div>
+                        <div>
+                            <p class="text-muted small mb-0 fw-semibold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.5px;">कुल घरपरिवार</p>
+                            <h3 class="fw-bold mb-0">@ViewBag.TotalHouseholds</h3>
+                        </div>
+                    </div>
+                    <a href="/Admin/Households" class="btn btn-sm btn-outline-primary w-100"
+                       style="border-radius: 8px; font-size: 0.82rem;">
+                        व्यवस्थापन <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="card border-0 shadow-sm h-100" style="border-radius: 14px; transition: transform .2s;"
+                 onmouseenter="this.style.transform='translateY(-4px)'" onmouseleave="this.style.transform='none'">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="rounded-3 p-3 me-3" style="background: rgba(5,150,105,0.1);">
+                            <i class="bi bi-bank fs-3 text-success"></i>
+                        </div>
+                        <div>
+                            <p class="text-muted small mb-0 fw-semibold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.5px;">कुल संस्थाहरू</p>
+                            <h3 class="fw-bold mb-0">@ViewBag.TotalInstitutions</h3>
+                        </div>
+                    </div>
+                    <a href="/Admin/Institutions" class="btn btn-sm btn-outline-success w-100"
+                       style="border-radius: 8px; font-size: 0.82rem;">
+                        व्यवस्थापन <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="card border-0 shadow-sm h-100" style="border-radius: 14px; transition: transform .2s;"
+                 onmouseenter="this.style.transform='translateY(-4px)'" onmouseleave="this.style.transform='none'">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="rounded-3 p-3 me-3" style="background: rgba(217,119,6,0.1);">
+                            <i class="bi bi-geo-alt fs-3 text-warning"></i>
+                        </div>
+                        <div>
+                            <p class="text-muted small mb-0 fw-semibold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.5px;">कुल वडाहरू</p>
+                            <h3 class="fw-bold mb-0">@ViewBag.TotalWards</h3>
+                        </div>
+                    </div>
+                    <a href="/Ward" class="btn btn-sm btn-outline-warning w-100"
+                       style="border-radius: 8px; font-size: 0.82rem;">
+                        वडा प्रोफाइल <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3">
+            <div class="card border-0 shadow-sm h-100" style="border-radius: 14px; transition: transform .2s;"
+                 onmouseenter="this.style.transform='translateY(-4px)'" onmouseleave="this.style.transform='none'">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="rounded-3 p-3 me-3" style="background: rgba(99,102,241,0.1);">
+                            <i class="bi bi-clipboard2-data fs-3 text-indigo" style="color:#6366f1;"></i>
+                        </div>
+                        <div>
+                            <p class="text-muted small mb-0 fw-semibold text-uppercase" style="font-size: 0.7rem; letter-spacing: 0.5px;">सर्वेक्षण प्रविष्टि</p>
+                            <h3 class="fw-bold mb-0">—</h3>
+                        </div>
+                    </div>
+                    <a href="/Admin/SurveyEntries" class="btn btn-sm w-100"
+                       style="border-radius: 8px; font-size: 0.82rem; border: 1px solid #6366f1; color: #6366f1;">
+                        व्यवस्थापन <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Main Content Grid ───────────────────────────────── -->
+    <div class="row g-4">
+
+        <!-- Left / Centre Column -->
+        <div class="col-lg-8">
+
+            <!-- Institution Categories -->
+            <div class="card border-0 shadow-sm mb-4" style="border-radius: 16px;">
+                <div class="card-header bg-white border-0 pt-4 pb-2 px-4">
+                    <h5 class="fw-bold mb-1">
+                        <i class="bi bi-grid-3x3-gap-fill text-danger me-2"></i>संस्थागत विवरण व्यवस्थापन
+                    </h5>
+                    <p class="text-muted small mb-0">संस्था प्रकार छनोट गरी डाटा हेर्नुस्, थप्नुस्, सम्पादन गर्नुस्</p>
+                </div>
+                <div class="card-body px-4 pb-4">
+                    <div class="row g-2">
+                        @{
+                            var cats = new[]
+                            {
+                                ("educational_institution", "bi-mortarboard",      "#2563EB", "शैक्षिक संस्था"),
+                                ("health_institution",      "bi-hospital",          "#DC2626", "स्वास्थ्य संस्था"),
+                                ("financial_institution",   "bi-wallet2",           "#D97706", "वित्तीय संस्था"),
+                                ("building",                "bi-building",          "#6B7280", "भवन विवरण"),
+                                ("security_body",           "bi-shield-check",      "#0EA5E9", "सुरक्षा निकाय"),
+                                ("road",                    "bi-bezier2",           "#059669", "सडक पूर्वाधार"),
+                                ("cultural_heritage",       "bi-bank2",             "#E11D48", "सांस्कृतिक सम्पदा"),
+                                ("trade_business",          "bi-shop",              "#7C3AED", "व्यापार व्यवसाय"),
+                                ("ngo_club_group",          "bi-people-fill",       "#374151", "गैसस / क्लब"),
+                                ("hotel_resort",            "bi-building-check",    "#B45309", "होटल / रिसोर्ट"),
+                                ("industry",                "bi-gear-wide-connected","#0F766E","उद्योग"),
+                                ("forest",                  "bi-tree-fill",         "#15803D", "वन / वनस्पति"),
+                                ("bridge",                  "bi-signpost-2",        "#4338CA", "पुल / पुलेसा"),
+                                ("land_use",                "bi-map-fill",          "#9333EA", "भू-उपयोग"),
+                                ("natural_resource",        "bi-gem",               "#0891B2", "प्राकृतिक श्रोत"),
+                                ("ward_statistics",         "bi-bar-chart-fill",    "#0284C7", "वडा सांख्यिकी"),
+                            };
+                        }
+                        @foreach (var (key, icon, color, label) in cats)
+                        {
+                            <div class="col-6 col-sm-4 col-md-3">
+                                <a href="/Admin/Institutions?subjectArea=@key"
+                                   class="d-flex flex-column align-items-start p-3 text-decoration-none border rounded-3 h-100"
+                                   style="border-color: rgba(0,0,0,0.08) !important; transition: box-shadow .2s, transform .2s; background: #fff;"
+                                   onmouseenter="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.10)'; this.style.transform='translateY(-2px)';"
+                                   onmouseleave="this.style.boxShadow='none'; this.style.transform='none';">
+                                    <i class="bi @icon fs-4 mb-2" style="color: @color;"></i>
+                                    <span class="small fw-semibold text-dark" style="line-height: 1.2;">@label</span>
+                                </a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Survey Entries Quick Access -->
+            <div class="card border-0 shadow-sm" style="border-radius: 16px;">
+                <div class="card-header bg-white border-0 pt-4 pb-2 px-4">
+                    <h5 class="fw-bold mb-1">
+                        <i class="bi bi-clipboard2-data-fill text-primary me-2"></i>सर्वेक्षण प्रविष्टिहरू
+                    </h5>
+                </div>
+                <div class="card-body px-4 pb-4 d-flex flex-wrap gap-2">
+                    <a href="/Admin/SurveyEntries" class="btn btn-primary px-4" style="border-radius: 10px;">
+                        <i class="bi bi-table me-1"></i>सूची हेर्नुहोस्
+                    </a>
+                    <a href="/Admin/CreateSurveyEntry" class="btn btn-outline-secondary px-4" style="border-radius: 10px;">
+                        <i class="bi bi-plus-circle me-1"></i>नयाँ प्रविष्टि
+                    </a>
+                    <a href="/Admin/SurveyEntriesTrash" class="btn btn-outline-warning px-4" style="border-radius: 10px;">
+                        <i class="bi bi-trash me-1"></i>ट्रेस हेर्नुहोस्
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right / Sidebar Column -->
+        <div class="col-lg-4">
+
+            @if (isGlobalAdmin)
+            {
+                <!-- User Management (admin only) -->
+                <div class="card border-0 shadow-sm mb-4"
+                     style="border-radius: 16px; border-left: 5px solid #DC143C !important; border: 1px solid rgba(220,20,60,0.15);">
+                    <div class="card-header bg-white border-0 pt-4 pb-2 px-4">
+                        <h5 class="fw-bold mb-1 text-dark">
+                            <i class="bi bi-people-fill text-danger me-2"></i>प्रयोगकर्ता व्यवस्थापन
+                        </h5>
+                    </div>
+                    <div class="card-body px-4 pb-4">
+                        <p class="text-muted small mb-3">वडा प्रशासक सिर्जना गर्नुस्, पासवर्ड परिवर्तन गर्नुस्, खाता सक्रिय/निष्क्रिय गर्नुस्।</p>
+                        <a href="/Admin/Users" class="btn btn-danger w-100 fw-semibold mb-2" style="border-radius: 10px;">
+                            <i class="bi bi-person-gear me-2"></i>प्रशासक खाता सूची
+                        </a>
+                        <a href="/Admin/CreateUser" class="btn btn-outline-danger w-100 fw-semibold" style="border-radius: 10px;">
+                            <i class="bi bi-person-plus-fill me-2"></i>नयाँ प्रशासक थप्नुहोस्
+                        </a>
+                    </div>
+                </div>
+            }
+            @if (isWardAdmin)
+            {
+                <!-- Ward Admin info card -->
+                <div class="card border-0 shadow-sm mb-4"
+                     style="border-radius: 16px; background: linear-gradient(135deg, #EFF6FF, #DBEAFE);">
+                    <div class="card-body p-4">
+                        <h6 class="fw-bold text-primary mb-2">
+                            <i class="bi bi-info-circle-fill me-1"></i>तपाईंको पहुँच सीमा
+                        </h6>
+                        <p class="small text-muted mb-0">
+                            तपाईं <strong>वडा नं. @wardClaim</strong> का प्रशासक हुनुहुन्छ।<br/>
+                            अन्य वडाका विवरण <strong>हेर्न मात्र</strong> पाउनुहुन्छ।
+                            आफ्नो वडाको डाटा मात्र थप्न / सम्पादन गर्न पाइन्छ।
+                            <strong>मेटाउने</strong> अधिकार मुख्य प्रशासकसँग मात्र छ।
+                        </p>
+                    </div>
+                </div>
+            }
+
+            <!-- Map widget -->
+            <div class="card border-0 shadow-sm mb-4 overflow-hidden" style="border-radius: 16px;">
+                <div class="p-4 text-center" style="background: linear-gradient(135deg, #EFF6FF, #DBEAFE);">
+                    <i class="bi bi-geo-fill fs-1 text-primary"></i>
+                    <h6 class="fw-bold mt-2 text-dark mb-1">GIS नक्सा प्रणाली</h6>
+                    <p class="text-muted small mb-0">भौगोलिक स्थान र वडा सीमा</p>
+                </div>
+                <div class="card-body p-3">
+                    <a href="/Map" class="btn btn-outline-primary w-100 fw-semibold" style="border-radius: 10px;">
+                        <i class="bi bi-map me-1"></i>नक्सा खोल्नुहोस्
+                    </a>
+                </div>
+            </div>
+
+            <!-- Ward profile link -->
+            <div class="card border-0 shadow-sm overflow-hidden" style="border-radius: 16px;">
+                <div class="p-4 text-center" style="background: linear-gradient(135deg, #F0FDF4, #DCFCE7);">
+                    <i class="bi bi-bar-chart-fill fs-1 text-success"></i>
+                    <h6 class="fw-bold mt-2 text-dark mb-1">वडा तथ्याङ्क</h6>
+                    <p class="text-muted small mb-0">चार्ट, जनगणना, तुलनात्मक विश्लेषण</p>
+                </div>
+                <div class="card-body p-3">
+                    <a href="/Ward" class="btn btn-outline-success w-100 fw-semibold" style="border-radius: 10px;">
+                        <i class="bi bi-graph-up me-1"></i>वडा प्रोफाइल हेर्नुहोस्
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

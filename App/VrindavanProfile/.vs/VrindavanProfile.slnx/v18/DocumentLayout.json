@@ -1,0 +1,153 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Brindavan\\App\\VrindavanProfile\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{25A3DCC8-B937-8DF6-4CD0-736AA193B8BA}|VrindavanProfile.Web\\VrindavanProfile.Web.csproj|d:\\brindavan\\app\\vrindavanprofile\\vrindavanprofile.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A3DCC8-B937-8DF6-4CD0-736AA193B8BA}|VrindavanProfile.Web\\VrindavanProfile.Web.csproj|solutionrelative:vrindavanprofile.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A3DCC8-B937-8DF6-4CD0-736AA193B8BA}|VrindavanProfile.Web\\VrindavanProfile.Web.csproj|d:\\brindavan\\app\\vrindavanprofile\\vrindavanprofile.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25A3DCC8-B937-8DF6-4CD0-736AA193B8BA}|VrindavanProfile.Web\\VrindavanProfile.Web.csproj|solutionrelative:vrindavanprofile.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A3DCC8-B937-8DF6-4CD0-736AA193B8BA}|VrindavanProfile.Web\\VrindavanProfile.Web.csproj|d:\\brindavan\\app\\vrindavanprofile\\vrindavanprofile.web\\services\\dashboardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A3DCC8-B937-8DF6-4CD0-736AA193B8BA}|VrindavanProfile.Web\\VrindavanProfile.Web.csproj|solutionrelative:vrindavanprofile.web\\services\\dashboardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A3DCC8-B937-8DF6-4CD0-736AA193B8BA}|VrindavanProfile.Web\\VrindavanProfile.Web.csproj|d:\\brindavan\\app\\vrindavanprofile\\vrindavanprofile.web\\wwwroot\\js\\table-export.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{25A3DCC8-B937-8DF6-4CD0-736AA193B8BA}|VrindavanProfile.Web\\VrindavanProfile.Web.csproj|solutionrelative:vrindavanprofile.web\\wwwroot\\js\\table-export.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A3DCC8-B937-8DF6-4CD0-736AA193B8BA}|VrindavanProfile.Web\\VrindavanProfile.Web.csproj|d:\\brindavan\\app\\vrindavanprofile\\vrindavanprofile.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25A3DCC8-B937-8DF6-4CD0-736AA193B8BA}|VrindavanProfile.Web\\VrindavanProfile.Web.csproj|solutionrelative:vrindavanprofile.web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A3DCC8-B937-8DF6-4CD0-736AA193B8BA}|VrindavanProfile.Web\\VrindavanProfile.Web.csproj|d:\\brindavan\\app\\vrindavanprofile\\vrindavanprofile.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A3DCC8-B937-8DF6-4CD0-736AA193B8BA}|VrindavanProfile.Web\\VrindavanProfile.Web.csproj|solutionrelative:vrindavanprofile.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A3DCC8-B937-8DF6-4CD0-736AA193B8BA}|VrindavanProfile.Web\\VrindavanProfile.Web.csproj|d:\\brindavan\\app\\vrindavanprofile\\vrindavanprofile.web\\views\\ward\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{25A3DCC8-B937-8DF6-4CD0-736AA193B8BA}|VrindavanProfile.Web\\VrindavanProfile.Web.csproj|solutionrelative:vrindavanprofile.web\\views\\ward\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A3DCC8-B937-8DF6-4CD0-736AA193B8BA}|VrindavanProfile.Web\\VrindavanProfile.Web.csproj|d:\\brindavan\\app\\vrindavanprofile\\vrindavanprofile.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{25A3DCC8-B937-8DF6-4CD0-736AA193B8BA}|VrindavanProfile.Web\\VrindavanProfile.Web.csproj|solutionrelative:vrindavanprofile.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Brindavan\\App\\VrindavanProfile\\VrindavanProfile.Web\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "VrindavanProfile.Web\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Brindavan\\App\\VrindavanProfile\\VrindavanProfile.Web\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "VrindavanProfile.Web\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-06T02:38:54.148Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Brindavan\\App\\VrindavanProfile\\VrindavanProfile.Web\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "VrindavanProfile.Web\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Brindavan\\App\\VrindavanProfile\\VrindavanProfile.Web\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "VrindavanProfile.Web\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAjwDsAAACiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-06T02:37:28.609Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Brindavan\\App\\VrindavanProfile\\VrindavanProfile.Web\\Views\\Ward\\Index.cshtml",
+              "RelativeDocumentMoniker": "VrindavanProfile.Web\\Views\\Ward\\Index.cshtml",
+              "ToolTip": "D:\\Brindavan\\App\\VrindavanProfile\\VrindavanProfile.Web\\Views\\Ward\\Index.cshtml",
+              "RelativeToolTip": "VrindavanProfile.Web\\Views\\Ward\\Index.cshtml",
+              "ViewState": "AgIAANYAAAAAAAAAAAAAAMwAAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-06T02:28:09.843Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Brindavan\\App\\VrindavanProfile\\VrindavanProfile.Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "VrindavanProfile.Web\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Brindavan\\App\\VrindavanProfile\\VrindavanProfile.Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "VrindavanProfile.Web\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAANAAAAAAAAAAAAAAANgAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-02T07:22:52.162Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DashboardService.cs",
+              "DocumentMoniker": "D:\\Brindavan\\App\\VrindavanProfile\\VrindavanProfile.Web\\Services\\DashboardService.cs",
+              "RelativeDocumentMoniker": "VrindavanProfile.Web\\Services\\DashboardService.cs",
+              "ToolTip": "D:\\Brindavan\\App\\VrindavanProfile\\VrindavanProfile.Web\\Services\\DashboardService.cs",
+              "RelativeToolTip": "VrindavanProfile.Web\\Services\\DashboardService.cs",
+              "ViewState": "AgIAAIYBAAAAAAAAAAAYwI8BAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-06T03:06:37.21Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Brindavan\\App\\VrindavanProfile\\VrindavanProfile.Web\\Program.cs",
+              "RelativeDocumentMoniker": "VrindavanProfile.Web\\Program.cs",
+              "ToolTip": "D:\\Brindavan\\App\\VrindavanProfile\\VrindavanProfile.Web\\Program.cs",
+              "RelativeToolTip": "VrindavanProfile.Web\\Program.cs",
+              "ViewState": "AgIAAMgAAAAAAAAAAAAAAOIAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-29T10:50:34.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "table-export.js",
+              "DocumentMoniker": "D:\\Brindavan\\App\\VrindavanProfile\\VrindavanProfile.Web\\wwwroot\\js\\table-export.js",
+              "RelativeDocumentMoniker": "VrindavanProfile.Web\\wwwroot\\js\\table-export.js",
+              "ToolTip": "D:\\Brindavan\\App\\VrindavanProfile\\VrindavanProfile.Web\\wwwroot\\js\\table-export.js",
+              "RelativeToolTip": "VrindavanProfile.Web\\wwwroot\\js\\table-export.js",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAAwJsAAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-07-06T02:39:15.056Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Brindavan\\App\\VrindavanProfile\\VrindavanProfile.Web\\appsettings.json",
+              "RelativeDocumentMoniker": "VrindavanProfile.Web\\appsettings.json",
+              "ToolTip": "D:\\Brindavan\\App\\VrindavanProfile\\VrindavanProfile.Web\\appsettings.json",
+              "RelativeToolTip": "VrindavanProfile.Web\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-29T10:48:13.147Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

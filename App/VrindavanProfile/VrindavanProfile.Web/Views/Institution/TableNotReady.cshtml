@@ -1,0 +1,23 @@
+@model int
+@{
+    ViewData["Title"] = $"तालिका नं. {Model}";
+}
+
+<nav aria-label="breadcrumb" class="container pt-3">
+    <ol class="breadcrumb mb-0 small">
+        <li class="breadcrumb-item"><a href="/">गृहपृष्ठ</a></li>
+        <li class="breadcrumb-item"><a href="/Institution">संस्थागत तथ्याङ्क</a></li>
+        <li class="breadcrumb-item active">तालिका नं. @Model</li>
+    </ol>
+</nav>
+
+<section class="container py-5 text-center">
+    <div class="card border-0 shadow-sm p-5" style="max-width: 500px; margin: 0 auto;">
+        <i class="bi bi-tools" style="font-size: 4rem; color: var(--accent);"></i>
+        <h4 class="mt-3 fw-bold" style="color: var(--primary);">तालिका नं. @Model</h4>
+        <p class="text-muted">यो तालिका अझै निर्माणाधीन छ।</p>
+        <a href="/Institution" class="btn btn-primary mt-2">
+            <i class="bi bi-arrow-left me-1"></i>तालिका सूचीमा फर्कनुहोस्
+        </a>
+    </div>
+</section>

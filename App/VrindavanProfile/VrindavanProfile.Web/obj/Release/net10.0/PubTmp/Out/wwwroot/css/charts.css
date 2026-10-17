@@ -1,0 +1,72 @@
+/* wwwroot/css/charts.css */
+/* Part 14: Ocean Blue + Nepal Flag chart styling */
+
+/* Chart canvas — responsive sizing */
+.chart-card canvas {
+    width: 100% !important;
+    max-height: 280px;
+}
+
+.chart-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chart-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 59, 111, 0.12);
+}
+
+.chart-card .card-header h6 {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Larger canvas for wide chart types (pyramid, stacked) */
+.chart-card[data-chart-type="agePyramid"] canvas,
+.chart-card[data-chart-type="stackedBar"] canvas {
+    max-height: 320px;
+    min-height: 240px;
+}
+
+/* Ensure chart containers don't collapse */
+.chart-card .chart-wrapper {
+    min-height: 220px;
+    position: relative;
+}
+
+section + section {
+    margin-top: 0;
+}
+
+.mt-n4 {
+    margin-top: -1.5rem !important;
+}
+
+/* Chart.js tooltip — force Devanagari font */
+.chartjs-tooltip {
+    font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif !important;
+}
+
+/* Chart legend — proper Devanagari rendering */
+.chart-card ul li span,
+.chart-card .legend-item {
+    font-family: 'Mukta', 'Noto Sans Devanagari', sans-serif;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .chart-card canvas {
+        max-height: 220px;
+    }
+
+    .chart-card[data-chart-type="agePyramid"] canvas,
+    .chart-card[data-chart-type="stackedBar"] canvas {
+        max-height: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+    .chart-card canvas {
+        max-height: 180px;
+    }
+}

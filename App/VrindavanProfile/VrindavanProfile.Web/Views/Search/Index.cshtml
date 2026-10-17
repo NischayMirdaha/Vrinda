@@ -1,0 +1,268 @@
+@model List<SearchResultItem>
+@{
+    ViewData["Title"] = "खोज्नुहोस्";
+    var query = Context.Request.Query["q"].ToString();
+}
+
+<!-- Search Page — Full overlay style -->
+<div class="search-page container py-4">
+    <!-- Search Input -->
+    <div class="search-input-wrapper mb-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <div class="input-group input-group-lg">
+                    <span class="input-group-text" style="background:var(--primary);color:white;border-color:var(--primary);border-radius:12px 0 0 12px">
+                        <i class="bi bi-search"></i>
+                    </span>
+                    <input type="text"
+                           id="globalSearchInput"
+                           class="form-control"
+                           style="border-color:#ccc;border-radius:0 12px 12px 0;font-size:1.1rem;padding:12px 16px"
+                           placeholder="तालिका, शीर्षक, कोटि वा तालिका नम्बर खोज्नुहोस्..."
+                           value="@query"
+                           autofocus />
+                </div>
+                <div class="mt-2 d-flex justify-content-between align-items-center">
+                    <small class="text-muted" id="searchResultCount">
+                        @Model.Count परिणामहरू
+                    </small>
+                    <small class="text-muted">
+                        <kbd style="font-size:0.7rem">Esc</kbd> बन्द गर्नुहोस्
+                        &nbsp;
+                        <kbd style="font-size:0.7rem">↑↓</kbd> नेभिगेट
+                        &nbsp;
+                        <kbd style="font-size:0.7rem">↵</kbd> जानुहोस्
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Filters -->
+    <div class="row justify-content-center mb-4">
+        <div class="col-lg-8 col-md-10">
+            <div class="d-flex flex-wrap gap-2" id="searchFilters">
+                <button class="btn btn-sm active" data-section="all"
+                        style="border-radius:20px;font-size:0.8rem;background:var(--primary);color:white;border:none">
+                    सबै
+                </button>
+                <button class="btn btn-sm" data-section="Page"
+                        style="border-radius:20px;font-size:0.8rem;background:var(--surface);color:var(--text-dark);border:1px solid #ddd">
+                    <i class="bi bi-house-door me-1"></i>पृष्ठहरू
+                </button>
+                <button class="btn btn-sm" data-section="Household"
+                        style="border-radius:20px;font-size:0.8rem;background:var(--surface);color:var(--text-dark);border:1px solid #ddd">
+                    <i class="bi bi-people me-1"></i>घरपरिवार
+                </button>
+                <button class="btn btn-sm" data-section="Institution"
+                        style="border-radius:20px;font-size:0.8rem;background:var(--surface);color:var(--text-dark);border:1px solid #ddd">
+                    <i class="bi bi-bank me-1"></i>संस्थागत
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results -->
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+            <div id="searchResults">
+                @foreach (var item in Model)
+                {
+                    <a href="@item.Url" class="search-result-item" data-section="@item.Section" data-title="@item.Title" data-category="@item.Category" data-description="@item.Description" data-number="@item.TableNumber">
+                        <div class="d-flex align-items-start gap-3 p-3 rounded-3 mb-2 search-item-inner" style="border:1px solid #e9ecef;transition:all .15s">
+                            <div class="flex-shrink-0" style="width:40px;height:40px;border-radius:10px;background:@item.AccentColor;display:flex;align-items:center;justify-content:center">
+                                <i class="@item.Icon text-white" style="font-size:1rem"></i>
+                            </div>
+                            <div class="flex-grow-1" style="min-width:0">
+                                <div class="d-flex align-items-center gap-2 mb-1">
+                                    @if (item.TableNumber > 0)
+                                    {
+                                        <span class="badge" style="background:@item.AccentColor;font-size:0.65rem">
+                                            तालिका @item.TableNumber
+                                        </span>
+                                    }
+                                    <span class="badge" style="background:#f0f0f0;color:#666;font-size:0.65rem">
+                                        @item.SectionLabel
+                                    </span>
+                                    <span class="badge" style="background:#f0f0f0;color:#666;font-size:0.65rem">
+                                        @item.Category
+                                    </span>
+                                </div>
+                                <h6 class="mb-0 fw-semibold" style="font-size:0.9rem;color:var(--text-dark)">
+                                    @item.Title
+                                </h6>
+                                @if (!string.IsNullOrEmpty(item.Description))
+                                {
+                                    <p class="mb-0 text-muted" style="font-size:0.78rem;line-height:1.3">
+                                        @item.Description
+                                    </p>
+                                }
+                            </div>
+                            <i class="bi bi-chevron-right text-muted flex-shrink-0 mt-2"></i>
+                        </div>
+                    </a>
+                }
+
+                <!-- No results message -->
+                <div id="searchNoResults" class="text-center py-5 d-none">
+                    <i class="bi bi-search" style="font-size:3rem;color:var(--text-muted);opacity:0.4"></i>
+                    <p class="mt-3 text-muted fw-semibold">कुनै परिणाम भेटिएन</p>
+                    <p class="text-muted small">अन्य शब्द वा तालिका नम्बरले खोज्नुहोस्</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .search-result-item {
+            text-decoration: none;
+            display: block;
+        }
+
+        .search-result-item .search-item-inner:hover {
+            border-color: var(--primary-light) !important;
+            background: rgba(45, 106, 79, 0.03);
+            transform: translateX(4px);
+        }
+
+        .search-result-item .search-item-inner.highlighted {
+            border-color: var(--primary) !important;
+            background: rgba(45, 106, 79, 0.06);
+            box-shadow: 0 2px 8px rgba(45, 106, 79, 0.1);
+        }
+
+        /* Mark/highlight matched text */
+        mark.search-hl {
+            background: rgba(212, 163, 115, 0.35);
+            color: inherit;
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+    </style>
+}
+
+@section Scripts {
+    <script>
+    (function() {
+        var input = document.getElementById('globalSearchInput');
+        var countEl = document.getElementById('searchResultCount');
+        var noResults = document.getElementById('searchNoResults');
+        var items = document.querySelectorAll('.search-result-item');
+        var filterBtns = document.querySelectorAll('#searchFilters button');
+        var activeSection = 'all';
+        var highlightedIndex = -1;
+
+        // ─── Filter Logic ──────────────────────────────
+        function applySearch() {
+            var q = (input.value || '').toLowerCase().trim();
+            var visible = 0;
+            highlightedIndex = -1;
+
+            items.forEach(function(item) {
+                var section = item.dataset.section || '';
+                var title = (item.dataset.title || '').toLowerCase();
+                var category = (item.dataset.category || '').toLowerCase();
+                var desc = (item.dataset.description || '').toLowerCase();
+                var num = item.dataset.number || '';
+
+                var matchSection = activeSection === 'all' || section === activeSection;
+                var matchQuery = !q ||
+                    title.indexOf(q) >= 0 ||
+                    category.indexOf(q) >= 0 ||
+                    desc.indexOf(q) >= 0 ||
+                    num === q;
+
+                if (matchSection && matchQuery) {
+                    item.style.display = '';
+                    visible++;
+                    // Highlight matching text in title
+                    var h6 = item.querySelector('h6');
+                    if (h6 && q) {
+                        var originalTitle = item.dataset.title || '';
+                        var regex = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+                        h6.innerHTML = originalTitle.replace(regex, '<mark class="search-hl">$1</mark>');
+                    } else if (h6) {
+                        h6.textContent = item.dataset.title || '';
+                    }
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            countEl.textContent = visible + ' परिणामहरू';
+            noResults.classList.toggle('d-none', visible > 0);
+        }
+
+        // ─── Section Filter Buttons ────────────────────
+        filterBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                filterBtns.forEach(function(b) {
+                    b.style.background = 'var(--surface)';
+                    b.style.color = 'var(--text-dark)';
+                    b.style.border = '1px solid #ddd';
+                    b.classList.remove('active');
+                });
+                btn.style.background = 'var(--primary)';
+                btn.style.color = 'white';
+                btn.style.border = 'none';
+                btn.classList.add('active');
+                activeSection = btn.dataset.section;
+                applySearch();
+                input.focus();
+            });
+        });
+
+        // ─── Input Event ───────────────────────────────
+        input.addEventListener('input', applySearch);
+
+        // ─── Keyboard Navigation ───────────────────────
+        function getVisibleItems() {
+            return Array.from(items).filter(function(i) { return i.style.display !== 'none'; });
+        }
+
+        function clearHighlights() {
+            document.querySelectorAll('.search-item-inner.highlighted').forEach(function(el) {
+                el.classList.remove('highlighted');
+            });
+        }
+
+        input.addEventListener('keydown', function(e) {
+            var visible = getVisibleItems();
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                clearHighlights();
+                highlightedIndex = Math.min(highlightedIndex + 1, visible.length - 1);
+                if (visible[highlightedIndex]) {
+                    visible[highlightedIndex].querySelector('.search-item-inner').classList.add('highlighted');
+                    visible[highlightedIndex].scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                }
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                clearHighlights();
+                highlightedIndex = Math.max(highlightedIndex - 1, 0);
+                if (visible[highlightedIndex]) {
+                    visible[highlightedIndex].querySelector('.search-item-inner').classList.add('highlighted');
+                    visible[highlightedIndex].scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                }
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                if (highlightedIndex >= 0 && visible[highlightedIndex]) {
+                    window.location = visible[highlightedIndex].getAttribute('href');
+                }
+            } else if (e.key === 'Escape') {
+                // If we were opened from navbar overlay, close it; otherwise go back
+                if (document.referrer && document.referrer !== window.location.href) {
+                    history.back();
+                }
+            }
+        });
+
+        // Auto-focus the input
+        input.focus();
+        input.select();
+    })();
+    </script>
+}

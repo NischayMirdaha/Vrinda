@@ -1,0 +1,629 @@
+﻿========================================================================
+                 CONVERTY EXCEL SCHEMA METADATA REPORT                  
+========================================================================
+Generated on: 2026-06-05 13:23:06
+Total Sheets: 1
+
+========================================================================
+SHEET: Sheet1
+========================================================================
+Total Rows:    43,013
+Total Columns: 77
+
+------------------------------------------------------------------------
+COLUMN 1:
+------------------------------------------------------------------------
+Header Name:   <span style="color:blue">घरका सदस्यहरुको जानकारी भर्दा घरमुलीको विवरणबाट भर्न शुरु गर्ने र जेठोबाट कान्छो सदस्य तिर घट्दो क्रममा भर्दै जानु होला । ध्यान दिनु होला कि कानूनीरुपमा अंश बण्डा भएको छैन वा सामाजिकरुपमा ति फरक घरका सदस्य हुन भन्‍ने गरि समाजमा पहिचान बनिसकेको छैन भने फरक घर वा फरक कोठामा बसे पनि सवै एउटै घरका सदस्यको रुपमा फर्म भर्नु पर्नेछ । </span>
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 43,013 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 2:
+------------------------------------------------------------------------
+Header Name:   ४.१. नाम
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    33 characters
+Completeness:  43,013 of 43,013 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 3:
+------------------------------------------------------------------------
+Header Name:   ४.२. ${Name} को थर के हो ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    29 characters
+Completeness:  43,013 of 43,013 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 4:
+------------------------------------------------------------------------
+Header Name:   ४.३. ${Name} को जाति के हो ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    21 characters
+Completeness:  42,489 of 43,013 rows (98.78%)
+
+------------------------------------------------------------------------
+COLUMN 5:
+------------------------------------------------------------------------
+Header Name:   ४.४. ${Name} को लिंग के हो ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    5 characters
+Completeness:  43,013 of 43,013 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 6:
+------------------------------------------------------------------------
+Header Name:   ४.५. ${Name} र घरमुली बीचको नाता के हो ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    19 characters
+Completeness:  43,013 of 43,013 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 7:
+------------------------------------------------------------------------
+Header Name:   ४.६. ${Name} को गणना गर्दाको उमेर ?
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    4 characters
+Completeness:  43,013 of 43,013 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 8:
+------------------------------------------------------------------------
+Header Name:   ४.७.  ${Name} ले बोल्ने भाषा के हो ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    7 characters
+Completeness:  43,013 of 43,013 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 9:
+------------------------------------------------------------------------
+Header Name:   अन्य भए उल्लेख गर्नु होस ।
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 43,013 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 10:
+------------------------------------------------------------------------
+Header Name:   ४.८. ${Name}  धर्म के हो ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    6 characters
+Completeness:  42,068 of 43,013 rows (97.80%)
+
+------------------------------------------------------------------------
+COLUMN 11:
+------------------------------------------------------------------------
+Header Name:   अन्य धर्म भए उल्लेख गर्नुहोस
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 43,013 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 12:
+------------------------------------------------------------------------
+Header Name:   ४.९. ${Name}  को बैवाहिक स्थिति
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    20 characters
+Completeness:  30,989 of 43,013 rows (72.05%)
+
+------------------------------------------------------------------------
+COLUMN 13:
+------------------------------------------------------------------------
+Header Name:   ४.१०.  ${Name}  को शैक्षिक योग्यता
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    14 characters
+Completeness:  37,476 of 43,013 rows (87.13%)
+
+------------------------------------------------------------------------
+COLUMN 14:
+------------------------------------------------------------------------
+Header Name:   खुलाउनु होला ।
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    25 characters
+Completeness:  50 of 43,013 rows (0.12%)
+
+------------------------------------------------------------------------
+COLUMN 15:
+------------------------------------------------------------------------
+Header Name:   ४.११ ${Name} को साक्षरताको स्थिति के हो ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    28 characters
+Completeness:  43,013 of 43,013 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 16:
+------------------------------------------------------------------------
+Header Name:   ४.१२. ${Name}  कुनै क्षेत्रको विशेषज्ञ हो ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    27 characters
+Completeness:  24,454 of 43,013 rows (56.85%)
+
+------------------------------------------------------------------------
+COLUMN 17:
+------------------------------------------------------------------------
+Header Name:   ४.१२.१ अन्य केहो खुलाउने ।
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    14 characters
+Completeness:  53 of 43,013 rows (0.12%)
+
+------------------------------------------------------------------------
+COLUMN 18:
+------------------------------------------------------------------------
+Header Name:   ४.१३. ${Name}  को पेशा के हो ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    47 characters
+Completeness:  26,218 of 43,013 rows (60.95%)
+
+------------------------------------------------------------------------
+COLUMN 19:
+------------------------------------------------------------------------
+Header Name:   अन्य पेशा भए उल्लेख गर्ने ।
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    30 characters
+Completeness:  1,615 of 43,013 rows (3.75%)
+
+------------------------------------------------------------------------
+COLUMN 20:
+------------------------------------------------------------------------
+Header Name:   ४.१३.१ ${Name} को सरकारी जागिरको विशिष्टिकरण गर्नु होस ।
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    48 characters
+Completeness:  432 of 43,013 rows (1.00%)
+
+------------------------------------------------------------------------
+COLUMN 21:
+------------------------------------------------------------------------
+Header Name:   ४.१३.२ ${Name} को स्वरोजगारको विशिष्टिकरण गर्नु होस ।
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    33 characters
+Completeness:  388 of 43,013 rows (0.90%)
+
+------------------------------------------------------------------------
+COLUMN 22:
+------------------------------------------------------------------------
+Header Name:   ४.१३.२.१ ${Name} को  सीपमा स्वरोजगारको विशिष्टिकरण गर्नु होस ।
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    29 characters
+Completeness:  198 of 43,013 rows (0.46%)
+
+------------------------------------------------------------------------
+COLUMN 23:
+------------------------------------------------------------------------
+Header Name:   ४.१३.२.२ ${Name} को  कृषिमा स्वरोजगारको विशिष्टिकरण गर्नु होस ।
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    14 characters
+Completeness:  21 of 43,013 rows (0.05%)
+
+------------------------------------------------------------------------
+COLUMN 24:
+------------------------------------------------------------------------
+Header Name:   ४.१३.२.३ ${Name} को  व्यवसायिक स्वरोजगारको विशिष्टिकरण गर्नु होस ।
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    33 characters
+Completeness:  155 of 43,013 rows (0.36%)
+
+------------------------------------------------------------------------
+COLUMN 25:
+------------------------------------------------------------------------
+Header Name:   ४.१३.२.४ ${Name} को  सेवामा आधारित स्वरोजगारको विशिष्टिकरण गर्नु होस ।
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    32 characters
+Completeness:  6 of 43,013 rows (0.01%)
+
+------------------------------------------------------------------------
+COLUMN 26:
+------------------------------------------------------------------------
+Header Name:   ४.१३.२.५ ${Name} को  घरमै बसेर गरिने स्वरोजगारको विशिष्टिकरण गर्नु होस ।
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    34 characters
+Completeness:  8 of 43,013 rows (0.02%)
+
+------------------------------------------------------------------------
+COLUMN 27:
+------------------------------------------------------------------------
+Header Name:   ४.१४. ${Name} ले कुनै व्यवसायिक तालिमको लिनु भएको छ ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    23 characters
+Completeness:  26,116 of 43,013 rows (60.72%)
+
+------------------------------------------------------------------------
+COLUMN 28:
+------------------------------------------------------------------------
+Header Name:   ४.१५. ${Name} ले कुनै व्यवसायिक तालिमको लिनु भएको छ ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(255))
+Max Length:    163 characters
+Completeness:  1,660 of 43,013 rows (3.86%)
+
+------------------------------------------------------------------------
+COLUMN 29:
+------------------------------------------------------------------------
+Header Name:   ४.१५. ${Name} ले कुनै व्यवसायिक तालिमको लिनु भएको छ ?/सिलाई ,बुनाई, बुटिक, सृङगार, पार्लर आदि
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  1,660 of 43,013 rows (3.86%)
+
+------------------------------------------------------------------------
+COLUMN 30:
+------------------------------------------------------------------------
+Header Name:   ४.१५. ${Name} ले कुनै व्यवसायिक तालिमको लिनु भएको छ ?/निर्माण सम्बन्धी (राज मिस्त्रि,  आदी)
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  1,660 of 43,013 rows (3.86%)
+
+------------------------------------------------------------------------
+COLUMN 31:
+------------------------------------------------------------------------
+Header Name:   ४.१५. ${Name} ले कुनै व्यवसायिक तालिमको लिनु भएको छ ?/सिकर्मी कार्पेन्ट्री
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  1,660 of 43,013 rows (3.86%)
+
+------------------------------------------------------------------------
+COLUMN 32:
+------------------------------------------------------------------------
+Header Name:   ४.१५. ${Name} ले कुनै व्यवसायिक तालिमको लिनु भएको छ ?/डकर्मी
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  1,660 of 43,013 rows (3.86%)
+
+------------------------------------------------------------------------
+COLUMN 33:
+------------------------------------------------------------------------
+Header Name:   ४.१५. ${Name} ले कुनै व्यवसायिक तालिमको लिनु भएको छ ?/बिजुली मिस्त्री
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  1,660 of 43,013 rows (3.86%)
+
+------------------------------------------------------------------------
+COLUMN 34:
+------------------------------------------------------------------------
+Header Name:   ४.१५. ${Name} ले कुनै व्यवसायिक तालिमको लिनु भएको छ ?/धारा पाईप पलाम्बिंग
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  1,660 of 43,013 rows (3.86%)
+
+------------------------------------------------------------------------
+COLUMN 35:
+------------------------------------------------------------------------
+Header Name:   ४.१५. ${Name} ले कुनै व्यवसायिक तालिमको लिनु भएको छ ?/अटोमोबाइल र मेकानिक्स
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  1,660 of 43,013 rows (3.86%)
+
+------------------------------------------------------------------------
+COLUMN 36:
+------------------------------------------------------------------------
+Header Name:   ४.१५. ${Name} ले कुनै व्यवसायिक तालिमको लिनु भएको छ ?/कृषि सम्बन्धी (जेटी, जेटिए र खाद्य प्रशाेधन आदि)
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  1,660 of 43,013 rows (3.86%)
+
+------------------------------------------------------------------------
+COLUMN 37:
+------------------------------------------------------------------------
+Header Name:   ४.१५. ${Name} ले कुनै व्यवसायिक तालिमको लिनु भएको छ ?/जनस्वास्थ्य सम्बन्धी
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  1,660 of 43,013 rows (3.86%)
+
+------------------------------------------------------------------------
+COLUMN 38:
+------------------------------------------------------------------------
+Header Name:   ४.१५. ${Name} ले कुनै व्यवसायिक तालिमको लिनु भएको छ ?/पशुस्वास्थ्य  सम्बन्धी
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  1,660 of 43,013 rows (3.86%)
+
+------------------------------------------------------------------------
+COLUMN 39:
+------------------------------------------------------------------------
+Header Name:   ४.१५. ${Name} ले कुनै व्यवसायिक तालिमको लिनु भएको छ ?/पर्यटन, टुर गाइड, ट्राभल र सत्कार
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  1,660 of 43,013 rows (3.86%)
+
+------------------------------------------------------------------------
+COLUMN 40:
+------------------------------------------------------------------------
+Header Name:   ४.१५. ${Name} ले कुनै व्यवसायिक तालिमको लिनु भएको छ ?/कला सम्बन्धी
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  1,660 of 43,013 rows (3.86%)
+
+------------------------------------------------------------------------
+COLUMN 41:
+------------------------------------------------------------------------
+Header Name:   ४.१५. ${Name} ले कुनै व्यवसायिक तालिमको लिनु भएको छ ?/अन्य
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  1,660 of 43,013 rows (3.86%)
+
+------------------------------------------------------------------------
+COLUMN 42:
+------------------------------------------------------------------------
+Header Name:   अन्य व्यवसायिक तालिमको भए उल्लेख गर्नुस
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    19 characters
+Completeness:  30 of 43,013 rows (0.07%)
+
+------------------------------------------------------------------------
+COLUMN 43:
+------------------------------------------------------------------------
+Header Name:   ४.१६. ${Name}  को बसोबासको अवस्था
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    23 characters
+Completeness:  42,033 of 43,013 rows (97.72%)
+
+------------------------------------------------------------------------
+COLUMN 44:
+------------------------------------------------------------------------
+Header Name:   ४.१७. बिदेशमा भए ${Name} कुन देशमा हुनुहुन्छ ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    19 characters
+Completeness:  2,271 of 43,013 rows (5.28%)
+
+------------------------------------------------------------------------
+COLUMN 45:
+------------------------------------------------------------------------
+Header Name:   ४.१८. ${Name} बिदेशमा के का लागि बसोबास गर्दै हुनुहुन्छ ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    15 characters
+Completeness:  2,218 of 43,013 rows (5.16%)
+
+------------------------------------------------------------------------
+COLUMN 46:
+------------------------------------------------------------------------
+Header Name:   ४.१९.  ${Name} को अपांगता स्थिति
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    35 characters
+Completeness:  37,493 of 43,013 rows (87.17%)
+
+------------------------------------------------------------------------
+COLUMN 47:
+------------------------------------------------------------------------
+Header Name:   ४.२०. ${Name} को स्वास्थ्य स्थिति
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    31 characters
+Completeness:  42,265 of 43,013 rows (98.26%)
+
+------------------------------------------------------------------------
+COLUMN 48:
+------------------------------------------------------------------------
+Header Name:   ४.२१. ${Name} लाई कुन रोग लागेको छ ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    43 characters
+Completeness:  635 of 43,013 rows (1.48%)
+
+------------------------------------------------------------------------
+COLUMN 49:
+------------------------------------------------------------------------
+Header Name:   ४.२१. ${Name} लाई कुन रोग लागेको छ ?/मुटु रोग
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  635 of 43,013 rows (1.48%)
+
+------------------------------------------------------------------------
+COLUMN 50:
+------------------------------------------------------------------------
+Header Name:   ४.२१. ${Name} लाई कुन रोग लागेको छ ?/क्यान्सर
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  635 of 43,013 rows (1.48%)
+
+------------------------------------------------------------------------
+COLUMN 51:
+------------------------------------------------------------------------
+Header Name:   ४.२१. ${Name} लाई कुन रोग लागेको छ ?/सुगर वा चिनि रोग
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  635 of 43,013 rows (1.48%)
+
+------------------------------------------------------------------------
+COLUMN 52:
+------------------------------------------------------------------------
+Header Name:   ४.२१. ${Name} लाई कुन रोग लागेको छ ?/बाथ रोग
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  635 of 43,013 rows (1.48%)
+
+------------------------------------------------------------------------
+COLUMN 53:
+------------------------------------------------------------------------
+Header Name:   ४.२१. ${Name} लाई कुन रोग लागेको छ ?/नशा च्यापिएको
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  635 of 43,013 rows (1.48%)
+
+------------------------------------------------------------------------
+COLUMN 54:
+------------------------------------------------------------------------
+Header Name:   ४.२१. ${Name} लाई कुन रोग लागेको छ ?/एचआइभि र एड्स
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  635 of 43,013 rows (1.48%)
+
+------------------------------------------------------------------------
+COLUMN 55:
+------------------------------------------------------------------------
+Header Name:   ४.२१. ${Name} लाई कुन रोग लागेको छ ?/दम
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  635 of 43,013 rows (1.48%)
+
+------------------------------------------------------------------------
+COLUMN 56:
+------------------------------------------------------------------------
+Header Name:   ४.२१. ${Name} लाई कुन रोग लागेको छ ?/किड्नी
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  635 of 43,013 rows (1.48%)
+
+------------------------------------------------------------------------
+COLUMN 57:
+------------------------------------------------------------------------
+Header Name:   ४.२१. ${Name} लाई कुन रोग लागेको छ ?/प्यारालाइसिस
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  635 of 43,013 rows (1.48%)
+
+------------------------------------------------------------------------
+COLUMN 58:
+------------------------------------------------------------------------
+Header Name:   ४.२१. ${Name} लाई कुन रोग लागेको छ ?/स्पाइनल इन्जुरी
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  635 of 43,013 rows (1.48%)
+
+------------------------------------------------------------------------
+COLUMN 59:
+------------------------------------------------------------------------
+Header Name:   ४.२२.  ${Name} ले सामाजिक सुरक्षा भत्ता लिए नलिएको अवस्था
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    44 characters
+Completeness:  2,299 of 43,013 rows (5.34%)
+
+------------------------------------------------------------------------
+COLUMN 60:
+------------------------------------------------------------------------
+Header Name:   ४.२३  ${Name} को विमा गरेको छ कि छैन ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    3 characters
+Completeness:  43,013 of 43,013 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 61:
+------------------------------------------------------------------------
+Header Name:   ४.२३.१ कुन कुन विमा गरेको छ ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    24 characters
+Completeness:  1,513 of 43,013 rows (3.52%)
+
+------------------------------------------------------------------------
+COLUMN 62:
+------------------------------------------------------------------------
+Header Name:   ४.२३.१ कुन कुन विमा गरेको छ ?/जीवन विमा
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  1,513 of 43,013 rows (3.52%)
+
+------------------------------------------------------------------------
+COLUMN 63:
+------------------------------------------------------------------------
+Header Name:   ४.२३.१ कुन कुन विमा गरेको छ ?/स्वास्थ्य विमा
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  1,513 of 43,013 rows (3.52%)
+
+------------------------------------------------------------------------
+COLUMN 64:
+------------------------------------------------------------------------
+Header Name:   ४.२३.१ कुन कुन विमा गरेको छ ?/अन्य
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    1 characters
+Completeness:  1,513 of 43,013 rows (3.52%)
+
+------------------------------------------------------------------------
+COLUMN 65:
+------------------------------------------------------------------------
+Header Name:   अन्य भए खुलाउनुस ।
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    3 characters
+Completeness:  1 of 43,013 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 66:
+------------------------------------------------------------------------
+Header Name:   _index
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    5 characters
+Completeness:  43,013 of 43,013 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 67:
+------------------------------------------------------------------------
+Header Name:   _parent_table_name
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    35 characters
+Completeness:  43,013 of 43,013 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 68:
+------------------------------------------------------------------------
+Header Name:   _parent_index
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    4 characters
+Completeness:  43,013 of 43,013 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 69:
+------------------------------------------------------------------------
+Header Name:   _submission__id
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    9 characters
+Completeness:  43,013 of 43,013 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 70:
+------------------------------------------------------------------------
+Header Name:   _submission__uuid
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    36 characters
+Completeness:  43,013 of 43,013 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 71:
+------------------------------------------------------------------------
+Header Name:   _submission__submission_time
+Inferred Type: DateTime (Recommended SQL: DATETIME2)
+Max Length:    0 characters
+Completeness:  43,013 of 43,013 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 72:
+------------------------------------------------------------------------
+Header Name:   _submission__validation_status
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 43,013 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 73:
+------------------------------------------------------------------------
+Header Name:   _submission__notes
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 43,013 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 74:
+------------------------------------------------------------------------
+Header Name:   _submission__status
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    17 characters
+Completeness:  43,013 of 43,013 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 75:
+------------------------------------------------------------------------
+Header Name:   _submission__submitted_by
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    14 characters
+Completeness:  43,013 of 43,013 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 76:
+------------------------------------------------------------------------
+Header Name:   _submission___version__
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    22 characters
+Completeness:  43,013 of 43,013 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 77:
+------------------------------------------------------------------------
+Header Name:   _submission__tags
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 43,013 rows (0.00%)
+
+

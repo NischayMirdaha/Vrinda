@@ -1,0 +1,97 @@
+@model VrindavanProfile.Web.Models.ViewModels.TableViewModel
+@{
+    Layout = "~/Views/Shared/_LayoutClean.cshtml";
+}
+
+@section PrintActions {
+    <div class="print-actions">
+        <button onclick="window.print()" class="btn btn-sm btn-primary">
+            <i class="bi bi-printer me-1"></i>प्रिन्ट गर्नुहोस्
+        </button>
+        <button onclick="exportTablePDF()" class="btn btn-sm btn-outline-primary">
+            <i class="bi bi-file-earmark-pdf me-1"></i>PDF डाउनलोड
+        </button>
+        <button onclick="exportTableCSV()" class="btn btn-sm btn-outline-success">
+            <i class="bi bi-file-earmark-spreadsheet me-1"></i>CSV डाउनलोड
+        </button>
+        <button onclick="window.close()" class="btn btn-sm btn-outline-secondary ms-auto">
+            <i class="bi bi-x-lg me-1"></i>बन्द गर्नुहोस्
+        </button>
+    </div>
+}
+
+<!-- Table Title -->
+<div class="print-title-bar">
+    <h5>
+        <span class="badge me-2" style="background:var(--accent);color:var(--text-dark);font-size:0.75rem">तालिका @Model.TableNumber</span>
+        @Model.Title
+    </h5>
+    <p class="print-subtitle">
+        @if (Model.FilteredWardNo.HasValue)
+        {
+            <span>वडा नं. @Model.FilteredWardNo</span>
+        }
+        else
+        {
+            <span>सम्पूर्ण नगरपालिका</span>
+        }
+        @if (!string.IsNullOrEmpty(Model.DataSource))
+        {
+            <span> &nbsp;|&nbsp; स्रोत: @Model.DataSource</span>
+        }
+    </p>
+</div>
+
+<!-- Data Table -->
+<div id="printArea">
+    @if (Model.HasData)
+    {
+        <div class="table-responsive">
+            <table class="table table-bordered align-middle">
+                <thead>
+                    <tr>
+                        <th class="text-center" style="min-width:100px">@Model.ColumnHeaders[0]</th>
+                        @for (int i = 1; i < Model.ColumnHeaders.Count; i++)
+                        {
+                            <th class="text-center">@Model.ColumnHeaders[i]</th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var row in Model.Rows)
+                    {
+                        <tr>
+                            <td class="fw-semibold">@row.RowLabel</td>
+                            @foreach (var cell in row.Cells)
+                            {
+                                <td class="text-center">@cell</td>
+                            }
+                        </tr>
+                    }
+                </tbody>
+                @if (Model.TotalRow != null)
+                {
+                    <tfoot>
+                        <tr>
+                            <td>@Model.TotalRow.RowLabel</td>
+                            @foreach (var cell in Model.TotalRow.Cells)
+                            {
+                                <td class="text-center">@cell</td>
+                            }
+                        </tr>
+                    </tfoot>
+                }
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="text-center py-4">
+            <p class="text-muted">यो तालिकाको लागि तथ्याङ्क उपलब्ध छैन।</p>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script src="~/js/table-export.js" asp-append-version="true"></script>
+}

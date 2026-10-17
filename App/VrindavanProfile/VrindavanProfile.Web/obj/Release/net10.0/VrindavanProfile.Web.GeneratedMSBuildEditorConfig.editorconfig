@@ -1,0 +1,232 @@
+is_global = true
+build_property.TargetFramework = net10.0
+build_property.TargetFramework = net10.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v10.0
+build_property.EntryPointFilePath = 
+build_property.RootNamespace = VrindavanProfile.Web
+build_property.RootNamespace = VrindavanProfile.Web
+build_property.ProjectDir = D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 10.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Brindavan\App\VrindavanProfile\VrindavanProfile.Web
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 10.0
+build_property.EnableCodeStyleSeverity = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Admin/CreateSurveyEntry.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlU3VydmV5RW50cnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Admin/CreateUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Admin/EditSurveyEntry.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFN1cnZleUVudHJ5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Admin/EditUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Admin/HouseHolds/CreateHousehold.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSG91c2VIb2xkc1xDcmVhdGVIb3VzZWhvbGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Admin/HouseHolds/EditHousehold.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSG91c2VIb2xkc1xFZGl0SG91c2Vob2xkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Admin/HouseHolds/EditHouseholdBasic.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSG91c2VIb2xkc1xFZGl0SG91c2Vob2xkQmFzaWMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Admin/HouseHolds/HouseholdCategoryAgriculture.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSG91c2VIb2xkc1xIb3VzZWhvbGRDYXRlZ29yeUFncmljdWx0dXJlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Admin/HouseHolds/HouseholdCategoryAssets.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSG91c2VIb2xkc1xIb3VzZWhvbGRDYXRlZ29yeUFzc2V0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Admin/HouseHolds/HouseholdCategoryBasic.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSG91c2VIb2xkc1xIb3VzZWhvbGRDYXRlZ29yeUJhc2ljLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Admin/HouseHolds/HouseholdCategoryFacilities.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSG91c2VIb2xkc1xIb3VzZWhvbGRDYXRlZ29yeUZhY2lsaXRpZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Admin/HouseHolds/HouseholdCategoryLocation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSG91c2VIb2xkc1xIb3VzZWhvbGRDYXRlZ29yeUxvY2F0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Admin/HouseHolds/HouseholdCategoryOther.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSG91c2VIb2xkc1xIb3VzZWhvbGRDYXRlZ29yeU90aGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Admin/HouseHolds/Households.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSG91c2VIb2xkc1xIb3VzZWhvbGRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Admin/HouseHolds/ManageHouseholdData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSG91c2VIb2xkc1xNYW5hZ2VIb3VzZWhvbGREYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Admin/HouseHolds/SubTables.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSG91c2VIb2xkc1xTdWJUYWJsZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Admin/Institutions/Form.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5zdGl0dXRpb25zXEZvcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Admin/Institutions/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5zdGl0dXRpb25zXExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Admin/Institutions/Trash.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5zdGl0dXRpb25zXFRyYXNoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Admin/SurveyEntries.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU3VydmV5RW50cmllcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Admin/Users.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Auth/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Auth/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Diag/Diag.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlhZ1xEaWFnLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Home/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Home/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFcnJvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Home/Forbidden.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGb3JiaWRkZW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Home/NotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxOb3RGb3VuZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Household/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG91c2Vob2xkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Household/Print.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG91c2Vob2xkXFByaW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Household/Table.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG91c2Vob2xkXFRhYmxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Household/TableNotReady.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG91c2Vob2xkXFRhYmxlTm90UmVhZHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Institution/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdGl0dXRpb25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Institution/TableNotReady.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdGl0dXRpb25cVGFibGVOb3RSZWFkeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Map/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFwXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Search/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VhcmNoXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Shared/_Breadcrumb.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9CcmVhZGNydW1iLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Shared/_GlobalSearchModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9HbG9iYWxTZWFyY2hNb2RhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Shared/_LayoutClean.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRDbGVhbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Shared/_StatCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TdGF0Q2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Shared/_WardSelector.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9XYXJkU2VsZWN0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Sitemap/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2l0ZW1hcFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Ward/Compare.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZFxDb21wYXJlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Ward/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2FyZFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Brindavan/App/VrindavanProfile/VrindavanProfile.Web/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-1fuprtyq2u

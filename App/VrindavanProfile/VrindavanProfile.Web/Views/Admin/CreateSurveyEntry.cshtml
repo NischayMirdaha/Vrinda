@@ -1,0 +1,128 @@
+@model VrindavanProfile.Web.Data.DbEntities.SurveyEntry
+@{
+    ViewData["Title"] = "नयाँ सर्वेक्षण प्रविष्टि थप्नुहोस्";
+}
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="fw-bold mb-0"><i class="bi bi-plus-circle me-2"></i>नयाँ सर्वेक्षण प्रविष्टि थप्नुहोस्</h2>
+        <a href="/Admin/SurveyEntries" class="btn btn-outline-secondary btn-sm">सूचीमा फर्कनुहोस्</a>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+
+    <div class="card">
+        <div class="card-body">
+            <form asp-action="CreateSurveyEntry" method="post">
+                <div class="row">
+                    <!-- Basic Identification -->
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">वडा नं. <span class="text-danger">*</span></label>
+                        <input asp-for="WardNo" class="form-control" type="number" min="1"
+                               max="9" required />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">गणकको नाम (Enumerator)</label>
+                        <input asp-for="EnumeratorName" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">प्रयोगकर्ता नाम (Username)</label>
+                        <input asp-for="Username" class="form-control" />
+                    </div>
+
+                    <!-- Contact & Device -->
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">फोन नम्बर</label>
+                        <input asp-for="PhoneNumber" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">डिभाइस आईडी (Device ID)</label>
+                        <input asp-for="DeviceId" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">प्रविष्टिकर्ता (Submitted By)</label>
+                        <input asp-for="SubmittedBy" class="form-control" />
+                    </div>
+
+                    <!-- Status & Validation -->
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">अवस्था (Status)</label>
+                        <input asp-for="Status" class="form-control" value="submitted" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">प्रमाणीकरण अवस्था</label>
+                        <input asp-for="ValidationStatus" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">ODK आईडी</label>
+                        <input asp-for="OdkId" class="form-control" type="number" />
+                    </div>
+
+                    <!-- Other Details -->
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">विषयगत क्षेत्र (Subject Area)</label>
+                        <select asp-for="SubjectArea" class="form-select">
+                            <option value="">— चयन गर्नुहोस् —</option>
+                            <option value="educational_institution">शैक्षिक संस्था (Educational Institution)</option>
+                            <option value="health_institution">स्वास्थ्य संस्था (Health Institution)</option>
+                            <option value="building">भवन (Building)</option>
+                            <option value="security_body">सुरक्षा निकाय (Security Body)</option>
+                            <option value="financial_institution">वित्तीय संस्था (Financial Institution)</option>
+                            <option value="hotel_resort">होटल/रिसोर्ट (Hotel / Resort)</option>
+                            <option value="bridge">पुल/पुलेसा (Bridge)</option>
+                            <option value="industry">उद्योग (Industry)</option>
+                            <option value="ngo_club_group">गैरसरकारी संस्था/क्लब (NGO / Club / Group)</option>
+                            <option value="land_use">भू-उपयोग (Land Use)</option>
+                            <option value="natural_resource">प्राकृतिक श्रोत (Natural Resource)</option>
+                            <option value="cultural_heritage">सांस्कृतिक सम्पदा (Cultural Heritage)</option>
+                            <option value="trade_business">व्यापार/व्यवसाय (Trade / Business)</option>
+                            <option value="forest">वन र वनस्पति (Forest)</option>
+                            <option value="road">सडक पूर्वाधार (Road)</option>
+                            <option value="ward_statistics">वडा सांख्यिकी (Ward Statistics)</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">नगरपालिका (Municipality)</label>
+                        <input asp-for="Municipality" class="form-control" value="वृन्दावन नगरपालिका" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">सहमति पाठ (Consent Text)</label>
+                        <input asp-for="ConsentText" class="form-control" />
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">कैफियत / टिप्पणी (Notes)</label>
+                        <textarea asp-for="Notes" class="form-control" rows="2"></textarea>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">ट्यागहरू (Tags)</label>
+                        <input asp-for="Tags" class="form-control" />
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">संस्करण (Version)</label>
+                        <input asp-for="Version" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">ODK अनुक्रमणिका (Odk Index)</label>
+                        <input asp-for="OdkIndex" class="form-control" type="number" />
+                    </div>
+                </div>
+
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-save me-1"></i>सेभ गर्नुहोस्
+                    </button>
+                    <a href="/Admin/SurveyEntries" class="btn btn-outline-secondary">रद्द गर्नुहोस्</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="mt-3 text-muted small">
+        नोट: केही टाइमस्ट्याम्प फिल्डहरू (survey_date, created_at आदि) स्वतः सेट हुन्छन्।
+    </div>
+</div>

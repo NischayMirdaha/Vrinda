@@ -1,0 +1,342 @@
+﻿@model VrindavanProfile.Web.Data.DbEntities.Household
+@{
+    ViewData["Title"] = "घरपरिवार संपत्ति";
+    int selectedCount = 0;
+    if (Model.AssetRadio == 1) selectedCount++;
+    if (Model.AssetBicycle == 1) selectedCount++;
+    if (Model.AssetTelevision == 1) selectedCount++;
+    if (Model.AssetPhone == 1) selectedCount++;
+    if (Model.AssetComputer == 1) selectedCount++;
+    if (Model.AssetInternet == 1) selectedCount++;
+    if (Model.AssetMotorcycle == 1) selectedCount++;
+    if (Model.AssetCar == 1) selectedCount++;
+    if (Model.AssetRefrigerator == 1) selectedCount++;
+    if (Model.AssetTractor == 1) selectedCount++;
+    if (Model.AssetBusTruck == 1) selectedCount++;
+    if (Model.AssetTipperTruck == 1) selectedCount++;
+    if (Model.AssetExcavator == 1) selectedCount++;
+}
+
+<div class="container py-4">
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <h2 class="fw-bold mb-1">
+                <i class="bi bi-tv me-2"></i>घरपरिवार संपत्ति
+            </h2>
+            <p class="text-muted mb-0 small">
+                वडा @Model.WardNo — @Model.SettlementName
+                @if (!string.IsNullOrEmpty(Model.RespondentName))
+                {
+                    <span>| उत्तरदाता: @Model.RespondentName</span>
+                }
+            </p>
+        </div>
+        <a href="/Admin/ManageHouseholdData/@Model.Id" class="btn btn-outline-secondary btn-sm">
+            <i class="bi bi-arrow-left me-1"></i>डेटा व्यवस्थापन
+        </a>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+
+    <form asp-action="HouseholdCategoryAssets" method="post">
+        <input type="hidden" asp-for="Id" />
+
+        <!-- Summary Banner -->
+        <div class="alert d-flex align-items-center py-2 mb-3"
+             style="background: linear-gradient(135deg, #003B6F 0%, #0066B3 100%); color: #fff; border-radius: 10px;">
+            <i class="bi bi-check-circle-fill me-3" style="font-size: 1.5rem;"></i>
+            <div>
+                <strong id="assetCountDisplay">@selectedCount वटा</strong> संपत्ति चयन गरिएको छ
+                <span class="opacity-75 ms-2 small">(मोबाइल, इन्टरनेट र मोटरसाइकल बाहेक)</span>
+            </div>
+        </div>
+
+        <!-- Household Electronics -->
+        <div class="card mb-3">
+            <div class="card-header" style="background: #003B6F; color: #fff;">
+                <h6 class="mb-0"><i class="bi bi-device-mobile me-2"></i>गृहस्थीका सामानहरू</h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 col-lg-3 mb-3">
+                        <div class="form-check card p-2" style="border-radius: 8px; border: 1px solid #e0e0e0;">
+                            <input class="form-check-input" type="checkbox" id="assetRadio"
+                                   @(Model.AssetRadio == 1 ? "checked" : "") onchange="updateAssetSummary()" />
+                            <label class="form-check-label d-flex align-items-center gap-2" for="assetRadio">
+                                <i class="bi bi-radio" style="font-size: 1.2rem; color: #6B7280;"></i>
+                                <span><strong>रेडियो</strong></span>
+                            </label>
+                        </div>
+                        <input type="hidden" asp-for="AssetRadio" id="assetRadioVal" />
+                    </div>
+
+                    <div class="col-md-4 col-lg-3 mb-3">
+                        <div class="form-check card p-2" style="border-radius: 8px; border: 1px solid #e0e0e0;">
+                            <input class="form-check-input" type="checkbox" id="assetBicycle"
+                                   @(Model.AssetBicycle == 1 ? "checked" : "") onchange="updateAssetSummary()" />
+                            <label class="form-check-label d-flex align-items-center gap-2" for="assetBicycle">
+                                <i class="bi bi-bicycle" style="font-size: 1.2rem; color: #6B7280;"></i>
+                                <span><strong>साइकल</strong></span>
+                            </label>
+                        </div>
+                        <input type="hidden" asp-for="AssetBicycle" id="assetBicycleVal" />
+                    </div>
+
+                    <div class="col-md-4 col-lg-3 mb-3">
+                        <div class="form-check card p-2" style="border-radius: 8px; border: 1px solid #e0e0e0;">
+                            <input class="form-check-input" type="checkbox" id="assetTelevision"
+                                   @(Model.AssetTelevision == 1 ? "checked" : "") onchange="updateAssetSummary()" />
+                            <label class="form-check-label d-flex align-items-center gap-2" for="assetTelevision">
+                                <i class="bi bi-tv" style="font-size: 1.2rem; color: #6B7280;"></i>
+                                <span><strong>टिभी</strong></span>
+                            </label>
+                        </div>
+                        <input type="hidden" asp-for="AssetTelevision" id="assetTelevisionVal" />
+                    </div>
+
+                    <div class="col-md-4 col-lg-3 mb-3">
+                        <div class="form-check card p-2" style="border-radius: 8px; border: 1px solid #e0e0e0;">
+                            <input class="form-check-input" type="checkbox" id="assetPhone"
+                                   @(Model.AssetPhone == 1 ? "checked" : "") onchange="updateAssetSummary()" />
+                            <label class="form-check-label d-flex align-items-center gap-2" for="assetPhone">
+                                <i class="bi bi-phone" style="font-size: 1.2rem; color: #6B7280;"></i>
+                                <span><strong>मोबाइल/फोन</strong></span>
+                            </label>
+                        </div>
+                        <input type="hidden" asp-for="AssetPhone" id="assetPhoneVal" />
+                    </div>
+
+                    <div class="col-md-4 col-lg-3 mb-3">
+                        <div class="form-check card p-2" style="border-radius: 8px; border: 1px solid #e0e0e0;">
+                            <input class="form-check-input" type="checkbox" id="assetComputer"
+                                   @(Model.AssetComputer == 1 ? "checked" : "") onchange="updateAssetSummary()" />
+                            <label class="form-check-label d-flex align-items-center gap-2" for="assetComputer">
+                                <i class="bi bi-pc" style="font-size: 1.2rem; color: #6B7280;"></i>
+                                <span><strong>कम्प्युटर/ल्यापटप</strong></span>
+                            </label>
+                        </div>
+                        <input type="hidden" asp-for="AssetComputer" id="assetComputerVal" />
+                    </div>
+
+                    <div class="col-md-4 col-lg-3 mb-3">
+                        <div class="form-check card p-2" style="border-radius: 8px; border: 1px solid #e0e0e0;">
+                            <input class="form-check-input" type="checkbox" id="assetInternet"
+                                   @(Model.AssetInternet == 1 ? "checked" : "") onchange="updateAssetSummary()" />
+                            <label class="form-check-label d-flex align-items-center gap-2" for="assetInternet">
+                                <i class="bi bi-wifi" style="font-size: 1.2rem; color: #6B7280;"></i>
+                                <span><strong>इन्टरनेट</strong></span>
+                            </label>
+                        </div>
+                        <input type="hidden" asp-for="AssetInternet" id="assetInternetVal" />
+                    </div>
+
+                    <div class="col-md-4 col-lg-3 mb-3">
+                        <div class="form-check card p-2" style="border-radius: 8px; border: 1px solid #e0e0e0;">
+                            <input class="form-check-input" type="checkbox" id="assetRefrigerator"
+                                   @(Model.AssetRefrigerator == 1 ? "checked" : "") onchange="updateAssetSummary()" />
+                            <label class="form-check-label d-flex align-items-center gap-2" for="assetRefrigerator">
+                                <i class="bi bi-snow" style="font-size: 1.2rem; color: #6B7280;"></i>
+                                <span><strong>फ्रिज/फ्रिजर</strong></span>
+                            </label>
+                        </div>
+                        <input type="hidden" asp-for="AssetRefrigerator" id="assetRefrigeratorVal" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transport & Machinery -->
+        <div class="card mb-3">
+            <div class="card-header" style="background: #0D9488; color: #fff;">
+                <h6 class="mb-0"><i class="bi bi-truck me-2"></i>यातायात र मेशिनरी</h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 col-lg-3 mb-3">
+                        <div class="form-check card p-2" style="border-radius: 8px; border: 1px solid #e0e0e0;">
+                            <input class="form-check-input" type="checkbox" id="assetMotorcycle"
+                                   @(Model.AssetMotorcycle == 1 ? "checked" : "") onchange="updateAssetSummary()" />
+                            <label class="form-check-label d-flex align-items-center gap-2" for="assetMotorcycle">
+                                <i class="bi bi-motorcycle" style="font-size: 1.2rem; color: #6B7280;"></i>
+                                <span><strong>मोटरसाइकल</strong></span>
+                            </label>
+                        </div>
+                        <input type="hidden" asp-for="AssetMotorcycle" id="assetMotorcycleVal" />
+                    </div>
+
+                    <div class="col-md-4 col-lg-3 mb-3">
+                        <div class="form-check card p-2" style="border-radius: 8px; border: 1px solid #e0e0e0;">
+                            <input class="form-check-input" type="checkbox" id="assetCar"
+                                   @(Model.AssetCar == 1 ? "checked" : "") onchange="updateAssetSummary()" />
+                            <label class="form-check-label d-flex align-items-center gap-2" for="assetCar">
+                                <i class="bi bi-car-front" style="font-size: 1.2rem; color: #6B7280;"></i>
+                                <span><strong>कार/जिप</strong></span>
+                            </label>
+                        </div>
+                        <input type="hidden" asp-for="AssetCar" id="assetCarVal" />
+                    </div>
+
+                    <div class="col-md-4 col-lg-3 mb-3">
+                        <div class="form-check card p-2" style="border-radius: 8px; border: 1px solid #e0e0e0;">
+                            <input class="form-check-input" type="checkbox" id="assetTractor"
+                                   @(Model.AssetTractor == 1 ? "checked" : "") onchange="updateAssetSummary()" />
+                            <label class="form-check-label d-flex align-items-center gap-2" for="assetTractor">
+                                <i class="bi bi-geo" style="font-size: 1.2rem; color: #6B7280;"></i>
+                                <span><strong>ट्रयाक्टर</strong></span>
+                            </label>
+                        </div>
+                        <input type="hidden" asp-for="AssetTractor" id="assetTractorVal" />
+                    </div>
+
+                    <div class="col-md-4 col-lg-3 mb-3">
+                        <div class="form-check card p-2" style="border-radius: 8px; border: 1px solid #e0e0e0;">
+                            <input class="form-check-input" type="checkbox" id="assetBusTruck"
+                                   @(Model.AssetBusTruck == 1 ? "checked" : "") onchange="updateAssetSummary()" />
+                            <label class="form-check-label d-flex align-items-center gap-2" for="assetBusTruck">
+                                <i class="bi bi-truck" style="font-size: 1.2rem; color: #6B7280;"></i>
+                                <span><strong>बस/ट्रक</strong></span>
+                            </label>
+                        </div>
+                        <input type="hidden" asp-for="AssetBusTruck" id="assetBusTruckVal" />
+                    </div>
+
+                    <div class="col-md-4 col-lg-3 mb-3">
+                        <div class="form-check card p-2" style="border-radius: 8px; border: 1px solid #e0e0e0;">
+                            <input class="form-check-input" type="checkbox" id="assetTipperTruck"
+                                   @(Model.AssetTipperTruck == 1 ? "checked" : "") onchange="updateAssetSummary()" />
+                            <label class="form-check-label d-flex align-items-center gap-2" for="assetTipperTruck">
+                                <i class="bi bi-box-seam" style="font-size: 1.2rem; color: #6B7280;"></i>
+                                <span><strong>टिपर ट्रक</strong></span>
+                            </label>
+                        </div>
+                        <input type="hidden" asp-for="AssetTipperTruck" id="assetTipperTruckVal" />
+                    </div>
+
+                    <div class="col-md-4 col-lg-3 mb-3">
+                        <div class="form-check card p-2" style="border-radius: 8px; border: 1px solid #e0e0e0;">
+                            <input class="form-check-input" type="checkbox" id="assetExcavator"
+                                   @(Model.AssetExcavator == 1 ? "checked" : "") onchange="updateAssetSummary()" />
+                            <label class="form-check-label d-flex align-items-center gap-2" for="assetExcavator">
+                                <i class="bi bi-tools" style="font-size: 1.2rem; color: #6B7280;"></i>
+                                <span><strong>एक्स्केभेटर</strong></span>
+                            </label>
+                        </div>
+                        <input type="hidden" asp-for="AssetExcavator" id="assetExcavatorVal" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- None / No Assets -->
+        <div class="card mb-3">
+            <div class="card-header" style="background: #DC143C; color: #fff;">
+                <h6 class="mb-0"><i class="bi bi-x-circle me-2"></i>कुनै संपत्ति छैन</h6>
+            </div>
+            <div class="card-body">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="assetNone"
+                           @(Model.AssetNone == 1 ? "checked" : "")
+                           onchange="if(this.checked){uncheckAll();} updateAssetSummary();" />
+                    <label class="form-check-label fw-semibold text-danger" for="assetNone">
+                        यस घरपरिवारसँग माथि सूचीबद्ध कुनै पनि संपत्ति छैन
+                    </label>
+                </div>
+                <input type="hidden" asp-for="AssetNone" id="assetNoneVal" />
+                <small class="text-muted d-block mt-1">
+                    यदि "कुनै संपत्ति छैन" चयन गरेमा, माथिका सबै संपत्तिहरू अनचेक हुनेछन्।
+                </small>
+            </div>
+        </div>
+
+        <!-- Assets Summary (auto-filled) -->
+        <div class="card mb-3">
+            <div class="card-header" style="background: #6366F1; color: #fff;">
+                <h6 class="mb-0"><i class="bi bi-list-check me-2"></i>संपत्ति सारांश</h6>
+            </div>
+            <div class="card-body">
+                <label class="form-label small fw-semibold">सारांश (स्वतः भरिन्छ)</label>
+                <input asp-for="AssetsSummary" class="form-control form-control-sm" id="assetsSummary"
+                       readonly placeholder="चयन गरिएका संपत्तिहरूको सूची..." />
+                <small class="text-muted">माथि चयन गरिएका संपत्तिहरूको नाम यहाँ स्वतः देखिनेछ</small>
+            </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="d-flex gap-2 justify-content-end mb-4">
+            <a href="/Admin/ManageHouseholdData/@Model.Id" class="btn btn-outline-secondary">
+                रद्द गर्नुहोस्
+            </a>
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-save me-1"></i>संपत्ति सेभ गर्नुहोस्
+            </button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        var assetNames = {
+            'assetRadio': 'रेडियो',
+            'assetBicycle': 'साइकल',
+            'assetTelevision': 'टिभी',
+            'assetPhone': 'मोबाइल/फोन',
+            'assetComputer': 'कम्प्युटर/ल्यापटप',
+            'assetInternet': 'इन्टरनेट',
+            'assetRefrigerator': 'फ्रिज/फ्रिजर',
+            'assetMotorcycle': 'मोटरसाइकल',
+            'assetCar': 'कार/जिप',
+            'assetTractor': 'ट्रयाक्टर',
+            'assetBusTruck': 'बस/ट्रक',
+            'assetTipperTruck': 'टिपर ट्रक',
+            'assetExcavator': 'एक्स्केभेटर'
+        };
+
+        function updateAssetSummary() {
+            var selected = [];
+            var count = 0;
+            var noneChecked = document.getElementById('assetNone').checked;
+
+            for (var key in assetNames) {
+                var checkbox = document.getElementById(key);
+                var valField = document.getElementById(key + 'Val');
+                if (valField) {
+                    if (noneChecked) {
+                        checkbox.checked = false;
+                        valField.value = '0';
+                    } else {
+                        valField.value = checkbox.checked ? '1' : '0';
+                        if (checkbox.checked) {
+                            selected.push(assetNames[key]);
+                            count++;
+                        }
+                    }
+                }
+            }
+
+            // Update none
+            var noneVal = document.getElementById('assetNoneVal');
+            if (noneVal) noneVal.value = noneChecked ? '1' : '0';
+
+            // Update summary field
+            document.getElementById('assetsSummary').value = selected.length > 0 ? selected.join(', ') : 'कुनै संपत्ति छैन';
+
+            // Update count banner
+            document.getElementById('assetCountDisplay').textContent = (noneChecked ? 0 : count) + ' वटा';
+        }
+
+        function uncheckAll() {
+            for (var key in assetNames) {
+                document.getElementById(key).checked = false;
+            }
+        }
+
+        // Sync all hidden fields on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            updateAssetSummary();
+        });
+    </script>
+}

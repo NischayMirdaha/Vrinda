@@ -1,0 +1,131 @@
+﻿@model List<VrindavanProfile.Web.Controllers.InstitutionListItem>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "ट्रेस — " + ViewBag.DisplayName;
+    string activeArea = ViewBag.SubjectArea;
+    var configs = ViewBag.ConfigList as List<VrindavanProfile.Web.Controllers.InstitutionCategoryItem>;
+    int currentPage = ViewBag.CurrentPage ?? 1;
+    int totalPages  = ViewBag.TotalPages  ?? 1;
+}
+
+<div class="container py-4">
+    <!-- Header -->
+    <div class="card mb-4 border-0 shadow-sm"
+         style="background: linear-gradient(135deg, #6c757d 0%, #495057 100%); color: white; border-radius: 12px;">
+        <div class="card-body p-4 d-flex justify-content-between align-items-center flex-wrap">
+            <div>
+                <h2 class="fw-bold mb-1"><i class="bi bi-trash me-2"></i>ट्रेस — @ViewBag.DisplayName</h2>
+                <p class="mb-0 small opacity-75">मेटाइएका प्रविष्टिहरू — पुनर्स्थापना वा स्थायी मेटाउन सकिन्छ</p>
+            </div>
+            <a href="/Admin/Institutions?subjectArea=@activeArea" class="btn btn-light btn-sm">
+                <i class="bi bi-arrow-left me-1"></i>सक्रिय सूचीमा फर्कनुहोस्
+            </a>
+        </div>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success shadow-sm">@TempData["SuccessMessage"]</div>
+    }
+
+    <div class="row">
+        <!-- Category Sidebar -->
+        <div class="col-md-3 mb-4">
+            <div class="card shadow-sm border-0" style="border-radius: 10px;">
+                <div class="card-header bg-light fw-bold py-3">
+                    <i class="bi bi-filter-square me-2"></i>विवरण प्रकारहरू
+                </div>
+                <div class="list-group list-group-flush">
+                    @foreach (var entry in configs ?? new())
+                    {
+                        <a href="/Admin/InstitutionsTrash?subjectArea=@entry.Key"
+                           class="list-group-item list-group-item-action d-flex align-items-center py-2
+                           @(activeArea == entry.Key ? "active bg-secondary border-secondary" : "")">
+                            <i class="bi @entry.Icon me-2 @(activeArea == entry.Key ? "text-white" : "text-muted")"></i>
+                            <span class="small">@entry.DisplayName</span>
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Trash Table -->
+        <div class="col-md-9">
+            <div class="card shadow-sm border-0" style="border-radius: 10px;">
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th class="py-3 px-4" style="width:80px;">आइडी</th>
+                                    <th class="py-3">नाम / प्रकार</th>
+                                    <th class="py-3 text-center" style="width:100px;">वडा नं</th>
+                                    <th class="py-3">प्रविष्टिकर्ता</th>
+                                    <th class="py-3 text-end px-4" style="width:230px;">कार्यहरू</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (!Model.Any())
+                                {
+                                    <tr>
+                                        <td colspan="5" class="text-center py-5 text-muted">
+                                            <i class="bi bi-check-circle display-4 d-block mb-3 text-success"></i>
+                                            ट्रेसमा कुनै प्रविष्टि छैन।
+                                        </td>
+                                    </tr>
+                                }
+                                @foreach (var item in Model)
+                                {
+                                    <tr class="table-warning">
+                                        <td class="px-4 fw-bold text-muted">@item.Id</td>
+                                        <td class="fw-semibold">@item.Name</td>
+                                        <td class="text-center">
+                                            <span class="badge bg-secondary">@item.WardNo</span>
+                                        </td>
+                                        <td>
+                                            <div class="small">@item.EnumeratorName</div>
+                                            <div class="text-muted small" style="font-size:11px;">@item.SubmissionTime</div>
+                                        </td>
+                                        <td class="text-end px-4">
+                                            <form asp-action="RestoreInstitution" method="post" class="d-inline">
+                                                <input type="hidden" name="id" value="@item.Id" />
+                                                <input type="hidden" name="subjectArea" value="@activeArea" />
+                                                <button type="submit" class="btn btn-success btn-sm me-1">
+                                                    <i class="bi bi-arrow-counterclockwise"></i> पुनर्स्थापित
+                                                </button>
+                                            </form>
+                                            <form asp-action="HardDeleteInstitution" method="post" class="d-inline"
+                                                  onsubmit="return confirm('⚠️ यो प्रविष्टि र यससँग सम्बन्धित सबै डाटा स्थायी रूपमा मेटिनेछ। निश्चित हुनुहुन्छ?')">
+                                                <input type="hidden" name="id" value="@item.Id" />
+                                                <input type="hidden" name="subjectArea" value="@activeArea" />
+                                                <button type="submit" class="btn btn-danger btn-sm">
+                                                    <i class="bi bi-trash-fill"></i> स्थायी मेटाउनुहोस्
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            @if (totalPages > 1)
+            {
+                <nav class="mt-4">
+                    <ul class="pagination justify-content-center">
+                        @for (int i = 1; i <= totalPages; i++)
+                        {
+                            <li class="page-item @(currentPage == i ? "active" : "")">
+                                <a class="page-link"
+                                   href="/Admin/InstitutionsTrash?subjectArea=@activeArea&page=@i">@i</a>
+                            </li>
+                        }
+                    </ul>
+                </nav>
+            }
+        </div>
+    </div>
+</div>

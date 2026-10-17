@@ -1,0 +1,17 @@
+﻿{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "ward": 1,
+        "name": "वडा १",
+        "municipality": "वृन्दावन नगरपालिका"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[85.0000, 27.0000], [85.0100, 27.0000], [85.0100, 27.0100], [85.0000, 27.0100], [85.0000, 27.0000]]]
+      }
+    }
+  ]
+}

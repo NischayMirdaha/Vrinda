@@ -1,0 +1,511 @@
+@using VrindavanProfile.Web.Models.ViewModels
+@using VrindavanProfile.Web.Models.ViewModels
+@{
+    ViewData["Title"] = "वडा तुलना";
+    var availableWards = ViewBag.AvailableWards as List<int> ?? new List<int>();
+    var selectedWards = ViewBag.SelectedWards as List<int> ?? new List<int>();
+    var selectedTableId = ViewBag.SelectedTableId as int?;
+    var hhTables = ViewBag.HouseholdTables as List<TableMeta> ?? new List<TableMeta>();
+    var instTables = ViewBag.InstitutionTables as List<TableMeta> ?? new List<TableMeta>();
+    var comparisonData = ViewBag.ComparisonData as List<(int WardNo, TableViewModel Table)> ?? new List<(int, TableViewModel)>();
+
+    // L.1: Language variables for i18n.js (add these if not already present)
+    var currentLang = ViewData["CurrentLang"] as string ?? "ne";
+    var isEnglish = ViewData["IsEnglish"] as bool? ?? false;
+}
+
+<!-- Hero -->
+<section class="py-4" style="background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--secondary) 100%); color: white;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h2 class="fw-bold mb-1"><i class="bi bi-arrow-left-right me-2"></i><span data-i18n="ward.compare_title">वडा तुलना</span></h2>
+                <p class="mb-0 opacity-90" data-i18n="ward.compare_subtitle">दुई वा बढी वडाहरूको तथ्याङ्क समानान्तर रूपमा तुलना गर्नुहोस्</p>
+            </div>
+            <div class="col-lg-4 text-end d-none d-lg-block">
+                <i class="bi bi-arrow-left-right" style="font-size: 3rem; opacity: 0.25;"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container py-4">
+    <!-- Selection Panel -->
+    <div class="card mb-4" style="border-radius:var(--radius);border:1px solid #e0e0e0">
+        <div class="card-header" style="background:var(--primary);color:#fff;border-radius:var(--radius) var(--radius) 0 0">
+            <h6 class="mb-0 fw-bold"><i class="bi bi-sliders me-2"></i><span data-i18n="ward.compare_modify">तुलना परिमार्जन गर्नुहोस्</span></h6>
+        </div>
+        <div class="card-body">
+            <form method="get" action="/Ward/Compare" id="compareForm">
+                <!-- Ward Selection -->
+                <div class="mb-3">
+                    <label class="form-label fw-semibold small">
+                        <i class="bi bi-geo-alt me-1"></i><span data-i18n="ward.select_wards">वडाहरू छान्नुहोस् (कम्तिमा २ वटा):</span>
+                    </label>
+                    <div class="d-flex flex-wrap gap-2">
+                        @foreach (var w in availableWards)
+                        {
+                            var isSelected = selectedWards.Contains(w);
+                            <label class="btn btn-sm @(isSelected ? "btn-primary" : "btn-outline-secondary") mb-1" style="border-radius:20px;font-size:0.8rem">
+                                <input type="checkbox" name="wards" value="@w" class="d-none" @(isSelected ? "checked" : "") onchange="updateWardSelection(this)" />
+                                वडा @w
+                            </label>
+                        }
+                    </div>
+                    <input type="hidden" name="wards" id="wardsHidden" value="@string.Join(",", selectedWards)" />
+                </div>
+
+                <!-- Table Selection -->
+                <div class="mb-3">
+                    <label class="form-label fw-semibold small">
+                        <i class="bi bi-table me-1"></i><span data-i18n="ward.select_table">तालिका छान्नुहोस्:</span>
+                    </label>
+                    <select name="tableId" class="form-select" id="tableSelect">
+                        <option value="">-- तालिका छान्नुहोस् --</option>
+                        <optgroup label="घरपरिवार तालिका (६५)">
+                            @foreach (var t in hhTables)
+                            {
+                                <option value="@t.TableNumber" selected="@(selectedTableId == t.TableNumber)">
+                                    तालिका @t.TableNumber — @t.Title
+                                </option>
+                            }
+                        </optgroup>
+                        <optgroup label="संस्थागत तालिका (४३)">
+                            @foreach (var t in instTables)
+                            {
+                                <option value="@(t.TableNumber + 1000)" selected="@(selectedTableId == t.TableNumber + 1000)">
+                                    तालिका @t.TableNumber — @t.Title
+                                </option>
+                            }
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-primary" id="compareBtn">
+                        <i class="bi bi-arrow-left-right me-1"></i><span data-i18n="ward.compare_button">तुलना गर्नुहोस्</span>
+                    </button>
+                    
+                    <button type="button" id="swapWardsBtn" class="btn btn-sm btn-outline-secondary" style="border-radius: 20px; font-size: 0.85rem;">
+                        <i class="bi bi-arrow-left-right me-1"></i>क्रम उल्टाउनुहोस्
+                    </button>
+
+                    <a href="/Ward/Compare" class="btn btn-sm btn-outline-danger" style="border-radius: 20px; font-size: 0.85rem;">
+                        <i class="bi bi-x-circle me-1"></i>चयन खाली गर्नुहोस्
+                    </a>
+
+                    <a href="/Ward" class="btn btn-sm btn-outline-primary" style="border-radius: 20px; font-size: 0.85rem;">
+                        <i class="bi bi-arrow-left me-1"></i>वडा प्रोफाइलमा फर्कनुहोस्
+                    </a>
+                </div>
+            </form>
+            <h5 class="mt-3 fw-bold" style="color:var(--primary)" data-i18n="ward.compare_start_title">वडा तुलना सुरु गर्नुहोस्</h5>
+            <p class="text-muted" data-i18n="ward.compare_start_text">
+                माथिको फारममा कम्तिमा २ वटा वडा र एउटा तालिका छानेर "तुलना गर्नुहोस्" बटन थिच्नुहोस्।
+            </p>
+        </div>
+    </div>
+
+    <!-- C.3: Side-by-side Statistics (Nepali + matching stat-card style) -->
+    @if (ViewBag.WardDashboards is List<DashboardViewModel> wardDbs && wardDbs.Any())
+    {
+        <h5 class="mt-4">वडाहरूको तुलनात्मक तथ्याङ्क</h5>
+        <div class="row">
+            @foreach (var db in wardDbs)
+            {
+                <div class="col-md">
+                    <div class="card mb-3">
+                        <div class="card-header py-2">
+                            <strong>वडा @db.WardNo</strong>
+                        </div>
+                        <div class="card-body p-2">
+                            @foreach (var stat in db.StatCounters)
+                            {
+                                <div class="stat-card card p-2 mb-1 overflow-hidden"
+                                     style="border-left-color: @stat.AccentColor; --stat-accent: @stat.AccentColor;">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <div class="small text-muted">@stat.Label</div>
+                                            <div class="fw-bold" style="font-size: 1.1rem; color: @stat.AccentColor;">
+                                                @stat.Value.ToString("#,##0")
+                                            </div>
+                                        </div>
+                                        <i class="bi @stat.Icon" style="font-size: 1.4rem; color: @stat.AccentColor; opacity: 0.7;"></i>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+
+    @if (ViewBag.WardDashboards is List<DashboardViewModel> wardDbse && wardDbse.Any())
+    {
+        var firstDb = wardDbse.First();
+        var categories = firstDb.Charts.GroupBy(c => c.GetCategory(isEnglish ? "en" : "ne")).Select(g => g.Key).ToList();
+        var lang = isEnglish ? "en" : "ne";
+
+        <!-- Global Synchronized Category Navigation -->
+        <div class="mt-4">
+            <h5 class="mb-3">साइड-बाइ-साइड चार्टहरू</h5>
+            <nav>
+                <ul class="nav nav-pills flex-wrap gap-1 mb-0" id="compareChartTabs" role="tablist">
+                    @{
+                        bool isFirst = true;
+                        int tabIndex = 0;
+                    }
+                    @foreach (var categoryName in categories)
+                    {
+                        string tabId    = "tab-compare-" + tabIndex;
+                        string paneId   = "pane-compare-" + tabIndex;
+                        string isActive = isFirst ? "active" : "";
+                        string selectedc = isFirst ? "true" : "false";
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link @isActive fw-semibold"
+                                    id="@tabId"
+                                    data-bs-toggle="pill"
+                                    data-bs-target="#@paneId"
+                                    type="button"
+                                    role="tab"
+                                    aria-controls="@paneId"
+                                    aria-selected="@selectedc"
+                                    style="font-size: 0.85rem; padding: 6px 12px;">
+                                @categoryName
+                            </button>
+                        </li>
+                        isFirst = false;
+                        tabIndex++;
+                    }
+                </ul>
+            </nav>
+            <hr class="mt-2 mb-3" />
+        </div>
+
+        <!-- Synchronized Tab Content -->
+        <div class="tab-content" id="compareChartTabsContent">
+            @{
+                isFirst = true;
+                tabIndex = 0;
+            }
+            @foreach (var categoryName in categories)
+            {
+                string paneId   = "pane-compare-" + tabIndex;
+                string isActive = isFirst ? "show active" : "";
+
+                <div class="tab-pane fade @isActive"
+                     id="@paneId"
+                     role="tabpanel"
+                     aria-labelledby="tab-compare-@tabIndex">
+                    <div class="row">
+                        @foreach (var db in wardDbse)
+                        {
+                            <div class="col-md">
+                                <div class="card mb-3">
+                                    <div class="card-header py-2 bg-light">
+                                        <strong>वडा @db.WardNo</strong>
+                                    </div>
+                                    <div class="card-body p-2">
+                                        @{
+                                            var matchedCharts = db.Charts
+                                                .Where(c => c.GetCategory(lang) == categoryName)
+                                                .OrderBy(c => c.SortOrder)
+                                                .ToList();
+                                        }
+                                        <div class="row g-1">
+                                            @foreach (var chart in matchedCharts)
+                                            {
+                                                var cid = $"w{db.WardNo}_{chart.Id}";
+                                                <div class="col-12 mb-2">
+                                                    <div class="chart-card card h-100" data-chart-type="@chart.ChartType">
+                                                        <div class="card-header py-1 bg-transparent border-bottom-0">
+                                                            <h6 class="mb-0 small fw-bold">@chart.GetTitle(lang)</h6>
+                                                        </div>
+                                                        <div class="card-body p-1">
+                                                            <canvas id="chart_@cid" height="110" style="display:none"></canvas>
+                                                            <div class="chart-skeleton" id="skeleton_@cid"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                            @if (!matchedCharts.Any())
+                                            {
+                                                <div class="text-center text-muted py-4">
+                                                    <i class="bi bi-inbox" style="font-size: 1.5rem;"></i>
+                                                    <p class="small mt-2 mb-0">तथ्याङ्क उपलब्ध छैन</p>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                isFirst = false;
+                tabIndex++;
+            }
+        </div>
+    }
+    <!-- Comparison Results — Transposed Layout -->
+    @if (comparisonData.Count >= 2)
+    {
+        var first = comparisonData[0].Table;
+        var categoryHeaders = first.ColumnHeaders.Skip(1).ToList();
+
+        <div class="card border-0 shadow-sm" style="border-radius: var(--radius);">
+            <!-- Table header / title -->
+            <div class="card-header d-flex justify-content-between align-items-center"
+                 style="background: rgba(45,106,79,0.06); border-bottom: 2px solid var(--primary);">
+                <div>
+                    <h6 class="mb-1 fw-bold" style="color: var(--primary);">
+                        <i class="bi bi-table me-1"></i>@first.Title
+                    </h6>
+                    <small class="text-muted">
+                        <i class="bi bi-bar-chart me-1"></i>
+                        तुलना गरिएको वडा:
+                        @string.Join(" | ", comparisonData.Select(d => "वडा " + d.WardNo))
+                    </small>
+                    @if (!string.IsNullOrEmpty(first.Description))
+                    {
+                        <div class="text-muted small mt-1">@first.Description</div>
+                    }
+                </div>
+                <div class="no-print">
+                    <button class="btn btn-sm btn-outline-primary" onclick="printPage()" title="प्रिन्ट गर्नुहोस्">
+                        <i class="bi bi-printer"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Legend: Which ward is which color -->
+            <div class="px-3 pt-3 pb-0 d-flex flex-wrap gap-2">
+                @{
+                    var wardColors = new[] { "#003B6F", "#2D6A4F", "#C1121F", "#E9C46A", "#457B9D", "#52B788", "#E76F51", "#B5838D", "#D4A373" };
+                }
+                @for (int wi = 0; wi < comparisonData.Count; wi++)
+                {
+                    var color = wardColors[wi % wardColors.Length];
+                    <span class="badge fw-semibold px-3 py-2"
+                          style="background-color: @color; border-radius: 20px; font-size: 0.78rem;">
+                        वडा @comparisonData[wi].WardNo
+                    </span>
+                }
+            </div>
+
+            <!-- Transposed Comparison Table -->
+            <div class="card-body p-0 pt-2">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover align-middle mb-0">
+                        <thead>
+                            <tr style="background-color: var(--primary); color: white;">
+                                <!-- First column: Category name -->
+                                <th class="ps-3" style="min-width: 220px;">
+                                    <i class="bi bi-tag me-1"></i>विवरण / श्रेणी
+                                </th>
+                                <!-- One column per selected ward -->
+                                @for (int wi = 0; wi < comparisonData.Count; wi++)
+                                {
+                                    var color = wardColors[wi % wardColors.Length];
+                                    <th class="text-center" style="min-width: 110px;">
+                                        <span style="border-bottom: 3px solid rgba(255,255,255,0.7); padding-bottom: 2px;">
+                                            वडा @comparisonData[wi].WardNo
+                                        </span>
+                                    </th>
+                                }
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @* Each category header becomes one row *@
+                            @for (int ci = 0; ci < categoryHeaders.Count; ci++)
+                            {
+                                @* Alternate row shading *@
+                                var rowBg = ci % 2 == 0 ? "" : "background-color: rgba(0,0,0,0.025);";
+
+                                <tr style="@rowBg">
+                                    <td class="fw-semibold ps-3" style="color: var(--primary);">
+                                        @categoryHeaders[ci]
+                                    </td>
+
+                                    @* For each ward, find the value at cell index ci *@
+                                    @foreach (var (wardNo, tbl) in comparisonData)
+                                    {
+                                        @* Ward-filtered table has exactly one row for that ward.
+                                           Cells[ci] corresponds to categoryHeaders[ci] *@
+                                        var wardRow = tbl.Rows.FirstOrDefault();
+                                        var cellValue = (wardRow != null && ci < wardRow.Cells.Count)
+                                            ? wardRow.Cells[ci]
+                                            : "—";
+
+                                        @* Determine if this is a "total" column for bold styling *@
+                                        bool isTotalCol = categoryHeaders[ci].Contains("जम्मा");
+
+                                        <td class="text-center @(isTotalCol ? "fw-bold" : "")"
+                                            style="@(isTotalCol ? "background-color: rgba(45,106,79,0.08);" : "")">
+                                            @cellValue
+                                        </td>
+                                    }
+                                </tr>
+                            }
+                        </tbody>
+
+                        @* Total row (municipality-wide total, if available) *@
+                        @if (comparisonData.Any(d => d.Table.TotalRow != null))
+                        {
+                            <tfoot>
+                                @for (int ci = 0; ci < categoryHeaders.Count; ci++)
+                                {
+                                    <tr class="fw-bold"
+                                        style="background-color: rgba(45,106,79,0.12); border-top: 2px solid var(--primary);">
+                                        <td class="ps-3" style="color: var(--primary);">
+                                            <i class="bi bi-sigma me-1"></i>
+                                            नगरपालिका जम्मा (@categoryHeaders[ci])
+                                        </td>
+                                        @foreach (var (wardNo, tbl) in comparisonData)
+                                        {
+                                            @* TotalRow.Cells[ci] = municipality total for that category *@
+                                            var totalVal = (tbl.TotalRow != null && ci < tbl.TotalRow.Cells.Count)
+                                                ? tbl.TotalRow.Cells[ci]
+                                                : "—";
+                                            <td class="text-center">@totalVal</td>
+                                        }
+                                    </tr>
+                                }
+                            </tfoot>
+                        }
+                    </table>
+                </div>
+
+                <!-- Data Source note -->
+                @if (!string.IsNullOrEmpty(first.DataSource))
+                {
+                    <div class="px-3 py-2 text-muted" style="font-size: 0.78rem; border-top: 1px solid #eee;">
+                        <i class="bi bi-info-circle me-1"></i>
+                        डाटा स्रोत: <code>@first.DataSource</code>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+    else if (selectedWards.Count >= 2 && ViewBag.SelectedTableId != null)
+    {
+        <!-- Wards selected and table chosen, but no data returned -->
+        <div class="alert alert-warning border-0 shadow-sm mt-3" style="border-radius: var(--radius);">
+            <i class="bi bi-exclamation-triangle me-2"></i>
+            छानिएका वडाहरूको लागि चुनिएको तालिकामा तथ्याङ्क भेटिएन। अर्को तालिका छान्नुहोस्।
+        </div>
+    }
+</section>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+    <script src="~/js/charts.js" asp-append-version="true"></script>
+    <script>
+        (function () {
+            // Update ward selection button styles
+            function updateWardStyles() {
+                document.querySelectorAll('[name="wards"][type="checkbox"]').forEach(function (cb) {
+                    var label = cb.closest('label');
+                    if (cb.checked) {
+                        label.classList.remove('btn-outline-secondary');
+                        label.classList.add('btn-primary');
+                    } else {
+                        label.classList.remove('btn-primary');
+                        label.classList.add('btn-outline-secondary');
+                    }
+                });
+            }
+
+            window.updateWardSelection = function (cb) {
+                updateWardStyles();
+            };
+
+            // Form submit — build wards param
+            document.getElementById('compareForm').addEventListener('submit', function (e) {
+                var checked = document.querySelectorAll('[name="wards"][type="checkbox"]:checked');
+                if (checked.length < 2) {
+                    e.preventDefault();
+                    alert('कृपया कम्तिमा २ वटा वडा छान्नुहोस्।');
+                    return;
+                }
+                var tableId = document.getElementById('tableSelect').value;
+                if (!tableId) {
+                    e.preventDefault();
+                    alert('कृपया एउटा तालिका छान्नुहोस्।');
+                    return;
+                }
+                // Build wards param as comma-separated
+                var wards = Array.from(checked).map(function (cb) { return cb.value; }).join(',');
+                var hidden = document.getElementById('wardsHidden');
+                hidden.value = wards;
+                // Remove checkbox name attributes to avoid duplicate params
+                document.querySelectorAll('[name="wards"][type="checkbox"]').forEach(function (cb) {
+                    cb.removeAttribute('name');
+                });
+            });
+
+            // C.5 UX: Swap wards order button
+            var swapBtn = document.getElementById('swapWardsBtn');
+            if (swapBtn) {
+                swapBtn.addEventListener('click', function () {
+                    var form = document.getElementById('compareForm');
+                    if (!form) return;
+
+                    // Get current checked wards in order
+                    var checked = Array.from(document.querySelectorAll('[name="wards"][type="checkbox"]:checked'))
+                        .map(function (cb) { return cb.value; });
+
+                    if (checked.length < 2) return;
+
+                    // Reverse the order
+                    checked.reverse();
+
+                    // Build new comma-separated value
+                    var newWards = checked.join(',');
+
+                    // Update hidden field
+                    var hidden = document.getElementById('wardsHidden');
+                    if (hidden) hidden.value = newWards;
+
+                    // Remove name from checkboxes to prevent duplicate params
+                    document.querySelectorAll('[name="wards"][type="checkbox"]').forEach(function (cb) {
+                        cb.removeAttribute('name');
+                    });
+
+                    // Submit the form (this will reload with swapped order)
+                    form.submit();
+                });
+            }
+        })();
+
+        const compareCharts = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(
+            (ViewBag.WardDashboards as List<DashboardViewModel> ?? new List<DashboardViewModel>())
+            .SelectMany(db => db.Charts.Select(c => {
+                var cid = $"w{db.WardNo}_{c.Id}";
+                return new {
+                    id = cid,
+                    chartType = c.ChartType,
+                    items = c.Items.Select(i => new { label = i.Label, value = i.Value, maleCount = i.MaleCount, femaleCount = i.FemaleCount }),
+                    datasets = c.Datasets?.Select(ds => new { label = ds.Label, values = ds.Values })
+                };
+            }))
+        ));
+
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof renderAllCharts === 'function' && compareCharts && compareCharts.length > 0) {
+                renderAllCharts(compareCharts);
+
+                compareCharts.forEach(function(chartData) {
+                    var skeleton = document.getElementById('skeleton_' + chartData.id);
+                    var canvas = document.getElementById('chart_' + chartData.id);
+                    if (skeleton && canvas) {
+                        skeleton.style.display = 'none';
+                        canvas.style.display = 'block';
+                    }
+                });
+            }
+        });
+    </script>
+    <script src="~/js/table-export.js" asp-append-version="true"></script>
+}

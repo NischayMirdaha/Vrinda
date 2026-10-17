@@ -1,0 +1,11 @@
+# robots.txt — वृन्दावन नगरपालिका डिजिटल प्रोफाइल
+# https://vrindavanmun.gov.np
+
+User-agent: *
+Allow: /
+Disallow: /Home/Error
+Disallow: /Home/Diag
+Disallow: /Search/Api
+
+# Sitemap
+Sitemap: https://vrindavanmun.gov.np/sitemap.xml

@@ -1,0 +1,189 @@
+﻿========================================================================
+                 CONVERTY EXCEL SCHEMA METADATA REPORT                  
+========================================================================
+Generated on: 2026-06-05 21:16:53
+Total Sheets: 1
+
+========================================================================
+SHEET: Sheet1
+========================================================================
+Total Rows:    8,647
+Total Columns: 22
+
+------------------------------------------------------------------------
+COLUMN 1:
+------------------------------------------------------------------------
+Header Name:   १७.१.  तपाई हाल बसेको घरको स्वामित्व कस्तो प्रकारको हो ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    10 characters
+Completeness:  8,618 of 8,647 rows (99.66%)
+
+------------------------------------------------------------------------
+COLUMN 2:
+------------------------------------------------------------------------
+Header Name:   १७.२. तपाईको घरमा जम्मा कति वटा कोठा छन् ?
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    5 characters
+Completeness:  8,467 of 8,647 rows (97.92%)
+
+------------------------------------------------------------------------
+COLUMN 3:
+------------------------------------------------------------------------
+Header Name:   १७.३  कति कोठा भाडामा दिनु भएको छ ?
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    2 characters
+Completeness:  7,020 of 8,647 rows (81.18%)
+
+------------------------------------------------------------------------
+COLUMN 4:
+------------------------------------------------------------------------
+Header Name:   १७.४  तपाई बसोबास गर्ने घरको छानाको प्रकार कस्ताे छ ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    26 characters
+Completeness:  7,882 of 8,647 rows (91.15%)
+
+------------------------------------------------------------------------
+COLUMN 5:
+------------------------------------------------------------------------
+Header Name:   अन्य भनेको खुलाउनु होला ।
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 8,647 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 6:
+------------------------------------------------------------------------
+Header Name:   १७.५  छानाको प्रकार अन्य भए उल्लेख गर्नुहोस्
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 8,647 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 7:
+------------------------------------------------------------------------
+Header Name:   १७.६  तपाई बसेको घरको जग कस्तो प्रकारको छ ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    16 characters
+Completeness:  7,732 of 8,647 rows (89.42%)
+
+------------------------------------------------------------------------
+COLUMN 8:
+------------------------------------------------------------------------
+Header Name:   १७.७  घरको जग अन्य भए उल्लेख गर्नुहोस् ।
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 8,647 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 9:
+------------------------------------------------------------------------
+Header Name:   १७.८  के तँपाईले घरनक्सा पास (अभिलेखिकरण) गर्नु भएको छ ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    8 characters
+Completeness:  7,603 of 8,647 rows (87.93%)
+
+------------------------------------------------------------------------
+COLUMN 10:
+------------------------------------------------------------------------
+Header Name:   १७.९  तपाई बसेको घर भवन मापदण्ड अनुसार बनेको छ ?
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    8 characters
+Completeness:  7,580 of 8,647 rows (87.66%)
+
+------------------------------------------------------------------------
+COLUMN 11:
+------------------------------------------------------------------------
+Header Name:   _index
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    4 characters
+Completeness:  8,647 of 8,647 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 12:
+------------------------------------------------------------------------
+Header Name:   _parent_table_name
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    35 characters
+Completeness:  8,647 of 8,647 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 13:
+------------------------------------------------------------------------
+Header Name:   _parent_index
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    4 characters
+Completeness:  8,647 of 8,647 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 14:
+------------------------------------------------------------------------
+Header Name:   _submission__id
+Inferred Type: Decimal / Double (Recommended SQL: DECIMAL(18,6))
+Max Length:    9 characters
+Completeness:  8,647 of 8,647 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 15:
+------------------------------------------------------------------------
+Header Name:   _submission__uuid
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    36 characters
+Completeness:  8,647 of 8,647 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 16:
+------------------------------------------------------------------------
+Header Name:   _submission__submission_time
+Inferred Type: DateTime (Recommended SQL: DATETIME2)
+Max Length:    0 characters
+Completeness:  8,647 of 8,647 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 17:
+------------------------------------------------------------------------
+Header Name:   _submission__validation_status
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 8,647 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 18:
+------------------------------------------------------------------------
+Header Name:   _submission__notes
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 8,647 rows (0.00%)
+
+------------------------------------------------------------------------
+COLUMN 19:
+------------------------------------------------------------------------
+Header Name:   _submission__status
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    17 characters
+Completeness:  8,647 of 8,647 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 20:
+------------------------------------------------------------------------
+Header Name:   _submission__submitted_by
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    14 characters
+Completeness:  8,647 of 8,647 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 21:
+------------------------------------------------------------------------
+Header Name:   _submission___version__
+Inferred Type: Text / Mixed (Recommended SQL: NVARCHAR(50))
+Max Length:    22 characters
+Completeness:  8,647 of 8,647 rows (100.00%)
+
+------------------------------------------------------------------------
+COLUMN 22:
+------------------------------------------------------------------------
+Header Name:   _submission__tags
+Inferred Type: Empty / Unknown (Recommended SQL: NVARCHAR(100))
+Max Length:    0 characters
+Completeness:  0 of 8,647 rows (0.00%)
+
+

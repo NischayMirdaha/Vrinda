@@ -1,0 +1,136 @@
+@model IEnumerable<VrindavanProfile.Web.Data.DbEntities.AppUser>
+@{
+    ViewData["Title"] = "प्रशासक प्रयोगकर्ता व्यवस्थापन";
+}
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+        <div>
+            <a href="/Admin" class="btn btn-sm btn-outline-secondary mb-2" style="border-radius: 20px;">
+                <i class="bi bi-arrow-left me-1"></i>ड्यासबोर्ड
+            </a>
+            <h2 class="fw-bold mb-0"><i class="bi bi-people-fill me-2 text-danger"></i>प्रशासक व्यवस्थापन</h2>
+            <p class="text-muted small mb-0">प्रणालीमा आवद्ध सबै प्रशासक खाताहरू</p>
+        </div>
+        <a href="/Admin/CreateUser" class="btn btn-danger fw-semibold px-4" style="border-radius: 10px;">
+            <i class="bi bi-person-plus-fill me-2"></i>नयाँ प्रशासक थप्नुहोस्
+        </a>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success border-0 shadow-sm alert-dismissible fade show" style="border-radius: 10px;">
+            <i class="bi bi-check-circle-fill me-2"></i>@TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger border-0 shadow-sm alert-dismissible fade show" style="border-radius: 10px;">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i>@TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    <div class="card border-0 shadow-sm" style="border-radius: 14px; overflow: hidden;">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead style="background: linear-gradient(90deg, #002147, #003B6F); color: white;">
+                    <tr>
+                        <th class="ps-4 py-3">आईडी</th>
+                        <th class="py-3">युजरनेम</th>
+                        <th class="py-3">इमेल</th>
+                        <th class="py-3">भूमिका</th>
+                        <th class="py-3">तोकिएको वडा</th>
+                        <th class="py-3">स्थिति</th>
+                        <th class="py-3">सिर्जना मिति</th>
+                        <th class="py-3 text-end pe-4">कार्य</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var user in Model)
+                    {
+                        <tr class="@(!user.IsActive ? "table-light text-muted" : "")">
+                            <td class="ps-4 text-muted small">#@user.Id</td>
+                            <td>
+                                <strong>@user.Username</strong>
+                                @if (string.Equals(user.Username, User.Identity?.Name, StringComparison.OrdinalIgnoreCase))
+                                {
+                                    <span class="badge bg-secondary ms-1" style="font-size: 0.65rem;">तपाईं</span>
+                                }
+                            </td>
+                            <td class="text-muted small">@user.Email</td>
+                            <td>
+                                @if (user.Role == "admin")
+                                {
+                                    <span class="badge px-3 py-2" style="background: rgba(220,20,60,0.12); color: #DC143C; border-radius: 20px;">
+                                        <i class="bi bi-shield-fill-check me-1"></i>मुख्य प्रशासक
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="badge px-3 py-2" style="background: rgba(37,99,235,0.12); color: #2563EB; border-radius: 20px;">
+                                        <i class="bi bi-person-badge me-1"></i>वडा प्रशासक
+                                    </span>
+                                }
+                            </td>
+                            <td>
+                                @if (user.WardNo.HasValue)
+                                {
+                                    <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2" style="border-radius: 20px;">
+                                        वडा नं. @user.WardNo
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="text-muted small">समग्र (सबै वडा)</span>
+                                }
+                            </td>
+                            <td>
+                                @if (user.IsActive)
+                                {
+                                    <span class="badge bg-success px-3 py-2" style="border-radius: 20px;">
+                                        <i class="bi bi-check-circle me-1"></i>सक्रिय
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary px-3 py-2" style="border-radius: 20px;">
+                                        <i class="bi bi-dash-circle me-1"></i>निष्क्रिय
+                                    </span>
+                                }
+                            </td>
+                            <td class="text-muted small">@user.CreatedAt.ToString("yyyy-MM-dd")</td>
+                            <td class="text-end pe-4">
+                                <a href="/Admin/EditUser/@user.Id"
+                                   class="btn btn-sm btn-outline-secondary me-1"
+                                   style="border-radius: 8px;">
+                                    <i class="bi bi-pencil-square"></i> सम्पादन
+                                </a>
+                                @if (!string.Equals(user.Username, User.Identity?.Name, StringComparison.OrdinalIgnoreCase))
+                                {
+                                    <form action="/Admin/DeleteUser/@user.Id" method="post" class="d-inline"
+                                          onsubmit="return confirm('के तपाईं पक्का @user.Username को खाता मेटाउन चाहनुहुन्छ?');">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" class="btn btn-sm btn-outline-danger" style="border-radius: 8px;">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </form>
+                                }
+                            </td>
+                        </tr>
+                    }
+                    @if (!Model.Any())
+                    {
+                        <tr>
+                            <td colspan="8" class="text-center py-5 text-muted">
+                                <i class="bi bi-people display-4 d-block mb-3 opacity-25"></i>
+                                कुनै प्रशासक खाता भेटिएन।
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

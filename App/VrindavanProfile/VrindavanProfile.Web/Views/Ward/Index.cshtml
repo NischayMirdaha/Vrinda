@@ -1,0 +1,356 @@
+@model WardProfileViewModel
+
+@{
+    ViewData["Title"] = "वडा प्रोफाइल";
+
+    // Breadcrumbs (Part 11B)
+    ViewData["BreadcrumbItems"] = new List<(string Label, string? Url)> {
+        ("गृहपृष्ठ", "/")
+    };
+
+    var selected = Model.SelectedWard;
+    var lang = Model.Dashboard.CurrentLang ?? "ne"; // fallback to Nepali if not set
+}
+
+<!-- Hero -->
+<section class="py-4" style="background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--secondary) 100%); color: white;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h2 class="fw-bold mb-1"><i class="bi bi-geo-alt me-2"></i>वडा प्रोफाइल</h2>
+                <p class="mb-0 opacity-90">प्रत्येक वडाको विस्तृत तथ्याङ्क हेर्नुहोस् र तुलना गर्नुहोस्</p>
+            </div>
+            <div class="col-lg-4 text-end d-none d-lg-block">
+                <i class="bi bi-geo-alt" style="font-size: 3.5rem; opacity: 0.25;"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- NEW: Ward Selector / Filter (W.2) -->
+    <div class="card mb-4" style="border-radius:var(--radius);border:1px solid #e0e0e0">
+        <div class="card-header" style="background:var(--primary);color:#fff;border-radius:var(--radius) var(--radius) 0 0">
+            <h6 class="mb-0 fw-bold"><i class="bi bi-funnel me-2"></i>वडा छान्नुहोस् (वडा अनुसार फिल्टर)</h6>
+        </div>
+        <div class="card-body">
+            <div class="d-flex flex-wrap gap-2">
+                <a href="/Ward" 
+                class="btn btn-sm @(Model.SelectedWard == null ? "btn-primary" : "btn-outline-secondary")">
+                    सबै वडा (समग्र)
+                </a>
+                @foreach (var w in Model.Wards)
+                {
+                    <a href="/Ward?wardNo=@w.WardNo" 
+                    class="btn btn-sm @(Model.SelectedWard == w.WardNo ? "btn-primary" : "btn-outline-secondary")"
+                    title="घरपरिवार: @w.HouseholdCount | जनसंख्या: @w.Population (पुरुष: @w.MaleCount, महिला: @w.FemaleCount)">
+                        @w.WardName<br />
+                        <small>HH: @w.HouseholdCount | Pop: @w.Population</small>
+                    </a>
+                }
+            </div>
+            <small class="text-muted mt-2 d-block">
+                @if (selected.HasValue)
+                {
+                    <strong>अहिले हेर्दै: वडा नं. @selected</strong>
+                    <text>— तलको डाटा यस वडाका लागि मात्र फिल्टर गरिएको छ।</text>
+                }
+                else
+                {
+                    <strong>अहिले हेर्दै: समग्र नगरपालिका</strong>
+                    <text>— सबै वडाहरूको संयुक्त तथ्याङ्क।</text>
+                }
+            </small>
+        </div>
+        <!-- NEW: All Wards at a Glance overview (W.7) -->
+            @if (Model.Wards.Any())
+            {
+                <div class="card mb-4" style="border-radius:var(--radius);border:1px solid #e0e0e0">
+                    <div class="card-header" style="background:var(--primary);color:#fff;border-radius:var(--radius) var(--radius) 0 0">
+                        <h6 class="mb-0 fw-bold"><i class="bi bi-grid-3x3-gap me-2"></i>सबै वडाहरूको सारांश (एक नजरमा)</h6>
+                    </div>
+                    <div class="card-body p-3">
+                        <div class="row g-2">
+                            @foreach (var w in Model.Wards)
+                            {
+                                var isSelected = Model.SelectedWard == w.WardNo;
+                                <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                                    <a href="/Ward?wardNo=@w.WardNo"
+                                    class="card h-100 p-2 text-decoration-none @(isSelected ? "border-primary shadow-sm" : "border-light")"
+                                    style="border-radius:8px; transition:all .15s; @(isSelected ? "background:#f0f7ff;" : "")">
+                                        <div class="card-body p-1">
+                                            <div class="fw-bold small @(isSelected ? "text-primary" : "")">@w.WardName</div>
+                                            <div class="small text-muted mt-1">
+                                                HH: <strong>@w.HouseholdCount</strong><br>
+                                                Pop: <strong>@w.Population</strong> (M:@w.MaleCount / F:@w.FemaleCount)
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                        <div class="small text-muted mt-2">क्लिक गर्नुहोस् कुनै वडा छान्न — तलको तथ्याङ्क र चार्टहरू फिल्टर हुनेछन्।</div>
+                        @if (Model.SelectedWard.HasValue)
+                        {
+                            var info = Model.Wards.FirstOrDefault(w => w.WardNo == Model.SelectedWard);
+
+                            <div class="mb-4 p-3 bg-light rounded border-start border-primary" style="border-left-width: 6px;">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h4 class="mb-1 fw-bold text-primary">@Model.PageTitle</h4>
+                                        <p class="mb-0 small text-muted">तलको तथ्याङ्क र चार्टहरू यस वडाका लागि मात्र फिल्टर गरिएका छन्।</p>
+                                    </div>
+                                    <a href="/Ward" class="btn btn-sm btn-outline-secondary ms-3 flex-shrink-0">
+                                        <i class="bi bi-x-circle me-1"></i>Clear selection
+                                    </a>
+                                </div>
+                            </div>
+
+                            @if (info != null)
+                            {
+                                <div class="row g-2 mb-3">
+                                    <div class="col-6 col-md-3">
+                                        <div class="card p-2 text-center h-100">
+                                            <div class="small text-muted">Households</div>
+                                            <div class="h5 mb-0 fw-bold">@info.HouseholdCount</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-3">
+                                        <div class="card p-2 text-center h-100">
+                                            <div class="small text-muted">Population</div>
+                                            <div class="h5 mb-0 fw-bold">@info.Population</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-3">
+                                        <div class="card p-2 text-center h-100">
+                                            <div class="small text-muted">Male</div>
+                                            <div class="h5 mb-0 fw-bold">@info.MaleCount</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 col-md-3">
+                                        <div class="card p-2 text-center h-100">
+                                            <div class="small text-muted">Female</div>
+                                            <div class="h5 mb-0 fw-bold">@info.FemaleCount</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            }
+    </div>
+
+<div class="row g-4 mb-4">
+    <!-- Ward Comparison Card (Full Width) -->
+    <div class="col-12">
+        <a href="/Ward/Compare" class="text-decoration-none">
+            <div class="card h-100 p-4" style="border-radius:var(--radius);border:1px solid #e0e0e0;transition:all .2s">
+                <div class="d-flex align-items-center gap-3">
+                    <div style="width:56px;height:56px;border-radius:14px;background:var(--primary);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                        <i class="bi bi-arrow-left-right text-white" style="font-size:1.5rem"></i>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold mb-1" style="color:var(--primary)">वडा तुलना</h5>
+                        <p class="text-muted mb-0 small">दुई वा बढी वडाहरूको तथ्याङ्क समानान्तर तुलना गर्नुहोस्</p>
+                    </div>
+                    <i class="bi bi-chevron-right text-muted ms-auto"></i>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+    @if (Model.Dashboard.StatCounters.Any())
+    {
+        <section class="mt-4" aria-label="वडाको मुख्य तथ्याङ्क">
+            <h5 class="mb-3 fw-bold">
+                मुख्य तथ्याङ्क 
+                @if (Model.SelectedWard.HasValue)
+                {
+                    <span class="text-primary">(वडा नं. @Model.SelectedWard)</span>
+                }
+                else
+                {
+                    <span class="text-muted">(समग्र नगरपालिका)</span>
+                }
+            </h5>
+            <div class="row g-3">
+                @foreach (var stat in Model.Dashboard.StatCounters)
+                {
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="stat-card card h-100 p-3 overflow-hidden"
+                             style="border-left: 5px solid @stat.AccentColor;">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <div style="font-size: 2rem; font-weight: 700; line-height: 1; color: @stat.AccentColor;">
+                                        @stat.Value.ToString("#,##0")
+                                    </div>
+                                    <div class="small text-muted mt-1">@stat.Label</div>
+                                </div>
+                                <i class="bi @stat.Icon" style="font-size: 2.2rem; color: @stat.AccentColor; opacity: 0.75;"></i>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </section>
+    }
+
+    @if (Model.Dashboard.Charts.Any())
+    {
+        var grouped = Model.Dashboard.Charts.GroupBy(c => c.GetCategory(lang)).ToList();
+
+        <!-- ─── Category Tab Navigation ─── -->
+        <div class="container mt-4">
+            <nav>
+                <ul class="nav nav-pills flex-wrap gap-1 mb-0" id="wardChartTabs" role="tablist">
+                    @{
+                        bool isFirst = true;
+                        int tabIndex = 0;
+                    }
+                    @foreach (var group in grouped)
+                    {
+                        string tabId    = "tab-" + tabIndex;
+                        string paneId   = "pane-" + tabIndex;
+                        string isActive = isFirst ? "active" : "";
+                        string selectedc = isFirst ? "true" : "false";
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link @isActive fw-semibold"
+                                    id="@tabId"
+                                    data-bs-toggle="pill"
+                                    data-bs-target="#@paneId"
+                                    type="button"
+                                    role="tab"
+                                    aria-controls="@paneId"
+                                    aria-selected="@selectedc">
+                                @group.Key
+                                <span class="badge bg-light text-dark ms-1"
+                                      style="font-size:10px;">@group.Count()</span>
+                            </button>
+                        </li>
+                        isFirst = false;
+                        tabIndex++;
+                    }
+                </ul>
+            </nav>
+            <hr class="mt-2 mb-0" />
+        </div>
+
+        <!-- ─── Tab Pane Content ─── -->
+        <div class="container">
+            <div class="tab-content" id="wardChartTabsContent">
+                @{
+                    isFirst  = true;
+                    tabIndex = 0;
+                }
+                @foreach (var group in grouped)
+                {
+                    string paneId   = "pane-" + tabIndex;
+                    string isActive = isFirst ? "show active" : "";
+
+                    <div class="tab-pane fade @isActive"
+                         id="@paneId"
+                         role="tabpanel"
+                         aria-labelledby="tab-@tabIndex">
+
+                        <section class="mt-4" aria-label="@group.Key">
+                            <div class="row g-4">
+                                @foreach (var chart in group.OrderBy(c => c.SortOrder))
+                                {
+                                    <div class="col-md-6 @(chart.ChartType == "agePyramid" || chart.ChartType == "stackedBar" ? "col-lg-8" : "col-lg-4")">
+                                        <div class="chart-card card h-100" data-chart-type="@chart.ChartType">
+                                            <div class="card-header d-flex justify-content-between align-items-center">
+                                                <h6 class="mb-0">@chart.GetTitle(lang)</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="chart-wrapper" id="chartWrap_@chart.Id">
+                                                    <div class="chart-skeleton" id="skeleton_@chart.Id">
+                                                        <div class="skeleton-title"></div>
+                                                        <div class="skeleton-bars">
+                                                            <div class="skeleton-bar" style="height:60%"></div>
+                                                            <div class="skeleton-bar" style="height:85%"></div>
+                                                            <div class="skeleton-bar" style="height:45%"></div>
+                                                        </div>
+                                                    </div>
+                                                    <canvas id="chart_@chart.Id" height="250" style="display:none"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </section>
+                    </div>
+
+                    isFirst  = false;
+                    tabIndex++;
+                }
+            </div>
+        </div>
+    }
+
+@section Scripts {
+    <!-- Chart.js + rendering (required for the 36 charts to appear) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+    <script src="~/js/charts.js" asp-append-version="true"></script>
+
+    <script>
+        const allCharts = @Html.Raw(
+                              System.Text.Json.JsonSerializer.Serialize(
+                                  Model.Dashboard.Charts.Select(c => new {
+                                      id = c.Id,
+                                      chartType = c.ChartType,
+                                      Title = c.GetTitle(lang),
+                                      items = c.Items.Select(i => new { label = i.Label, value = i.Value, maleCount = i.MaleCount, femaleCount = i.FemaleCount }),
+                                      datasets = c.Datasets?.Select(ds => new { label = ds.Label, values = ds.Values })
+                                  })
+                              )
+                          );
+
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof renderAllCharts === 'function' && allCharts && allCharts.length > 0) {
+                renderAllCharts(allCharts);
+
+                // Hide skeletons and show canvases (same pattern as homepage)
+                allCharts.forEach(function(chartData) {
+                    var skeleton = document.getElementById('skeleton_' + chartData.id);
+                    var canvas = document.getElementById('chart_' + chartData.id);
+                    if (skeleton && canvas) {
+                        skeleton.style.opacity = '0';
+                        setTimeout(function() {
+                            skeleton.style.display = 'none';
+                            canvas.style.display = 'block';
+                        }, 300);
+                    }
+                });
+            } else {
+                console.log('Ward charts: no data or renderAllCharts not ready yet');
+            }
+        });
+
+        (function() {
+            // Restore active tab from URL hash on page load
+            var hash = window.location.hash;
+            if (hash) {
+                var trigger = document.querySelector('[data-bs-target="' + hash.replace('#', '#pane-').replace('tab-','') + '"]');
+                // Try direct target match
+                var btn = document.querySelector('[data-bs-target="' + hash + '"]');
+                if (btn) {
+                    var tab = new bootstrap.Tab(btn);
+                    tab.show();
+                }
+            }
+
+            // Save active tab to URL hash when switched
+            document.querySelectorAll('[data-bs-toggle="pill"]').forEach(function(btn) {
+                btn.addEventListener('shown.bs.tab', function(e) {
+                    history.replaceState(null, '', e.target.getAttribute('data-bs-target').replace('pane-', '#tab-'));
+                });
+            });
+        })();
+        
+    </script>
+    
+
+    <script src="~/js/table-export.js" asp-append-version="true"></script>
+}

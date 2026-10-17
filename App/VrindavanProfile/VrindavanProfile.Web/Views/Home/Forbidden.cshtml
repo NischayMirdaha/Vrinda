@@ -1,0 +1,55 @@
+@model ErrorViewModel
+@{
+    ViewData["Title"] = "पहुँच अस्वीकृत";
+    Layout = "_Layout";
+}
+@{
+    Context.Response.StatusCode = 403;
+}
+
+<section class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+            <!-- Forbidden Icon -->
+            <div class="mb-4">
+                <div class="d-inline-flex align-items-center justify-content-center"
+                     style="width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--warning),#e2b714)">
+                    <i class="bi bi-shield-lock text-white" style="font-size:3.5rem"></i>
+                </div>
+            </div>
+
+            <!-- Error Code -->
+            <h1 class="display-4 fw-bold mb-2" style="color:var(--warning)">
+                <span style="font-size:4rem;line-height:1">४०३</span>
+            </h1>
+
+            <!-- Message -->
+            <h4 class="fw-bold mb-3" style="color:var(--text-dark)">
+                पहुँच अस्वीकृत
+            </h4>
+            <p class="text-muted mb-4" style="max-width:500px;margin:0 auto">
+                तपाईंसँग यो पृष्ठ हेर्ने अनुमति छैन।
+                कृपया गृहपृष्ठमा फर्कनुहोस् वा प्रशासकसँग सम्पर्क गर्नुहोस्।
+            </p>
+
+            <!-- Actions -->
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="/" class="btn btn-primary" style="border-radius:8px;padding:10px 24px">
+                    <i class="bi bi-house-door me-2"></i>गृहपृष्ठ
+                </a>
+                <button onclick="history.back()" class="btn btn-outline-secondary" style="border-radius:8px;padding:10px 24px">
+                    <i class="bi bi-arrow-left me-2"></i>पछाडि जानुहोस्
+                </button>
+            </div>
+
+            @if (Model.ShowRequestId)
+            {
+                <div class="mt-4">
+                    <small class="text-muted">
+                        <i class="bi bi-tag me-1"></i>अनुरोध: <code>@Model.RequestId</code>
+                    </small>
+                </div>
+            }
+        </div>
+    </div>
+</section>

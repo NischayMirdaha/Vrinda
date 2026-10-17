@@ -1,0 +1,31 @@
+@model VrindavanProfile.Web.Models.ViewModels.StatCounter
+@{
+    // Determine background intensity based on accent color
+    var bgOpacity = "0.08";
+    var iconBgOpacity = "0.15";
+}
+
+<div class="stat-card card h-100 p-3 overflow-hidden" 
+     style="border-left-color: @Model.AccentColor; --stat-accent: @Model.AccentColor;"
+     role="status"
+     aria-label="@Model.Label: @Model.Value.ToString("#,##0")">
+    <!-- Decorative background circle -->
+    <div class="stat-card-bg-circle" style="background: @Model.AccentColor" aria-hidden="true"></div>
+
+    <div class="d-flex justify-content-between align-items-start position-relative">
+        <!-- Value + Label -->
+        <div class="flex-grow-1">
+            <div class="stat-value counter-value" data-target="@Model.Value" aria-hidden="true">0</div>
+            <div class="stat-label">@Model.Label</div>
+            <div class="stat-badge" aria-hidden="true">
+                <i class="bi bi-activity"></i> तथ्याङ्क
+            </div>
+        </div>
+
+        <!-- Icon with glow -->
+        <div class="stat-icon-wrapper" style="--glow-color: @Model.AccentColor" aria-hidden="true">
+            <div class="stat-icon-bg" style="background: @Model.AccentColor"></div>
+            <i class="bi @Model.Icon stat-icon-inner"></i>
+        </div>
+    </div>
+</div>

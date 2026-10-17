@@ -1,0 +1,1122 @@
+﻿@model dynamic
+@{
+    long householdId = ViewBag.HouseholdId;
+    string householdInfo = ViewBag.HouseholdInfo ?? "";
+}
+
+<div class="container-fluid">
+    @* ===== HEADER ===== *@
+    <div class="row mb-4">
+        <div class="col-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/Admin"><i class="bi bi-speedometer2"></i> व्यवस्थापन</a></li>
+                    <li class="breadcrumb-item"><a href="/Admin/Households"><i class="bi bi-people"></i> घरपरिवार सूची</a></li>
+                    <li class="breadcrumb-item"><a href="/Admin/ManageHouseholdData/@householdId">व्यवस्थापन</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><i class="bi bi-tree"></i> कृषि तथा पशुपालन</li>
+                </ol>
+            </nav>
+            <div class="card border-primary">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="bi bi-tree"></i> कृषि तथा पशुपालन — @householdInfo</h5>
+                    <small>घरपरिवार ID: @householdId</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form method="post" asp-action="HouseholdCategoryAgriculture">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="Id" value="@householdId" />
+
+        @* ===== SECTION: LAND (भूमि) ===== *@
+        <div class="card mb-3">
+            <div class="card-header bg-success text-white" data-bs-toggle="collapse" data-bs-target="#secLand" style="cursor:pointer">
+                <h6 class="mb-0"><i class="bi bi-geo-alt"></i> खण्ड ८: कृषि भूमि</h6>
+            </div>
+            <div class="card-body collapse show" id="secLand">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">कृषि योग्य भूमि छ?</label>
+                        <select name="HasAgricultureLand" class="form-select">
+                            <option value="">-- चयन गर्नुहोस् --</option>
+                            <option value="1" selected="@(Model.HasAgricultureLand?.ToString() == "1")"> हो </option>
+                            <option value="0" selected="@(Model.HasAgricultureLand?.ToString() == "0")"> होइन </option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">आफ्नो जग्गा (कट्ठा)</label>
+                        <input type="number" step="0.01" name="OwnLandKattha" class="form-control" value="@Model.OwnLandKattha" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">अरूको जग्गा (कट्ठा)</label>
+                        <input type="number" step="0.01" name="OthersLandKattha" class="form-control" value="@Model.OthersLandKattha" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">अन्य स्वामित्व (कट्ठा)</label>
+                        <input type="number" step="0.01" name="OtherOwnershipKattha" class="form-control" value="@Model.OtherOwnershipKattha" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">खेत क्षेत्र (कट्ठा)</label>
+                        <input type="number" step="0.01" name="KhetAreaKattha" class="form-control" value="@Model.KhetAreaKattha" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">बारी क्षेत्र (कट्ठा)</label>
+                        <input type="number" step="0.01" name="BariAreaKattha" class="form-control" value="@Model.BariAreaKattha" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">पर्ती जग्गा (कट्ठा)</label>
+                        <input type="number" step="0.01" name="FallowLandKattha" class="form-control" value="@Model.FallowLandKattha" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">सिंचाई अवस्था</label>
+                        <input type="text" name="IrrigationStatus" class="form-control" value="@Model.IrrigationStatus" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">सिंचाई माध्यम सारांश</label>
+                        <input type="text" name="IrrigationMediumSummary" class="form-control" value="@Model.IrrigationMediumSummary" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">सिंचाई स्रोत (जाँच गर्नुहोस्)</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="IrrigationCanal" value="1" @(Model.IrrigationCanal == 1 ? "checked" : "") />
+                            <label class="form-check-label">नहर</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="IrrigationTubewell" value="1" @(Model.IrrigationTubewell == 1 ? "checked" : "") />
+                            <label class="form-check-label">ट्युबवेल</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="IrrigationElectric" value="1" @(Model.IrrigationElectric == 1 ? "checked" : "") />
+                            <label class="form-check-label">इलेक्ट्रिक पम्प</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">खेती गर्ने विधि</label>
+                        <input type="text" name="FarmingMethod" class="form-control" value="@Model.FarmingMethod" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* ===== SECTION: CEREALS (अन्नबाली) ===== *@
+        <div class="card mb-3">
+            <div class="card-header bg-warning text-dark" data-bs-toggle="collapse" data-bs-target="#secCereals" style="cursor:pointer">
+                <h6 class="mb-0"><i class="bi bi-bucket"></i> खण्ड ९.१: अन्नबाली</h6>
+            </div>
+            <div class="card-body collapse show" id="secCereals">
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label">अन्नबाली खेती गर्नुभएको?</label>
+                        <select name="HasCerealCrops" class="form-select">
+                            <option value="">-- चयन गर्नुहोस् --</option>
+                            <option value="1" selected="@(Model.HasCerealCrops?.ToString() == "1")"> हो </option>
+                            <option value="0" selected="@(Model.HasCerealCrops?.ToString() == "0")"> होइन </option>
+                        </select>
+                    </div>
+                    <div class="col-md-8">
+                        <label class="form-label">अन्नबाली सारांश</label>
+                        <input type="text" name="CerealCropSummary" class="form-control" value="@Model.CerealCropSummary" />
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-12">
+                        <label class="form-label fw-bold">खेती गर्ने अन्नबाली</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="CerealRice" value="1" @(Model.CerealRice == 1 ? "checked" : "") />
+                            <label class="form-check-label">धान</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="CerealMaize" value="1" @(Model.CerealMaize == 1 ? "checked" : "") />
+                            <label class="form-check-label">मकै</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="CerealWheat" value="1" @(Model.CerealWheat == 1 ? "checked" : "") />
+                            <label class="form-check-label">गहुँ</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="CerealBarley" value="1" @(Model.CerealBarley == 1 ? "checked" : "") />
+                            <label class="form-check-label">कोदो</label>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered table-sm">
+                    <thead class="table-light">
+                        <tr>
+                            <th>बाली</th>
+                            <th>क्षेत्र (रोपनी)</th>
+                            <th>उत्पादन (के.जी.)</th>
+                            <th>बिक्री (रु.)</th>
+                            <th>घाटा (रु.)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>धान</td>
+                            <td><input type="number" step="0.01" name="RiceArea" class="form-control form-control-sm" value="@Model.RiceArea" /></td>
+                            <td><input type="number" step="0.01" name="RiceProductionKg" class="form-control form-control-sm" value="@Model.RiceProductionKg" /></td>
+                            <td><input type="number" step="0.01" name="RiceSalesRupees" class="form-control form-control-sm" value="@Model.RiceSalesRupees" /></td>
+                            <td><input type="number" step="0.01" name="RiceDeficitRupees" class="form-control form-control-sm" value="@Model.RiceDeficitRupees" /></td>
+                        </tr>
+                        <tr>
+                            <td>मकै</td>
+                            <td><input type="number" step="0.01" name="MaizeArea" class="form-control form-control-sm" value="@Model.MaizeArea" /></td>
+                            <td><input type="number" step="0.01" name="MaizeProductionKg" class="form-control form-control-sm" value="@Model.MaizeProductionKg" /></td>
+                            <td><input type="number" step="0.01" name="MaizeSalesRupees" class="form-control form-control-sm" value="@Model.MaizeSalesRupees" /></td>
+                            <td><input type="number" step="0.01" name="MaizeDeficitRupees" class="form-control form-control-sm" value="@Model.MaizeDeficitRupees" /></td>
+                        </tr>
+                        <tr>
+                            <td>गहुँ</td>
+                            <td><input type="number" step="0.01" name="WheatArea" class="form-control form-control-sm" value="@Model.WheatArea" /></td>
+                            <td><input type="number" step="0.01" name="WheatProductionKg" class="form-control form-control-sm" value="@Model.WheatProductionKg" /></td>
+                            <td><input type="number" step="0.01" name="WheatSalesRupees" class="form-control form-control-sm" value="@Model.WheatSalesRupees" /></td>
+                            <td><input type="number" step="0.01" name="WheatDeficitRupees" class="form-control form-control-sm" value="@Model.WheatDeficitRupees" /></td>
+                        </tr>
+                        <tr>
+                            <td>कोदो</td>
+                            <td><input type="number" step="0.01" name="BarleyArea" class="form-control form-control-sm" value="@Model.BarleyArea" /></td>
+                            <td><input type="number" step="0.01" name="BarleyProductionKg" class="form-control form-control-sm" value="@Model.BarleyProductionKg" /></td>
+                            <td><input type="number" step="0.01" name="BarleySalesRupees" class="form-control form-control-sm" value="@Model.BarleySalesRupees" /></td>
+                            <td><input type="number" step="0.01" name="BarleyDeficitRupees" class="form-control form-control-sm" value="@Model.BarleyDeficitRupees" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        @* ===== SECTION: PULSES (दलहन) ===== *@
+        <div class="card mb-3">
+            <div class="card-header" style="background:#8B4513;color:white" data-bs-toggle="collapse" data-bs-target="#secPulses" style="cursor:pointer">
+                <h6 class="mb-0"><i class="bi bi-circle-fill"></i> खण्ड ९.२: दलहन</h6>
+            </div>
+            <div class="card-body collapse show" id="secPulses">
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label">दलहन खेती गर्नुभएको?</label>
+                        <select name="HasPulseCrops" class="form-select">
+                            <option value="">-- चयन गर्नुहोस् --</option>
+                            <option value="1" selected="@(Model.HasPulseCrops?.ToString() == "1")"> हो </option>
+                            <option value="0" selected="@(Model.HasPulseCrops?.ToString() == "0")"> होइन </option>
+                        </select>
+                    </div>
+                    <div class="col-md-8">
+                        <label class="form-label">दलहन सारांश</label>
+                        <input type="text" name="PulseCropSummary" class="form-control" value="@Model.PulseCropSummary" />
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-12">
+                        <label class="form-label fw-bold">खेती गर्ने दलहन</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="PulseBlackDal" value="1" @(Model.PulseBlackDal == 1 ? "checked" : "") />
+                            <label class="form-check-label">भुईंसाउला</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="PulseRahar" value="1" @(Model.PulseRahar == 1 ? "checked" : "") />
+                            <label class="form-check-label">रहर</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="PulseMasuro" value="1" @(Model.PulseMasuro == 1 ? "checked" : "") />
+                            <label class="form-check-label">मसुरो</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="PulseChana" value="1" @(Model.PulseChana == 1 ? "checked" : "") />
+                            <label class="form-check-label">चना</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="PulseSimi" value="1" @(Model.PulseSimi == 1 ? "checked" : "") />
+                            <label class="form-check-label">सिमी</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="PulseBhattmas" value="1" @(Model.PulseBhattmas == 1 ? "checked" : "") />
+                            <label class="form-check-label">भट्टमास</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="PulseMung" value="1" @(Model.PulseMung == 1 ? "checked" : "") />
+                            <label class="form-check-label">मुग</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="PulseKhesari" value="1" @(Model.PulseKhesari == 1 ? "checked" : "") />
+                            <label class="form-check-label">खेसारी</label>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered table-sm">
+                    <thead class="table-light">
+                        <tr>
+                            <th>दलहन</th>
+                            <th>क्षेत्र (रोपनी)</th>
+                            <th>उत्पादन (के.जी.)</th>
+                            <th>बिक्री (रु.)</th>
+                            <th>घाटा (रु.)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>दलहन १</td>
+                            <td><input type="number" step="0.01" name="Pulse1Area" class="form-control form-control-sm" value="@Model.Pulse1Area" /></td>
+                            <td><input type="number" step="0.01" name="Pulse1ProductionKg" class="form-control form-control-sm" value="@Model.Pulse1ProductionKg" /></td>
+                            <td><input type="number" step="0.01" name="Pulse1SalesRupees" class="form-control form-control-sm" value="@Model.Pulse1SalesRupees" /></td>
+                            <td><input type="number" step="0.01" name="Pulse1DeficitRupees" class="form-control form-control-sm" value="@Model.Pulse1DeficitRupees" /></td>
+                        </tr>
+                        <tr><td>दलहन २</td>
+                            <td><input type="number" step="0.01" name="Pulse2Area" class="form-control form-control-sm" value="@Model.Pulse2Area" /></td>
+                            <td><input type="number" step="0.01" name="Pulse2ProductionKg" class="form-control form-control-sm" value="@Model.Pulse2ProductionKg" /></td>
+                            <td><input type="number" step="0.01" name="Pulse2SalesRupees" class="form-control form-control-sm" value="@Model.Pulse2SalesRupees" /></td>
+                            <td><input type="number" step="0.01" name="Pulse2DeficitRupees" class="form-control form-control-sm" value="@Model.Pulse2DeficitRupees" /></td>
+                        </tr>
+                        <tr><td>दलहन ३</td>
+                            <td><input type="number" step="0.01" name="Pulse3Area" class="form-control form-control-sm" value="@Model.Pulse3Area" /></td>
+                            <td><input type="number" step="0.01" name="Pulse3ProductionKg" class="form-control form-control-sm" value="@Model.Pulse3ProductionKg" /></td>
+                            <td><input type="number" step="0.01" name="Pulse3SalesRupees" class="form-control form-control-sm" value="@Model.Pulse3SalesRupees" /></td>
+                            <td><input type="number" step="0.01" name="Pulse3DeficitRupees" class="form-control form-control-sm" value="@Model.Pulse3DeficitRupees" /></td>
+                        </tr>
+                        <tr><td>दलहन ४</td>
+                            <td><input type="number" step="0.01" name="Pulse4Area" class="form-control form-control-sm" value="@Model.Pulse4Area" /></td>
+                            <td><input type="number" step="0.01" name="Pulse4ProductionKg" class="form-control form-control-sm" value="@Model.Pulse4ProductionKg" /></td>
+                            <td><input type="number" step="0.01" name="Pulse4SalesRupees" class="form-control form-control-sm" value="@Model.Pulse4SalesRupees" /></td>
+                            <td><input type="number" step="0.01" name="Pulse4DeficitRupees" class="form-control form-control-sm" value="@Model.Pulse4DeficitRupees" /></td>
+                        </tr>
+                        <tr><td>दलहन ५</td>
+                            <td><input type="number" step="0.01" name="Pulse5Area" class="form-control form-control-sm" value="@Model.Pulse5Area" /></td>
+                            <td><input type="number" step="0.01" name="Pulse5ProductionKg" class="form-control form-control-sm" value="@Model.Pulse5ProductionKg" /></td>
+                            <td><input type="number" step="0.01" name="Pulse5SalesRupees" class="form-control form-control-sm" value="@Model.Pulse5SalesRupees" /></td>
+                            <td><input type="number" step="0.01" name="Pulse5DeficitRupees" class="form-control form-control-sm" value="@Model.Pulse5DeficitRupees" /></td>
+                        </tr>
+                        <tr><td>दलहन ६</td>
+                            <td><input type="number" step="0.01" name="Pulse6Area" class="form-control form-control-sm" value="@Model.Pulse6Area" /></td>
+                            <td><input type="number" step="0.01" name="Pulse6ProductionKg" class="form-control form-control-sm" value="@Model.Pulse6ProductionKg" /></td>
+                            <td><input type="number" step="0.01" name="Pulse6SalesRupees" class="form-control form-control-sm" value="@Model.Pulse6SalesRupees" /></td>
+                            <td><input type="number" step="0.01" name="Pulse6DeficitRupees" class="form-control form-control-sm" value="@Model.Pulse6DeficitRupees" /></td>
+                        </tr>
+                        <tr><td>दलहन ७</td>
+                            <td><input type="number" step="0.01" name="Pulse7Area" class="form-control form-control-sm" value="@Model.Pulse7Area" /></td>
+                            <td><input type="number" step="0.01" name="Pulse7ProductionKg" class="form-control form-control-sm" value="@Model.Pulse7ProductionKg" /></td>
+                            <td><input type="number" step="0.01" name="Pulse7SalesRupees" class="form-control form-control-sm" value="@Model.Pulse7SalesRupees" /></td>
+                            <td><input type="number" step="0.01" name="Pulse7DeficitRupees" class="form-control form-control-sm" value="@Model.Pulse7DeficitRupees" /></td>
+                        </tr>
+                        <tr><td>दलहन ८</td>
+                            <td><input type="number" step="0.01" name="Pulse8Area" class="form-control form-control-sm" value="@Model.Pulse8Area" /></td>
+                            <td><input type="number" step="0.01" name="Pulse8ProductionKg" class="form-control form-control-sm" value="@Model.Pulse8ProductionKg" /></td>
+                            <td><input type="number" step="0.01" name="Pulse8SalesRupees" class="form-control form-control-sm" value="@Model.Pulse8SalesRupees" /></td>
+                            <td><input type="number" step="0.01" name="Pulse8DeficitRupees" class="form-control form-control-sm" value="@Model.Pulse8DeficitRupees" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        @* ===== SECTION: OILSEEDS (तेलहन) ===== *@
+        <div class="card mb-3">
+            <div class="card-header" style="background:#DAA520;color:black" data-bs-toggle="collapse" data-bs-target="#secOilseeds" style="cursor:pointer">
+                <h6 class="mb-0"><i class="bi bi-droplet"></i> खण्ड ९.३: तेलहन</h6>
+            </div>
+            <div class="card-body collapse show" id="secOilseeds">
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label">तेलहन खेती गर्नुभएको?</label>
+                        <select name="HasOilseedCrops" class="form-select">
+                            <option value="">-- चयन गर्नुहोस् --</option>
+                            <option value="1" selected="@(Model.HasOilseedCrops?.ToString() == "1")"> हो </option>
+                            <option value="0" selected="@(Model.HasOilseedCrops?.ToString() == "0")"> होइन </option>
+                        </select>
+                    </div>
+                    <div class="col-md-8">
+                        <label class="form-label">तेलहन सारांश</label>
+                        <input type="text" name="OilseedCropSummary" class="form-control" value="@Model.OilseedCropSummary" />
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-12">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="OilseedTori" value="1" @(Model.OilseedTori == 1 ? "checked" : "") />
+                            <label class="form-check-label">तोरी</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="OilseedTil" value="1" @(Model.OilseedTil == 1 ? "checked" : "") />
+                            <label class="form-check-label">तिल</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="OilseedSunflower" value="1" @(Model.OilseedSunflower == 1 ? "checked" : "") />
+                            <label class="form-check-label">सूर्यमुखी</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="OilseedOther" value="1" @(Model.OilseedOther == 1 ? "checked" : "") />
+                            <label class="form-check-label">अन्य</label>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered table-sm">
+                    <thead class="table-light"><tr><th>तेलहन</th><th>क्षेत्र</th><th>उत्पादन (के.जी.)</th><th>बिक्री (रु.)</th><th>घाटा (रु.)</th></tr></thead>
+                    <tbody>
+                        <tr><td>तेलहन १</td>
+                            <td><input type="number" step="0.01" name="Oilseed1Area" class="form-control form-control-sm" value="@Model.Oilseed1Area" /></td>
+                            <td><input type="number" step="0.01" name="Oilseed1ProductionKg" class="form-control form-control-sm" value="@Model.Oilseed1ProductionKg" /></td>
+                            <td><input type="number" step="0.01" name="Oilseed1SalesRupees" class="form-control form-control-sm" value="@Model.Oilseed1SalesRupees" /></td>
+                            <td><input type="number" step="0.01" name="Oilseed1DeficitRupees" class="form-control form-control-sm" value="@Model.Oilseed1DeficitRupees" /></td>
+                        </tr>
+                        <tr><td>तेलहन २</td>
+                            <td><input type="number" step="0.01" name="Oilseed2Area" class="form-control form-control-sm" value="@Model.Oilseed2Area" /></td>
+                            <td><input type="number" step="0.01" name="Oilseed2ProductionKg" class="form-control form-control-sm" value="@Model.Oilseed2ProductionKg" /></td>
+                            <td><input type="number" step="0.01" name="Oilseed2SalesRupees" class="form-control form-control-sm" value="@Model.Oilseed2SalesRupees" /></td>
+                            <td><input type="number" step="0.01" name="Oilseed2DeficitRupees" class="form-control form-control-sm" value="@Model.Oilseed2DeficitRupees" /></td>
+                        </tr>
+                        <tr><td>तेलहन ३</td>
+                            <td><input type="number" step="0.01" name="Oilseed3Area" class="form-control form-control-sm" value="@Model.Oilseed3Area" /></td>
+                            <td><input type="number" step="0.01" name="Oilseed3ProductionKg" class="form-control form-control-sm" value="@Model.Oilseed3ProductionKg" /></td>
+                            <td><input type="number" step="0.01" name="Oilseed3SalesRupees" class="form-control form-control-sm" value="@Model.Oilseed3SalesRupees" /></td>
+                            <td><input type="number" step="0.01" name="Oilseed3DeficitRupees" class="form-control form-control-sm" value="@Model.Oilseed3DeficitRupees" /></td>
+                        </tr>
+                        <tr><td>तेलहन ४</td>
+                            <td><input type="number" step="0.01" name="Oilseed4Area" class="form-control form-control-sm" value="@Model.Oilseed4Area" /></td>
+                            <td><input type="number" step="0.01" name="Oilseed4ProductionKg" class="form-control form-control-sm" value="@Model.Oilseed4ProductionKg" /></td>
+                            <td><input type="number" step="0.01" name="Oilseed4SalesRupees" class="form-control form-control-sm" value="@Model.Oilseed4SalesRupees" /></td>
+                            <td><input type="number" step="0.01" name="Oilseed4DeficitRupees" class="form-control form-control-sm" value="@Model.Oilseed4DeficitRupees" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        @* ===== SECTION: CASH CROPS (नगदे बाली) ===== *@
+        <div class="card mb-3">
+            <div class="card-header bg-info text-white" data-bs-toggle="collapse" data-bs-target="#secCash" style="cursor:pointer">
+                <h6 class="mb-0"><i class="bi bi-currency-dollar"></i> खण्ड ९.४: नगदे बाली</h6>
+            </div>
+            <div class="card-body collapse show" id="secCash">
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label">नगदे बाली खेती गर्नुभएको?</label>
+                        <select name="HasCashCrops" class="form-select">
+                            <option value="">-- चयन गर्नुहोस् --</option>
+                            <option value="1" selected="@(Model.HasCashCrops?.ToString() == "1")"> हो </option>
+                            <option value="0" selected="@(Model.HasCashCrops?.ToString() == "0")"> होइन </option>
+                        </select>
+                    </div>
+                    <div class="col-md-8">
+                        <label class="form-label">नगदे बाली सारांश</label>
+                        <input type="text" name="CashCropSummary" class="form-control" value="@Model.CashCropSummary" />
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-12">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="CashGingerTurmeric" value="1" @(Model.CashGingerTurmeric == 1 ? "checked" : "") />
+                            <label class="form-check-label">अदुवा/बेसार</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="CashOnionGarlic" value="1" @(Model.CashOnionGarlic == 1 ? "checked" : "") />
+                            <label class="form-check-label">प्याज/लसुन</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="CashMushroom" value="1" @(Model.CashMushroom == 1 ? "checked" : "") />
+                            <label class="form-check-label">च्याउ</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="CashSugarcane" value="1" @(Model.CashSugarcane == 1 ? "checked" : "") />
+                            <label class="form-check-label">उखु</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="CashChili" value="1" @(Model.CashChili == 1 ? "checked" : "") />
+                            <label class="form-check-label">खुर्सानी</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="CashPeanut" value="1" @(Model.CashPeanut == 1 ? "checked" : "") />
+                            <label class="form-check-label">बदाम</label>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered table-sm">
+                    <thead class="table-light"><tr><th>नगदे बाली</th><th>क्षेत्र</th><th>उत्पादन (के.जी.)</th><th>बिक्री (रु.)</th><th>घाटा (रु.)</th></tr></thead>
+                    <tbody>
+                        @for (int i = 1; i <= 6; i++)
+                        {
+                            <tr><td>नगदे बाली @i</td>
+                                <td><input type="number" step="0.01" name="Cash@(i)Area" class="form-control form-control-sm" value="@Model.GetType().GetProperty($"Cash{i}Area")?.GetValue(Model)" /></td>
+                                <td><input type="number" step="0.01" name="Cash@(i)ProductionKg" class="form-control form-control-sm" value="@Model.GetType().GetProperty($"Cash{i}ProductionKg")?.GetValue(Model)" /></td>
+                                <td><input type="number" step="0.01" name="Cash@(i)SalesRupees" class="form-control form-control-sm" value="@Model.GetType().GetProperty($"Cash{i}SalesRupees")?.GetValue(Model)" /></td>
+                                <td><input type="number" step="0.01" name="Cash@(i)DeficitRupees" class="form-control form-control-sm" value="@Model.GetType().GetProperty($"Cash{i}DeficitRupees")?.GetValue(Model)" /></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        @* ===== SECTION: FRUITS (फलफूल) ===== *@
+        <div class="card mb-3">
+            <div class="card-header" style="background:#FF6347;color:white" data-bs-toggle="collapse" data-bs-target="#secFruits" style="cursor:pointer">
+                <h6 class="mb-0"><i class="bi bi-apple"></i> खण्ड ९.५: फलफूल</h6>
+            </div>
+            <div class="card-body collapse show" id="secFruits">
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label">फलफूल खेती गर्नुभएको?</label>
+                        <select name="HasFruitCrops" class="form-select">
+                            <option value="">-- चयन गर्नुहोस् --</option>
+                            <option value="1" selected="@(Model.HasFruitCrops?.ToString() == "1")"> हो </option>
+                            <option value="0" selected="@(Model.HasFruitCrops?.ToString() == "0")"> होइन </option>
+                        </select>
+                    </div>
+                    <div class="col-md-8">
+                        <label class="form-label">फलफूल सारांश</label>
+                        <input type="text" name="FruitCropSummary" class="form-control" value="@Model.FruitCropSummary" />
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-12">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="FruitMango" value="1" @(Model.FruitMango == 1 ? "checked" : "") />
+                            <label class="form-check-label">आँप</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="FruitLemon" value="1" @(Model.FruitLemon == 1 ? "checked" : "") />
+                            <label class="form-check-label">नीबू</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="FruitPomelo" value="1" @(Model.FruitPomelo == 1 ? "checked" : "") />
+                            <label class="form-check-label">भakian्केट</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="FruitPomegranate" value="1" @(Model.FruitPomegranate == 1 ? "checked" : "") />
+                            <label class="form-check-label">अनार</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="FruitBanana" value="1" @(Model.FruitBanana == 1 ? "checked" : "") />
+                            <label class="form-check-label">केरा</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="FruitAmba" value="1" @(Model.FruitAmba == 1 ? "checked" : "") />
+                            <label class="form-check-label">अम्बा</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="FruitLichi" value="1" @(Model.FruitLichi == 1 ? "checked" : "") />
+                            <label class="form-check-label">लिची</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="FruitSarifa" value="1" @(Model.FruitSarifa == 1 ? "checked" : "") />
+                            <label class="form-check-label">सरिफा</label>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered table-sm">
+                    <thead class="table-light"><tr><th>फलफूल</th><th>क्षेत्र</th><th>उत्पादन (के.जी.)</th><th>बिक्री (रु.)</th><th>घाटा (रु.)</th></tr></thead>
+                    <tbody>
+                        @for (int i = 1; i <= 8; i++)
+                        {
+                            <tr><td>फलफूल @i</td>
+                                <td><input type="number" step="0.01" name="Fruit@(i)Area" class="form-control form-control-sm" value="@Model.GetType().GetProperty($"Fruit{i}Area")?.GetValue(Model)" /></td>
+                                <td><input type="number" step="0.01" name="Fruit@(i)ProductionKg" class="form-control form-control-sm" value="@Model.GetType().GetProperty($"Fruit{i}ProductionKg")?.GetValue(Model)" /></td>
+                                <td><input type="number" step="0.01" name="Fruit@(i)SalesRupees" class="form-control form-control-sm" value="@Model.GetType().GetProperty($"Fruit{i}SalesRupees")?.GetValue(Model)" /></td>
+                                <td><input type="number" step="0.01" name="Fruit@(i)DeficitRupees" class="form-control form-control-sm" value="@Model.GetType().GetProperty($"Fruit{i}DeficitRupees")?.GetValue(Model)" /></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        @* ===== SECTION: HERBS (जडीबुटी) ===== *@
+        <div class="card mb-3">
+            <div class="card-header" style="background:#228B22;color:white" data-bs-toggle="collapse" data-bs-target="#secHerbs" style="cursor:pointer">
+                <h6 class="mb-0"><i class="bi bi-flower1"></i> खण्ड ९.६: जडीबुटी</h6>
+            </div>
+            <div class="card-body collapse show" id="secHerbs">
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label">जडीबुटी खेती गर्नुभएको?</label>
+                        <select name="HasHerbCrops" class="form-select">
+                            <option value="">-- चयन गर्नुहोस् --</option>
+                            <option value="1" selected="@(Model.HasHerbCrops?.ToString() == "1")"> हो </option>
+                            <option value="0" selected="@(Model.HasHerbCrops?.ToString() == "0")"> होइन </option>
+                        </select>
+                    </div>
+                    <div class="col-md-8">
+                        <label class="form-label">जडीबुटी सारांश</label>
+                        <input type="text" name="HerbCropSummary" class="form-control" value="@Model.HerbCropSummary" />
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-12">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="HerbHarroBarro" value="1" @(Model.HerbHarroBarro == 1 ? "checked" : "") />
+                            <label class="form-check-label">हर्रो/बैरो</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="HerbGurjo" value="1" @(Model.HerbGurjo == 1 ? "checked" : "") />
+                            <label class="form-check-label">गुर्जो</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="HerbTulsi" value="1" @(Model.HerbTulsi == 1 ? "checked" : "") />
+                            <label class="form-check-label">तुलसी</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="HerbAmla" value="1" @(Model.HerbAmla == 1 ? "checked" : "") />
+                            <label class="form-check-label">आँला</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="HerbSarpagandha" value="1" @(Model.HerbSarpagandha == 1 ? "checked" : "") />
+                            <label class="form-check-label">सर्पगन्धा</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="HerbAjwain" value="1" @(Model.HerbAjwain == 1 ? "checked" : "") />
+                            <label class="form-check-label">अजवाइन</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="HerbSutli" value="1" @(Model.HerbSutli == 1 ? "checked" : "") />
+                            <label class="form-check-label">सुत्ली</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="HerbAloeVera" value="1" @(Model.HerbAloeVera == 1 ? "checked" : "") />
+                            <label class="form-check-label">एलोभेरा</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="HerbBojho" value="1" @(Model.HerbBojho == 1 ? "checked" : "") />
+                            <label class="form-check-label">बोज्हो</label>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered table-sm">
+                    <thead class="table-light"><tr><th>जडीबुटी</th><th>क्षेत्र</th><th>उत्पादन (के.जी.)</th><th>बिक्री (रु.)</th></tr></thead>
+                    <tbody>
+                        @for (int i = 1; i <= 9; i++)
+                        {
+                            <tr><td>जडीबुटी @i</td>
+                                <td><input type="number" step="0.01" name="Herb@(i)Area" class="form-control form-control-sm" value="@Model.GetType().GetProperty($"Herb{i}Area")?.GetValue(Model)" /></td>
+                                <td><input type="number" step="0.01" name="Herb@(i)ProductionKg" class="form-control form-control-sm" value="@Model.GetType().GetProperty($"Herb{i}ProductionKg")?.GetValue(Model)" /></td>
+                                <td><input type="number" step="0.01" name="Herb@(i)SalesRupees" class="form-control form-control-sm" value="@Model.GetType().GetProperty($"Herb{i}SalesRupees")?.GetValue(Model)" /></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        @* ===== SECTION: DAIRY (डेरी) ===== *@
+        <div class="card mb-3">
+            <div class="card-header bg-secondary text-white" data-bs-toggle="collapse" data-bs-target="#secDairy" style="cursor:pointer">
+                <h6 class="mb-0"><i class="bi bi-droplet-half"></i> खण्ड १०.१: डेरी पशुपालन</h6>
+            </div>
+            <div class="card-body collapse show" id="secDairy">
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label class="form-label">पशुपालन गर्नुभएको?</label>
+                        <select name="HasLivestock" class="form-select">
+                            <option value="">-- चयन गर्नुहोस् --</option>
+                            <option value="1" selected="@(Model.HasLivestock?.ToString() == "1")"> हो </option>
+                            <option value="0" selected="@(Model.HasLivestock?.ToString() == "0")"> होइन </option>
+                        </select>
+                    </div>
+                    <div class="col-md-8">
+                        <label class="form-label">डेरी सारांश</label>
+                        <input type="text" name="DairySummary" class="form-control" value="@Model.DairySummary" />
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-12">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="DairyCow" value="1" @(Model.DairyCow == 1 ? "checked" : "") />
+                            <label class="form-check-label">गाई</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="DairyBuffalo" value="1" @(Model.DairyBuffalo == 1 ? "checked" : "") />
+                            <label class="form-check-label">भैंसी</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="DairyOther" value="1" @(Model.DairyOther == 1 ? "checked" : "") />
+                            <label class="form-check-label">अन्य</label>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered table-sm">
+                    <thead class="table-light"><tr><th>पशु</th><th>संख्या</th><th>दैनिक दूध (लि.)</th><th>दूध बिक्री (लि.)</th><th>दही बिक्री</th><th>वार्षिक आम्दानी (रु.)</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td>गाई</td>
+                            <td><input type="number" name="CowCount" class="form-control form-control-sm" value="@Model.CowCount" /></td>
+                            <td><input type="number" step="0.01" name="CowMilkDaily" class="form-control form-control-sm" value="@Model.CowMilkDaily" /></td>
+                            <td><input type="number" step="0.01" name="CowMilkSold" class="form-control form-control-sm" value="@Model.CowMilkSold" /></td>
+                            <td><input type="number" step="0.01" name="CowCurdSold" class="form-control form-control-sm" value="@Model.CowCurdSold" /></td>
+                            <td><input type="number" step="0.01" name="CowAnnualIncome" class="form-control form-control-sm" value="@Model.CowAnnualIncome" /></td>
+                        </tr>
+                        <tr>
+                            <td>भैंसी</td>
+                            <td><input type="number" name="BuffaloCount" class="form-control form-control-sm" value="@Model.BuffaloCount" /></td>
+                            <td><input type="number" step="0.01" name="BuffaloMilkDaily" class="form-control form-control-sm" value="@Model.BuffaloMilkDaily" /></td>
+                            <td><input type="number" step="0.01" name="BuffaloMilkSold" class="form-control form-control-sm" value="@Model.BuffaloMilkSold" /></td>
+                            <td><input type="number" step="0.01" name="BuffaloCurdSold" class="form-control form-control-sm" value="@Model.BuffaloCurdSold" /></td>
+                            <td><input type="number" step="0.01" name="BuffaloAnnualIncome" class="form-control form-control-sm" value="@Model.BuffaloAnnualIncome" /></td>
+                        </tr>
+                        <tr>
+                            <td>अन्य</td>
+                            <td><input type="number" name="OtherDairyCount" class="form-control form-control-sm" value="@Model.OtherDairyCount" /></td>
+                            <td><input type="number" step="0.01" name="OtherDairyMilkDaily" class="form-control form-control-sm" value="@Model.OtherDairyMilkDaily" /></td>
+                            <td><input type="number" step="0.01" name="OtherDairyMilkSold" class="form-control form-control-sm" value="@Model.OtherDairyMilkSold" /></td>
+                            <td><input type="number" step="0.01" name="OtherDairyCurdSold" class="form-control form-control-sm" value="@Model.OtherDairyCurdSold" /></td>
+                            <td><input type="number" step="0.01" name="OtherDairyAnnualIncome" class="form-control form-control-sm" value="@Model.OtherDairyAnnualIncome" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="row mt-2">
+                    <div class="col-md-4 mb-2">
+                        <label class="form-label">घिउ बिक्री (गाई)</label>
+                        <input type="number" step="0.01" name="GheeSold" class="form-control" value="@Model.GheeSold" />
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <label class="form-label">घिउ बिक्री (भैंसी)</label>
+                        <input type="number" step="0.01" name="GheeSold2" class="form-control" value="@Model.GheeSold2" />
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <label class="form-label">घिउ बिक्री (अन्य)</label>
+                        <input type="number" step="0.01" name="GheeSold3" class="form-control" value="@Model.GheeSold3" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* ===== SECTION: MEAT (मासु पशु) ===== *@
+        <div class="card mb-3">
+            <div class="card-header bg-danger text-white" data-bs-toggle="collapse" data-bs-target="#secMeat" style="cursor:pointer">
+                <h6 class="mb-0"><i class="bi bi-egg-fried"></i> खण्ड १०.२: मासु पशु</h6>
+            </div>
+            <div class="card-body collapse show" id="secMeat">
+                <div class="row mb-3">
+                    <div class="col-md-8">
+                        <label class="form-label">मासु पशु सारांश</label>
+                        <input type="text" name="MeatSummary" class="form-control" value="@Model.MeatSummary" />
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-12">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="MeatGoatSheep" value="1" @(Model.MeatGoatSheep == 1 ? "checked" : "") />
+                            <label class="form-check-label">बाख्रा/भेंडा</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="MeatCalf" value="1" @(Model.MeatCalf == 1 ? "checked" : "") />
+                            <label class="form-check-label">पाडा</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="MeatPig" value="1" @(Model.MeatPig == 1 ? "checked" : "") />
+                            <label class="form-check-label">सुँगुर</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="MeatOther" value="1" @(Model.MeatOther == 1 ? "checked" : "") />
+                            <label class="form-check-label">अन्य</label>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered table-sm">
+                    <thead class="table-light"><tr><th>पशु</th><th>संख्या</th><th>वार्षिक बिक्री</th><th>वार्षिक आम्दानी (रु.)</th></tr></thead>
+                    <tbody>
+                        <tr><td>बाख्रा/भेंडा</td>
+                            <td><input type="number" name="GoatCount" class="form-control form-control-sm" value="@Model.GoatCount" /></td>
+                            <td><input type="number" step="0.01" name="GoatAnnualSold" class="form-control form-control-sm" value="@Model.GoatAnnualSold" /></td>
+                            <td><input type="number" step="0.01" name="GoatAnnualIncome" class="form-control form-control-sm" value="@Model.GoatAnnualIncome" /></td>
+                        </tr>
+                        <tr><td>पाडा</td>
+                            <td><input type="number" name="CalfCount" class="form-control form-control-sm" value="@Model.CalfCount" /></td>
+                            <td><input type="number" step="0.01" name="CalfAnnualSold" class="form-control form-control-sm" value="@Model.CalfAnnualSold" /></td>
+                            <td><input type="number" step="0.01" name="CalfAnnualIncome" class="form-control form-control-sm" value="@Model.CalfAnnualIncome" /></td>
+                        </tr>
+                        <tr><td>सुँगुर</td>
+                            <td><input type="number" name="PigCount" class="form-control form-control-sm" value="@Model.PigCount" /></td>
+                            <td><input type="number" step="0.01" name="PigAnnualSold" class="form-control form-control-sm" value="@Model.PigAnnualSold" /></td>
+                            <td><input type="number" step="0.01" name="PigAnnualIncome" class="form-control form-control-sm" value="@Model.PigAnnualIncome" /></td>
+                        </tr>
+                        <tr><td>अन्य</td>
+                            <td><input type="number" name="OtherMeatCount" class="form-control form-control-sm" value="@Model.OtherMeatCount" /></td>
+                            <td><input type="number" step="0.01" name="OtherMeatAnnualSold" class="form-control form-control-sm" value="@Model.OtherMeatAnnualSold" /></td>
+                            <td><input type="number" step="0.01" name="OtherMeatAnnualIncome" class="form-control form-control-sm" value="@Model.OtherMeatAnnualIncome" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        @* ===== SECTION: POULTRY (पोल्ट्री) ===== *@
+        <div class="card mb-3">
+            <div class="card-header bg-warning text-dark" data-bs-toggle="collapse" data-bs-target="#secPoultry" style="cursor:pointer">
+                <h6 class="mb-0"><i class="bi bi-egg"></i> खण्ड ११: पोल्ट्री</h6>
+            </div>
+            <div class="card-body collapse show" id="secPoultry">
+                <div class="row mb-3">
+                    <div class="col-md-8">
+                        <label class="form-label">पोल्ट्री सारांश</label>
+                        <input type="text" name="PoultrySummary" class="form-control" value="@Model.PoultrySummary" />
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-12">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="PoultryChicken" value="1" @(Model.PoultryChicken == 1 ? "checked" : "") />
+                            <label class="form-check-label">कुखुरा</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="PoultryDuck" value="1" @(Model.PoultryDuck == 1 ? "checked" : "") />
+                            <label class="form-check-label">हाँस</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="PoultryPigeon" value="1" @(Model.PoultryPigeon == 1 ? "checked" : "") />
+                            <label class="form-check-label">कबुत</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="PoultryBattai" value="1" @(Model.PoultryBattai == 1 ? "checked" : "") />
+                            <label class="form-check-label">बटाई</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 mb-2">
+                        <label class="form-label">पोल्ट्री संख्या</label>
+                        <input type="number" name="PoultryCount" class="form-control" value="@Model.PoultryCount" />
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        <label class="form-label">वार्षिक अण्डा</label>
+                        <input type="number" name="PoultryEggAnnual" class="form-control" value="@Model.PoultryEggAnnual" />
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        <label class="form-label">मासु बिक्री (के.जी.)</label>
+                        <input type="number" step="0.01" name="PoultryMeatSoldKg" class="form-control" value="@Model.PoultryMeatSoldKg" />
+                    </div>
+                    <div class="col-md-3 mb-2">
+                        <label class="form-label">वार्षिक आम्दानी (रु.)</label>
+                        <input type="number" step="0.01" name="PoultryAnnualIncome" class="form-control" value="@Model.PoultryAnnualIncome" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* ===== SECTION: FISH (माछापालन) ===== *@
+        <div class="card mb-3">
+            <div class="card-header" style="background:#4682B4;color:white" data-bs-toggle="collapse" data-bs-target="#secFish" style="cursor:pointer">
+                <h6 class="mb-0"><i class="bi bi-water"></i> खण्ड १२: माछापालन</h6>
+            </div>
+            <div class="card-body collapse show" id="secFish">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">माछापालन गर्नुभएको?</label>
+                        <select name="HasFishFarming" class="form-select">
+                            <option value="">-- चयन गर्नुहोस् --</option>
+                            <option value="1" selected="@(Model.HasFishFarming?.ToString() == "1")"> हो </option>
+                            <option value="0" selected="@(Model.HasFishFarming?.ToString() == "0")"> होइन </option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">पोखरी संख्या</label>
+                        <input type="number" name="FishPondCount" class="form-control" value="@Model.FishPondCount" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">क्षेत्रफल (रोपनी)</label>
+                        <input type="number" step="0.01" name="FishPondArea" class="form-control" value="@Model.FishPondArea" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">उत्पादन (के.जी.)</label>
+                        <input type="number" step="0.01" name="FishProductionKg" class="form-control" value="@Model.FishProductionKg" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">वार्षिक आम्दानी (रु.)</label>
+                        <input type="number" step="0.01" name="FishAnnualIncome" class="form-control" value="@Model.FishAnnualIncome" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">अनुदान</label>
+                        <input type="text" name="FishSubsidy" class="form-control" value="@Model.FishSubsidy" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* ===== SECTION: BEEKEEPING (मौरीपालन) ===== *@
+        <div class="card mb-3">
+            <div class="card-header" style="background:#F4A460;color:black" data-bs-toggle="collapse" data-bs-target="#secBee" style="cursor:pointer">
+                <h6 class="mb-0"><i class="bi bi-hexagon"></i> खण्ड १३: मौरीपालन</h6>
+            </div>
+            <div class="card-body collapse show" id="secBee">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">मौरीपालन गर्नुभएको?</label>
+                        <select name="HasBeekeeping" class="form-select">
+                            <option value="">-- चयन गर्नुहोस् --</option>
+                            <option value="1" selected="@(Model.HasBeekeeping?.ToString() == "1")"> हो </option>
+                            <option value="0" selected="@(Model.HasBeekeeping?.ToString() == "0")"> होइन </option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">मौरी घार संख्या</label>
+                        <input type="number" name="BeeHiveCount" class="form-control" value="@Model.BeeHiveCount" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">मह उत्पादन (के.जी.)</label>
+                        <input type="number" step="0.01" name="HoneyProductionKg" class="form-control" value="@Model.HoneyProductionKg" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">वार्षिक आम्दानी (रु.)</label>
+                        <input type="number" step="0.01" name="HoneyAnnualIncome" class="form-control" value="@Model.HoneyAnnualIncome" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">अनुदान</label>
+                        <input type="text" name="BeeSubsidy" class="form-control" value="@Model.BeeSubsidy" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* ===== SECTION: INCOME (आम्दानी) ===== *@
+        <div class="card mb-3">
+            <div class="card-header bg-success text-white" data-bs-toggle="collapse" data-bs-target="#secIncome" style="cursor:pointer">
+                <h6 class="mb-0"><i class="bi bi-wallet2"></i> खण्ड १४: आम्दानी</h6>
+            </div>
+            <div class="card-body collapse show" id="secIncome">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">तरकारी बाट (रु.)</label>
+                        <input type="number" step="0.01" name="IncomeVegetables" class="form-control" value="@Model.IncomeVegetables" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">ज्याला बाट (रु.)</label>
+                        <input type="number" step="0.01" name="IncomeLabor" class="form-control" value="@Model.IncomeLabor" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">व्यापार बाट (रु.)</label>
+                        <input type="number" step="0.01" name="IncomeTrade" class="form-control" value="@Model.IncomeTrade" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">विदेश बाट (रु.)</label>
+                        <input type="number" step="0.01" name="IncomeForeign" class="form-control" value="@Model.IncomeForeign" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">नोकरी बाट (रु.)</label>
+                        <input type="number" step="0.01" name="IncomeJob" class="form-control" value="@Model.IncomeJob" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">अन्य बाट (रु.)</label>
+                        <input type="number" step="0.01" name="IncomeOther" class="form-control" value="@Model.IncomeOther" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* ===== SECTION: EXPENDITURE (खर्च) ===== *@
+        <div class="card mb-3">
+            <div class="card-header bg-dark text-white" data-bs-toggle="collapse" data-bs-target="#secExpenditure" style="cursor:pointer">
+                <h6 class="mb-0"><i class="bi bi-receipt"></i> खण्ड १५: खर्च</h6>
+            </div>
+            <div class="card-body collapse show" id="secExpenditure">
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <label class="form-label">खाद्य (रु.)</label>
+                        <input type="number" step="0.01" name="ExpenseFood" class="form-control" value="@Model.ExpenseFood" />
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label class="form-label">लुगा (रु.)</label>
+                        <input type="number" step="0.01" name="ExpenseClothes" class="form-control" value="@Model.ExpenseClothes" />
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label class="form-label">शिक्षा (रु.)</label>
+                        <input type="number" step="0.01" name="ExpenseEducation" class="form-control" value="@Model.ExpenseEducation" />
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label class="form-label">स्वास्थ्य (रु.)</label>
+                        <input type="number" step="0.01" name="ExpenseHealth" class="form-control" value="@Model.ExpenseHealth" />
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label class="form-label">चाडपर्व (रु.)</label>
+                        <input type="number" step="0.01" name="ExpenseFestivals" class="form-control" value="@Model.ExpenseFestivals" />
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label class="form-label">कृषि (रु.)</label>
+                        <input type="number" step="0.01" name="ExpenseAgriculture" class="form-control" value="@Model.ExpenseAgriculture" />
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label class="form-label">इन्धन (रु.)</label>
+                        <input type="number" step="0.01" name="ExpenseFuel" class="form-control" value="@Model.ExpenseFuel" />
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label class="form-label">मोबाइल/इन्टरनेट (रु.)</label>
+                        <input type="number" step="0.01" name="ExpenseMobileInternet" class="form-control" value="@Model.ExpenseMobileInternet" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">खाद्य पर्याप्तता (महिना)</label>
+                        <input type="text" name="FoodSufficiencyMonths" class="form-control" value="@Model.FoodSufficiencyMonths" />
+                    </div>
+                </div>
+                @* Deficit spending *@
+                <div class="row mt-3">
+                    <div class="col-md-8 mb-3">
+                        <label class="form-label">घाटा खर्च सारांश</label>
+                        <input type="text" name="DeficitSpendingSummary" class="form-control" value="@Model.DeficitSpendingSummary" />
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-12">
+                        <label class="form-label fw-bold">घाटा खर्चका स्रोत</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="DeficitJob" value="1" @(Model.DeficitJob == 1 ? "checked" : "") />
+                            <label class="form-check-label">नोकरी</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="DeficitDailyWage" value="1" @(Model.DeficitDailyWage == 1 ? "checked" : "") />
+                            <label class="form-check-label">दैनिक ज्याला</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="DeficitForeignJob" value="1" @(Model.DeficitForeignJob == 1 ? "checked" : "") />
+                            <label class="form-check-label">विदेशी रोजगार</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="DeficitTrade" value="1" @(Model.DeficitTrade == 1 ? "checked" : "") />
+                            <label class="form-check-label">व्यापार</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="DeficitLoan" value="1" @(Model.DeficitLoan == 1 ? "checked" : "") />
+                            <label class="form-check-label">ऋण</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* ===== SECTION: BANKING (बैंक तथा ऋण) ===== *@
+        <div class="card mb-3">
+            <div class="card-header" style="background:#6A5ACD;color:white" data-bs-toggle="collapse" data-bs-target="#secBanking" style="cursor:pointer">
+                <h6 class="mb-0"><i class="bi bi-bank"></i> खण्ड १६: बैंक तथा ऋण</h6>
+            </div>
+            <div class="card-body collapse show" id="secBanking">
+                @* Bank Account *@
+                <div class="row mb-3">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">बैंक खाता छ?</label>
+                        <select name="HasBankAccount" class="form-select">
+                            <option value="">-- चयन गर्नुहोस् --</option>
+                            <option value="1" selected="@(Model.HasBankAccount?.ToString() == "1")"> हो </option>
+                            <option value="0" selected="@(Model.HasBankAccount?.ToString() == "0")"> होइन </option>
+                        </select>
+                    </div>
+                    <div class="col-md-8 mb-3">
+                        <label class="form-label">बैंक खाता सारांश</label>
+                        <input type="text" name="BankAccountSummary" class="form-control" value="@Model.BankAccountSummary" />
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-12">
+                        <label class="form-label fw-bold">खाता प्रकार</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="BankAccountBank" value="1" @(Model.BankAccountBank == 1 ? "checked" : "") />
+                            <label class="form-check-label">बैंक</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="BankAccountCoop" value="1" @(Model.BankAccountCoop == 1 ? "checked" : "") />
+                            <label class="form-check-label">सहकारी</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="BankAccountSavings" value="1" @(Model.BankAccountSavings == 1 ? "checked" : "") />
+                            <label class="form-check-label">बचत समूह</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="BankAccountMoneylender" value="1" @(Model.BankAccountMoneylender == 1 ? "checked" : "") />
+                            <label class="form-check-label">महाजन</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="BankAccountOther" value="1" @(Model.BankAccountOther == 1 ? "checked" : "") />
+                            <label class="form-check-label">अन्य</label>
+                        </div>
+                    </div>
+                </div>
+                @* Loan *@
+                <hr />
+                <div class="row mb-3">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">ऋण छ?</label>
+                        <select name="HasLoan" class="form-select">
+                            <option value="">-- चयन गर्नुहोस् --</option>
+                            <option value="1" selected="@(Model.HasLoan?.ToString() == "1")"> हो </option>
+                            <option value="0" selected="@(Model.HasLoan?.ToString() == "0")"> होइन </option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">ऋण रकम</label>
+                        <input type="text" name="LoanAmount" class="form-control" value="@Model.LoanAmount" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">ऋण प्रकार</label>
+                        <input type="text" name="LoanType" class="form-control" value="@Model.LoanType" />
+                    </div>
+                    <div class="col-md-8 mb-3">
+                        <label class="form-label">ऋण स्रोत सारांश</label>
+                        <input type="text" name="LoanSourceSummary" class="form-control" value="@Model.LoanSourceSummary" />
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-12">
+                        <label class="form-label fw-bold">ऋण स्रोत</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="LoanFromBank" value="1" @(Model.LoanFromBank == 1 ? "checked" : "") />
+                            <label class="form-check-label">बैंक</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="LoanFromCoop" value="1" @(Model.LoanFromCoop == 1 ? "checked" : "") />
+                            <label class="form-check-label">सहकारी</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="LoanFromMoneylender" value="1" @(Model.LoanFromMoneylender == 1 ? "checked" : "") />
+                            <label class="form-check-label">महाजन</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="LoanFromRelatives" value="1" @(Model.LoanFromRelatives == 1 ? "checked" : "") />
+                            <label class="form-check-label">आफन्त</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-8 mb-3">
+                        <label class="form-label">ऋण उद्देश्य सारांश</label>
+                        <input type="text" name="LoanPurposeSummary" class="form-control" value="@Model.LoanPurposeSummary" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">अन्य विवरण</label>
+                        <input type="text" name="LoanPurposeOtherDetail" class="form-control" value="@Model.LoanPurposeOtherDetail" />
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-md-12">
+                        <label class="form-label fw-bold">ऋण उद्देश्य</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="LoanPurposeBusiness" value="1" @(Model.LoanPurposeBusiness == 1 ? "checked" : "") />
+                            <label class="form-check-label">व्यापार</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="LoanPurposeHouse" value="1" @(Model.LoanPurposeHouse == 1 ? "checked" : "") />
+                            <label class="form-check-label">घर</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="LoanPurposeMedical" value="1" @(Model.LoanPurposeMedical == 1 ? "checked" : "") />
+                            <label class="form-check-label">स्वास्थ्य</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="LoanPurposeEducation" value="1" @(Model.LoanPurposeEducation == 1 ? "checked" : "") />
+                            <label class="form-check-label">शिक्षा</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="LoanPurposeOther" value="1" @(Model.LoanPurposeOther == 1 ? "checked" : "") />
+                            <label class="form-check-label">अन्य</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* ===== SAVE BUTTON ===== *@
+        <div class="row mt-3 mb-5">
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary btn-lg">
+                    <i class="bi bi-save"></i> डाटा सुरक्षित गर्नुहोस्
+                </button>
+                <a href="/Admin/ManageHouseholdData/@householdId" class="btn btn-secondary btn-lg ms-2">
+                    <i class="bi bi-arrow-left"></i> फर्कनुहोस्
+                </a>
+            </div>
+        </div>
+    </form>
+</div>

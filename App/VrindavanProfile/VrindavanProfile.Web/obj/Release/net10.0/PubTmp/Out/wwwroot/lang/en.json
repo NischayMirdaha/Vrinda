@@ -1,0 +1,167 @@
+{
+  "app": {
+    "title": "Vrindavan Municipality Digital Profile",
+    "brand": "Vrindavan Municipality",
+    "subtitle": "Digital Profile System",
+    "location": "Rupandehi District, Lumbini Province, Nepal",
+    "description": "Digital presentation of household and institutional survey data for evidence-based development planning",
+    "municipality_full": "Vrindavan Municipality, Rupandehi District, Lumbini Province",
+    "digital_profile": "Digital Profile System",
+    "copyright": "All Rights Reserved"
+  },
+  "nav": {
+    "home": "Home",
+    "ward": "Ward Profile",
+    "household": "Household",
+    "institution": "Institution",
+    "map": "Map",
+    "search": "Search",
+    "toggle_lang": "ने"
+  },
+  "skip": {
+    "main_content": "Skip to main content"
+  },
+  "hero": {
+    "title": "Vrindavan Municipality",
+    "subtitle": "Digital Profile System",
+    "location_line": "Rupandehi District, Lumbini Province, Nepal —",
+    "description_line": "Digital presentation of household and institutional survey data for evidence-based development planning"
+  },
+  "stats": {
+    "household": "Households",
+    "population": "Population",
+    "male": "Male",
+    "female": "Female",
+    "children": "Children (0-15)",
+    "senior": "Senior Citizens (60+)",
+    "disabled": "Persons with Disability",
+    "abroad": "Abroad",
+    "data_tag": "Data",
+    "summary_label": "Key Statistics Summary"
+  },
+  "charts": {
+    "no_data": "No data available",
+    "view_details": "View Details",
+    "exploration_title": "Data Exploration",
+    "exploration_label": "Data Exploration Links",
+    "ward_profile": "Ward Profile",
+    "ward_desc": "View detailed statistics for each ward",
+    "household_data": "Household Data",
+    "household_desc": "65 household data tables",
+    "institution_data": "Institutional Data",
+    "institution_desc": "43 institutional data tables"
+  },
+  "chart_titles": {
+    "gender": "Population by Gender",
+    "caste": "Population by Caste/Ethnicity",
+    "language": "Population by Mother Tongue",
+    "religion": "Population by Religion",
+    "marital": "Marital Status",
+    "occupation": "Population by Main Occupation",
+    "residence": "Residence Status",
+    "disability": "Disability Status",
+    "age_pyramid": "Age Pyramid",
+    "literacy": "Literacy Status",
+    "education": "Population by Education Level",
+    "health_visit": "First Health Visit Place",
+    "insurance": "Insurance Status",
+    "social_security": "Social Security Allowance",
+    "death_cause": "Causes of Death",
+    "water": "Drinking Water Source",
+    "fuel": "Cooking Fuel",
+    "light": "Source of Electricity",
+    "toilet": "Type of Toilet",
+    "waste": "Waste Management",
+    "ownership": "House Ownership",
+    "roof": "Roof Type",
+    "foundation": "House Foundation",
+    "income": "Annual Income Sources",
+    "expense": "Annual Expenditure",
+    "food": "Food Sufficiency (Months)",
+    "bank": "Bank Account",
+    "loan_purpose": "Purpose of Loan",
+    "risk": "Natural Disaster Risks",
+    "assets": "Household Assets & Facilities",
+    "livestock": "Livestock & Poultry",
+    "foreign": "Foreign Employment (Country)",
+    "agri_land": "Agricultural Land",
+    "irrigation": "Irrigation Status",
+    "crop_production": "Households Growing Cereal Crops",
+    "income_vs_expense": "Income vs Expenditure"
+  },
+  "categories": {
+    "population": "Population",
+    "education_health": "Education & Health",
+    "facility_infrastructure": "Facilities & Infrastructure",
+    "housing": "Housing",
+    "economic": "Economic Status",
+    "risk_assets": "Risk & Assets",
+    "agriculture": "Agriculture & Livestock"
+  },
+  "footer": {
+    "about_title": "About",
+    "quick_links": "Quick Links",
+    "about_text": "This system digitally presents household and institutional survey data of Vrindavan Municipality.",
+    "municipality_intro": "Municipality Introduction",
+    "about_location": "Rupandehi District, Lumbini Province, Nepal",
+    "about_system": "Digital Profile System — Evidence-based Development Planning"
+  },
+  "search": {
+    "placeholder": "Search tables, wards, or data...",
+    "advanced_search": "Advanced Search",
+    "no_results": "No results found",
+    "searching": "Searching...",
+    "results_for": "Search results for:",
+    "title": "Search",
+    "hint": "Type table number, title, or description",
+    "sections": {
+      "page": "Pages",
+      "household": "Household",
+      "institution": "Institution"
+    }
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "ward_profile": "Ward Profile",
+    "household": "Household Data",
+    "institution": "Institutional Data",
+    "map": "Map",
+    "table": "Table"
+  },
+  "ward": {
+    "title": "Ward Profile",
+    "select_ward": "Select Ward",
+    "all_wards": "All Wards",
+    "ward": "Ward"
+  },
+  "table": {
+    "table_num": "Table No.",
+    "total": "Total",
+    "data_source": "Data Source",
+    "household": "Household Data",
+    "institution": "Institutional Data",
+    "no_data": "No data available for this table.",
+    "print": "Print",
+    "export_pdf": "Export PDF",
+    "not_ready": "Table not ready"
+  },
+  "map_page": {
+    "title": "Interactive Map",
+    "all_types": "All Types",
+    "all_wards": "All Wards",
+    "legend": "Map Legend",
+    "filter": "Filter"
+  },
+  "export": {
+    "pdf": "PDF",
+    "print": "Print",
+    "exporting": "Exporting...",
+    "preparing": "Preparing document"
+  },
+  "chart_labels": {
+    "male": "Male",
+    "female": "Female",
+    "total": "Total"
+  }
+}

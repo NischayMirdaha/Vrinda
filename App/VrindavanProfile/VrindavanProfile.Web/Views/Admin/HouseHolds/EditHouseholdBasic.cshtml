@@ -1,0 +1,133 @@
+@model dynamic
+@{
+    ViewData["Title"] = "प्राथमिक विवरण सम्पादन";
+    long id = ViewBag.HouseholdId;
+}
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <h2 class="fw-bold mb-1"><i class="bi bi-info-circle me-2"></i>प्राथमिक विवरण</h2>
+            <p class="text-muted mb-0">@ViewBag.HouseholdInfo</p>
+        </div>
+        <a href="/Admin/Households" class="btn btn-outline-secondary btn-sm">सूचीमा फर्कनुहोस्</a>
+    </div>
+
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb small">
+            <li class="breadcrumb-item"><a href="/Admin">Admin</a></li>
+            <li class="breadcrumb-item"><a href="/Admin/Households">घरपरिवार</a></li>
+            <li class="breadcrumb-item"><a href="/Admin/ManageHouseholdData/@id">डाटा व्यवस्थापन</a></li>
+            <li class="breadcrumb-item active">प्राथमिक विवरण</li>
+        </ol>
+    </nav>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+
+    <div class="card">
+        <div class="card-body">
+            <form asp-action="EditHouseholdBasic" method="post">
+                <input type="hidden" name="id" value="@Model.Id" />
+
+                <div class="row g-3">
+                    <!-- Row 1: Basic identification -->
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">वडा नं. <span class="text-danger">*</span></label>
+                        <input name="wardNo" value="@Model.WardNo" class="form-control" type="number" required />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">घर सिरियल नं</label>
+                        <input name="houseSerialNo" value="@Model.HouseSerialNo" class="form-control" type="number" step="any" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">बस्तीको नाम</label>
+                        <input name="settlementName" value="@Model.SettlementName" class="form-control" />
+                    </div>
+
+                    <!-- Row 2: Respondent info -->
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">प्रतिवादीको नाम</label>
+                        <input name="respondentName" value="@Model.RespondentName" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">प्रतिवादी फोन</label>
+                        <input name="respondentPhone" value="@Model.RespondentPhone" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">हेडसँग सम्बन्ध</label>
+                        <input name="respondentRelation" value="@Model.RespondentRelation" class="form-control" />
+                    </div>
+
+                    <!-- Row 3: Membership + admin -->
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">परिवार सदस्य गणना</label>
+                        <input name="familyMemberCount" value="@Model.FamilyMemberCount" class="form-control" type="number" step="any" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">गणनाकर्ताको नाम</label>
+                        <input name="enumeratorName" value="@Model.EnumeratorName" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">स्थिति</label>
+                        <input name="status" value="@Model.Status" class="form-control" />
+                    </div>
+
+                    <!-- Row 4: Municipality + migration -->
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">नगरपालिका</label>
+                        <input name="municipality" value="@Model.Municipality" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">पछिल्लो ५ वर्षमा बसाइँ सरेको?</label>
+                        <input name="migratedLast5Years" value="@Model.MigratedLast5Years" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">बाट माइग्रेट गरियो</label>
+                        <input name="migratedFrom" value="@Model.MigratedFrom" class="form-control" />
+                    </div>
+
+                    <!-- Row 5: Residence + address -->
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">निवासको प्रकार</label>
+                        <input name="residenceType" value="@Model.ResidenceType" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">स्थायी ठेगाना</label>
+                        <input name="permanentAddress" value="@Model.PermanentAddress" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">अन्य वडा</label>
+                        <input name="otherWard" value="@Model.OtherWard" class="form-control" />
+                    </div>
+
+                    <!-- Row 6: Citizenship + death -->
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">नागरिकता स्थिति</label>
+                        <input name="citizenshipStatus" value="@Model.CitizenshipStatus" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">गत वर्ष मृत्यु?</label>
+                        <input name="deathInLastYear" value="@Model.DeathInLastYear" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">मृत्यु गणना</label>
+                        <input name="deathCount" value="@Model.DeathCount" class="form-control" type="number" step="any" />
+                    </div>
+                </div>
+
+                <div class="mt-4 d-flex gap-2">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-save me-1"></i>सेभ गर्नुहोस्
+                    </button>
+                    <a href="/Admin/ManageHouseholdData/@Model.Id" class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left me-1"></i>व्यवस्थापनमा फर्कनुहोस्
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

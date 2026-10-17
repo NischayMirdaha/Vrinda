@@ -1,0 +1,61 @@
+@{
+    Layout = "_LayoutClean";
+    ViewData["Title"] = "लगइन — वृन्दावन नगरपालिका";
+}
+
+<div class="d-flex align-items-center justify-content-center min-vh-100"
+     style="background: linear-gradient(135deg, #002147 0%, #003B6F 100%);">
+    <div class="card shadow-lg border-0 p-4 text-white" style="width: 100%; maxwidth: 420px; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(12px);border-radius: 16px;">
+        <div class="text-center mb-4">
+            <h3 class="fw-bold mb-1" style="color: #C5A55A;">प्रशासकीय लगइन</h3>
+            <p class="small text-white-50">डिजिटल प्रोफाइल प्रणाली</p>
+        </div>
+        @if (!Html.ViewData.ModelState.IsValid)
+        {
+            <div class="alert alert-danger py-2 border-0 small"
+                 style="background: rgba(220, 20, 60, 0.2); color: #FFD2D2;">
+                <div asp-validation-summary="All"></div>
+            </div>
+        }
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success py-2 border-0 small"
+                 style="background: rgba(46, 204, 113, 0.2); color: #D4EDDA;">
+                @TempData["SuccessMessage"]
+            </div>
+        }
+        <form asp-action="Login" method="post">
+            <div class="mb-3">
+                <label class="form-label small text-white-50">युजरनेम</label>
+                <div class="input-group">
+                    <span class="input-group-text bg-transparent text-white-50
+            border-white-20"><i class="bi bi-person"></i></span>
+                    <input name="username" type="text" class="form-control bgtransparent text-white border-white-20" placeholder="Username" required />
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label small text-white-50">पासवर्ड</label>
+                <div class="input-group">
+                    <span class="input-group-text bg-transparent text-white-50
+                    border-white-20"><i class="bi bi-lock"></i></span>
+                    <input name="password" type="password" class="form-control
+                    bg-transparent text-white border-white-20" placeholder="Password" required />
+                </div>
+            </div>
+            <button type="submit" class="btn btn-warning w-100 fw-bold mt-2
+                py-2" style="background: #C5A55A; border: none; color: #002147;">
+                लगइन गर्नुहोस्
+            </button>
+        </form>
+        <div class="text-center mt-3">
+            <a href="/" class="text-white-50 small text-decoration-none">
+                <i class="bi bi-arrow-left me-1"></i>गृहपृष्ठमा जानुहोस्
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+ .border-white-20 { border-color: rgba(255, 255, 255, 0.2) !important; }
+ .form-control:focus { background-color: rgba(255,255,255,0.05) !important; border-color: #C5A55A !important; color: white !important; box-shadow: none; }
+</style>

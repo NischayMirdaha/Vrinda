@@ -1,0 +1,88 @@
+@{
+    ViewData["Title"] = "नयाँ प्रशासक थप्नुहोस्";
+}
+
+<div class="container py-4" style="max-width: 620px;">
+    <a href="/Admin/Users" class="btn btn-sm btn-outline-secondary mb-3" style="border-radius: 20px;">
+        <i class="bi bi-arrow-left me-1"></i>सूचीमा फर्कनुहोस्
+    </a>
+    <h2 class="fw-bold mb-1"><i class="bi bi-person-plus-fill me-2 text-danger"></i>नयाँ प्रशासक थप्नुहोस्</h2>
+    <p class="text-muted small mb-4">मुख्य प्रशासक वा वडा प्रशासक खाता सिर्जना गर्नुहोस्।</p>
+
+    <div class="card border-0 shadow-sm p-4" style="border-radius: 16px;">
+        <form action="/Admin/CreateUser" method="post" id="createUserForm">
+            @Html.AntiForgeryToken()
+
+            <div asp-validation-summary="All" class="text-danger small mb-3"></div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">युजरनेम <span class="text-danger">*</span></label>
+                <input type="text" name="username" class="form-control" required
+                       placeholder="उदा: ward3_admin" style="border-radius: 10px;" />
+                <div class="form-text">लगइनका लागि प्रयोग हुन्छ। पछि परिवर्तन गर्न मिल्दैन।</div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">इमेल <span class="text-danger">*</span></label>
+                <input type="email" name="email" class="form-control" required
+                       placeholder="उदा: ward3@vrindavan.gov.np" style="border-radius: 10px;" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">पासवर्ड <span class="text-danger">*</span></label>
+                <input type="password" name="password" class="form-control" required
+                       placeholder="••••••••" style="border-radius: 10px;" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">प्रणाली भूमिका <span class="text-danger">*</span></label>
+                <select name="role" id="roleSelect" class="form-select" style="border-radius: 10px;"
+                        onchange="toggleWardField()">
+                    <option value="admin">मुख्य प्रशासक (Super Admin) — सबै वडाको पूर्ण पहुँच</option>
+                    <option value="ward_admin">वडा प्रशासक (Ward Admin) — तोकिएको वडामा मात्र पहुँच</option>
+                </select>
+            </div>
+
+            <div class="mb-3" id="wardGroup" style="display: none;">
+                <label class="form-label fw-semibold">तोकिएको वडा <span class="text-danger">*</span></label>
+                <select name="wardNo" id="wardNoSelect" class="form-select" style="border-radius: 10px;">
+                    @for (int w = 1; w <= 9; w++)
+                    {
+                        <option value="@w">वडा नं. @w</option>
+                    }
+                </select>
+                <div class="form-text">वडा प्रशासकले यो वडाको डाटा मात्र थप्न / सम्पादन गर्न पाउँछन्।</div>
+            </div>
+
+            <div class="mb-4">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" name="isActive" value="true"
+                           id="isActiveSwitch" checked />
+                    <label class="form-check-label fw-semibold" for="isActiveSwitch">
+                        खाता सक्रिय राख्नुहोस् (Active)
+                    </label>
+                    <div class="form-text">निष्क्रिय गरिएको खाताले लगइन गर्न पाउँदैन।</div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-danger w-100 fw-semibold py-2" style="border-radius: 10px;">
+                <i class="bi bi-check-lg me-1"></i>खाता सिर्जना गर्नुहोस्
+            </button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function toggleWardField() {
+        var role  = document.getElementById('roleSelect').value;
+        var group = document.getElementById('wardGroup');
+        var sel   = document.getElementById('wardNoSelect');
+        if (role === 'ward_admin') {
+            group.style.display = 'block';
+            sel.required = true;
+        } else {
+            group.style.display = 'none';
+            sel.required = false;
+        }
+    }
+</script>

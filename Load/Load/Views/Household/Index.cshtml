@@ -1,0 +1,106 @@
+@{ ViewData["Title"] = "Household Import"; }
+
+<div class="container mt-4">
+    <h1>🏠 Household Survey Import</h1>
+
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert alert-danger">@ViewBag.Error</div>
+    }
+
+    <div class="alert alert-info">
+        <strong>Import Order:</strong>
+        <ol class="mb-0">
+            <li>Household (main) — must be first</li>
+            <li>Family Members — needs household IDs</li>
+            <li>House Details — needs household IDs</li>
+            <li>Death Records — needs household IDs</li>
+        </ol>
+    </div>
+
+    <!-- Step 1 -->
+    <div class="card mb-3">
+        <div class="card-header bg-primary text-white">
+            <strong>Step 1: Household (Main)</strong>
+        </div>
+        <div class="card-body">
+            <form asp-controller="Household" asp-action="UploadHousehold"
+                  method="post" enctype="multipart/form-data">
+                <div class="mb-2">
+                    <input type="file" name="files" class="form-control"
+                           accept=".json" multiple required />
+                    <small class="text-muted">Select all household JSON parts</small>
+                </div>
+                <button type="submit" class="btn btn-primary"
+                    onclick="this.disabled=true; this.innerText='Importing...'; this.form.submit();">
+                    🏠 Import Households
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="card mb-3">
+        <div class="card-header bg-success text-white">
+            <strong>Step 2: Family Members</strong>
+        </div>
+        <div class="card-body">
+            <form asp-controller="Household" asp-action="UploadFamily"
+                  method="post" enctype="multipart/form-data">
+                <div class="mb-2">
+                    <input type="file" name="files" class="form-control"
+                           accept=".json" multiple required />
+                    <small class="text-muted">Select all family member JSON parts</small>
+                </div>
+                <button type="submit" class="btn btn-success"
+                    onclick="this.disabled=true; this.innerText='Importing...'; this.form.submit();">
+                    👨‍👩‍👧‍👦 Import Family Members
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="card mb-3">
+        <div class="card-header bg-info text-white">
+            <strong>Step 3: House Details</strong>
+        </div>
+        <div class="card-body">
+            <form asp-controller="Household" asp-action="UploadHouseDetail"
+                  method="post" enctype="multipart/form-data">
+                <div class="mb-2">
+                    <input type="file" name="files" class="form-control"
+                           accept=".json" multiple required />
+                    <small class="text-muted">Select all house detail JSON parts</small>
+                </div>
+                <button type="submit" class="btn btn-info"
+                    onclick="this.disabled=true; this.innerText='Importing...'; this.form.submit();">
+                    🏗️ Import House Details
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="card mb-3">
+        <div class="card-header bg-warning text-dark">
+            <strong>Step 4: Death Records</strong>
+        </div>
+        <div class="card-body">
+            <form asp-controller="Household" asp-action="UploadDeath"
+                  method="post" enctype="multipart/form-data">
+                <div class="mb-2">
+                    <input type="file" name="files" class="form-control"
+                           accept=".json" multiple required />
+                    <small class="text-muted">Select all death record JSON parts</small>
+                </div>
+                <button type="submit" class="btn btn-warning"
+                    onclick="this.disabled=true; this.innerText='Importing...'; this.form.submit();">
+                    📋 Import Death Records
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <a href="/" class="btn btn-outline-secondary mt-3">← Home</a>
+</div>

@@ -1,0 +1,767 @@
+@model VrindavanProfile.Web.Models.ViewModels.MapViewModel
+@{
+    ViewData["Title"] = "भौगोलिक नक्सा (GIS Webmap)";
+    var lang = (ViewData["CurrentLang"] as string) ?? "ne";
+}
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+
+<div class="gis-container position-relative">
+    <!-- Map Container -->
+    <div id="gisMap"></div>
+
+    <!-- Floating Glassmorphic Sidebar -->
+    <div id="gisSidebar" class="floating-sidebar active">
+        <!-- Sidebar Toggle Button -->
+        <button id="sidebarToggle" class="sidebar-toggle-btn shadow" onclick="toggleSidebar()" title="फिल्टर प्यानल लुकाउनुहोस्/देखाउनुहोस्">
+            <i class="bi bi-chevron-left" id="toggleIcon"></i>
+        </button>
+
+        <div class="sidebar-content p-3">
+            <h5 class="fw-bold mb-3 d-flex align-items-center text-primary border-bottom pb-2">
+                <i class="bi bi-map-fill me-2"></i>नक्सा नियन्त्रण
+            </h5>
+
+            <!-- Autocomplete Search Panel -->
+            <div class="mb-3 position-relative">
+                <h6 class="text-muted small text-uppercase fw-semibold mb-2">स्थान वा घरपरिवार खोज्नुहोस्</h6>
+                <div class="input-group input-group-sm search-container shadow-sm">
+                    <span class="input-group-text"><i class="bi bi-search text-muted"></i></span>
+                    <input type="text" id="pinSearch" class="form-control ps-0" 
+                           placeholder="नाम वा विवरण खोज्नुहोस्..." oninput="searchPins(this.value)" />
+                    <button class="btn btn-link btn-sm text-muted d-none border-0 pe-2" id="clearSearchBtn" onclick="clearSearch()" style="text-decoration:none;">
+                        <i class="bi bi-x-circle-fill"></i>
+                    </button>
+                </div>
+                <!-- Search Suggestions Dropdown -->
+                <div id="searchResults" class="search-results-dropdown shadow d-none"></div>
+            </div>
+
+            <!-- Entity Type Filter Buttons -->
+            <div class="mb-4">
+                <h6 class="text-muted small text-uppercase fw-semibold mb-2">संस्था / स्थान प्रकार</h6>
+                <div class="d-flex flex-wrap gap-1">
+                    @{
+                        var totalPins = Model.Markers.Count;
+                    }
+                    <button class="btn btn-sm btn-outline-secondary filter-btn active" data-type="all"
+                            onclick="filterMarkers('all', this)">
+                        <i class="bi bi-layers me-1"></i>सबै
+                        <span class="badge bg-secondary ms-1">@totalPins</span>
+                    </button>
+                    @foreach (var ts in Model.TypeSummaries)
+                    {
+                        if (ts.Count == 0) { continue; }
+                        <button class="btn btn-sm btn-outline-secondary filter-btn"
+                                data-type="@ts.EntityTypeKey"
+                                style="border-color:@ts.Color;color:@ts.Color;"
+                                onclick="filterMarkers('@ts.EntityTypeKey', this)">
+                            <i class="bi @ts.Icon me-1"></i>@ts.EntityType
+                            <span class="badge ms-1" style="background:@ts.Color;">@ts.Count</span>
+                        </button>
+                    }
+                </div>
+            </div>
+
+            <hr class="my-3 opacity-25" />
+
+            <!-- Ward Filter -->
+            <div class="mb-2">
+                <h6 class="text-muted small text-uppercase fw-semibold mb-0">वडा अनुसार फिल्टर</h6>
+                <div id="pinCountBadge" class="small text-muted mt-1 fw-bold"></div>
+            </div>
+            <div class="list-group ward-list-group">
+                <button class="list-group-item list-group-item-action p-2 small ward-btn active"
+                        onclick="filterByWard(null, this)">
+                    <i class="bi bi-globe me-1"></i>सबै वडाहरू
+                </button>
+                @foreach (var ward in Model.WardDetails.OrderBy(w => w.WardNo))
+                {
+                    <button class="list-group-item list-group-item-action p-2.5 ward-btn"
+                            onclick="filterByWard(@ward.WardNo, this)">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <span class="fw-bold text-primary small">वडा नं. @ward.WardNo</span>
+                            <span class="badge bg-secondary" style="font-size:10px;">@ward.HouseholdCount घर</span>
+                        </div>
+                        <div class="row g-0 text-muted" style="font-size:11px;">
+                            <div class="col-6"><i class="bi bi-people me-1"></i>जनसंख्या: @ward.Population</div>
+                            <div class="col-6"><i class="bi bi-gender-male me-1"></i>पुरुष: @ward.MaleCount</div>
+                            <div class="col-6"><i class="bi bi-gender-female me-1"></i>महिला: @ward.FemaleCount</div>
+                        </div>
+                    </button>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const defaultCenter = [26.90, 85.25];
+
+        // Tile Layers with maxNativeZoom config to prevent "Map not found" at high zoom levels
+        const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 22,
+            maxNativeZoom: 19,
+            attribution: '© OpenStreetMap contributors'
+        });
+        const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            maxZoom: 22,
+            maxNativeZoom: 18,
+            attribution: 'Tiles &copy; Esri'
+        });
+        const topo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+            maxZoom: 22,
+            maxNativeZoom: 18,
+            attribution: 'Tiles &copy; Esri'
+        });
+        const dark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            maxZoom: 22,
+            maxNativeZoom: 19,
+            attribution: '© CARTO'
+        });
+
+        // Initialize map with zoom control on the right so it doesn't overlap with the sidebar
+        const map = L.map('gisMap', { 
+            center: defaultCenter, 
+            zoom: 12.5, 
+            layers: [topo],
+            zoomControl: false 
+        });
+
+        L.control.zoom({ position: 'topright' }).addTo(map);
+        L.control.layers({ 
+            "टोपोग्राफी (Default)": topo,
+            "सडक नक्सा (Light)": osm, 
+            "स्याटेलाइट नक्सा": satellite, 
+            "डार्क थिम (Dark)": dark 
+        }, null, { position: 'topright' }).addTo(map);
+
+        // Ward polygon boundaries (approximate grid for 9 wards) - Commented out to prevent border drawing
+        /*
+        const boundsMap = {
+            1: [[[85.18,26.80],[85.26,26.80],[85.26,26.90],[85.18,26.90],[85.18,26.80]]],
+            2: [[[85.26,26.80],[85.34,26.80],[85.34,26.90],[85.26,26.90],[85.26,26.80]]],
+            3: [[[85.34,26.80],[85.43,26.80],[85.43,26.90],[85.34,26.90],[85.34,26.80]]],
+            4: [[[85.18,26.90],[85.26,26.90],[85.26,27.01],[85.18,27.01],[85.18,26.90]]],
+            5: [[[85.26,26.90],[85.34,26.90],[85.34,27.01],[85.26,27.01],[85.26,26.90]]],
+            6: [[[85.34,26.90],[85.43,26.90],[85.43,27.01],[85.34,27.01],[85.34,26.90]]],
+            7: [[[85.18,27.01],[85.26,27.01],[85.26,27.12],[85.18,27.12],[85.18,27.01]]],
+            8: [[[85.26,27.01],[85.34,27.01],[85.34,27.12],[85.26,27.12],[85.26,27.01]]],
+            9: [[[85.34,27.01],[85.43,27.01],[85.43,27.12],[85.34,27.12],[85.34,27.01]]]
+        };
+
+        const wardGeoJSONs = {};
+        const wardLayers = L.layerGroup().addTo(map);
+
+        for (let w = 1; w <= 9; w++) {
+            const coords = boundsMap[w][0].map(c => [c[1], c[0]]);
+            const polygon = L.polygon(coords, {
+                color: '#003B6F', weight: 1.5, fillColor: '#8EA4D4', fillOpacity: 0.12,
+                className: 'ward-polygon'
+            }).addTo(wardLayers);
+            
+            polygon.bindTooltip("वडा नं. " + w, { permanent: false, direction: "center", className: 'ward-tooltip' });
+            
+            // Hover animation for ward boundaries
+            polygon.on('mouseover', function() {
+                if (activeWard !== w) {
+                    this.setStyle({
+                        fillOpacity: 0.25,
+                        color: '#0056b3',
+                        weight: 2
+                    });
+                }
+            });
+            
+            polygon.on('mouseout', function() {
+                if (activeWard !== w) {
+                    this.setStyle({
+                        fillOpacity: 0.12,
+                        color: '#003B6F',
+                        weight: 1.5
+                    });
+                }
+            });
+
+            polygon.on('click', () => highlightWard(w));
+            wardGeoJSONs[w] = polygon;
+        }
+        */
+
+        function highlightWard(wardNo) {
+            activeWard = wardNo;
+            
+            // Synchronize sidebar active list selection
+            const buttons = document.querySelectorAll('.ward-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            const matchingBtn = Array.from(buttons).find(b => b.getAttribute('onclick') && b.getAttribute('onclick').includes(wardNo));
+            if (matchingBtn) matchingBtn.classList.add('active');
+
+            /*
+            Object.keys(wardGeoJSONs).forEach(w => {
+                const polygon = wardGeoJSONs[w];
+                if (parseInt(w) === wardNo) {
+                    polygon.setStyle({ fillOpacity: 0.3, color: '#DC143C', weight: 3 });
+                    map.flyToBounds(polygon.getBounds(), {
+                        padding: [50, 50],
+                        duration: 1.5,
+                        easeLinearity: 0.2
+                    });
+                } else {
+                    polygon.setStyle({ fillOpacity: 0.12, color: '#003B6F', weight: 1.5 });
+                }
+            });
+            */
+        }
+
+        window.zoomToWard = function(wardNo) { highlightWard(wardNo); };
+
+        // ─── Marker Management ───
+        const allMarkers = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.Markers));
+
+        // Glassmorphic Custom Marker Clusters
+        let markerCluster = L.markerClusterGroup({
+            showCoverageOnHover: false,
+            zoomToBoundsOnClick: true,
+            spiderfyOnMaxZoom: true,
+            iconCreateFunction: function (cluster) {
+                const count = cluster.getChildCount();
+                let sizeClass = 'cluster-small';
+                if (count > 50) sizeClass = 'cluster-large';
+                else if (count > 15) sizeClass = 'cluster-medium';
+
+                return L.divIcon({
+                    html: `<div class="custom-cluster ${sizeClass}">
+                               <span>${count}</span>
+                           </div>`,
+                    className: 'custom-cluster-wrapper',
+                    iconSize: [42, 42]
+                });
+            }
+        });
+        map.addLayer(markerCluster);
+
+        let activeType = 'all';
+        let activeWard = null;
+
+        const entityColors = {
+            'household':               '#28a745',
+            'health_institution':      '#E76F51',
+            'educational_institution': '#3a86ff',
+            'financial_institution':   '#f0a500',
+            'building':                '#B5838D',
+            'security_body':           '#457B9D',
+            'hotel_resort':            '#D4A373',
+            'industry':                '#8d6e63',
+            'ngo_club_group':          '#78909c',
+            'land_use':                '#ab47bc',
+            'natural_resource':        '#26a69a',
+            'cultural_heritage':       '#ec407a',
+            'trade_business':          '#d4e157',
+            'forest':                  '#66bb6a',
+            'road':                    '#ff7043',
+            'ward_statistics':         '#26c6da'
+        };
+
+        // Redesigned 3D gloss pins with animations
+        function makeIcon(m) {
+            const color = m.Color || entityColors[m.EntityTypeKey] || '#6c757d';
+            return L.divIcon({
+                className: 'custom-pin-wrapper',
+                html: `<div class="custom-pin">
+                           <div class="custom-pin-marker" style="background:${color};">
+                               <i class="bi ${m.Icon || 'bi-geo-alt'}"></i>
+                           </div>
+                           <div class="custom-pin-shadow"></div>
+                       </div>`,
+                iconSize: [32, 32], iconAnchor: [16, 32], popupAnchor: [0, -32]
+            });
+        }
+
+        window.zoomToMarker = function(latlng) {
+            map.flyTo(latlng, 18, {
+                animate: true,
+                duration: 1.5,
+                easeLinearity: 0.25
+            });
+        };
+
+        function renderMarkers() {
+            markerCluster.clearLayers();
+            const filtered = allMarkers.filter(m => {
+                const typeMatch = (activeType === 'all') || (m.EntityTypeKey === activeType);
+                const wardMatch = (activeWard === null) || (m.WardNo === activeWard);
+                return typeMatch && wardMatch && m.Latitude && m.Longitude;
+            });
+
+            filtered.forEach(m => {
+                const marker = L.marker([m.Latitude, m.Longitude], { icon: makeIcon(m) });
+                const markerColor = m.Color || entityColors[m.EntityTypeKey] || '#6c757d';
+                
+                // Beautifully formatted modern popup cards
+                marker.bindPopup(`
+                    <div style="min-width: 200px; font-family: inherit;">
+                        <div class="popup-header">
+                            <span class="fw-bold">${m.Name || '—'}</span>
+                        </div>
+                        <div class="popup-body">
+                            <div class="mb-2">
+                                <span class="badge" style="background:${markerColor};">${m.EntityType}</span> 
+                                <span class="badge bg-secondary">वडा ${m.WardNo}</span>
+                            </div>
+                            <div class="text-muted"><i class="bi bi-info-circle me-1"></i>${m.Detail || 'कुनै अतिरिक्त विवरण छैन।'}</div>
+                        </div>
+                        <div class="popup-footer">
+                            <button class="btn btn-sm btn-primary py-1 px-2 w-100" style="font-size:11px;" onclick="zoomToMarker([${m.Latitude}, ${m.Longitude}])">
+                                <i class="bi bi-search me-1"></i>नजिकबाट हेर्नुहोस्
+                            </button>
+                        </div>
+                    </div>
+                `, { className: 'custom-popup', maxWidth: 280 });
+                markerCluster.addLayer(marker);
+            });
+
+            // Update live counter badge
+            const badge = document.getElementById('pinCountBadge');
+            if (badge) {
+                const wardLabel = activeWard !== null ? `वडा ${activeWard}` : 'सबै वडाहरू';
+                badge.innerHTML = `<i class="bi bi-pin-map-fill me-1 text-primary"></i><strong>${filtered.length}</strong> पिन देखाइएको (${wardLabel})`;
+            }
+        }
+
+        renderMarkers();
+
+        // ─── Filter Handlers ───
+        window.filterMarkers = function(type, btn) {
+            activeType = type;
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            renderMarkers();
+        };
+
+        window.filterByWard = function(wardNo, btn) {
+            activeWard = wardNo;
+            document.querySelectorAll('.ward-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            
+            if (wardNo !== null) {
+                highlightWard(wardNo);
+            } else {
+                /*
+                Object.values(wardGeoJSONs).forEach(p => {
+                    p.setStyle({ fillOpacity: 0.12, color: '#003B6F', weight: 1.5 });
+                });
+                map.flyTo(defaultCenter, 12.5, {
+                    duration: 1.5,
+                    easeLinearity: 0.25
+                });
+                */
+            }
+            renderMarkers();
+        };
+
+        // ─── Collapsible Sidebar ───
+        window.toggleSidebar = function() {
+            const sidebar = document.getElementById('gisSidebar');
+            const icon = document.getElementById('toggleIcon');
+            sidebar.classList.toggle('active');
+            if (sidebar.classList.contains('active')) {
+                icon.className = 'bi bi-chevron-left';
+            } else {
+                icon.className = 'bi bi-chevron-right';
+            }
+        };
+
+        // ─── Search / Autocomplete ───
+        window.searchPins = function(query) {
+            const dropdown = document.getElementById('searchResults');
+            const clearBtn = document.getElementById('clearSearchBtn');
+            if (!query.trim()) {
+                dropdown.classList.add('d-none');
+                clearBtn.classList.add('d-none');
+                return;
+            }
+            
+            clearBtn.classList.remove('d-none');
+            const q = query.toLowerCase().trim();
+            const results = allMarkers.filter(m => 
+                (m.Name && m.Name.toLowerCase().includes(q)) || 
+                (m.EntityType && m.EntityType.toLowerCase().includes(q)) ||
+                (m.Detail && m.Detail.toLowerCase().includes(q))
+            ).slice(0, 8); // limit to 8 results
+            
+            if (results.length === 0) {
+                dropdown.innerHTML = `<div class="p-3 text-muted small text-center"><i class="bi bi-info-circle me-1"></i>कुनै परिणाम भेटिएन</div>`;
+            } else {
+                dropdown.innerHTML = results.map(r => {
+                    const iconColor = r.Color || entityColors[r.EntityTypeKey] || '#6c757d';
+                    return `
+                        <div class="search-result-item" onclick="selectSearchResult(${r.Latitude}, ${r.Longitude}, ${r.Id})">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span class="fw-semibold text-truncate me-2" style="max-width:180px;">${r.Name}</span>
+                                <span class="badge text-white" style="background:${iconColor};font-size:10px;">${r.EntityType}</span>
+                            </div>
+                            <div class="text-muted" style="font-size:11px;"><i class="bi bi-geo-alt me-1"></i>वडा नं. ${r.WardNo}</div>
+                        </div>
+                    `;
+                }).join('');
+            }
+            dropdown.classList.remove('d-none');
+        };
+        
+        window.selectSearchResult = function(lat, lng, markerId) {
+            document.getElementById('searchResults').classList.add('d-none');
+            map.flyTo([lat, lng], 18, {
+                animate: true,
+                duration: 1.8
+            });
+            // Open popup of searched pin after flight completes
+            setTimeout(() => {
+                markerCluster.eachLayer(function(layer) {
+                    // MarkerCluster handles matching via custom logic or LatLng comparison
+                    if (Math.abs(layer.getLatLng().lat - lat) < 0.00001 && Math.abs(layer.getLatLng().lng - lng) < 0.00001) {
+                        layer.openPopup();
+                    }
+                });
+            }, 1800);
+        };
+        
+        window.clearSearch = function() {
+            document.getElementById('pinSearch').value = '';
+            document.getElementById('searchResults').classList.add('d-none');
+            document.getElementById('clearSearchBtn').classList.add('d-none');
+        };
+        
+        // Close search results dropdown on outside click
+        document.addEventListener('click', function(e) {
+            const container = document.getElementById('searchResults');
+            const input = document.getElementById('pinSearch');
+            if (container && e.target !== container && e.target !== input) {
+                container.classList.add('d-none');
+            }
+        });
+    });
+</script>
+
+<style>
+    /* Full Viewport GIS Styling */
+    .gis-container {
+        height: calc(100vh - 70px);
+        width: 100%;
+        overflow: hidden;
+        background-color: #f4f6f9;
+    }
+    #gisMap {
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+    }
+
+    /* Floating Glassmorphic Sidebar */
+    .floating-sidebar {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        bottom: 20px;
+        width: 380px;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(16px) saturate(120%);
+        -webkit-backdrop-filter: blur(16px) saturate(120%);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 59, 111, 0.15);
+        z-index: 1000;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+    .floating-sidebar:not(.active) {
+        transform: translateX(calc(-100% - 30px));
+    }
+    .sidebar-content {
+        height: 100%;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(0,0,0,0.15) transparent;
+    }
+    .sidebar-content::-webkit-scrollbar {
+        width: 6px;
+    }
+    .sidebar-content::-webkit-scrollbar-thumb {
+        background: rgba(0,0,0,0.15);
+        border-radius: 4px;
+    }
+
+    /* Sidebar Toggle Button */
+    .sidebar-toggle-btn {
+        position: absolute;
+        right: -48px;
+        top: 20px;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: #003B6F;
+        color: white;
+        border: 1px solid rgba(255,255,255,0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 1001;
+        transition: background 0.2s, transform 0.2s;
+    }
+    .sidebar-toggle-btn:hover {
+        background: #002244;
+        transform: scale(1.05);
+    }
+
+    /* Search autocomplete styling */
+    .search-container {
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(0,0,0,0.1) !important;
+        background: white;
+    }
+    .search-container input {
+        border: none;
+        box-shadow: none;
+    }
+    .search-container input:focus {
+        box-shadow: none;
+    }
+    .search-container .input-group-text {
+        background: transparent;
+        border: none;
+    }
+    .search-results-dropdown {
+        position: absolute;
+        top: 65px;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 14px;
+        max-height: 260px;
+        overflow-y: auto;
+        z-index: 1050;
+    }
+    .search-result-item {
+        padding: 10px 14px;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+    .search-result-item:last-child {
+        border-bottom: none;
+    }
+    .search-result-item:hover {
+        background: rgba(0, 59, 111, 0.08);
+    }
+
+    /* Modern Ward filter styling */
+    .ward-list-group {
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid rgba(0,0,0,0.05);
+    }
+    .ward-btn {
+        background: rgba(255, 255, 255, 0.5) !important;
+        border: none !important;
+        border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+        transition: all 0.25s ease !important;
+        border-radius: 0 !important;
+    }
+    .ward-btn:last-child {
+        border-bottom: none !important;
+    }
+    .ward-btn:hover {
+        background: rgba(0, 59, 111, 0.05) !important;
+        transform: translateY(-0.5px);
+    }
+    .ward-btn.active {
+        background: rgba(0, 59, 111, 0.08) !important;
+        border-left: 4px solid #003B6F !important;
+        font-weight: bold;
+    }
+
+    /* 3D Pins Styling */
+    .custom-pin-wrapper {
+        perspective: 600px;
+        border: none !important;
+        background: transparent !important;
+    }
+    .custom-pin {
+        width: 32px;
+        height: 32px;
+        position: relative;
+        transform-style: preserve-3d;
+        animation: pinDrop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+    }
+    .custom-pin-marker {
+        width: 32px;
+        height: 32px;
+        border-radius: 50% 50% 50% 0;
+        transform: rotate(-45deg);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3), inset -2px -2px 6px rgba(0,0,0,0.25), inset 2px 2px 6px rgba(255,255,255,0.45);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        border: 2px solid #ffffff;
+    }
+    .custom-pin-marker i {
+        transform: rotate(45deg);
+        font-size: 13px;
+        color: #ffffff;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+    }
+    .custom-pin:hover .custom-pin-marker {
+        transform: rotate(-45deg) scale(1.15) translate(2px, -2px);
+        box-shadow: -4px 8px 15px rgba(0,0,0,0.35), inset -2px -2px 6px rgba(0,0,0,0.2), inset 2px 2px 6px rgba(255,255,255,0.5);
+    }
+    .custom-pin-shadow {
+        position: absolute;
+        width: 14px;
+        height: 4px;
+        background: rgba(0,0,0,0.3);
+        border-radius: 50%;
+        bottom: -2.5px;
+        left: 9px;
+        filter: blur(1.5px);
+        transform: scale(1);
+        transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    .custom-pin:hover ~ .custom-pin-shadow {
+        transform: scale(0.65);
+        opacity: 0.4;
+    }
+
+    @@keyframes pinDrop {
+        0% {
+            transform: translateY(-50px) scaleY(0.7);
+            opacity: 0;
+        }
+        60% {
+            transform: translateY(8px) scaleY(1.1);
+        }
+        80% {
+            transform: translateY(-4px) scaleY(0.95);
+        }
+        100% {
+            transform: translateY(0) scaleY(1);
+            opacity: 1;
+        }
+    }
+
+    /* Custom Glassmorphic Cluster Icons */
+    .custom-cluster-wrapper {
+        border: none !important;
+        background: transparent !important;
+    }
+    .custom-cluster {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: white;
+        font-size: 14px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+        border: 2px solid rgba(255, 255, 255, 0.85);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        backdrop-filter: blur(4px);
+    }
+    .custom-cluster:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    }
+    .cluster-small {
+        background: linear-gradient(135deg, rgba(82, 183, 136, 0.85), rgba(45, 106, 79, 0.85));
+    }
+    .cluster-medium {
+        background: linear-gradient(135deg, rgba(233, 196, 106, 0.9), rgba(244, 162, 97, 0.9));
+    }
+    .cluster-large {
+        background: linear-gradient(135deg, rgba(231, 111, 81, 0.9), rgba(168, 47, 47, 0.9));
+    }
+
+    /* Beautifulized Popup Cards */
+    .custom-popup .leaflet-popup-content-wrapper {
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 59, 111, 0.2);
+        padding: 0;
+        overflow: hidden;
+    }
+    .custom-popup .leaflet-popup-content {
+        margin: 0;
+        line-height: inherit;
+    }
+    .custom-popup .leaflet-popup-tip {
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .popup-header {
+        background: linear-gradient(135deg, #003B6F, #002244);
+        color: white;
+        padding: 12px 16px;
+        font-size: 14px;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .popup-body {
+        padding: 14px 16px;
+        font-size: 13px;
+        color: #2b2b2b;
+    }
+    .popup-footer {
+        border-top: 1px solid rgba(0,0,0,0.06);
+        background: rgba(0,0,0,0.02);
+        padding: 8px 16px;
+    }
+    .popup-footer button {
+        font-size: 11px;
+    }
+
+    /* Customized Standard Leaflet Control Bars */
+    .leaflet-control-layers {
+        border-radius: 12px !important;
+        border: 1px solid rgba(255, 255, 255, 0.4) !important;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+        backdrop-filter: blur(8px) !important;
+        font-family: inherit !important;
+        padding: 8px 12px !important;
+    }
+    .leaflet-bar {
+        border-radius: 12px !important;
+        border: 1px solid rgba(255, 255, 255, 0.4) !important;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+        overflow: hidden;
+    }
+    .leaflet-bar a {
+        background: rgba(255, 255, 255, 0.95) !important;
+        border-bottom: 1px solid rgba(0,0,0,0.08) !important;
+        transition: background 0.2s;
+    }
+    .leaflet-bar a:hover {
+        background: rgba(0, 59, 111, 0.08) !important;
+    }
+    .leaflet-bar a:last-child {
+        border-bottom: none !important;
+    }
+</style>

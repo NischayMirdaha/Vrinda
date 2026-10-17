@@ -1,0 +1,98 @@
+﻿@{
+    ViewData["Title"] = "घरपरिवार डाटा व्यवस्थापन";
+    long id = ViewBag.HouseholdId;
+}
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div>
+            <h2 class="fw-bold mb-1">घरपरिवार डाटा व्यवस्थापन</h2>
+            <p class="text-muted mb-0">@ViewBag.HouseholdInfo</p>
+        </div>
+        <a href="/Admin/Households" class="btn btn-outline-secondary btn-sm">सूचीमा फर्कनुहोस्</a>
+    </div>
+
+    <div class="row g-3">
+        <!-- Basic Details -->
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-info-circle me-2"></i>प्राथमिक विवरण</h5>
+                    <p class="card-text small text-muted">वार्ड, बस्ती, उत्तरदाताहरु, परिवारका सदस्यहरू, आदि।</p>
+                    <a href="/Admin/HouseholdCategoryBasic/@id" class="btn btn-sm btn-outline-primary">हेर्नुहोस् / सम्पादन गर्नुहोस्</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Location & Infrastructure -->
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-geo-alt me-2"></i>स्थान र पूर्वाधार समीक्षा</h5>
+                    <p class="card-text small text-muted">सडक, दूरी, बस्ती विवरण.</p>
+                    <a href="/Admin/HouseholdCategoryLocation/@id" class="btn btn-sm btn-outline-primary">हेर्नुहोस् / सम्पादन गर्नुहोस्</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Facilities & Services -->
+        <div class="col-md-4">
+            <div class="card h-100 border-primary">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-building me-2"></i>सुविधाहरू र सेवा</h5>
+                    <p class="card-text small text-muted">पानी, खाना पकाउने इन्धन, बत्ती, शौचालय, फोहोर, बजार र स्वास्थ्य पहुँच।</p>
+                    <a href="/Admin/HouseholdCategoryFacilities/@id" class="btn btn-sm btn-primary">हेर्नुहोस् / सम्पादन गर्नुहोस्</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Assets -->
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-tv me-2"></i>संपत्ति</h5>
+                    <p class="card-text small text-muted">रेडियो, टिभी, फोन, कम्प्युटर, साइकल आदि।</p>
+                    <a href="/Admin/HouseholdCategoryAssets/@id" class="btn btn-sm btn-outline-primary">हेर्नुहोस् / सम्पादन गर्नुहोस्</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Agriculture, Livestock & Insurance -->
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-tree me-2"></i>कृषि, पशुपालन र बीमा</h5>
+                    <p class="card-text small text-muted">जग्गा, अन्नबाली, पशुपालन, बीमा।</p>
+                    <a href="/Admin/HouseholdCategoryAgriculture/@id" class="btn btn-sm btn-outline-primary">हेर्नुहोस् / सम्पादन गर्नुहोस्</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Death, Migration & Other -->
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-journal-text me-2"></i>मृत्यु, प्रवास र अन्य</h5>
+                    <p class="card-text small text-muted">मृत्युका रेकर्ड, बसाइँसराइ, नोटहरू।</p>
+                    <a href="/Admin/HouseholdCategoryOther/@id" class="btn btn-sm btn-outline-primary">हेर्नुहोस् / सम्पादन गर्नुहोस्</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="card h-100 border-warning">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="bi bi-people-fill me-2 text-warning"></i>पारिवारिक सदस्य / भवन / मृत्यु
+                    </h5>
+                    <p class="card-text small text-muted">
+                        पारिवारिक सदस्यहरू, घरको संरचना विवरण, र मृत्यु रेकर्डहरू व्यवस्थापन गर्नुहोस्।
+                    </p>
+                    <a href="/Admin/ManageSubTables/@id" class="btn btn-sm btn-warning">
+                        <i class="bi bi-table me-1"></i>उप-तालिका हेर्नुहोस्
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

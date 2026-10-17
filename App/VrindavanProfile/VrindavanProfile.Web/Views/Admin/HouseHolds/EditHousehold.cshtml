@@ -1,0 +1,85 @@
+@model VrindavanProfile.Web.Data.DbEntities.Household
+@{
+    ViewData["Title"] = "घरपरिवार सम्पादन गर्नुहोस्";
+}
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="fw-bold mb-0"><i class="bi bi-pencil-square me-2"></i>घरपरिवार सम्पादन गर्नुहोस्</h2>
+        <a href="/Admin/Households" class="btn btn-outline-secondary btn-sm">सूचीमा फर्कनुहोस्</a>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+
+    <div class="card">
+        <div class="card-body">
+            <form asp-action="EditHousehold" method="post">
+                <input type="hidden" asp-for="Id" />
+
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">वडा नं. <span class="text-danger">*</span></label>
+                        <input asp-for="WardNo" class="form-control" type="number" required />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">घर क्रम संख्या (House Serial No)</label>
+                        <input asp-for="HouseSerialNo" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">टोलको नाम</label>
+                        <input asp-for="SettlementName" class="form-control" />
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">उत्तरदाताको नाम</label>
+                        <input asp-for="RespondentName" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">उत्तरदाताको फोन नम्बर</label>
+                        <input asp-for="RespondentPhone" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">पारिवारिक सदस्य संख्या</label>
+                        <input asp-for="FamilyMemberCount" class="form-control" type="number" />
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">गणकको नाम</label>
+                        <input asp-for="EnumeratorName" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">अवस्था (Status)</label>
+                        <input asp-for="Status" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">नगरपालिका</label>
+                        <input asp-for="Municipality" class="form-control" />
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">सडकको नाम</label>
+                        <input asp-for="RoadName" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">गत वर्षमा मृत्यु भएको ?</label>
+                        <input asp-for="DeathInLastYear" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">मृत्यु संख्या</label>
+                        <input asp-for="DeathCount" class="form-control" type="number" />
+                    </div>
+                </div>
+
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-save me-1"></i>अपडेट गर्नुहोस्
+                    </button>
+                    <a href="/Admin/Households" class="btn btn-outline-secondary">रद्द गर्नुहोस्</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
